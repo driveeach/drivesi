@@ -1,0 +1,44 @@
+Headnote
+MEASUREMENT Changing CIO role shows limits of traditional approach to measuring IT
+
+Headnote
+Opinion
+
+There is an adage that as a young company matures, its leadership evolves from being barbarians to bureaucrats, and a similar shift is currently taking place within the IT function of many organisations.
+
+Whereas in the past, IT has not been seen to be subject to quite the same rules as other business functions, it is now being required to demonstrate its value to the organisation, to maintain the disciplines of planning, budgeting and cost management, and to assess and mitigate any potential risks to the organisation, in the same way as other departments.
+
+As the leader of the IT function, the focus of the chief information officer is therefore turning further away from the detail of technology such as server availability, network performance and application functionality. Instead it is moving towards the strategic issues of IT budgeting and investment planning, governance, service quality, risk management and outsourcing.
+
+Most business functions have well-established methodologies for cost and value measurement. However, enlightened CIOs seeking to prove their worth are finding a distinct lack of recognised tools and procedures that can be applied to this task.
+
+Where chief financial officers have the Generally Accepted Accounting Principles, production directors have quality control and improvement techniques, and sales directors can rely on revenue figures, the tools available to the CIO still have a technology bias.
+
+At the lowest level, technology management tools abound - systems management, application lifecycle management and performance management being examples.
+
+For IT service management there is the Information Technology Infrastructure Library (ITIL), developed by the government's Central Computer and Telecommunications Agency in the late 19805, and now managed by the Office of Government Commerce. ITIL defines a best practice framework for the management and delivery of IT services.
+
+For governance, the Control Objectives for Information and Related Technology (Cobit) provide a reference framework for IT governance, information control and security. Issued by industry body the IT Governance Institute, Cobit comprises a process model and 34 high-level controls to achieve, spanning all areas of IT management.
+
+Both ITIL and Cobit identify that cost and value measurement is an important aspect of IT management, but neither do much to tell the CIO how to go about it.
+
+And although both methods help to define a framework for management and control, they are also both IT-centric, doing little to help close the gap between business and IT.
+
+Giving a briefing on ITIL or Cobit to your chief executive is not likely to convince them that you have a firm handle on how IT is making an invaluable contribution to the business strategy.
+
+Better methodologies for cost and value measurement in IT are now emerging, but they have not yet reached the tip-over point where there is broad acceptance, and where the techniques are incorporated into widely available frameworks and the associated tools.
+
+For now, the CIO is therefore faced with something of a best-of-breed approach, and the most effective step that an organisation can take to improve the quality of its cost and value measurement is to implement an IT portfolio management solution.
+
+IT portfolio management is a technique that applies formal methods and quantitative analysis to the process of IT investment planning, control and evaluation.
+
+It allows senior executives in a business to compare the merits of IT initiatives that are competing for limited resources, and make an informed decision on where IT investment should best be directed to achieve business objectives.
+
+By linking portfolio management to programme and project management functions, it is possible to complete the loop of planning, executing, monitoring and optimising.
+
+Sidebar
+The most effective step that an organisation can take to improve the quality of its cost and value measurement is to implement an IT portfolio management solution
+
+
+AuthorAffiliation
+Tim Jennings is research director at analyst company Butler Group

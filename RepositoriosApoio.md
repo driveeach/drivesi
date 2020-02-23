@@ -1,0 +1,5 @@
+* [Awesome awesomeness](https://github.com/bayandin/awesome-awesomeness) (Uma lista de repositórios sobre qualquer coisa)
+* [Remote jobs Brazil](https://github.com/lerrua/remote-jobs-brazil) (Empresas que contratam remotamente)
+* [Awesome Linux](https://github.com/aleksandar-todorovic/awesome-linux) (Listas de coisas relacionadas ao Linux)
+* [Every programmer should know](https://github.com/mr-mig/every-programmer-should-know) (Uma coleção de coisas técnicas que todo desenvolvedor deve saber)
+* [cosmos](https://github.com/OpenGenus/cosmos) (Coleção de todos algoritmos e estrutura de dados)

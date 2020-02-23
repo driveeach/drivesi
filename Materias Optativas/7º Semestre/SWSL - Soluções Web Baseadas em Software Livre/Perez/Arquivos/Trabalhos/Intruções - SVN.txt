@@ -1,0 +1,6 @@
+1. Download eclipse indigo (jse ou jee) não o classic
+2. help -> marketplace, depois procurar pelo subclipse baixar e instalar tudo
+3. criar um novo projeto a partir do "checkout de projetos do svn"
+4. adicionar um repositório = http://143.107.58.177/svn/grupo05sw e colocar seu login e senha
+
+

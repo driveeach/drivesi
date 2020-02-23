@@ -1,0 +1,180 @@
+Headnote
+IT management needs an overarching governance model to ensure that investments in technology generate business value and mitigate risks.
+
+INFORMATION TECHNOLOGY GOVERNANCE defines the overall structure, policies, processes and relationships necessary to provide the desired f standardization and consistency across an IT ation. It encompasses systems, performance measures risk management procedures, helping organizations make informed decisions about their operations and investments. While organizations have similar goals - such as controlling costs and achieving data consistency- IT departments across government, rporations and nonprofits operate differently.
+
+Even after a rigorous focus on compliance initiatives- and the widespread acknowledgment that large-scale, complex, strategic IT projects commonly progress beyond scope and budget without due attention- standardization around IT governance models is still being sought.
+
+When organizations are examined and the use ofbest-practice disciplines are polled, a number of frameworks and standards for varying aspects of IT operations are found. These frameworks typically include:
+
+* IT infrastructure Library (ITIL), developed by the United Kingdom's Office of Government Commerce, focuses on service support and service delivery.
+
+* iso/iEC 27001 (iso 27001) consists of a set of best practices to implement and maintain an information security program.
+
+* AS8015 2005 is the Australian Standard for Corporate Governance of Information and Communication Technology.
+
+* capability Maturity Model Integration focuses on software engineering, people and implementation.
+
+* Balanced Scorecard is a strategic planning and management system used to align business activities to the organization's vision and strategy.
+
+* Six Sigma is a manufacturing-based system focusing on quality assurance.
+
+IT management needs an overarching governance model to ensure that investments in technology generate business value and mitigate associated risks. The model should also provide a common language for IT and users, enable more focused planning, and create a level of standardization, consistency and predictability
+
+ENTER COBIT
+
+First published in 1996, Control Objectives for Information and Related Technology (COBIT) provides a set of generally accepted best-practice objectives to help maximize the benefits derived through IT use. It further aids in developing appropriate IT governance and control in an organization. Managed by the Information Systems Audit and Control Association and its research body, the IT Governance Institute (ITGI), COBIT became the IT governance standard against which auditors measured process and control maturity in support of compliance with the Sarbanes-Oxley Act of 2002.
+
+COBIT provides a control- and objective-based foundation upon which decisions and investments can be based. These include defining a strategic plan; defining the information architecture; acquiring the necessary hardware and software to execute a strategy; managing projects; ensuring continuous service; and monitoring the performance of the IT system.
+
+This is achieved by providing tools to assess and measure the performance of 34 high-level processes that cover 214 control objectives, which are categorized in four domains: Plan and Organize; Acquire and Implement; Deliver and Support; and Monitor and Evaluate. By implementing processes and procedures supporting the COBIT objectives and identifying and monitoring associated controls, users and auditors will recognize greater reliability and performance throughout the enterprise.
+
+OVERCOMING CHALLENGES
+
+Throughout IT organizations, common themes are described as areas of opportunity: improve project planning and investment; increase collaboration and information sharing; facilitate effective communication and transition across the lifecycle; control cost while providing efficient operations and support; enhance service delivery; and improve security. These themes are usually approached as individual programs or are carefully orchestrated as an overarching organizational transformation related to technology operations.
+
+Certain areas, such as security and managing data across an enterprise, require heavy investment and monitoring. These are also areas that auditors commonly spend time scrutinizing and directing change for heightened control.
+
+When remediation is essential, reactive solutions are typically implemented. Though necessary, these solutions can be costly and inefficient. Once a baseline is set, however, and the auditors leave, it is far more efficient for IT management to proactively design and support an improvement plan with cross-functional reach The COBIT model can help with this.
+
+By understanding the four domains and the underlying process areas, IT management and staff can begin communicating from a common frame of reference. Leveraging the COBIT toolkits, IT management can promote a standard set of metrics, process structures, improvement plans and self-assessment mechanisms. This allows each area to initiate, report and monitor in a similar fashion.
+
+In almost every change-management or operational-improvement approach, stakeholder involvement is critical, yet this is often where things fall apart. Think how many project managers ask for executive stakeholder meetings to communicate issues and detailed plans. Now ask how many IT managers have enough time to devote to such detail. The answer would be "very few."
+
+With an understanding of COBIT and having a common approach to managing and measuring processes, IT management will have an informed understanding of the objectives to be achieved. This understanding allows IT management to focus on the actions that require their attention, enabling the program to stay on track based on meaningful risk and opportunity reviews.
+
+From the ITGI COBIT 4.1 framework document, the four domains and their relationships are described and the related process areas listed. The relationships can help IT management focus on areas of opportunity or risk.
+
+Plan and Organize (PO) provides direction to solution delivery (AI) and service delivery (DS); Acquire and Implement (AI) provides the solutions and passes them to be turned into services; Deliver and Support (DS) receives the solutions and makes them usable for end users; and Monitor and Evaluate (ME) monitors all processes to ensure that the direction is followed.
+
+A governance framework is worthwhile only if it is actually used; otherwise, it becomes a waste of money and a burden to the staff. Tb be effective, its language must permeate regular conversations among the leadership team and find its way into dashboards and documents.
+
+By using COBIT tools, IT management can quickly assess strengths, weaknesses and opportunities. It can then reduce costs, improve the top-line, enhance customer service, or meet compliance and regulatory reporting by balancing risk mitigation and process improvement in a proactive fashion.
+
+COLLABORATION AND SUPPORT
+
+As an example, one state government's IT strategic planning group wanted higher levels of collaboration and a stronger sense of support. The sense of buy-in across multiple agencies would strengthen appropriation requests for strategic initiatives, allowing for economies of scale, including:
+
+* Solutions that address and automate inter- and intra-agency business processes
+
+* smaller, more focused teams to drive progress more quickly
+
+* More statewide, standardized technology platforms and toolsets
+
+* Enhanced information sharing and increased reusability
+
+* Lower total cost of ownership for solutions
+
+To achieve its goals, the state government embarked on a more collaborative planning effort, beginning with an agency director approach. This top-down model was meant to align agencies having similar business-oriented goals and challenges. Facilitated discussion and collaborative decision making identified and defined capabilities that would help alleviate challenges in support of goals that could be met through technology. This transition - from businessdriven need to technology-based capability - also allowed the agency directors to communicate more effectively with the IT directors.
+
+The transition to technology occurred when enabling capabilities, such as business intelligence, were identified. More than 50 agencies were represented and more than 100 directors, chiefs of staff, and IT leads collaborated in the process to iterate balanced objectives and identify existing and new initiatives.
+
+The state's intent for the strategic planning process was a set of IToriented priorities that support state and agency business goals and can be translated into a set of recommended projects and budgets. With the iterative, collaborative process utilized, it was essential to be sensitive to time and competing priorities. In support of the process, the state established a legislative technology committee and formalized the agency director advisory committee.
+
+The state's approach - developing output for the framework- was designed to facilitate discussion and move quickly toward decisions in a collaborative fashion that built support and consensus.
+
+Looking at CO Ii ? 's Planning and Organizing domain, the very first process area is Define a Strategic IT Plan. This satisfies the business requirement for IT to sustain or extend the strategy and governance requirements, while still being transparent about benefits, costs and risks.
+
+Another COBIT process area, Define the IT Processes, Organization and Relationships, has several applicable objectives. These include Defining an IT Process Framework, Establishing an IT Strategy Committee and Establishing an IT Steering Committee.
+
+The state government achieved several COBIT objectives through its planning process, which had the goal of developing a long-term strategic plan - not overtly aligning with the COBIT framework. This is a model of success that other standard and framework maturity programs can learn from.
+
+ENABLING IT GOVERNANCE TRANSFORMATION
+
+The steps enabling transformation- in the context of an IT governance, compliance or enterprise risk management initiative- describe a business process. Similar to any other business process, it must be documented, followed with discipline and improved with every iteration.
+
+For a successful COBIT experience, always begin from a perspective of knowledge and leverage experienced support. Implementing an enterprise risk management, compliance or IT governance program is like any other transformation: It must have the support of a dedicated team to be successful.
+
+Lessons taken from enabling organizational transformation hold true for an IT governance program to reduce cost and effort, while enhancing chances of success and building support across an organization. There are only so many tasks that one person or a group working part-time can push forward simultaneously.
+
+For an IT governance effort to succeed, therefore, dedicated resources must be allocated, IT management must have a common understanding to allow for more focused decision making, and progress must not be predetermined by an arbitrary schedule, such as a quarterly earnings call.
+
+Sidebar
+PLAN AND ORGANIZE
+
+* Define a strategic IT plan.
+
+* Define the information architecture.
+
+* Determine the technological direction.
+
+* Define the IT processes, organization and relationships.
+
+* Manage the it investment.
+
+* communicate management aims and direction.
+
+* Manage IT human resources.
+
+* Manage quality.
+
+* Assess and manage IT risks.
+
+* Manage projects.
+
+ACQUIRE AND IMPLEMENT
+
+* Identify automated solutions.
+
+* Acquire and maintain application software.
+
+* Acquire and maintain technology infrastructure.
+
+* Enable operation and use.
+
+* Procure IT resources.
+
+* Manage changes.
+
+* Install and accredit solutions and changes.
+
+DELIVER AND SUPPORT
+
+* Define and manage service levels.
+
+* Manage third-party services.
+
+* Manage performance and capacity.
+
+* Ensure continuous service.
+
+* Ensure systems security.
+
+* Identify and allocate costs.
+
+* Educate and train users.
+
+* Manage sen/ice desk and incidents.
+
+* Manage the configuration.
+
+* Manage problems.
+
+* Manage data.
+
+* Manage the physical environment.
+
+* Manage operations.
+
+MONITOR AND EVALUATE
+
+* Monitor and evaluate IT performance.
+
+* Monitor and evaluate internal control.
+
+* Ensure compliance with external requirements.
+
+* Provide IT governance.
+
+Sidebar
+A governance framework is worthwhile only if it is actually used; otherwise, it becomes a waste of money and a burden to the staff.
+
+Sidebar
+Please send questions and comments on this article to editors@baselinemag.com
+
+AuthorAffiliation
+Adam Nelson is director of 'management and IT consultmgat Keane, a global IT consulting firm headquartered m San Ramon, Calif.
+
+Copyright Ziff Davis Enterprise Inc. Dec 2008
+
+Contagem de palavras: 1837

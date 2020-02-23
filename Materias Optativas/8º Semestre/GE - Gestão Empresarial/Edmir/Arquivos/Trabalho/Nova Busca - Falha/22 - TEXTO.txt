@@ -1,0 +1,25 @@
+For well over 25 years, we have been besieged with methodologies, particularly in the application development and project management domains. During the last few years, however, it has been refreshing to see new management-oriented models emerging. These range from detailed process guides for infrastructure services delivery and support (e.g., ITIL - Information Technology Infrastructure Library), to methods of measuring maturity in various disciplines (e.g., CMM - Capability Maturity Models), to high-level IT governance models, such as COBIT (Control Objectives for IT).
+
+COBIT is particularly interesting as it approaches the management of IT from the perspective of the CIO. It demonstrates the functional breakdown of the IT business (planning and organizing, acquisition and implementation, delivery and support) and the processes required to successfully execute each function (34 processes in all). In essence it describes the complete IT lifecycle from a management perspective.
+
+It is particularly valuable in that it not only describes processes in detail, but also outlines their control objectives and critical quality criteria. It also provides a guideline for self-assessing your level of maturity in executing each process.
+
+I am finding there is tremendous interest in this model, mainly from the perspective of the control objectives for each process. Largely, this is driven by the need to demonstrate adequate control mechanisms in IT management for regulatory compliance (e.g., Sarbanes- Oxley). In my work with these models, however, I think their value goes well beyond this.
+
+Value of a management framework
+
+The COBIT model provides a common vocabulary for an IT leadership team to discuss the business of IT. Once it is understood by each team member, there should be little need for clarification over process terminology or in-scope activities. Furthermore, a leadership team could do its own self-assessment on the level of maturity it has reached for each process and its desired level of maturity. In turn, this allows the team to determine priorities for continuous improvement programs within the IT shop.
+
+The IT management framework under COBIT helps facilitate the dialogue with seniormanagement. Not only does it educate executives about IT service and project delivery, but it also prompts worthwhile discussion on senior management's role and decision privileges in overall IT governance. In addition, the CIO and senior management now have a framework for discussions with the Board of Directors, who typically are becoming increasingly concerned about governance on all fronts.
+
+COBIT and the business
+
+The business (user) community should be introduced to an IT management framework to learn more about how IT services are delivered and how the business can most effectively work with IT service providers. The business community, of course, participates in several of these processes. Having a generally accepted framework could lead to more fruitful discussions on roles and responsibilities in both project and day-to-day service delivery.
+
+Internal and external auditors should find these frameworks invaluable in working with IT leadership to plan and scope audit programs and to discuss their priorities. Furthermore, there is now a framework to determine control points and objectives for compliance with external regulators.Auditor cooperation, using the COBIT framework, can be enlisted in helping to control "rogue" IT activities in the organization. Often, in IT shops, there are friction points among groups over roles and responsibilities during service delivery or decisionmaking. Sometimes this occurs with outsourcers in trying to determine the scope of their process responsibilities, input into other processes, and decisionmaking powers. A management framework can lend focus to the discussion in trying to reconcile these problems.
+
+Having a standard IT management framework model has several benefits in furthering the understanding of the IT business with internal and external stakeholders. It can be an invaluable tool for most CIOs.
+
+-- Graham J. McFarlane, P.Eng., ISP, FCMC is a consultant who has worked with IT management, both in Canada and internationally, since 1978, focusing on improving IT effectiveness. Prior to this, he spent ten years with IBM Canada.
+
+Copyright Laurentian Technomedia Inc. Jul 2005

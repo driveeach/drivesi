@@ -1,0 +1,3 @@
+IP: 143.107.58.177
+login: grupo05
+senha: c93z4

@@ -1,0 +1,27 @@
+-- Executing query:
+create sequence profissionais_numeroControle_seq START 1; //auto incremento
+Query returned successfully with no result in 36 ms.
+
+-- Executing query:
+create table profissionais (
+	numeroControle BIGINT NOT NULL default nextval('profissionais_numeroControle_seq'),
+	nome VARCHAR(255),
+	endereco VARCHAR(255),
+	profissao VARCHAR(255),
+	dataNascimento DATE,
+	primary key(numeroControle)
+);
+NOTICE:  CREATE TABLE / PRIMARY KEY will create implicit index "profissionais_pkey" for table "profissionais"
+Query returned successfully with no result in 111 ms.
+
+create sequence contratos_numero_seq START 1;
+
+create table contratos (
+	numero BIGINT NOT NULL default nextval('contratos_numero_seq'),
+	profNumero BIGINT,
+	dataInicio DATE,
+	dataTermino DATE,
+	valorHora FLOAT8,
+	primary key (numero),
+	foreign key (profNumero) references profissionais(numeroControle)
+);
