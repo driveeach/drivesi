@@ -1,0 +1,13 @@
+O professor Auil não diz as respostas das provas.
+
+No entanto, uma nota 7 foi obtida com a seguinte série de respostas:
+1 - A
+2 - C
+3 - B
+4 - C
+5 - C
+6 - A
+7 - C
+8 - F
+9 - C
+10 - F

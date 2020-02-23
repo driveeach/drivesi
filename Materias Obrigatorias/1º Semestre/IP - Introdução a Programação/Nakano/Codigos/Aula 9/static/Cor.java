@@ -1,0 +1,1 @@
+enum Cor {MARROM, VERMELHO, VERDE};

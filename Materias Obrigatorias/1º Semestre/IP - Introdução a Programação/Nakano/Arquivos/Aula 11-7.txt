@@ -1,0 +1,18 @@
+Aula 11/7 - IP Lab
+
+	-EP
+		->package
+		->import
+	-Domino
+		-> contar pontos
+		-> trapacear
+		-> refatorar
+		-> simular
+		-> novas funcionalidades
+		-> novos jogadores
+		
+	olhar peça do proximo jogador
+	Gambiarra da Vóvó
+	
+	Esconder peças
+	Não alterar mesa

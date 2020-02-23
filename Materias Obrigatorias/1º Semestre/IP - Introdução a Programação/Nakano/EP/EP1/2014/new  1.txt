@@ -1,0 +1,43 @@
+indice 0 das linhas 1 a n-1, ai,0
+Linha => pi = ai,0/a0,0
+Reaclcula linha -> ai,j = ai,j, - pi*a0,j
+indice 1 das linhas 2 a n-1, ai,1 combinando com a linha 1 com as demais
+pi = ai1/a1,1 e ai,j = ai,j - pi * a1,j
+_______________________________________________________________________________________
+
+GERAL
+
+P[i][k] = a[i][k] / a[k][k] //Linha
+
+a[i][j] = a[i][j] - (P[i][k] * a[k][j]) //Re-calculo de Linha 
+
+x[i] =(b[i] - (a[i][j] * x[j])) / a[i][i] //Acha X, onde j = i + 1;
+_______________________________________________________________________________________
+
+Teste de mesa do Exemplo Numérico
+
+4 5 
+linha k = 0, i = 1, j = 0
+	  k = 0, i = 2, j = 0
+	  k = 0, i = 3, j = 0
+	  k = 1, i = 2, j = 1
+	  k = 1, i = 3, j = 1
+	  k = 2, i = 3, j = 2
+	  
+_______________________________________________________________________________________
+	public void escalonar(){
+		double[][] P = new double[4][5]; 
+		for(int i = 0; i < M.length; i++){
+			for(int k = i; k < M.length; k++){
+				P[i][k] = M[i][k] / M[k][k];
+				for(int j = k; j < M[i].length; j++){
+						M[i][j] = M[i][j] - (P[i][k] * M[k][j]);															
+				}
+			}
+		}
+		for(int i = 0; i < P.length; i++){
+			for(int j = 0; j < P[i].length; j++){
+				System.out.print (P[i][j] + " ");
+			}
+			System.out.println ();
+		}
