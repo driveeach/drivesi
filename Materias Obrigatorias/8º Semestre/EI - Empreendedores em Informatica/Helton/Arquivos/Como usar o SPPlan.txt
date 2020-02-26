@@ -1,0 +1,46 @@
+-----------------------------------
+Como usar o SPPlan
+-----------------------------------
+O software deve ser executado no navegador Internet Explorer versão 5.5 ou superior, não sendo necessário estar conectado à internet para a sua utilização, após a instalação. Os sistemas operacionais homologados para uso são Windows 98, ME, XP, NT e 2000 e pode ser usado em ambiente de rede (multi-usuário), via HTTP.
+
+Versões do SPPlan
+-----------------
+A partir da versão 1.2 do sistema SPPlan, foram disponibilizadas duas versões do instalador para escolha do usuário. A opção Download (versão com JRE) inclui a instalação do SPPlan juntamente com o software Java Runtime Environment (JRE), de distribuição livre. A opção Download (versão sem JRE) instala apenas o sistema SPPlan e deve ser utilizada apenas por usuários que já possuem o JRE ou J2SDK versão 1.2 ou superior instalados em seus computadores. Os relatórios são gerados por meio do aplicativo Adobe Acrobat Reader, de distribuição livre. 
+
+Operações iniciais
+------------------
+Durante a instalação é gerado um ícone na Área de Trabalho do Windows para facilitar o acesso à aplicação. Sequência das operações iniciais: identificação do administrador da elaboração do Plano de Negócio, identificação do Plano, identificação dos usuários que colaborarão para o Plano, e preenchimento dos campos cujas telas são orientadas para que todas as informações necessárias sejam inseridas de forma aleatória e não sequencial. 
+Ao informar os dados básicos, como tipo de empresa, porte, segmento, enunciado e objetivos do Plano, navegue livremente pelas seções, preenchendo todos os campos abertos. Alguns campos devem ser preenchidos obrigatoriamente e estão sinalizados com um *(asterisco). A qualquer momento, pode-se verificar os campos preenchidos e pendentes, clicando em Mapa do Plano de Negócios.
+
+Para visualizar o plano
+-----------------------
+Escolha a opção Imprimir no menu ou Exibir, no caso dos relatórios financeiros. Os relatórios financeiros são gerados a partir de dados numéricos inseridos no Plano Financeiro, de acordo com as projeções esperadas para o negócio no horizonte de tempo definido no início. 
+Anexos que ilustrem e complementem a descrição de cada campo podem ser também incluídos. Nem todas as seções devem ser preenchidas. Elas servem como um guia para que não corra o risco de esquecer nenhuma informação importante, mas o preenchimento de todas as seções pode torná-lo muito grande. 
+
+Primeiro acesso ao software
+---------------------------
+Ao entrar na aplicação através do ícone Iniciar Aplicação, localizado na página de Introdução, o usuário será direcionado à Página de Login, para a sua identificação. 
+Neste primeiro acesso, digite o Login e a senha padrão do sistema.
+Login: admin
+Senha: admin 
+Observação: É recomendável a troca do Login e Senha com o objetivo de aumentar a segurança e controle dos acessos ao software. 
+
+Cadastro da Empresa
+-------------------
+Navegue até Ferramentas / Cadastro / Empresas, clique no ícone para inserir uma nova empresa, preencha os campos do formulário e clique em Inserir para confirmar a inclusão. 
+
+Cadastro de Usuários
+--------------------
+Navegue até Ferramentas / Alteração de dados Cadastrais, digite um novo usuário e uma nova senha, confirme a digitação da senha e clique em Atualizar. Se desejar que outras pessoas tenham acesso ao software, repita a operação de cadastro para novo usuário. 
+
+Quem desenvolveu o SPPlan
+-------------------------
+O desenvolvimento do software SPPlan foi uma iniciativa conjunta entre as áreas de Projetos e Competitividade da Fiesp/Ciesp (parte integrante do programa SPCred) e o SEBRAE-SP, através da Unidade Organizacional de Educação e Cultura Empreendedora. 
+As especificações funcionais foram geradas pela Lebre Consulting (lebre@uol.com.br), especialista em Plano de Negócios, com ampla experiência na área de Empreendedorismo e Administração. 
+Base bibliográfica usada como referência para os textos:
+·         O Empreendedor, de Ronald Degen;
+·         Guia da Ernst & Young para Desenvolver o Seu Plano de Negócios;
+·         Empreendedorismo, de José Carlos de Assis Dornelas;
+·         Construindo Plano de Negócios, de César Simões Salim e outros. 
+O software foi desenvolvido pela empresa Tagview Tecnologia (www.tagview.com.br), em linguagem Java, com tecnologia web. 
+O suporte é feito pela Central de Atendimento da FIESP/CIESP: e-mail atendimento@fiesp.com.br.

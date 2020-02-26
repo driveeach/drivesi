@@ -1,0 +1,3 @@
+Enviar via COL:
+- PDF com texto alterado marcado em fundo amarelo
+- arquivo modelo-alteracoes preenchido (deletar linhas de exemplo)
