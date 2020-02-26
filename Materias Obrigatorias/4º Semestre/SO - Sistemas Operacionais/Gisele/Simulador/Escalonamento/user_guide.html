@@ -1,0 +1,574 @@
+<html>
+<head>
+<title>Moss | Scheduling Simulator | User Guide</title>
+</head>
+<body bgcolor="#ffffff">
+<h1>
+MOSS Scheduling Simulator
+<br>User Guide</h1>
+
+<h2>Purpose</h2>
+
+<p>
+This document is a user guide for the MOSS
+Scheduling Simulator.  It explains how to use the simulator
+and describes the various input and output files used
+by the simulator.
+The MOSS software
+is designed for use with 
+<a href="http://www.cs.vu.nl/~ast/">Andrew S. Tanenbaum</a>, 
+<a href="http://vig.prenhall.com/catalog/academic/product/1,4096,0130313580,00.html">Modern Operating Systems, 2nd Edition</a> 
+(<a href="http://www.prenhall.com/">Prentice Hall</a>, 2001).  
+The Scheduling Simulator was written by 
+<a href="http://www.cs.earlham.edu/~odo/">Alex Reeder</a>
+(<a href="mailto:alexr@e-sa.org"><i>alexr@e-sa.org</i></a>).  
+This user guide was written by 
+<a href="http://www.ontko.com/~rayo/">Ray Ontko</a>
+(<a href="mailto:rayo@ontko.com"><i>rayo@ontko.com</i></a>).
+
+<p>
+This user guide assumes that you have already installed and tested 
+the simulator. If you are looking for installation information, 
+please read the 
+<a href="install_unix.html">Installation Guide for
+Unix/Linux/Solaris/HP-UX Systems</a> or the 
+<a href="install_windows.html">Installation Guide for 
+Win95/98/Me/NT/2000 Systems</a>. 
+</p>
+
+<h2>Introduction</h2>
+<p>
+The scheduling simulator illustrates the behavior of scheduling 
+algorithms against a simulated mix of process loads. The user can 
+specify the number of processes, the mean and standard deviation 
+for compute time and I/O blocking time for each process, and the 
+duration of the simulation. At the end of the simulation a 
+statistical summary is presented. Students may also be asked to 
+write their own scheduling algorithms to be used with process 
+loads defined by the instructor. 
+
+
+<h2>Running the Simulator</h2>
+
+<p>
+The program reads 
+a configuration file (<tt>scheduling.conf</tt>)
+and writes two output files (<tt>Summary-Results</tt>
+and <tt>Summary-Processes</tt>).
+<p>
+To run the program, enter the following command line.
+
+<blockquote><pre>
+$ java Scheduling scheduling.conf
+</pre></blockquote>
+
+<p>
+The program will display "Working..." while the simulation
+is working, and "Completed." when the simulation is complete.
+</p>
+<blockquote><pre>
+Working...
+Completed.
+
+</pre></blockquote>
+<p>
+The simulator reads parameters from the configuration file
+("scheduling.conf").
+It creates a 
+specified number of processes, each of which blocks for
+input or output after a number of milliseconds that can be specified
+for each process.  Each process is allowed to run for a
+randomly generated amount of time, with the amount of time
+constrained by a specified average (mean) in milliseconds,
+and standard deviations from that average.  The simulation
+may also be bounded in the total length of its run.
+<p>
+After reading the configuration file, the 
+scheduling algorithm then "runs" the processes, causing
+each to block for input or output after the specified interval
+until all processes have completed their randomly generated
+amount of runtime, or until the maximum amount of runtime for
+the simulation is exceeded.
+<p>
+As the simulation proceeds, a log file ("Summary-Processes")
+is generated which shows the activity of the scheduling algorithm
+as it considers each process in the process queue.
+<p>
+After the simulation halts, a summary report ("Summary-Results")
+is generated which shows statistics for each process and for the 
+simulation as a whole.
+</p>
+
+<h2>The Configuration File</h2>
+
+<p>
+The configuration file (<tt>scheduling.conf</tt>) 
+is used to specify various parameters for the 
+simulation, including:
+</p>
+<ul>
+<li>the number of processes,
+<li>the mean runtime for a process,
+<li>the standard deviation in runtime for a process,
+<li>for each process, how long the process runs before it blocks for input or 
+output, and
+<li>how long the simulation should run.
+</ul>
+
+<h3>Configuration File Options</h3>
+
+<p>There are a number of options which can 
+be specified in the configuration file.  These are
+summarized in the table below.
+</p>
+
+<table border="1" cellspacing="0">
+<tr>
+<th>Keyword</th>
+<th>Values</th>
+<th>Description</th>
+</tr>
+
+<tr>
+<td valign="top"><tt>numprocess</tt></td>
+<td valign="top"><i>n</i></td>
+<td valign="top">The number of processes to create for 
+the simulation.</td>
+</tr>
+
+<tr>
+<td valign="top"><tt>meandev</tt></td>
+<td valign="top"><i>n</i></td>
+<td valign="top">The average length of time in milliseconds
+that a process should execute before terminating.</td>
+</tr>
+
+<tr>
+<td valign="top"><tt>standdev</tt></td>
+<td valign="top"><i>n</i></td>
+<td valign="top">The number of standard deviations from the
+average length of time a process should execute before terminating.<td>
+</tr>
+
+<tr>
+<td valign="top"><tt>process</tt></td>
+<td valign="top"><i>n</i></td>
+<td valign="top">The amount of time in milliseconds that
+the process should execute before blocking for input or output.
+There should be a separate <tt>process</tt> directive for
+each process specified by the <tt>numprocess</tt> directive.</td>
+</tr>
+
+<tr>
+<td valign="top"><tt>runtime</tt></td>
+<td valign="top"><i>n</i></td>
+<td valign="top">The maximum amount of time the simulation should run
+in milliseconds.</td>
+</tr>
+</table>
+
+<h3>Sample Configuration File</h3>
+<p>
+The "scheduling.conf" configuration file looks like this:
+
+<blockquote><pre>
+// # of Process	
+numprocess 3
+
+// mean deivation
+meandev 1100
+
+// standard deviation
+standdev 510
+
+// process    # I/O blocking
+process 100
+process 500
+process 30
+
+// duration of the simulation in milliseconds
+runtime 5000
+
+</pre></blockquote>
+
+<h2>The Summary-Results File</h2>
+
+<p>
+The Summary-Results file contains a summary report describing
+the simulation and includes one line of summary information
+for each process.  The fields and columns in the report
+are described in the following table.
+</p>
+
+<table border="1">
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+
+<tr>
+<td valign="top">Scheduling Type:</td>
+<td valign="top">The type of the scheduling algorithm used.
+The value displayed is "hard coded" in the SchedulingAlgorithm.java
+file.</td>
+</tr>
+
+<tr>
+<td valign="top">Scheduling Name:</td>
+<td valign="top">The name of the scheduling algorithm used.
+The value displayed is "hard coded" in the SchedulingAlgorithm.java
+file.</td>
+</tr>
+
+<tr>
+<td valign="top">Simulation Run Time:</td>
+<td valign="top">The number of milliseconds that the simulation
+ran.  This may be less than or equal to the total amount of
+time specified by the "runtime" configuration parameter.</td>
+</tr>
+
+<tr>
+<td valign="top">Mean:</td>
+<td valign="top">The average amount of runtime for the processes
+as specified by the "meandev" configuration parameter.</td>
+</tr>
+
+<tr>
+<td valign="top">Standard Deviation:</td>
+<td valign="top">The standard deviation from the average
+amount of runtime for the processes as specified by the 
+"standdev" configuration parameter.</td>
+</tr>
+
+<tr>
+<td valign="top">Process #</td>
+<td valign="top">The process number assigned to the process 
+by the simulator.  The process number is between 0 and n-1, 
+where n is the number specified by the "numprocess" configuration
+parameter.</td>
+</tr>
+
+<tr>
+<td valign="top">CPU Time</td>
+<td valign="top">The randomly generated total runtime for the 
+process in milliseconds.  This is determined by the 
+"meandev" and "standdev" parameters in the configuration 
+file.</td>
+</tr>
+
+<tr>
+<td valign="top">IO Blocking</td>
+<td valign="top">The amount of time the process runs before it
+blocks for input or output.  This is specified for each process
+by a "process" directive in the configuration file.</td>
+</tr>
+
+<tr>
+<td valign="top">CPU Completed</td>
+<td valign="top">The amount of runtime in milliseconds completed for
+the process.  Note that this may be less than the CPU Time 
+for the process if the simulator runs out of time as specified
+by the "runtime" configuration parameter.</td>
+</tr>
+
+<tr>
+<td valign="top">CPU Blocked</td>
+<td valign="top">The number of times the process blocked for
+input or output during the simulation.</td>
+</tr>
+</table>
+
+<h3>Sample Summary-Results File</h3>
+
+<p>
+The output "Summary-Results" file looks something like this:
+</p>
+<blockquote><pre>
+Scheduling Type: Batch (Nonpreemptive)
+Scheduling Name: First-Come First-Served
+Simulation Run Time: 2750
+Mean: 1100
+Standard Deviation: 510
+Process #	CPU Time	IO Blocking	CPU Completed	CPU Blocked
+0		1372 (ms)	100 (ms)	1372 (ms)	13 times
+1		689 (ms)	500 (ms)	689 (ms)	1 times
+2		689 (ms)	30 (ms)		689 (ms)	22 times
+
+</pre></blockquote>
+
+<h2>The Summary-Processes File</h2>
+
+<p>
+The Summary-Processes file contains a log of the actions
+taken by the scheduling algorithm as it considers each
+process in the scheduling queue.
+</p>
+<p>
+Each line in the log file is of the following form:
+<blockquote><pre>
+Process: <i>process-number</i> <i>process-status</i>... (<i>cpu-time</i> <i>block-time</i> <i>accumulated-time</i> <i>accumulated-time</i>)
+</pre></blockquote>
+<p>
+The fields in the line are described in the table below.
+</p>
+
+<table border="1">
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+
+<tr>
+<td valign="top"><i>process-number</i></td>
+<td valign="top">The process number assigned to the process by the simulator.
+This is a number between 0 and n-1, where n is the 
+value specified for the "numprocess" configuration parameter.</td>
+</tr>
+
+<tr>
+<td valign="top"><i>process-status</i></td>
+<td valign="top">The status of the process at this point 
+in time.  If "registered" then the process is under consideration
+by the scheduling algorithm.  If "I/O blocked", then the 
+scheduling algorithm has noticed that the process is blocked
+for input or output.
+If "completed", then the scheduling algorithm has noticed
+that the process has met or exceeded its allocated execution
+time.</td>
+</tr>
+
+<tr>
+<td valign="top"><i>cpu-time</i></td>
+<td valign="top">The total amount of run time allowed for this 
+process.  This number is randomly generated for the process 
+based on the
+"meandev" and "standdev" values specified in the configuration
+file.</td>
+</tr>
+
+<tr>
+<td valign="top"><i>block-time</i></td>
+<td valign="top">The amount of time in milliseconds to execute 
+before blocking process.  This number is specified for the process
+by the "process" directive in the configuration file.</td>
+</tr>
+
+<tr>
+<td valign="top"><i>accumulated-time</i></td>
+<td valign="top">The total amount of time process has executed in 
+milliseconds. (This number appears twice in the log file; one 
+should be removed).
+</tr>
+
+</table>
+
+<h3>Sample Summary-Processes File</h3>
+
+<p>
+The output "Summary-Processes" file looks something like this:
+</p>
+<blockquote><pre>
+Process: 0 registered... (1372 100 0 0)
+Process: 0 I/O blocked... (1372 100 100 100)
+Process: 1 registered... (689 500 0 0)
+Process: 1 I/O blocked... (689 500 500 500)
+Process: 0 registered... (1372 100 100 100)
+Process: 0 I/O blocked... (1372 100 200 200)
+Process: 1 registered... (689 500 500 500)
+Process: 1 completed... (689 500 689 689)
+Process: 0 registered... (1372 100 200 200)
+Process: 0 I/O blocked... (1372 100 300 300)
+Process: 2 registered... (689 30 0 0)
+Process: 2 I/O blocked... (689 30 30 30)
+Process: 0 registered... (1372 100 300 300)
+Process: 0 I/O blocked... (1372 100 400 400)
+Process: 2 registered... (689 30 30 30)
+Process: 2 I/O blocked... (689 30 60 60)
+Process: 0 registered... (1372 100 400 400)
+Process: 0 I/O blocked... (1372 100 500 500)
+Process: 2 registered... (689 30 60 60)
+Process: 2 I/O blocked... (689 30 90 90)
+Process: 0 registered... (1372 100 500 500)
+Process: 0 I/O blocked... (1372 100 600 600)
+Process: 2 registered... (689 30 90 90)
+Process: 2 I/O blocked... (689 30 120 120)
+Process: 0 registered... (1372 100 600 600)
+Process: 0 I/O blocked... (1372 100 700 700)
+Process: 2 registered... (689 30 120 120)
+Process: 2 I/O blocked... (689 30 150 150)
+Process: 0 registered... (1372 100 700 700)
+Process: 0 I/O blocked... (1372 100 800 800)
+Process: 2 registered... (689 30 150 150)
+Process: 2 I/O blocked... (689 30 180 180)
+Process: 0 registered... (1372 100 800 800)
+Process: 0 I/O blocked... (1372 100 900 900)
+Process: 2 registered... (689 30 180 180)
+Process: 2 I/O blocked... (689 30 210 210)
+Process: 0 registered... (1372 100 900 900)
+Process: 0 I/O blocked... (1372 100 1000 1000)
+Process: 2 registered... (689 30 210 210)
+Process: 2 I/O blocked... (689 30 240 240)
+Process: 0 registered... (1372 100 1000 1000)
+Process: 0 I/O blocked... (1372 100 1100 1100)
+Process: 2 registered... (689 30 240 240)
+Process: 2 I/O blocked... (689 30 270 270)
+Process: 0 registered... (1372 100 1100 1100)
+Process: 0 I/O blocked... (1372 100 1200 1200)
+Process: 2 registered... (689 30 270 270)
+Process: 2 I/O blocked... (689 30 300 300)
+Process: 0 registered... (1372 100 1200 1200)
+Process: 0 I/O blocked... (1372 100 1300 1300)
+Process: 2 registered... (689 30 300 300)
+Process: 2 I/O blocked... (689 30 330 330)
+Process: 0 registered... (1372 100 1300 1300)
+Process: 0 completed... (1372 100 1372 1372)
+Process: 2 registered... (689 30 330 330)
+Process: 2 I/O blocked... (689 30 360 360)
+Process: 2 registered... (689 30 360 360)
+Process: 2 I/O blocked... (689 30 390 390)
+Process: 2 registered... (689 30 390 390)
+Process: 2 I/O blocked... (689 30 420 420)
+Process: 2 registered... (689 30 420 420)
+Process: 2 I/O blocked... (689 30 450 450)
+Process: 2 registered... (689 30 450 450)
+Process: 2 I/O blocked... (689 30 480 480)
+Process: 2 registered... (689 30 480 480)
+Process: 2 I/O blocked... (689 30 510 510)
+Process: 2 registered... (689 30 510 510)
+Process: 2 I/O blocked... (689 30 540 540)
+Process: 2 registered... (689 30 540 540)
+Process: 2 I/O blocked... (689 30 570 570)
+Process: 2 registered... (689 30 570 570)
+Process: 2 I/O blocked... (689 30 600 600)
+Process: 2 registered... (689 30 600 600)
+Process: 2 I/O blocked... (689 30 630 630)
+Process: 2 registered... (689 30 630 630)
+Process: 2 I/O blocked... (689 30 660 660)
+Process: 2 registered... (689 30 660 660)
+Process: 2 completed... (689 30 689 689)
+
+</pre></blockquote>
+ 
+<h2>Suggested Exercises</h2>
+
+<ol>
+<li>Create a configuration file in which all processes run
+an average of 2000 milliseconds with a standard deviation of
+zero, and which are blocked for input or output every 500 milliseconds.  
+Run the simulation for 10000 milliseconds with 2 processes.  
+Examine the two output files.  Try again for 5 processes.  Try again for
+10 processes.  Explain what's happening.
+<p><!-- --></p>
+<li>Implement a round-robin scheduling algorithm.  (Hint: 
+see the Run() method in SchedulingAlgorithm.java).
+<p><!-- --></p>
+</ol>
+
+<h2>To Do</h2>
+
+<ol>
+<li>Consider changing the configuration parameter "meandev" 
+to "run_time_average".  The word "dev"
+doesn't belong here.  It would be nice if this were
+the average amount of time a process runs before
+blocking for input or output instead of the total runtime.
+<p><!-- --></p>
+
+<li>Consider changing the configuration parameter "standdev" 
+to "run_time_stddev".
+It would be nice if this were the
+number of standard deviations from the average time a 
+process runs before blocking for input or output instead
+of the total runtime.
+<p><!-- --></p>
+
+<li>Consider renaming the "Run()" method in SchedulingAlgorithm
+to "run()".  By convention in java, method names begin with
+a lowercase letter.  Also, add some internal documentation
+to SchedulingAlgorithm to facilitate understanding by students
+and instructors, and add external documentation regarding
+the implementation of new scheduling algorithms to this user guide.
+<p><!-- --></p>
+
+<li>Consider adding a configuration parameter for "block_time_average"
+which would be the average amount of time in milliseconds that a process
+remains blocked for input or output before resuming execution.
+This would help eliminate the need for the "process" directive.
+<p><!-- --></p>
+
+<li>Consider adding a configuration parameter for "block_time_stddev"
+which would be the number of standard deviations from the average
+time a process remains blocked for input out output before
+resuming execution.  This would help eliminate the need for the 
+"process" directive.
+<p><!-- --></p>
+
+<li>Consider adding a configuration parameter for "quantum" which
+specifies the number of milliseconds that a process is allowed to
+execute before being re-considered by the scheduling algorithm.
+<p><!-- --></p>
+
+<li>Consider modifying the format of the Summary-Processes log file.
+The total cpu time for the process is repeated in the last column
+and should be eliminated.  It would be nice if the total elapsed
+milliseconds (system clock) were present at the beginning of the line
+so that we can see when things happened exactly during the simulation.
+If we switch to the meanings of the various parameters as suggested
+above, we may want to rethink the overall format of the lines as
+well.
+<p><!-- --></p>
+
+<li>Consider adding a configuration parameter for "summary_file" so that
+the name for the Summary-Results file can be specified
+in the configuration file.
+<p><!-- --></p>
+
+<li>Consider adding a configuration parameter for "log_file" so
+that the name for the Summary-Processes file can be 
+specified in the configuration file.
+<p><!-- --></p>
+
+<li>Consider adding a graphical user
+interface that allowed the user to view the simulation
+as it proceeded.  This might show a summary of the 
+number of blocked processes and executable processes,
+the percentage of idle time, and even the current status
+of each process.  This might be enabled by a configuration
+parameter "show_graphics true".  A "step" button might 
+allow the simulation to proceed 1000 milliseconds at a 
+time, or a "run" button might allow it to update every
+1000 milliseconds until the simulation completes.  A 
+"reset" button might restart the simulation to its original
+values, and there might be menu options to allow the user
+to override the parameter values given in the configuration file.
+<p><!-- --></p>
+
+</ol>
+
+<h2>Copyright</h2>
+
+&copy; Copyright 2001, Prentice-Hall, Inc.
+<p>
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.
+<p>
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+<p>
+You should have received a copy of the GNU General Public License
+along with this program (see <a href="COPYING.TXT">COPYING.TXT</a>); 
+if not, write to the Free Software
+Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+<p>
+
+Please send suggestions, corrections, and comments to
+<a href="http://www.ontko.com/~rayo/">Ray Ontko</a> 
+(<a href="mailto:rayo@ontko.com"><i>rayo@ontko.com</i></a>).
+<p>
+<i>Last updated: May 23, 2001</i>
+</body>
+</html>

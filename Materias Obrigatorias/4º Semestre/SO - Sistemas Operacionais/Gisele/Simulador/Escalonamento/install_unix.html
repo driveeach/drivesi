@@ -1,0 +1,512 @@
+<html>
+<head>
+<title>MOSS | Scheduling Simlulator | Installation | 
+
+
+Unix
+
+</title>
+</head>
+<body bgcolor="#ffffff">
+
+<h1>MOSS Scheduling Simulator
+
+
+<br>Installation on Unix/Linux/Solaris/HP-UX Systems</h1>
+
+
+<h2>Purpose</h2>
+
+<p>
+This document provides instructions for the installation
+of the MOSS Scheduling Simulator on 
+
+
+Unix
+
+operating systems.  This procedure should be the same or similar on 
+
+
+Unix, Linux, Solaris, HP-UX and other Unix-compatible
+
+systems.  
+The MOSS software
+is designed for use with 
+<a href="http://www.cs.vu.nl/~ast/">Andrew S. Tanenbaum</a>, 
+<a href="http://vig.prenhall.com/catalog/academic/product/1,4096,0130313580,00.html">Modern Operating Systems, 2nd Edition</a> 
+(<a href="http://www.prenhall.com/">Prentice Hall</a>, 2001).  
+The Scheduling Simulator was written by 
+<a href="http://www.cs.earlham.edu/~odo/">Alex Reeder</a>
+(<a href="mailto:alexr@e-sa.org"><i>alexr@e-sa.org</i></a>).  
+This installation guide was written by 
+<a href="http://www.ontko.com/~rayo/">Ray Ontko</a>
+(<a href="mailto:rayo@ontko.com"><i>rayo@ontko.com</i></a>).
+<p>
+This installation guide only provides information about installing 
+the software and testing the configuration for
+
+Unix-like operating systems.  To install on Windows
+operating systems, please read the
+<a href="install_windows.html">Installation Guide for 
+Win95/98/Me/NT/2000 Systems</a>.
+
+
+For more detailed information about the simulator, please read the 
+<a href="user_guide.html">User Guide</a>.
+</p>
+<h2>Requirements</h2>
+
+The following software components are required
+to install and use the MOSS Scheduling
+Simulator.
+<ul>
+
+
+<li>X-windows environment for running Java Application Window Toolkit (AWT) programs
+
+<li>Java Development Kit (JDK) 1.0 or greater 
+<li>Text program editor (e.g., notepad)
+</ul>
+
+<h2>Pre-Installation</h2>
+<p>
+Before installation, you should verify:
+</p>
+<ul>
+<li>that you have a working java runtime environment,
+<li>that you have a working java development environment, and 
+<li>that the working directory is in the classpath for the runtime environment.
+</ul>
+<p>
+If you're using a standard command-line java compiler, the following
+instructions will help determine if your environment is configured
+correctly.
+</p>
+<ol>
+<li>Verify that you have java installed and configured in your environment.
+
+
+<blockquote><pre>
+$ java -version
+</pre></blockquote>
+
+You should see a message like this with possibly a different version number.
+<blockquote><pre>
+java version "1.1.8"
+</pre></blockquote>
+If you get a message like:
+
+
+<blockquote><pre>
+java: Command not found.
+</pre></blockquote>
+
+Then java may not be installed on your system, or may not be configured
+for your use.
+<p>
+If you think that Java may already be installed on your system 
+but may not be in your "path", you can find it by
+
+
+<blockquote><pre>
+$ find /usr -name java -print
+</pre></blockquote>
+On my system, for example, the following is returned.
+<blockquote><pre>
+/usr/lib/netscape/477/communicator/java
+/usr/lib/netscape/477/netscape/java
+/usr/lib/jdk1.1/bin/java
+/usr/lib/jdk1.1/bin/ia32/green_threads/java
+/usr/share/java
+/usr/bin/java
+/usr/src/kernel-source-2.2.17/include/config/binfmt/java
+</pre></blockquote>
+On my system, I also searched for "javac" and found 
+that it exists in /usr/bin/java.  I'll use this jdk for my
+installation.
+
+<p>
+If Java isn't available on your system, you should check with
+your instructor or system administrator.  If you administer your
+own system, then you should be able to find a copy of Java
+for your operating system.
+<p>
+If you find that java is installed but not configured for
+your use, then perhaps you need to add it to your path.  Consult
+your instructor or system administrator if you need help adding this
+to your path.
+</p>
+<p><!-- --></p>
+
+<li>Verify that the java compiler is installed and configured in 
+your environment.
+
+
+<blockquote><pre>
+$ javac
+</pre></blockquote>
+
+If you're using a standard java command-line compiler, you should
+see a message similar to this.
+<blockquote><pre>
+use: javac [-g][-O][-debug][-depend][-nowarn][-verbose][-classpath path][-nowrite][-deprecation][-d dir][-J<runtime flag>] file.java...
+</pre></blockquote>
+If you get a message like:
+
+
+<blockquote><pre>
+javac: Command not found.
+</pre></blockquote>
+
+then the java compiler may not be installed on your system, or 
+may not be configured for your use.   Consult your instructor
+or system administrator.
+<p><!-- --></p>
+
+<li>Verify that that the current directory is in your classpath.
+
+
+<blockquote><pre>
+$ echo $CLASSPATH
+</pre></blockquote>
+You should see a list of directories separated by colons (":")
+or possibly just a blank line.  If you don't see the directory 
+"." (a single period, which stands for the current directory), then 
+you should add it to the claspath.
+<p>
+Determine which shell you're using: 
+</p>
+<blockquote><pre>
+$ echo $SHELL
+</pre></blockquote>
+
+<p>
+If you're using sh, ksh, or bash: 
+</p>
+<blockquote><pre>
+$ CLASSPATH=.:$CLASSPATH
+$ export CLASSPATH
+</pre></blockquote>
+
+<p>
+If you're using csh, or tcsh: 
+</p>
+<blockquote><pre>
+% set CLASSPATH=.:$CLASSPATH
+</pre></blockquote>
+
+<p><!-- --></p>
+
+</ol>
+<p>
+If you have a working java runtime environment, a working java
+compiler, and the current directory is in your path, then you're
+ready to proceed with the installation.
+</p>
+
+
+<h2>Installation</h2>
+
+Installation of the software can be accomplished with
+these simple steps:
+<ol>
+<li>
+
+
+Create a directory in which you wish to install the
+simulator (e.g., "moss/sched").
+<blockquote><pre>
+$ cd
+$ mkdir moss
+$ cd moss
+$ mkdir sched
+$ cd sched
+</pre></blockquote>
+
+<p><!-- --></p>
+
+<li>
+
+
+Download the compressed tar archive (sched.tgz) into
+the directory.
+The latest release for this file can always be found at
+<a href="http://www.ontko.com/moss/sched/sched.tgz">http://www.ontko.com/moss/sched/sched.tgz</a>.
+
+<p><!-- --></p>
+
+<li>
+
+
+Expand the compressed tar archive.
+<blockquote><pre>
+$ tar -xzf sched.tgz
+</pre></blockquote>
+or 
+<blockquote><pre>
+$ gunzip sched.tgz
+$ tar xf sched.tar
+</pre></blockquote>
+
+<p><!-- --></p>
+
+</ol>
+<h2>Files</h2>
+<p>
+The directory should now contain the following files:
+</p>
+<table border="1" cellspacing="0">
+<tr>
+<th>Files
+<th>Description
+<tr>
+<td>
+
+
+sched.tgz
+<td>Compressed tar
+
+archive which contains all the other files.
+<tr>
+<td>Common.java
+<br>Process.java
+<br>Results.java
+<br>Scheduling.java
+<br>SchedulingAlgorithm.java
+<br>sProcess.java
+<td valign="top">
+Java source files (*.java)
+<tr>
+<td>Common.class
+<br>Process.class
+<br>Results.class
+<br>Scheduling.class
+<br>SchedulingAlgorithm.class
+<br>sProcess.class
+<td valign="top">
+Compiled Java class files (*.class)
+<tr>
+<td>scheduling.conf
+<td>Sample configuration file
+<tr>
+<td>install_unix.html
+<br>install_windows.html
+<br>user_guide.html
+<td valign="top">
+Documentation
+<tr>
+<td>COPYING.TXT</td>
+<td>Gnu General Public License: Terms and Conditions
+for Copying, Distribution, and Modification
+</table>
+
+<h2>Compilation</h2>
+
+<p>
+The distribution includes compiled class files as
+well as the source java files.  You should not need
+to recompile unless you decide to change the code.
+If you wish to compile the code, 
+the following commands should work if you're using
+a Java compiler that accepts the normal "javac" command
+line.
+
+
+<p>
+To determine which shell you're using: 
+</p>
+<blockquote><pre>
+$ echo $SHELL
+</pre></blockquote>
+
+<p>
+If you're using sh, ksh, bash: 
+</p>
+<blockquote><pre>
+$ CLASSPATH=.
+$ export CLASSPATH
+$ javac -nowarn *.java
+</pre></blockquote>
+
+<p>
+If you're using csh, tcsh: 
+</p>
+<blockquote><pre>
+% set CLASSPATH=.
+% javac -nowarn *.java
+</pre></blockquote>
+
+
+The <tt>-nowarn</tt> flag supresses warning messges, of which
+there may be several.  For backward compatability we use only
+those features of Java which have been present from the beginning,
+some of which are deprecated and are usually reported by the 
+compiler with warning messages.
+
+<h2>Test</h2>
+
+<p>
+To test the program, enter the following commands.
+
+
+
+<blockquote><pre>
+$ java Scheduling scheduling.conf
+</pre></blockquote>
+
+
+<p>
+The program will simply run the simulation based on the 
+information provided in <tt>scheduling.conf</tt> and write its
+output to the <tt>Summary-Results</tt> and 
+<tt>Summary-Processes</tt> files.  You should see the following
+output.
+<blockquote><pre>
+Working...
+Completed.
+
+</pre></blockquote>
+
+<p>
+The simulation configuration information is read from a file called 
+"scheduling.conf".
+The "scheduling.conf" file looks something like this:
+<blockquote><pre>
+// # of Process	
+numprocess 3
+
+// mean deivation
+meandev 1100
+
+// standard deviation
+standdev 510
+
+// process    # I/O blocking
+process 100
+process 500
+process 30
+
+// duration of the simulation in milliseconds
+runtime 5000
+
+</pre></blockquote>
+
+<p>
+If things are working correctly, the "Summary-Results" file should look 
+something like this:
+
+<blockquote><pre>
+Scheduling Type: Batch (Nonpreemptive)
+Scheduling Name: First-Come First-Served
+Simulation Run Time: 2750
+Mean: 1100
+Standard Deviation: 510
+Process #	CPU Time	IO Blocking	CPU Completed	CPU Blocked
+0		1372 (ms)	100 (ms)	1372 (ms)	13 times
+1		689 (ms)	500 (ms)	689 (ms)	1 times
+2		689 (ms)	30 (ms)		689 (ms)	22 times
+
+</pre></blockquote>
+
+and the "Summary-Processes" file should look something like
+this:
+
+<blockquote><pre>
+Process: 0 registered... (1372 100 0 0)
+Process: 0 I/O blocked... (1372 100 100 100)
+Process: 1 registered... (689 500 0 0)
+Process: 1 I/O blocked... (689 500 500 500)
+Process: 0 registered... (1372 100 100 100)
+Process: 0 I/O blocked... (1372 100 200 200)
+Process: 1 registered... (689 500 500 500)
+Process: 1 completed... (689 500 689 689)
+Process: 0 registered... (1372 100 200 200)
+Process: 0 I/O blocked... (1372 100 300 300)
+Process: 2 registered... (689 30 0 0)
+Process: 2 I/O blocked... (689 30 30 30)
+Process: 0 registered... (1372 100 300 300)
+Process: 0 I/O blocked... (1372 100 400 400)
+Process: 2 registered... (689 30 30 30)
+Process: 2 I/O blocked... (689 30 60 60)
+Process: 0 registered... (1372 100 400 400)
+Process: 0 I/O blocked... (1372 100 500 500)
+Process: 2 registered... (689 30 60 60)
+Process: 2 I/O blocked... (689 30 90 90)
+Process: 0 registered... (1372 100 500 500)
+Process: 0 I/O blocked... (1372 100 600 600)
+Process: 2 registered... (689 30 90 90)
+Process: 2 I/O blocked... (689 30 120 120)
+Process: 0 registered... (1372 100 600 600)
+Process: 0 I/O blocked... (1372 100 700 700)
+Process: 2 registered... (689 30 120 120)
+Process: 2 I/O blocked... (689 30 150 150)
+Process: 0 registered... (1372 100 700 700)
+Process: 0 I/O blocked... (1372 100 800 800)
+Process: 2 registered... (689 30 150 150)
+Process: 2 I/O blocked... (689 30 180 180)
+Process: 0 registered... (1372 100 800 800)
+Process: 0 I/O blocked... (1372 100 900 900)
+Process: 2 registered... (689 30 180 180)
+Process: 2 I/O blocked... (689 30 210 210)
+Process: 0 registered... (1372 100 900 900)
+Process: 0 I/O blocked... (1372 100 1000 1000)
+Process: 2 registered... (689 30 210 210)
+Process: 2 I/O blocked... (689 30 240 240)
+Process: 0 registered... (1372 100 1000 1000)
+Process: 0 I/O blocked... (1372 100 1100 1100)
+Process: 2 registered... (689 30 240 240)
+Process: 2 I/O blocked... (689 30 270 270)
+Process: 0 registered... (1372 100 1100 1100)
+Process: 0 I/O blocked... (1372 100 1200 1200)
+Process: 2 registered... (689 30 270 270)
+Process: 2 I/O blocked... (689 30 300 300)
+Process: 0 registered... (1372 100 1200 1200)
+Process: 0 I/O blocked... (1372 100 1300 1300)
+Process: 2 registered... (689 30 300 300)
+Process: 2 I/O blocked... (689 30 330 330)
+Process: 0 registered... (1372 100 1300 1300)
+Process: 0 completed... (1372 100 1372 1372)
+Process: 2 registered... (689 30 330 330)
+Process: 2 I/O blocked... (689 30 360 360)
+Process: 2 registered... (689 30 360 360)
+Process: 2 I/O blocked... (689 30 390 390)
+Process: 2 registered... (689 30 390 390)
+Process: 2 I/O blocked... (689 30 420 420)
+Process: 2 registered... (689 30 420 420)
+Process: 2 I/O blocked... (689 30 450 450)
+Process: 2 registered... (689 30 450 450)
+Process: 2 I/O blocked... (689 30 480 480)
+Process: 2 registered... (689 30 480 480)
+Process: 2 I/O blocked... (689 30 510 510)
+Process: 2 registered... (689 30 510 510)
+Process: 2 I/O blocked... (689 30 540 540)
+Process: 2 registered... (689 30 540 540)
+Process: 2 I/O blocked... (689 30 570 570)
+Process: 2 registered... (689 30 570 570)
+Process: 2 I/O blocked... (689 30 600 600)
+Process: 2 registered... (689 30 600 600)
+Process: 2 I/O blocked... (689 30 630 630)
+Process: 2 registered... (689 30 630 630)
+Process: 2 I/O blocked... (689 30 660 660)
+Process: 2 registered... (689 30 660 660)
+Process: 2 completed... (689 30 689 689)
+
+</pre></blockquote>
+
+<p>
+The program and its input and output files are described 
+more fully in the <i>MOSS Scheduling Simulator
+<a href="user_guide.html">User Guide</a></i>.
+<p>
+&copy; Copyright 2001, Prentice-Hall, Inc.
+This program is free software; it is distributed under the
+terms of the Gnu General Public License.  
+See <a href="COPYING.TXT">COPYING.TXT</a>, 
+included with this distribution.
+<p>
+Please send suggestions, corrections, and comments to
+Ray Ontko (<A href="mailto:rayo@ontko.com"><i>rayo@ontko.com</i></a>).
+<p>
+<i>Last updated: July 7, 2001</i>
+</body>
+</html>

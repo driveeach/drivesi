@@ -1,0 +1,92 @@
+0 : Inicializando SOsim ...
+2 : SOsim pronto
+38 : Processo 4507484 alocacao de blocos no pagefile
+38 : Processo 4507484 criado
+41 : Processo 4507484 Pronto -> Exec
+42 : Processo 4507484 Exec -> Page Fault0
+52 : Processo 4507484 HwPF - Executável0
+53 : Processo 4507484 Pronto -> Exec
+53 : Processo 4507484 Exec -> I/O
+58 : Processo 4527625 alocacao de blocos no pagefile
+58 : Processo 4527625 criado
+59 : Processo 4527734 alocacao de blocos no pagefile
+59 : Processo 4527734 criado
+59 : Processo 4527843 alocacao de blocos no pagefile
+59 : Processo 4527843 criado
+59 : Processo 4527953 alocacao de blocos no pagefile
+59 : Processo 4527953 criado
+59 : Processo 4528046 alocacao de blocos no pagefile
+59 : Processo 4528046 criado
+59 : Processo 4528156 alocacao de blocos no pagefile
+59 : Processo 4528156 criado
+59 : Processo 4527625 Pronto -> Exec
+60 : Processo 4527625 Exec -> Page Fault0
+61 : Processo 4527734 Pronto -> Exec
+62 : Processo 4527734 Exec -> Page Fault0
+63 : Processo 4527843 Pronto -> Exec
+64 : Processo 4527843 Exec -> Page Fault0
+65 : Processo 4527953 Pronto -> Exec
+66 : Processo 4527953 Exec -> Page Fault0
+67 : Processo 4528046 Pronto -> Exec
+68 : Processo 4528046 Exec -> Page Fault0
+69 : Processo 4528156 Pronto -> Exec
+70 : Processo 4528156 Exec -> Page Fault0
+71 : Processo 4507484 Pronto -> Exec
+72 : Processo 4507484 Exec -> Pronto por tempo
+73 : Processo 4507484 Pronto -> Exec
+73 : Processo 4507484 Exec -> I/O
+73 : Processo 4527625 HwPF - Executável0
+74 : Processo 4527625 Pronto -> Exec
+75 : Processo 4527625 Exec -> Pronto por tempo
+76 : Processo 4527625 Pronto -> Exec
+77 : Processo 4527625 Exec -> Pronto por tempo
+78 : Processo 4527625 Pronto -> Exec
+79 : Processo 4527625 Exec -> Pronto por tempo
+80 : Processo 4527625 Pronto -> Exec
+81 : Processo 4527625 Exec -> Pronto por tempo
+82 : Processo 4527625 Pronto -> Exec
+83 : Processo 4527625 Exec -> Pronto por tempo
+83 : Processo 4527734 HwPF - Executável0
+84 : Processo 4527625 Pronto -> Exec
+85 : Processo 4527625 Exec -> Pronto por tempo
+86 : Processo 4527734 Pronto -> Exec
+87 : Processo 4527734 Exec -> Pronto por tempo
+88 : Processo 4527625 Pronto -> Exec
+89 : Processo 4527625 Exec -> Pronto por tempo
+90 : Processo 4527734 Pronto -> Exec
+91 : Processo 4527734 Exec -> Pronto por tempo
+92 : Processo 4527625 Pronto -> Exec
+93 : Processo 4527625 Exec -> Pronto por tempo
+93 : Processo 4527843 HwPF - Executável0
+94 : Processo 4527734 Pronto -> Exec
+95 : Processo 4527734 Exec -> Pronto por tempo
+96 : Processo 4527625 Pronto -> Exec
+97 : Processo 4527625 Exec -> Page Fault1
+98 : Processo 4527843 Pronto -> Exec
+99 : Processo 4527843 Exec -> Pronto por tempo
+100 : Processo 4527734 Pronto -> Exec
+101 : Processo 4527734 Exec -> Pronto por tempo
+102 : Processo 4527843 Pronto -> Exec
+103 : Processo 4527843 Exec -> Pronto por tempo
+104 : Processo 4527734 Pronto -> Exec
+105 : Processo 4527734 Exec -> Pronto por tempo
+106 : Processo 4527843 Pronto -> Exec
+106 : Processo 4527953 HwPF - Executável0
+107 : Processo 4527843 Exec -> Pronto por tempo
+108 : Processo 4527734 Pronto -> Exec
+109 : Processo 4527734 Exec -> Pronto por tempo
+110 : Processo 4527953 Pronto -> Exec
+111 : Processo 4527953 Exec -> Pronto por tempo
+112 : Processo 4527843 Pronto -> Exec
+113 : Processo 4527843 Exec -> Pronto por tempo
+114 : Processo 4527734 Pronto -> Exec
+115 : Processo 4527734 Exec -> Pronto por tempo
+116 : Processo 4527953 Pronto -> Exec
+117 : Processo 4527953 Exec -> Pronto por tempo
+118 : Processo 4527843 Pronto -> Exec
+119 : Processo 4527843 Exec -> Pronto por tempo
+120 : Processo 4527734 Pronto -> Exec
+120 : Processo 4528046 HwPF - Executável0
+121 : Processo 4527734 Exec -> Pronto por tempo
+122 : Processo 4527953 Pronto -> Exec
+123 : Processo 4527953 Exec -> Pronto por tempo

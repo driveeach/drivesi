@@ -1,0 +1,460 @@
+<html>
+<head>
+<title>Moss | Memory Management Simulator | User Guide</title>
+</head>
+<body bgcolor="#ffffff">
+<h1>
+MOSS
+Memory Management Simulator
+<br>User Guide</h1>
+
+<h2>Purpose</h2>
+
+<p>
+This document is a user guide for the MOSS
+Memory Management Simulator.  It explains how to use the simulator and
+describes the display and the various input files used by and output files
+produced by the simulator.  The MOSS software
+is designed for use with 
+<a href="http://www.cs.vu.nl/~ast/">Andrew S. Tanenbaum</a>, 
+<a href="http://vig.prenhall.com/catalog/academic/product/1,4096,0130313580,00.html">Modern Operating Systems, 2nd Edition</a> 
+(<a href="http://www.prenhall.com/">Prentice Hall</a>, 2001).  
+The Memory Management Simulator was written by 
+<a href="http://www.cs.earlham.edu/~odo/">Alex Reeder</a>
+(<a href="mailto:alexr@e-sa.org"><i>alexr@e-sa.org</i></a>).  
+This user guide was written by 
+<a href="http://www.ontko.com/~rayo/">Ray Ontko</a>
+(<a href="mailto:rayo@ontko.com"><i>rayo@ontko.com</i></a>).
+<p>
+This user guide assumes that you have already installed and tested
+the simulator.  If you are looking for installation information,
+please read the 
+<a href="install_unix.html">Installation Guide for 
+Unix/Linux/Solaris/HP-UX Systems</a> or the 
+<a href="install_windows.html">Installation Guide for 
+Win95/98/Me/NT/2000 Systems</a>.
+</p>
+
+<h2>Introduction</h2>
+<p>
+The memory management simulator illustrates page fault behavior 
+in a paged virtual memory system. The program reads the initial 
+state of the page table and a sequence of virtual memory 
+instructions and writes a trace log indicating the effect of each 
+instruction. It includes a graphical user interface so that 
+students can observe page replacement algorithms at work. Students 
+may be asked to implement a particular page replacement algorithm 
+which the instructor can test by comparing the output from the 
+student's algorithm to that produced by a working implementation. 
+
+</p>
+
+<h2>Running the Simulator</h2>
+
+<p>
+The program reads a command file, optionally reads 
+a configuration file, displays a GUI window which
+allows you to execute the command file, and optionally 
+writes a trace file. 
+<p>
+To run the program, enter the following command line.
+
+<blockquote><pre>
+$ java MemoryManagement commands memory.conf
+</pre></blockquote>
+
+<p>
+The program will display a window allowing you to run the
+simulator.  You will notice a row of command buttons across
+the top, two columns of "page" buttons at the left, and an
+informational display at the right.  
+</p>
+<IMG SRC="user_guide_1.gif">
+<p>
+Typically you will
+use the <tt>step</tt> button to execute a command from the 
+input file, examine information about any pages by clicking
+on a <tt>page</tt> button, and when you're done, quit the
+simulation using the <tt>exit</tt> button.
+
+<p>
+The buttons:
+</p>
+<table border="1" cellspacing="0">
+<tr><th>Button
+<th>Description</th>
+<tr><td valign="top"><tt>run</tt>
+<td valign="top">runs the simulation to completion.  Note that the simulation
+pauses and updates the screen between each step.
+<tr><td valign="top"><tt>step</tt>
+<td valign="top">runs a single setup of the simulation and updates the display.
+<tr><td valign="top"><tt>reset</tt>
+<td valign="top">initializes the simulator and starts from the beginning of
+the command file.
+<tr><td valign="top"><tt>exit</tt>
+<td valign="top">exits the simulation.
+<tr><td valign="top"><tt>page <i>n</i></tt>
+<td valign="top">display information about this virtual page in the display
+area at the right.
+</table>
+
+<p>
+The informational display:
+</p>
+<table border="1" cellspacing="0">
+<tr><th>Field
+<th>Description</th>
+<tr><td valign="top"><tt>status:</tt>
+<td valign="top">RUN, STEP, or STOP.  This indicates whether the current 
+run or step is completed.
+<tr><td valign="top"><tt>time:</tt>
+<td valign="top">number of "ns" since the start of the simulation.
+<tr><td valign="top"><tt>instruction:</tt>
+<td valign="top">READ or WRITE.  The operation last performed.
+<tr><td valign="top"><tt>address:</tt>
+<td valign="top">the virtual memory address of the operation last performed.
+<tr><td valign="top"><tt>page fault:</tt>
+<td valign="top">whether the last operation caused a page fault to occur.
+<tr><td valign="top"><tt>virtual page:</tt>
+<td valign="top">the number of the virtual page being displayed in the 
+fields below.  This is the last virtual page accessed by the simulator,
+or the last <tt>page <i>n</i></tt> button pressed.
+<tr><td valign="top"><tt>physical page:</tt>
+<td valign="top">the physical page for this virtual page, if any.  <tt>-1</tt>
+indicates that no physical page is associated with this virtual page.
+<tr><td valign="top"><tt>R:</tt>
+<td valign="top">whether this page has been read. (1=yes, 0=no)
+<tr><td valign="top"><tt>M:</tt>
+<td valign="top">whether this page has been modified. (1=yes, 0=no)
+<tr><td valign="top"><tt>inMemTime:</tt>
+<td valign="top">number of ns ago the physical page was allocated to this virtual
+page.
+<tr><td valign="top"><tt>lastTouchTime:</tt>
+<td valign="top">number of ns ago the physical page was last modified.
+<tr><td valign="top"><tt>low:</tt>
+<td valign="top">low virtual memory address of the virtual page.
+<tr><td valign="top"><tt>high:</tt>
+<td valign="top">high virtual memory address of the virtual page.
+</table>
+
+<h2>The Command File</h2>
+
+<p>
+The command file for the simulator specifies a sequence
+of memory instructions to be performed.  Each instruction
+is either a memory READ or WRITE operation, and includes
+a virtual memory address to be read or written.  Depending on whether
+the virtual page for the address is present in physical
+memory, the operation will succeed, or, if not, a page fault 
+will occur.
+
+<h3>Operations on Virtual Memory</h3>
+
+<p>
+There are two operations one can carry out on pages in memory: 
+READ and WRITE.
+<p>
+The format for each command is 
+<blockquote><pre>
+<i>operation</i> <i>address</i>
+</pre></blockquote>
+or
+<blockquote><pre>
+<i>operation</i> random
+</pre></blockquote>
+where <i>operation</i> is <tt>READ</tt> or <tt>WRITE</tt>,
+and <i>address</i> is the numeric virtual memory address, optionally
+preceeded by one of the radix keywords <tt>bin</tt>, <tt>oct</tt>,
+or <tt>hex</tt>.  If no radix is supplied, the number is assumed
+to be decimal.
+The keyword <tt>random</tt> will generate a random virtual 
+memory address 
+(for those who want to experiment quickly) 
+rather than having to type an address.
+
+<p>
+For example, the sequence
+
+<blockquote><pre>
+READ bin 01010101
+WRITE bin 10101010
+READ random
+WRITE random
+</pre></blockquote>
+
+causes the virtual memory manager to:
+
+<ol>
+<li>read from virtual memory address 85
+<li>write to virtual memory address 170
+<li>read from some random virtual memory address
+<li>write to some random virtual memory address
+</ol>
+
+<h3>Sample Command File</h3>
+<p>
+The "commands" input file looks like this:
+
+<blockquote><pre>
+// Enter READ/WRITE commands into this file
+// READ <OPTIONAL number type: bin/hex/oct> <virtual memory address or random>
+// WRITE <OPTIONAL number type: bin/hex/oct> <virtual memory address or random>
+READ bin 100
+READ 19
+WRITE hex CC32
+READ bin 100000000000000
+READ bin 100000000000000
+WRITE bin 110000000000001
+WRITE random
+
+
+</pre></blockquote>
+
+<h2>The Configuration File</h2>
+
+The configuration file <tt>memory.conf</tt> is used to specify the 
+the initial content of the virtual memory map 
+(which pages of virtual
+memory are mapped to which pages in physical memory)
+and provide other configuration information, such
+as whether operation should be logged to a file.
+
+<h3>Setting Up the Virtual Memory Map</h3>
+<p>
+The <tt>memset</tt> command is used to initialize each 
+entry in the virtual page map.
+<tt>memset</tt> is followed by six integer values:
+
+<ol>
+<li>The virtual page # to initialize
+<li>The physical page # associated with this virtual page 
+(-1 if no page assigned)
+<li>If the page has been read from (R) (0=no, 1=yes)
+<li>If the page has been modified (M) (0=no, 1=yes)
+<li>The amount of time the page has been in memory (in ns)
+<li>The last time the page has been modified (in ns)
+</ol>
+The first two parameters define the mapping between
+the virtual page and a physical page, if any.
+The last four parameters are values that might be used
+by a page replacement algorithm.
+<p>
+For example,
+
+<blockquote><pre>
+memset 34 23 0 0 0 0
+</pre></blockquote>
+
+specifies that virtual page 34 maps to physical page 23, 
+and that the page has not been read or modified.
+<p>
+Note:
+<ul>
+<li>Each physical page should be mapped to exactly one virtual page.
+<li>The number of virtual pages is fixed at 64 (0..63).
+<li>The number of physical pages cannot exceed 64 (0..63).
+<li>If a virtual page is not specified by any memset command,
+it is assumed that the page is not mapped.
+</ul>
+
+<h3>Other Configuration File Options</h3>
+
+<p>There are a number of other options which can 
+be specified in the configuration file.  These are
+summarized in the table below.
+</p>
+
+<table border="1" cellspacing="0">
+<tr><th>Keyword<th>Values<th>Description
+<tr><td valign="top"><tt>enable_logging</tt><td valign="top"><tt>true</tt><br><tt>false</tt>
+<td valign="top">Whether logging of the operations should be enabled.  If logging
+is enabled, then the program writes a one-line message for each 
+READ or WRITE operation.  By default, no logging is enabled.
+See also the <tt>log_file</tt> option.
+
+<tr><td valign="top"><tt>log_file</tt>
+<td valign="top"><i>trace-file-name</i>
+<td valign="top">The name of the file to which log messages should be written.
+If no filename is given, then log messages are written to stdout.
+This option has no effect if <tt>enable_logging</tt> is <tt>false</tt>
+or not specified.
+
+<tr><td valign="top"><tt>pagesize</tt><td valign="top"><i>n</i><br>
+<tt>power</tt> <i>p</i>
+<td valign="top">The size of the page in bytes as a power of two.  
+This can be given as a decimal number which is a 
+power of two (1, 2, 4, 8, etc.) or as a power of two using
+the <tt>power</tt> keyword. The maximum page size is 
+<tt>67108864</tt> or <tt>power 26</tt>.  The default
+page size is <tt>power 26</tt>.
+
+<tr><td valign="top"><tt>addressradix</tt><td valign="top"><i>n</i>
+<td valign="top">The radix in which numerical values are displayed.
+The default radix is 2 (binary).  You may prefer radix
+8 (octal), 10 (decimal), or 16 (hexadecimal).
+</table>
+
+<h3>Sample Configuration File</h3>
+<p>
+The "memory.conf" configuration file looks like this:
+
+<blockquote><pre>
+// memset  virt page #  physical page #  R (read from)  M (modified) inMemTime (ns) lastTouchTime (ns)
+memset 0 0 0 0 0 0      
+memset 1 1 0 0 0 0      
+memset 2 2 0 0 0 0      
+memset 3 3 0 0 0 0      
+memset 4 4 0 0 0 0      
+memset 5 5 0 0 0 0      
+memset 6 6 0 0 0 0      
+memset 7 7 0 0 0 0      
+memset 8 8 0 0 0 0      
+memset 9 9 0 0 0 0      
+memset 10 10 0 0 0 0            
+memset 11 11 0 0 0 0            
+memset 12 12 0 0 0 0            
+memset 13 13 0 0 0 0            
+memset 14 14 0 0 0 0            
+memset 15 15 0 0 0 0            
+memset 16 16 0 0 0 0            
+memset 17 17 0 0 0 0            
+memset 18 18 0 0 0 0            
+memset 19 19 0 0 0 0            
+memset 20 20 0 0 0 0            
+memset 21 21 0 0 0 0            
+memset 22 22 0 0 0 0            
+memset 23 23 0 0 0 0            
+memset 24 24 0 0 0 0            
+memset 25 25 0 0 0 0            
+memset 26 26 0 0 0 0            
+memset 27 27 0 0 0 0            
+memset 28 28 0 0 0 0            
+memset 29 29 0 0 0 0            
+memset 30 30 0 0 0 0            
+memset 31 31 0 0 0 0            
+
+// enable_logging 'true' or 'false'
+// When true specify a log_file or leave blank for stdout
+enable_logging true
+
+// log_file <FILENAME>
+// Where <FILENAME> is the name of the file you want output
+// to be print to.
+log_file tracefile
+
+// page size, defaults to 2^14 and cannot be greater than 2^26
+// pagesize <single page size (base 10)> or <'power' num (base 2)>
+pagesize 16384
+
+// addressradix sets the radix in which numerical values are displayed
+// 2 is the default value
+// addressradix <radix>
+addressradix 16
+
+// numpages sets the number of pages (physical and virtual)
+// 64 is the default value
+// numpages must be at least 2 and no more than 64
+// numpages <num>
+numpages 64
+
+</pre></blockquote>
+
+<h2>The Output File</h2>
+
+<p>
+The output file contains a log of the operations
+since the simulation started (or since the last reset).
+It lists the command that was attempted and what happened
+as a result.  You can review this file after executing
+the simulation.
+<p>
+The output file contains one line per operation
+executed.  The format of each line is:
+<blockquote><pre>
+<i>command</i> <i>address</i> ... <i>status</i>
+</pre></blockquote>
+where:
+<ul type="none">
+<li><i>command</i> is <tt>READ</tt> or <tt>WRITE</tt>,
+<li><i>address</i> is a number corresponding to a virtual memory address, and 
+<li><i>status</i> is <tt>okay</tt> or <tt>page fault</tt>.
+</ul>
+
+<h3>Sample Output</h3>
+The output "tracefile" looks something like this:
+
+<blockquote><pre>
+READ 4 ... okay
+READ 13 ... okay
+WRITE 3acc32 ... okay
+READ 10000000 ... okay
+READ 10000000 ... okay
+WRITE c0001000 ... page fault
+WRITE 2aeea2ef ... okay
+</pre></blockquote>
+
+
+<h2>Suggested Exercises</h2>
+
+<ol>
+<li>Create a command file that maps any 8 pages of physical memory to 
+the first 8 pages of virtual memory, and then reads from one virtual
+memory address on each 
+of the 64 virtual pages.  Step through
+the simulator one operation at a time and see if you can predict
+which virtual memory addresses cause page faults.  What page replacement 
+algorithm is being used?
+<p><!-- --></p>
+<li>Modify <tt>replacePage()</tt> in 
+<tt>PageFault.java</tt> to implement a <em>round robin</em>
+page replacement algorithm
+(i.e., first page fault
+replaces page 0, next one replaces page 1, next one replaces page 2, 
+etc.).
+<p><!-- --></p>
+<li>Modify <tt>replacePage()</tt> in 
+<tt>PageFault.java</tt> to implement a <em>least recently used</em>
+(LRU) page replacement algorithm.
+<p><!-- --></p>
+</ol>
+
+<h2>To Do</h2>
+<ol>
+<li>
+The user guide should tell a little bit about how replacePage works, e.g.
+what data structures it uses, what the arguments are,
+how it operates, how it makes it choice known, etc.
+Add a section of documentation on how to implement a new 
+page replacement algorithm.  This should explain a little about
+what changes are needed in the GUI, what to call the page replacement
+class, what fields and methods it needs to provide, and what
+other changes might be needed.  
+</ol>
+
+<h2>Copyright</h2>
+
+&copy; Copyright 2001, Prentice-Hall, Inc.
+<p>
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.
+<p>
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+<p>
+You should have received a copy of the GNU General Public License
+along with this program (see <a href="copying.txt">copying.txt</a>); 
+if not, write to the Free Software
+Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+<p>
+
+Please send suggestions, corrections, and comments to
+<a href="http://www.ontko.com/~rayo/">Ray Ontko</a> 
+(<a href="mailto:rayo@ontko.com"><i>rayo@ontko.com</i></a>).
+<p>
+<i>Last updated: July 28, 2001</i>
+</body>
+</html>

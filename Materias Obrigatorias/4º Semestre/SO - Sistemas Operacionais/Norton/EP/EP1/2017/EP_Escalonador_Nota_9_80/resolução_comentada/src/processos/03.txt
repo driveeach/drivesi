@@ -1,0 +1,15 @@
+TESTE-3
+X=8
+COM
+COM
+COM
+Y=5
+X=2
+COM
+COM
+X=3
+X=91
+Y=10
+COM
+X=4
+SAIDA

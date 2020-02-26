@@ -1,0 +1,8 @@
+The scheduling simulator illustrates the behavior of scheduling 
+algorithms against a simulated mix of process loads. The user can 
+specify the number of processes, the mean and standard deviation 
+for compute time and I/O blocking time for each process, and the 
+duration of the simulation. At the end of the simulation a 
+statistical summary is presented. Students may also be asked to 
+write their own scheduling algorithms to be used with process 
+loads defined by the instructor. 

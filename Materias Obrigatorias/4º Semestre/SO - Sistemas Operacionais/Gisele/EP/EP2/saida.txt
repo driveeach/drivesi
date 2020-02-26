@@ -1,0 +1,87 @@
+------------------------------------------
+Arquivo de entrada: cenario1.txt
+Gerencia de memoria: Segmentacao pura
+Tamanho da memoria: 64 bytes
+Quantum de tempo: 3 ms
+------------------------------------------
+0 ms: processo 1 chegou ao sistema.
+   Processo 1 rejeitado. Requisita 70 bytes, mas a memoria total é de 64 bytes.
+0 ms: processo 2 chegou ao sistema.
+0 ms: processo 2 obteve memoria.
+  *Secoes: (texto) base 0, limite 10; (dados) base 10, limite 20; (pilha) base 20, limite 30.
+0 ms: processo 3 chegou ao sistema.
+0 ms: processo 3 obteve memoria.
+  *Secoes: (texto) base 30, limite 35; (dados) base 35, limite 39; (pilha) base 39, limite 40.
+-->Memoria: [2,T][0:10],[2,D][10:20],[2,P][20:30],[3,T][30:35],[3,D][35:39],[3,P][39:40],[HOLE][40:64].
+0 ms: processo 2 executando na CPU.
+3 ms: processo 2 preemptado.
+3 ms: processo 3 executando na CPU.
+4 ms: processo 4 chegou ao sistema.
+4 ms: processo 4 entrou na fila de memoria.
+-->Memoria: [2,T][0:10],[2,D][10:20],[2,P][20:30],[3,T][30:35],[3,D][35:39],[3,P][39:40],[HOLE][40:64].
+5 ms: processo 5 chegou ao sistema.
+5 ms: processo 5 entrou na fila de memoria.
+-->Memoria: [2,T][0:10],[2,D][10:20],[2,P][20:30],[3,T][30:35],[3,D][35:39],[3,P][39:40],[HOLE][40:64].
+6 ms: processo 3 preemptado.
+6 ms: processo 6 chegou ao sistema.
+6 ms: processo 6 obteve memoria.
+  *Secoes: (texto) base 40, limite 41; (dados) base 41, limite 42; (pilha) base 42, limite 43.
+-->Memoria: [2,T][0:10],[2,D][10:20],[2,P][20:30],[3,T][30:35],[3,D][35:39],[3,P][39:40],[6,T][40:41],[6,D][41:42],[6,P][42:43],[HOLE][43:64].
+6 ms: processo 2 executando na CPU.
+9 ms: processo 2 preemptado.
+9 ms: processo 3 executando na CPU.
+12 ms: processo 3 preemptado.
+12 ms: processo 6 executando na CPU.
+15 ms: processo 6 preemptado.
+15 ms: processo 2 executando na CPU.
+18 ms: processo 2 preemptado.
+18 ms: processo 3 executando na CPU.
+21 ms: processo 3 preemptado.
+21 ms: processo 6 executando na CPU.
+24 ms: processo 6 preemptado.
+24 ms: processo 2 executando na CPU.
+27 ms: processo 2 preemptado.
+27 ms: processo 3 executando na CPU.
+28 ms: processo 3 concluido.
+  *Tempo de resposta: 3 ms.
+  *Turnaround: 28 ms.
+  *Tempo de Espera: 18 ms.
+28 ms: processo 4 obteve memoria.
+  *Secoes: (texto) base 30, limite 40; (dados) base 43, limite 53; (pilha) base 53, limite 63.
+-->Memoria: [2,T][0:10],[2,D][10:20],[2,P][20:30],[4,T][30:40],[6,T][40:41],[6,D][41:42],[6,P][42:43],[4,D][43:53],[4,P][53:63],[HOLE][63:64].
+28 ms: processo 6 executando na CPU.
+31 ms: processo 6 preemptado.
+31 ms: processo 2 executando na CPU.
+34 ms: processo 2 concluido.
+  *Tempo de resposta: 0 ms.
+  *Turnaround: 34 ms.
+  *Tempo de Espera: 19 ms.
+-->Memoria: [HOLE][0:30],[4,T][30:40],[6,T][40:41],[6,D][41:42],[6,P][42:43],[4,D][43:53],[4,P][53:63],[HOLE][63:64].
+34 ms: processo 4 executando na CPU.
+37 ms: processo 4 preemptado.
+37 ms: processo 6 executando na CPU.
+38 ms: processo 6 concluido.
+  *Tempo de resposta: 6 ms.
+  *Turnaround: 32 ms.
+  *Tempo de Espera: 22 ms.
+-->Memoria: [HOLE][0:30],[4,T][30:40],[HOLE][40:43],[4,D][43:53],[4,P][53:63],[HOLE][63:64].
+38 ms: processo 4 executando na CPU.
+40 ms: processo 4 concluido.
+  *Tempo de resposta: 30 ms.
+  *Turnaround: 36 ms.
+  *Tempo de Espera: 7 ms.
+40 ms: processo 5 obteve memoria.
+  *Secoes: (texto) base 0, limite 20; (dados) base 20, limite 40; (pilha) base 40, limite 64.
+-->Memoria: [5,T][0:20],[5,D][20:40],[5,P][40:64].
+40 ms: processo 5 executando na CPU.
+43 ms: processo 5 preemptado.
+43 ms: processo 5 executando na CPU.
+46 ms: processo 5 preemptado.
+46 ms: processo 5 executando na CPU.
+49 ms: processo 5 preemptado.
+49 ms: processo 5 executando na CPU.
+50 ms: processo 5 concluido.
+  *Tempo de resposta: 35 ms.
+  *Turnaround: 45 ms.
+  *Tempo de Espera: 0 ms.
+------------------------------------------

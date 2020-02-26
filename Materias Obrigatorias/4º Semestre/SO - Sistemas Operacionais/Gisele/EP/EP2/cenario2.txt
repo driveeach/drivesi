@@ -1,0 +1,12 @@
+64 		//tamanho da memoria em bytes
+16 		//tamanho da pagina em bytes
+3 		//quantum de tempo em ms
+0 		//estrategia (0 = paginação, 1 = segmentacao pura)
+//respectivamente: PID (inteiro), instante de chegada(ms), tempo de burst(ms), tamanho das secoes texto, dados e pilha (bytes)
+//separar cada campo com TAB. A quantidade de memoria a ser alocada na pagincao sera a soma das tres secoes.
+Processo-tempoChegada-Burst-texto-dados-pilha
+001	0	10	10	10	10
+002 	0	15	20	10	20
+003	0	10	5	4	1
+004	50	10	5	5	5
+005	23	3	1	1	1

@@ -1,0 +1,385 @@
+<html>
+<head>
+<title>MOSS | Memory Management Simlulator | Installation | 
+
+Windows
+
+
+</title>
+</head>
+<body bgcolor="#ffffff">
+
+<h1>MOSS Memory Management Simulator
+
+<br>Installation on Windows 95/98/Me/NT/2000 Systems</h1>
+
+
+
+<h2>Purpose</h2>
+
+<p>
+This document provides instructions for the installation
+of the MOSS Memory Management Simulator on 
+
+Microsoft Windows 
+
+
+operating systems.  This procedure should be the same or similar on 
+
+Windows 95, 98, Me, NT, and 2000 
+
+
+systems.  
+The MOSS software
+is designed for use with 
+<a href="http://www.cs.vu.nl/~ast/">Andrew S. Tanenbaum</a>, 
+<a href="http://vig.prenhall.com/catalog/academic/product/1,4096,0130313580,00.html">Modern Operating Systems, 2nd Edition</a> 
+(<a href="http://www.prenhall.com/">Prentice Hall</a>, 2001).  
+The Memory Management Simulator was written by 
+<a href="http://www.cs.earlham.edu/~odo/">Alex Reeder</a>
+(<a href="mailto:alexr@e-sa.org"><i>alexr@e-sa.org</i></a>).  
+This installation guide was written by 
+<a href="http://www.ontko.com/~rayo/">Ray Ontko</a>
+(<a href="mailto:rayo@ontko.com"><i>rayo@ontko.com</i></a>).
+
+<p>
+This installation guide only provides information about 
+installing the software and testing the configuration for 
+
+
+Windows operating systems.  To install on Unix-like
+operating systems, please read the 
+<a href="install_unix.html">Installation Guide for Unix/Linux/Solaris/HP-UX Systems</a>.
+
+For more detailed information about the simulator, please
+read the <a href="user_guide.html">User Guide</a>.
+</p>
+
+<h2>Requirements</h2>
+
+The following software components are required
+to install and use the MOSS Memory Management
+Simulator.
+<ul>
+
+<li>Microsoft Windows 95, 98, Me, NT, or 2000
+
+
+<li>Java Development Kit (JDK) 1.0 or greater 
+<li>Text program editor (e.g., notepad)
+</ul>
+
+<h2>Pre-Installation</h2>
+<p>
+Before installation, you should verify:
+</p>
+<ul>
+<li>that you have a working java runtime environment,
+<li>that you have a working java development environment, and 
+<li>that the working directory is in the classpath for the runtime environment.
+</ul>
+<p>
+If you're using a standard command-line java compiler, the following
+instructions will help determine if your environment is configured
+correctly.
+</p>
+<ol>
+<li>Verify that you have java installed and configured in your environment.
+
+<blockquote><pre>
+C:\WINDOWS> java -version
+</pre></blockquote>
+
+
+You should see a message like this with possibly a different version number.
+<blockquote><pre>
+java version "1.1.8"
+</pre></blockquote>
+If you get a message like:
+
+<blockquote><pre>
+Bad command or file name
+</pre></blockquote>
+
+
+Then java may not be installed on your system, or may not be configured
+for your use.
+<p>
+If you think that Java may already be installed on your system 
+but may not be in your "path", you can find it by
+
+choosing Start -> Find -> Files or Folders
+and enter "java.exe" in the "Named:" field and click the Find Now button.
+If found, make note of the directory folder in which it resides (e.g.,
+"C:\jdk1.1.8\bin").
+<p>
+While you're at it, also seach for javac.exe to see if the Java
+compiler is installed and whether it's in the same directory as
+the java.exe file.
+
+
+<p>
+If Java isn't available on your system, you should check with
+your instructor or system administrator.  If you administer your
+own system, then you should be able to find a copy of Java
+for your operating system.
+<p>
+If you find that java is installed but not configured for
+your use, then perhaps you need to add it to your path.  Consult
+your instructor or system administrator if you need help adding this
+to your path.
+</p>
+<p><!-- --></p>
+
+<li>Verify that the java compiler is installed and configured in 
+your environment.
+
+<blockquote><pre>
+C:\WINDOWS> javac
+</pre></blockquote>
+
+
+If you're using a standard java command-line compiler, you should
+see a message similar to this.
+<blockquote><pre>
+use: javac [-g][-O][-debug][-depend][-nowarn][-verbose][-classpath path][-nowrite][-deprecation][-d dir][-J<runtime flag>] file.java...
+</pre></blockquote>
+If you get a message like:
+
+<blockquote><pre>
+Bad command or file name
+</pre></blockquote>
+
+
+then the java compiler may not be installed on your system, or 
+may not be configured for your use.   Consult your instructor
+or system administrator.
+<p><!-- --></p>
+
+<li>Verify that that the current directory is in your classpath.
+
+<blockquote><pre>
+C:\WINDOWS> echo "%CLASSPATH%"
+</pre></blockquote>
+You should see a list of directories separated by semi-colons (";") 
+or possibly just "". If you don't see the directory "." (a single
+period, which stands for the current directory), then you should
+add it to the classpath.
+<blockquote><pre>
+C:\WINDOWS> set CLASSPATH=.;%CLASSPATH%
+</pre></blockquote>
+
+
+<p><!-- --></p>
+
+</ol>
+<p>
+If you have a working java runtime environment, a working java
+compiler, and the current directory is in your path, then you're
+ready to proceed with the installation.
+</p>
+
+
+<h2>Installation</h2>
+
+Installation of the software can be accomplished with
+these simple steps:
+<ol>
+<li>
+
+Create a directory folder in which you wish to install
+the simulator (e.g., "C:\moss\memory").  You can do
+this using the Windows explorer, or from the MS-DOS
+prompt.  To create the directory from the MS-DOS
+prompt:
+<blockquote><pre>
+C:\WINDOWS> cd \&nbsp;
+C:\> mkdir moss
+C:\> cd moss
+C:\moss> mkdir memory
+C:\moss> cd memory
+C:\moss\memory>
+</pre></blockquote>
+
+
+<p><!-- --></p>
+
+<li>
+
+Download the self-extracting ZIP archive (memory.exe) into
+the directory folder.
+The latest release for this file can always be found at
+<a href="http://www.ontko.com/moss/memory/memory.exe">http://www.ontko.com/moss/memory/memory.exe</a>.
+
+
+<p><!-- --></p>
+
+<li>
+
+Double-click on the file you downloaded (memory.exe),
+or invoke it using Start -> Run..., or invoke it
+from an MS-DOS command prompt:
+<blockquote><pre>
+C:\moss\memory> memory.exe
+</pre></blockquote>
+
+
+<p><!-- --></p>
+
+</ol>
+
+<h2>Files</h2>
+<p>
+The directory should now contain the following files:
+</p>
+<table border="1" cellspacing="0">
+<tr>
+<th>Files
+<th>Description
+<tr>
+<td>
+
+memory.exe
+<td>Self-extracting ZIP 
+
+
+archive which contains all the other files.
+<tr>
+<td>Common.java
+<br>ControlPanel.java
+<br>Instruction.java
+<br>Kernel.java
+<br>MemoryManagement.java
+<br>PageFault.java
+<br>Page.java
+<br>Virtual2Physical.java
+<td valign="top">
+Java source files (*.java)
+<tr>
+<td>Common.class
+<br>ControlPanel.class
+<br>Instruction.class
+<br>Kernel.class
+<br>MemoryManagement.class
+<br>PageFault.class
+<br>Page.class
+<br>Virtual2Physical.class
+<td valign="top">
+Compiled Java class files (*.class)
+<tr>
+<td>commands
+<td>Sample input command file
+<tr>
+<td>memory.conf
+<td>Sample configuration file
+<tr>
+<td>install_unix.html
+<br>install_windows.html
+<br>user_guide.html
+<br>user_guide_1.gif
+<td valign="top">
+Documentation and associated images
+<tr>
+<td>copying.txt</td>
+<td>Gnu General Public License: Terms and Conditions
+for Copying, Distribution, and Modification
+</table>
+
+<h2>Compilation</h2>
+
+<p>
+The distribution includes compiled class files as
+well as the source java files.  You should not need
+to recompile unless you decide to change the code.
+If you wish to compile the code, 
+the following commands should work if you're using
+a Java compiler that accepts the normal "javac" command
+line.
+
+<blockquote><pre>
+C:\moss\memory> javac -nowarn *.java
+</pre></blockquote>
+
+
+
+The <tt>-nowarn</tt> flag supresses warning messges, of which
+there may be several.  For backward compatability we use only
+those features of Java which have been present from the beginning,
+some of which are deprecated and are usually reported by the 
+compiler with warning messages.
+
+<h2>Test</h2>
+
+<p>
+To test the program, enter the following command line.
+
+
+<blockquote><pre>
+C:\moss\memory> java MemoryManagement commands memory.conf
+</pre></blockquote>
+
+
+
+<p>
+The program will display a window allowing you to run the
+simulator.  
+When the window presents itself, click on the Run
+button.  
+You should see the 
+program "execute" 7 memory operations, about one per second.
+When the simulation completes, click the 
+Exit button.
+<p>
+The memory operation commands are read from a file called 
+"commands",
+and the initial configuration and various options are 
+specified in the file "memory.conf".  
+The program also produces a log file called "tracefile"
+in the working directory.
+
+<p>
+The "commands" file looks something like this:
+<blockquote><pre>
+// Enter READ/WRITE commands into this file
+// READ &lt;OPTIONAL number type: bin/hex/oct&gt; &lt;virtual memory address or random&gt;
+// WRITE &lt;OPTIONAL number type: bin/hex/oct&gt; &lt;virtual memory address or random&gt;
+READ bin 100
+READ 19
+WRITE hex CC32
+READ bin 10000000000000000
+READ bin 10000000000000000
+WRITE bin 11000000000000001
+WRITE random
+</pre></blockquote>
+
+<p>
+If things are working correctly, the "tracefile" should look 
+something like this:
+
+<blockquote><pre>
+READ 4 ... okay
+READ 13 ... okay
+WRITE 3acc32 ... okay
+READ 10000000 ... okay
+READ 10000000 ... okay
+WRITE c0001000 ... page fault
+WRITE 1ff82cdc ... okay
+</pre></blockquote>
+
+<p>
+The program and its input and output files are described 
+more fully in the <i>MOSS Memory Management Simulator
+<a href="user_guide.html">User Guide</a></i>.
+<p>
+&copy; Copyright 2001, Prentice-Hall, Inc.
+This program is free software; it is distributed under the
+terms of the Gnu General Public License.  
+See <a href="copying.txt">copying.txt</a>, 
+included with this distribution.
+<p>
+Please send suggestions, corrections, and comments to
+Ray Ontko (<A href="mailto:rayo@ontko.com"><i>rayo@ontko.com</i></a>).
+<p>
+<i>Last updated: July 28, 2001</i>
+</body>
+</html>

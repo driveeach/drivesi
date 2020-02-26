@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.7" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <Properties>
+    <Property name="defaultCloseOperation" type="int" value="3"/>
+    <Property name="title" type="java.lang.String" value="Realizar Pedidos"/>
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="textoNumPedidos" alignment="1" pref="133" max="32767" attributes="0"/>
+                          <Component id="textoPendentes" alignment="1" pref="133" max="32767" attributes="1"/>
+                      </Group>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="lEncomendado" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="lMinimo" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="lEstoque" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="lAutor" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="lTitulo" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="lISBN" alignment="1" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="textoEstoque" alignment="1" pref="111" max="32767" attributes="1"/>
+                  <Component id="textoMinimo" alignment="1" pref="111" max="32767" attributes="1"/>
+                  <Component id="textoAutores" alignment="1" pref="111" max="32767" attributes="1"/>
+                  <Component id="textoTitulo" alignment="1" pref="111" max="32767" attributes="1"/>
+                  <Component id="textoISBN" alignment="1" pref="111" max="32767" attributes="1"/>
+                  <Component id="textoPedidoID" alignment="1" pref="111" max="32767" attributes="1"/>
+                  <Component id="campoEncomendada" alignment="1" max="32767" attributes="1"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="botaoAnterior" alignment="1" pref="134" max="32767" attributes="1"/>
+                  <Component id="botaoIgnorar" alignment="1" pref="134" max="32767" attributes="1"/>
+                  <Component id="botaoProximo" alignment="1" pref="134" max="32767" attributes="1"/>
+                  <Component id="botaoEnviar" alignment="1" pref="134" max="32767" attributes="1"/>
+                  <Component id="botaoCancelar" alignment="1" pref="134" max="32767" attributes="1"/>
+              </Group>
+              <EmptySpace min="-2" max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="textoPendentes" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="botaoAnterior" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="textoPedidoID" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="textoNumPedidos" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="botaoIgnorar" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="botaoProximo" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="textoISBN" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lISBN" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="textoTitulo" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lTitulo" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="textoAutores" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lAutor" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="textoEstoque" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lEstoque" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="textoMinimo" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="botaoEnviar" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lMinimo" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lEncomendado" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="campoEncomendada" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="botaoCancelar" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JTextField" name="textoPendentes">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+        <Property name="text" type="java.lang.String" value="Ordem pendente 1 de N"/>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
+            <EtchetBorder/>
+          </Border>
+        </Property>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="textoNumPedidos">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+        <Property name="text" type="java.lang.String" value="# pedidos confirmados"/>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
+            <EtchetBorder/>
+          </Border>
+        </Property>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lISBN">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="ISBN"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lTitulo">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="T&#xed;tulo"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lAutor">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Autor(es)"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lEstoque">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Quantidade em estoque"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lMinimo">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="M&#xed;nimo requerido"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lEncomendado">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Quantidade a encomendar"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="botaoAnterior">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="&lt;&lt; Pedido Anterior"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="botaoProximo">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Pr&#xf3;ximo Pedido &gt;&gt;"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="botaoIgnorar">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Ignorar Pedido &gt;&gt;"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="botaoEnviar">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Enviar Pedidos"/>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="botaoCancelar">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Cancelar"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="textoPedidoID">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+        <Property name="text" type="java.lang.String" value="Ordem # K"/>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
+            <EtchetBorder/>
+          </Border>
+        </Property>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textoPedidoIDActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JTextField" name="campoEncomendada">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="MMM"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="textoISBN">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+        <Property name="text" type="java.lang.String" value="isbn"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="textoAutores">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+        <Property name="text" type="java.lang.String" value="autor1, autor2, autor3"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="textoEstoque">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+        <Property name="text" type="java.lang.String" value="XXX"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="textoMinimo">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+        <Property name="text" type="java.lang.String" value="YYY"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="textoTitulo">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+        <Property name="text" type="java.lang.String" value="titulo"/>
+      </Properties>
+    </Component>
+  </SubComponents>
+</Form>
