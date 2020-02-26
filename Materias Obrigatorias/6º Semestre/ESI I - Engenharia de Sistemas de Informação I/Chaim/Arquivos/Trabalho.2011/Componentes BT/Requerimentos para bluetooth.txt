@@ -1,0 +1,24 @@
+Artigos
+Using the Java APIs for Bluetooth Wireless Technology, Part 1 - API Overview
+http://developers.sun.com/mobility/apis/articles/bluetoothintro/
+
+Part II: The Java APIs for Bluetooth Wireless Technology
+http://developers.sun.com/mobility/midp/articles/bluetooth2/
+
+Blog sobre JSR-82 - com códigos
+http://www.jsr82.com/
+--------------------------
+Bluetooth stack emulators
+Sun Java Wireless Toolkit 2.5.2_01 (windows)
+http://www.oracle.com/technetwork/java/javame/javamobile/download/sdk/index.html
+
+BlueSim
+http://www.javabluetoothstack.com/bluesim.htm
+
+BlueCove emu
+http://code.google.com/p/bluecove/downloads/list
+--------------------------
+Implementação da JSR-82
+
+BlueCove
+http://code.google.com/p/bluecove/

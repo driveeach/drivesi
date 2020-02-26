@@ -1,0 +1,25 @@
+A metodologia XP, em português (muito útil) - videos, artigos, papéis:
+http://improveit.com.br/xp
+
+Perguntas e respostas sobre XP:
+Extreme Programming FAQ
+http://www.jera.com/techinfo/xpfaq.html
+
+Wiki sobre xp, com diversas dicas:
+Extreme Programming Roadmap
+http://c2.com/cgi/wiki?ExtremeProgrammingRoadmap
+
+Uma espécie de livro, com diagramas e explicações importantes:
+Extreme Programming: A gentle introduction
+http://www.extremeprogramming.org/index.html
+
+Escrevendo uma história de usuário:
+What’s in a Story?
+http://dannorth.net/whats-in-a-story/
+
+Vantagens do modelo história de usuário
+ADVANTAGES OF THE “AS A USER, I WANT” USER STORY TEMPLATE
+http://blog.mountaingoatsoftware.com/advantages-of-the-as-a-user-i-want-user-story-template
+
+TDD - Desenvolvimento Dirigido por Testes
+http://improveit.com.br/xp/praticas/tdd

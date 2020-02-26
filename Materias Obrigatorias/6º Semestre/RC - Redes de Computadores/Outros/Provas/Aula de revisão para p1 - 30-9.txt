@@ -1,0 +1,201 @@
+Revisão da p1 de redes. // asterico marca o q deve ser dado mais tempo de estudo.
+
+	O que é um protocolo?
+	
+	Serviços da internet. Com garantia e sem garantia. O q uma camada oferece as camada de cima. Sem precisar saber a definição. Quais serviços fornecem ao usuário. Que serviços utiliza das camadas de baixo.
+
+	Redes de acesso, compartilhado e dedicado. O que é roteador de boda?(Qq um q atravessa as bordas de sub-rede)
+	
+	Gateway - roteador de borda especial, que tem sistema finais chegando nele. Como se concecta, adsl não precisa.
+	
+	Cliente-servidor, p2p precisa saber. Vantagens e desvantagens.
+	
+	Acesso por ethernet (não será cobrado)
+	
+	Par trançado, fibra ótica, cabo coaxial. Vantagens e desvatagens. Não precisa lembrar números de velocidade
+		par trançado - barato
+		cabo coaxial - mais caro, mas alcança taxa maior pois tem mais blindagem contra interferência, fisicamente mais resistente 
+		fibra ótica - perda despresível, não sofre interferência, custo alto da manutenção e instalação
+		
+	Rádio - Problemas interferência, reflexão,  obstrução. Perda de pacote, e pacote corrompido.
+	
+	Taxa de transmissão e largura de banda: Quantos dados consigo mandar por segundo.
+	atraso: tempo depois q eu mandei, chega no destino
+	
+	Comutação por circuito e comutação de pacote. Não pode escolher. A rede é montada por cima disso. 
+	
+		*********Pode cair o cálculo do atraso********. Para calcular atraso, ou só calcula para o primeiro, ou só para o último host. Roteadores todos entram. Atraso modal é a soma dos 4 atrasos em algum nó. Atraso de enfileiramente não existe na comutação por circuitos.
+		
+		atraso de processamento  - dado
+		atraso de enfileiramento - dado
+		atraso nodal - somar todos, na comutação por pacotes.
+		atraso de transmissão - tempo de um pacote sair de uma interface e chegar em um enlace (tem a ver com a velocidade do enlace)
+		atraso de propagação - atraso que o sinal se propaga o meio. Depende do meio. Depende da distância. Distância/velocidade
+		comutação por circuito: não precisa de store-and-forward
+		comutação por pacote: n atrasos de transmissão.
+		comutação por circuito: só tem o primeiro atraso de  transmissão, para colocar os dados na rede. Não precisa ter store-and-forward nos nós, depois do primeiro.
+		
+		comutação por circuito:
+			rede de telefone. 
+			Cria-se a conexão. Voltado para conexão. 
+			Ao criar uma conexão, reserva recursos ao longo de toda rede, entre os dois pontos q irão se comunicar. Com isso é garantido que o atraso será sempre determinado. Reduz atraso de processamento, enfileiramento.
+			Perde um tempo fazendo a chamada, mas depois consegue garantiar a vazão, pois está-se reservando para ocorrer a vazão.
+			
+			Desvantagem, como reserva-se recursos, estes ficam reservados mesmo quando não estão sendo usados. Passa-se uma grande porcentagem do tempo não usando o recurso. Utilização menos eficiente do recurso (largura de banda, memória do roteador, ...).
+			É menos eficiente, do ponto de vista dos recursos da rede. 
+			
+			Permite sistemas finais mais burros. 
+			
+		comutação por pacotes: A internet sempre foi por pacotes.
+			Mais eficiente. Não se garante nada. 
+			Pode deixar carga de processamento para os sistemas finais.
+		
+		Multiplixação estatística: Não fica com recurso parado se ninguém estiver querendo usar. Se somente um cara for utilizar, ele sempre consegue utilizar 100% da capacidade do recurso.	
+			
+		Jeitos de dividir FDM e TDM.	
+		Como dividir largura de banda entre n usuários. tem 2 jeitos. Particionamento estático:
+			1 por frequencia: dividir uma porcentagem para cada usuário
+			2 por pedaços de tempo: x% do tempo para o 1 usuário, x% para o segundo.
+			
+		Hierarquia de provedores. Para alcançar outras regiões, provadores contratam outros provadores.
+		Através do traceroute verifica-se o caminho do pacote.
+		
+		Perda de pacote.
+		
+		Vazão do caminho inteiro, será a vazão mínima entre eles.		
+			
+		Checksum: Não é infalível. Quanto menor a quantidade de dados, a probabilidade de erros aumenta. Um erro pode compensar o outro e checksum pode falhar.
+		No caso do torrent, na camada de aplicação, há outra checagem de checksum.
+		
+		cliente-servidor-problema
+			escalabilidade, custos 
+			custos: calor gerado, eletricidade , banda, computador
+		
+		P2p - problema:
+			complexidade para segurança dos dados,
+			complexidade para sincronização de dados
+			
+		Pode pedir para programar tcp, udp (problema do lab). Pode pedir como foi resolvido o problema no lab. Threads.
+			Pode pedir para mudar um código ou completar o código. Pode pedir consertar um código.
+			Pode pedir um teste de mesa tb.	
+		
+		TCP/UDP
+		HTTP-TCP - 
+			não lembra o estado, cada requisição é uma requisão
+			não precisa saber cabeçalho de http
+			
+		DNS - UDP
+		
+		Persistente e não persistente.	
+			persistente -> a conexão fica aberta até pedir para fechar ou ocorrer um timeout
+				1 Rtt para página inteira
+			não persistente-> para cada pedido de objeto a conexão abre e fecha
+				2 Rtt para abrir e 4 Rtts para fechar
+			
+		Cookies
+			Identificador para encontrar informações de estado no banco de dados	
+			
+		Método 
+			GET - menos seguro
+			GET?	
+			
+			post - mais fácil de criptografar, direto com o SSL
+			
+		Cache web
+			aplicação faz um cache dos objetos
+			cacheweb - 
+				servidor sabe que há algo que está no cache dele, ele já manda para o cliente.
+		
+		DNS
+			como achar os ips, segundo os nomes
+			Traduz do nome fantasia para o nome do servidor. Ajuda tb a distribuir a carga da web.
+			Do nome do servidor, para o ip do servidor. Isso é guardado de maneira hierarquica
+			
+			Os servidores dns hierarquicamente podem ser:
+			raiz 
+			top level  - guarda, com, br, edu
+			autoridade - servidor web de verdade
+			
+			consulta iterativa e recursiva.
+			Recursiva (mais difícil, menos frequente)
+			
+			O dns q configura, é o servidor do DNS local. Ele fará o pedido recursivamente. Tem um cache dns. 
+			
+			*** Questão de dns, pag 72. Exercício extra de DNS. Cap1e2.
+			
+			tipo A - associa nome canônico com ip. //endereço servidor de verdade, com ip
+			cname - associa minemônimo (o q vc lembra)e canônico (o de verdade).
+			ns - associa nome de dominio com servidor de nomes daquele dominio//onde está o servidor de nomes
+			mx - associa dominio com servidor de email // o de email.
+			
+			****4 campos do DNS - Pergunta, resposta, autoridade, informação adicional (lab) - slide cap 4/2, pag 32, 
+			o que vem em cada campo
+			Tipos de registro				
+	
+			ftp e correio eletrônico não cai.
+			
+		TCP/UDP 
+			controle de fluxo:
+				controlar o tamanho da janela de quem está mandando, baseado no tamanho da janela de quem está recebendo. Não deixa a janela de tranmissão ser maior do que a janela que cara tem livre	
+			
+			Multiplexação/Desmultiplexação:  junta tudo e entrega ao processo certo.
+				Tem a pegadinha da diferença do TCP e do UDP. 
+				 	UDP- um socket consegue se conectar com diversos outros. Se na prova tiver uma figura é fácil identificar o UDP. Se tiver um conversando com vários, é UDP. Se tiver um conversando com um só, pode ser TCP ou UDP. 
+				 	
+		 	Identificação do socket:
+				 
+			tcp
+			 	ip - porta de origem.
+			 	ip - porta de destino
+			 PEGADINHA: Se for TCP eu posso ter 2 sockets diferentes mas q tem o mesmo número de porta, na mesma máquina, pq estão ligados em máquinas diferentes.	
+				 	
+			udp
+				ip-porta de oritem (de onde estou) 		
+		UDP 
+			soma de verificação
+			cabeçalho simples
+			soma confiável de dados
+			
+			dois acks repetidos, significa que algo deu errado no meio do caminho.
+			para evitar perda de pacote, utiliza temporizador. Se depois de algum tempo não chegou ack, manda novamente.
+			
+			****4 mecanismo importantes
+			soma de verificação
+			ack
+			número de sequencia
+			?
+		Melhorar a performance, faz em paralelo, tem 2 jeitos, GO BACK N, REPETIÇÃO SELETIVA
+		
+		GO BACK N (pode pedir para fazer o código)	
+			tem o esquema do ack cumulativo. O ack que chega diz, até esse número eu recebi todos, não precisa chegar um para cada um. Ack q chegou depois, é ignorado.
+			o receptor não tem buffer de recepção, recebe e manda direto para cima. Se receber fora de ordem não pode mandar direto para cima, pois o TCP quer garantir ordem. Se receber fora de ordem descarta. Quando percebo que deu problema, eu envio todos novamente. 
+			repete todos os pacotes perdidos 
+						 	
+		repetição seletiva
+			tem um buffer no receptor. Pode ir guardando os pacotes conforme vão chegando fora de ordem, ai será mandado um ack para cada pacote. Não é mais mais o ack cumulativo.
+			pode dar a volta no números de seq, pode achar q está recebendo o pacote 2 anterior, mas na verdade é o próximo. 				 	
+				 	
+		*** Janela. Variáveis base, n, next-seq-num, (pag 38, slide5, camTrans)	
+		
+		TCP
+			número de sequencia. Número do primeiro byte que estou mandando. O ack do tcp é cumulativo. O ack me diz qual o próximo que estou esperando. 
+			*****número de seq // ack// próximo q estou esperando.
+			Pode mandar pacote que tem ack. Um ack puro, não tem número de sequencia, pois não tem ack, só dado. O número esperado continua o mesmo.
+			
+			tipos de perguntas:
+			No tcp agente espera até chegar o 2 ack para mandar, pq?
+			No tcp normalemnte, após de 3 acks, explique
+			Dobrar o timeout, aumenta o tempo
+			Quando gera o ack? não da primeira vez.
+			Retransmissão rápica, depois de 3 acks repetidos manda novamente.
+			
+			Controle de fluxo. Rwind (quando eu tenho de tamanho totla) é o q sobrou na janela.
+			rwnd = Tamanho total do buffer de recepção - o q sobrou no buffer de recepção = livre no buffer de receção (pag 46)
+			
+			todo momento será mandado número de seq, número de seq, ack tamanho, rwnd. (Tenho x de espaço livre para receber)
+			
+			O tamanho de janela do emissor, nunca pode ser maior q o rwnd. Garante q nunca irá mandar mais coisa, do que tem de espaço para o cara receber.
+			rwnd = 0; De tempos em tempos manda um pacote vazio, só para ver o ack que vem do rwnd.
+			
+			rtt não cai  			
+			

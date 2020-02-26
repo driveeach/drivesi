@@ -1,0 +1,29 @@
+Cabeçalho:
+
+{	String: TIPO_MSG,
+	String: código do ônibus,
+	number: número da linha,
+	String: SENTIDO,
+	String: data-hora	}
+
+IniciarViagem:
+
+{	String: TIPO_INICIO,
+	number: latitude,
+	number: longitude	}
+
+Abertura de Portas - posição:
+
+{	String: TIPO_LOCALIZAÇÃO,
+	number: latitude,
+	number: longitude	}
+	
+Fechamento de Portas - posição:
+
+{	String: TIPO_EMBARQUE_DESEMBARQUE,
+	[	código_passageiro1,
+		código_passageiro2,
+		código_passageiroN	],
+	[	código_passageiro1,
+		código_passageiro2,
+		código_passageiroN	]	}

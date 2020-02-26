@@ -1,0 +1,5 @@
+http://www.thiagochaves.eti.br/wordpress/?p=54
+http://www.systemmobile.com/?p=11
+http://javafree.uol.com.br/artigo/3721/Pequeno-Tutorial-sobre-Hibernate.html
+http://diariodecodigos.info/2009/12/jee12tutorial-jpa-com-eclipse-postgresql/
+http://diariodecodigos.info/2009/12/jee24testando-o-seu-projeto-jpa-com-eclipse-e-postgresql/

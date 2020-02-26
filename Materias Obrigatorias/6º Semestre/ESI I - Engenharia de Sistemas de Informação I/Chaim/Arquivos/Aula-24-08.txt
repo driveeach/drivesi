@@ -1,0 +1,50 @@
+Métodos Ágeis 24/08
+
+Integração contínua
+
+comunicação; realimentação
+->scripts que compilam,executam casos de teste e postam os resultados frequentemente
+
+exemplos de scripts
+make
+ant
+maven
+
+O código deve ser integrado e testado depois de algumas horas.
+Uma máquina deve ficar dedicada para integração
+
+semana de 40 horas
+
+aspessoas precisam de descanço para serem produtivas
+
+horas extras são um sintoma de problemas sérios no projeto
+
+xp admite uma semana de horas extras
+
+já duas semanas são um indicio de problemas de estimativa e gerência do projeto
+
+cliente/ usuário residente
+
+um cliente/usuário deve estar disponivel no "site",para responder dúvidase ajustar prioridades
+menores.
+
+ele deve ser um usuário real
+
+apesar de longe do seu local de trabalho habitual, ele deve continuar a fazer seu trabalho
+
+padrões de codificação
+
+com todos os programadores podendo alterar o código, padrões de codificação são essenciais.
+esses padrões devem: 
+exigir pouco esforço.
+caso contrario a adoção pode ser problematica, senão ninguém irá adota-los
+os padroes devem evitar duplicação de código
+enfatizar comunicação
+ser adotados voluntariamente
+
+estória do usuário:
+
+lembram, vagamente, casos de uso
+são escritas pelo cliente/usuário
+devem ser escritos em três fases na linguagem do cliente/usuário
+as estórias de usuário serão utilizadas para guiar a criação de testes automatizados

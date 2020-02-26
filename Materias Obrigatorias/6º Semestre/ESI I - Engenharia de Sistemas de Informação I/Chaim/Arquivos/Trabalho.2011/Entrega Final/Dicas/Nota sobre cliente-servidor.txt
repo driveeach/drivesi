@@ -1,0 +1,15 @@
+Lógica de fluxo:
+
+enquanto(verdadeiro) {
+	aceitar uma conexão;
+	criar uma thread para tratar do cliente;
+}
+fim-enquanto
+
+Cliente:
+
+1 - abrir um socket
+2 - abrir InputStream e OutputStream para o socket
+3 - ler para/escrever para o fluxo de acordo com o protocolo do servidor
+4 - fechar os fluxos
+5 - fechar o socket

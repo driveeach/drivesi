@@ -1,0 +1,7 @@
+Um relatório final
+Uma lista com o Product Backlog
+Histórias de usuário detalhadas
+Testes abrangentes
+Tamanhos dos campos e dicas ao lado nas páginas
+Algumas falhas nas páginas
+Tratamento de erro para o caso de BD inexistente
