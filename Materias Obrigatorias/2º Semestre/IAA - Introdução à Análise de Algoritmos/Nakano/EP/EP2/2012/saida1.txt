@@ -1,0 +1,100 @@
+############ Exemplo: partindo da cidade Y para a X (caminho composto por 2 cidades).
+Tempo de execucao: 0 ms.
+Imprimindo caminho (2 cidades):
+Y [5.5] X
+Distancia do caminho: 5.5
+############ Exemplo: partindo da cidade X para a Y (caminho composto por 2 cidades).
+Tempo de execucao: 0 ms.
+Imprimindo caminho (2 cidades):
+X [5.5] Y
+Distancia do caminho: 5.5
+############ Exemplo: partindo da cidade A para a C (caminho composto por 3 cidades).
+Tempo de execucao: 0 ms.
+Imprimindo caminho (3 cidades):
+A [5.5] B [6.0] C
+Distancia do caminho: 11.5
+############ Exemplo: partindo da cidade C para a A (caminho composto por 3 cidades).
+Tempo de execucao: 0 ms.
+Imprimindo caminho (3 cidades):
+C [6.0] B [5.5] A
+Distancia do caminho: 11.5
+############ Exemplo: partindo da cidade B para a C (caminho composto por 3 cidades).
+Tempo de execucao: 0 ms.
+Imprimindo caminho (3 cidades):
+B [5.5] A [3.0] C
+Distancia do caminho: 8.5
+############ Exemplo: partindo da cidade C para a B (caminho composto por 3 cidades).
+Tempo de execucao: 0 ms.
+Imprimindo caminho (3 cidades):
+C [3.0] A [5.5] B
+Distancia do caminho: 8.5
+############ Exemplo: partindo da cidade A para a B (caminho composto por 3 cidades).
+Tempo de execucao: 0 ms.
+Imprimindo caminho (3 cidades):
+A [3.0] C [6.0] B
+Distancia do caminho: 9.0
+############ Exemplo: partindo da cidade B para a A (caminho composto por 3 cidades).
+Tempo de execucao: 0 ms.
+Imprimindo caminho (3 cidades):
+B [6.0] C [3.0] A
+Distancia do caminho: 9.0
+############ Exemplo: partindo da cidade E para a G (caminho composto por 4 cidades).
+Tempo de execucao: 0 ms.
+Imprimindo caminho (4 cidades):
+E [3.0] F [20.0] H [7.0] G
+Distancia do caminho: 30.0
+############ Exemplo: partindo da cidade E para a H (caminho composto por 4 cidades).
+Tempo de execucao: 0 ms.
+Imprimindo caminho (4 cidades):
+E [3.0] F [6.0] G [7.0] H
+Distancia do caminho: 16.0
+############ Exemplo: partindo da cidade G para a E (caminho composto por 4 cidades).
+Tempo de execucao: 1 ms.
+Imprimindo caminho (4 cidades):
+G [7.0] H [20.0] F [3.0] E
+Distancia do caminho: 30.0
+############ Exemplo: partindo da cidade I para a M (caminho composto por 5 cidades).
+Tempo de execucao: 0 ms.
+Imprimindo caminho (5 cidades):
+I [2.5] J [6.5] L [5.5] K [3.0] M
+Distancia do caminho: 17.5
+############ Exemplo: partindo da cidade I para a J (caminho composto por 5 cidades).
+Tempo de execucao: 0 ms.
+Imprimindo caminho (5 cidades):
+I [3.5] L [5.5] K [3.0] M [4.0] J
+Distancia do caminho: 16.0
+############ Exemplo: partindo da cidade J para a M (caminho composto por 5 cidades).
+Tempo de execucao: 0 ms.
+Imprimindo caminho (5 cidades):
+J [2.5] I [3.5] L [5.5] K [3.0] M
+Distancia do caminho: 14.5
+############ Exemplo: partindo da cidade N para a R (caminho composto por 5 cidades).
+Tempo de execucao: 0 ms.
+Imprimindo caminho (5 cidades):
+N [2.0] O [7.0] P [5.0] Q [3.5] R
+Distancia do caminho: 17.5
+############ Exemplo: partindo da cidade O para a P (caminho composto por 5 cidades).
+Tempo de execucao: 0 ms.
+Imprimindo caminho (5 cidades):
+O [2.0] N [4.0] Q [3.5] R [3.0] P
+Distancia do caminho: 12.5
+############ Exemplo: partindo da cidade N para a O (caminho composto por 5 cidades).
+Tempo de execucao: 0 ms.
+Imprimindo caminho (5 cidades):
+N [4.0] Q [3.5] R [3.0] P [7.0] O
+Distancia do caminho: 17.5
+############ Exemplo: partindo da cidade a para a j (caminho composto por 10 cidades).
+Tempo de execucao: 0 ms.
+Imprimindo caminho (10 cidades):
+a [50.0] b [45.0] c [43.0] d [51.0] e [85.0] f [30.0] g [44.0] h [38.0] i [53.0] j
+Distancia do caminho: 439.0
+############ Exemplo: partindo da cidade c para a g (caminho composto por 10 cidades).
+Tempo de execucao: 0 ms.
+Imprimindo caminho (10 cidades):
+c [43.0] d [51.0] e [85.0] f [27.0] b [50.0] a [40.0] j [53.0] i [38.0] h [44.0] g
+Distancia do caminho: 431.0
+############ Exemplo: partindo da cidade e para a j (caminho composto por 10 cidades).
+Tempo de execucao: 0 ms.
+Imprimindo caminho (10 cidades):
+e [85.0] f [30.0] g [44.0] h [38.0] i [37.0] d [43.0] c [45.0] b [50.0] a [40.0] j
+Distancia do caminho: 412.0

@@ -1,0 +1,209 @@
+
+<!-- saved from url=(0060)http://www.each.usp.br/digiampietri/ACH2023/prova1/index.htm -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <title>Prova 1 - ACH2023 - 1º Semestre de 2012</title>
+  </head>
+  <body>
+
+  <h2>Prova 1 - Data 08/05/11</h2>
+
+  <h3>Conteúdo:</h3>
+  <ul>
+  <li><b>Programação Básica em C:</b>
+      <ul>Estruturas de Controle;</ul>
+      <ul>Funções;</ul>
+      <ul>Ponteiros e Endereços;</ul>
+  </li>
+  <li><b>Listas Lineares</b>
+      <ul>Sequenciais</ul>
+      <ul>Ligadas
+          <ul>
+          <li>Implementação Estática;</li>
+          <li>Implementação Dinâmica;</li>
+          <li>Técnicas Especiais: Cabeça, Sentinela, Circularidade, Encadeamento Duplo;</li>
+          </ul>
+      </ul>
+      <ul>Filas
+          <ul>
+          <li>Implementação Estática;</li>
+          <li>Implementação Dinâmica;</li>
+          </ul>
+      </ul>
+      <ul>Deques (Filas de Duas Pontas)
+          <ul>
+          <li>Implementação Dinâmica;</li>
+          </ul>
+      </ul>
+      <ul>Pilhas
+          <ul>
+          <li>Implementação Estática;</li>
+          <li>Implementação Dinâmica;</li>
+          <li>Implementação de <font color="#cc0000">Duas Pilhas (ou Listas)</font> em um Vetor</li>
+          <li>Aplicações</li>
+          </ul>
+      </ul>
+
+  <h3>Referências Principais:</h3>
+  <a href="http://www.each.usp.br/digiampietri/ACH2023/ACH2023.pdf">
+      <b>Apostila ACH2023</b> - ALGORITMOS E ESTRUTURAS DE DADOS I, <i>Willian Yukio Honda e Ivandré Paraboni</i>
+  <br>
+  <br></a><a href="http://www.each.usp.br/digiampietri/ACH2023/notasdeaula.html"><b>Notas de Aula</b></a>
+
+  <h3>Lista de Exercícios / Exemplo de Prova:</h3>
+  Um ÓTIMO exercício é implementar e testar os algoritmos da apostila e das notas de aula (que estão disponíveis no site da disciplina), principalmente as funções que não foram implementadas em aula) 
+  e entender a definição, pontos fracos e fortes de cada implementação de cada estrutura de dados.
+  <br>
+
+  <h3>Exemplo de questões para a prova</h3>
+<b>Pergunta 1.</b> Dado o seguinte programa:
+<pre>#include &lt;stdio.h&gt;
+
+typedef int * pontInt;
+
+int main(){
+  pontInt *x;
+  pontInt y;
+  int z;
+  x=&amp;y;
+  y=&amp;z;
+  z = 5;
+  *y = 7;
+  **x = 9;
+  
+  printf("x: %d\n",x);
+  printf("*x: %d\n",*x);
+  printf("**x: %d\n",**x);
+  printf("&amp;x: %d\n",&amp;x);
+  return 0;
+}
+</pre>
+
+Qual é o resultado impresso pelo programa, sabendo-se que: (i) a variável x foi criada  no endereço 3608; (ii) a variável y foi criada no endereço 3604; e (iv) a variável z foi criada no endereço 3600.
+<br><br>
+
+<b>Pergunta 2.</b> Dado o seguinte programa:
+
+<pre>#include &lt;stdio.h&gt;
+#include &lt;malloc.h&gt;
+
+typedef struct tempR{
+  int valor;
+  struct tempR * ant;
+  struct tempR * prox;
+} Registro;
+
+Registro * criarRegistro(int val){
+   Registro* novo = (Registro*) malloc(sizeof(Registro));
+   novo-&gt;prox = NULL;
+   novo-&gt;ant = NULL;
+   novo-&gt;valor = val;
+   return novo;
+}
+
+int main(){
+  Registro* primeiro = NULL;
+  primeiro = criarRegistro(10);
+  primeiro-&gt;prox = criarRegistro(12);
+  primeiro-&gt;prox-&gt;ant = primeiro;
+  Registro* temp;
+  temp = primeiro;
+  primeiro = criarRegistro(15);
+  primeiro-&gt;prox = temp;
+  primeiro-&gt;prox-&gt;ant = primeiro;
+    
+  printf("(*primeiro).prox-&gt;valor: %d\n",(*primeiro).prox-&gt;valor);
+  printf("primeiro-&gt;prox-&gt;valor: %d\n",primeiro-&gt;prox-&gt;valor);
+  printf("primeiro-&gt;prox-&gt;prox-&gt;valor: %d\n",primeiro-&gt;prox-&gt;prox-&gt;valor);
+  printf("primeiro-&gt;valor: %d\n",primeiro-&gt;valor);
+  printf("primeiro: %d\n", primeiro);  
+  printf("primeiro-&gt;prox-&gt;ant: %d\n",primeiro-&gt;prox-&gt;ant);
+  printf("primeiro-&gt;prox-&gt;prox: %d\n",primeiro-&gt;prox-&gt;prox);
+
+  return 0;
+}
+
+</pre>
+
+Qual é o resultado impresso pelo programa, sabendo-se que: (i) o registro com valor=10 foi gravado no endereço 3528; (ii) o registro com valor=12 foi gravado no endereço 3552; e (iii) o registro com valor=15 foi gravado no endereço 3576;
+<br><br>
+
+<b>Pergunta 3.</b> Suponha que há um problema para se manter uma lista ordenada de alunos da USP. Duas soluções foram propostas uma utilizando uma lista ligada implementação dinânica e a outra utilizando lista sequencial (estática). Diga uma vantagem e uma desvantagem de cada uma das propostas.
+
+
+<br><br><b>Pergunta 4.</b> Definimos deque como uma estrutura duplamente ligada (sem nós cabeças), onde é possível inserir ou remover os elementos do qualquer uma de suas entradas (acessíveis pelos endereços inicio1 e inicio2, que terão valor NULL [ambos] caso o deque esteja vazio). Utilizamos as definições abaixo:
+
+<pre>typedef int TIPOCHAVE;
+
+typedef struct tempRegistro{
+  TIPOCHAVE chave;
+  struct tempRegistro *prox;
+  struct tempRegistro *ant;
+} REGISTRO;
+
+typedef REGISTRO* PONT;
+
+typedef struct {
+  PONT inicio1;
+  PONT inicio2; 
+} DEQUE;
+</pre>
+
+Implemente os métodos <i>inserirDeque1</i> e <i>excluirElemDeque2</i> conforme as definições abaixo:
+
+<pre>/* Inserção no deque, entrada 1 */
+bool inserirDeque1(REGISTRO reg, DEQUE *l) e 
+
+/* Exclusão do primeiro elemento, entrada 2 do deque
+   e colocar o valor da chave do elemento na memoria apontada por ch*/
+bool excluirElemDeque2(DEQUE *l, TIPOCHAVE * ch){
+</pre>
+
+
+<b>Pergunta 5.</b> Utilizando as definições da estrutura deque do exercício anteriro, este exercício apresenta duas funções <i>inicializarDeque</i>, mas apenas uma funcionará corretamente (quando chamada por outro progama ou função). Qual? Justifique sua escolha.
+<pre>// Primeira 
+void inicializarDeque(DEQUE *d){
+  d-&gt;inicio1 = NULL;
+  d-&gt;inicio2 = NULL;
+} /* inicializarDeque */
+
+// Segunda
+void inicializarDeque(DEQUE d){
+  d.inicio1 = NULL;
+  d.inicio2 = NULL;
+} /* inicializarDeque */
+</pre>
+
+
+<br><br><br><br>
+<h3>Respostas</h3>
+<b>Resposta 1:</b>
+<pre>     x: 3604
+     *x: 3600
+     **x: 9
+     &amp;x: 3608
+</pre>
+
+<br>
+
+<b>Resposta 2:</b>
+<pre>    (*primeiro).prox-&gt;valor: 10
+    primeiro-&gt;prox-&gt;valor: 10
+    primeiro-&gt;prox-&gt;prox-&gt;valor: 12
+    primeiro-&gt;valor: 15
+    primeiro: 3576
+    primeiro-&gt;prox-&gt;ant: 3576
+    primeiro-&gt;prox-&gt;prox: 3552 
+</pre>
+
+<b>Resposta 3 (exemplo de resposta possível):</b>
+<br>Solução Estática. Vantagem: permite a busca binária. Desvantagem: é necessário definir um número máximo de registros e a memória alocada para esses registros é alocada na criação da lista (mesmo que não exista nenhum registro utilizado).
+<br>Solução Dinâmica. Vantagem: só é alocado espaço para registros válidos (usados); não existe limite para o número de registros. Desvantagem: não é possível fazer a busca binária.
+
+<br><br>
+<b>Resposta 4</b> <a href="http://www.each.usp.br/digiampietri/ACH2023/javaec/javaec.htm#ed">ver implementação no site da disciplina</a>.
+
+<br><br>
+<b>Resposta 5</b> a primeira função inicializarDeque irá funcionar pois ele recebe o endereço de um deque e modifica os valores de inicio1 e inicio2 do deque presente nesse endereço. A segunda função não funciona porque recebe como parâmetro uma cópia de um DEQUE e altera apenas os valores das variáveis inicio1 e inicio2 da cópia, não afetando os dados do DEQUE original.
+
+  
+</li></ul><div id="-chrome-auto-translate-plugin-dialog" style="opacity: 1 !important; background-image: initial !important; background-attachment: initial !important; background-origin: initial !important; background-clip: initial !important; background-color: transparent !important; padding-top: 0px !important; padding-right: 0px !important; padding-bottom: 0px !important; padding-left: 0px !important; margin-top: 0px !important; margin-right: 0px !important; margin-bottom: 0px !important; margin-left: 0px !important; position: absolute !important; top: 0px; left: 0px; overflow-x: visible !important; overflow-y: visible !important; z-index: 999999 !important; text-align: left !important; display: none; background-position: initial initial !important; background-repeat: initial initial !important; "><div style="max-width: 300px !important;color: #fafafa !important;opacity: 0.8 !important;border-color: #000000 !important;border-width: 0px !important;-webkit-border-radius: 10px !important;background-color: #363636 !important;font-size: 16px !important;padding: 8px !important;overflow: visible !important;background-image: -webkit-gradient(linear, left top, right bottom, color-stop(0%, #000), color-stop(50%, #363636), color-stop(100%, #000));z-index: 999999 !important;text-align: left  !important;"><div class="translate"></div><div class="additional"></div></div><img src="./Prova 1 - ACH2023 - 1º Semestre de 2012_files/small-logo.png" onclick="document.location.href=&#39;http://translate.google.com/&#39;;" style="position: absolute !important; z-index: -1 !important; right: 1px !important; top: -20px !important; cursor: pointer !important;-webkit-border-radius: 20px; background-color: rgba(200, 200, 200, 0.3) !important; padding: 3px 5px 0 !important; margin: 0 !important;"></div></body></html>

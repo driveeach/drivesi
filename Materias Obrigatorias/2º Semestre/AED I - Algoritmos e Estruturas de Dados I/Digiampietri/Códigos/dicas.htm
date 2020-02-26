@@ -1,0 +1,78 @@
+<HTML><HEAD><TITLE>Dicas 
+ACH2023 - 1º semestre de 2012</TITLE>
+</HEAD>
+<BODY>
+<H2>Dicas ACH2023 - 1º semestre de 2012</H2>
+
+<hr>
+Se você está usando um compilador diferente do utilizado pelo 
+<i>DEV-C++</i>, talvez você encontre o seguinte problema ao compilar arquivos 
+que utilizam .c ou .h: <i>cabeçalhos repetidos ...</i> para todas as funçõs do 
+arquivo .h . Para corrigir esse erro, substitua no .c principal (por exemplo, 
+testaesparsas.c) a linha <b>#include "esparsas.c"</b> por <b>#include 
+"esparsas.h"</b> . 
+
+
+<hr>
+Dúvidas sobre o uso do <b>scanf</b>: <br>Para usar o scanf não 
+insira espaços ou "\n" no primeiro parâmetro do comando (exceto se esses espaços forem esperados na entrada). 
+<table>
+  <tbody>
+  <tr>
+    <td bgcolor="#ffffaa"><pre>  int x;
+  scanf("%d", &amp;x);  // Maneira correta
+</pre></td></tr></tbody></table>Além disso, ao ler caracteres (char) é 
+necessária uma leitura adicional para capturar um "resíduo" do "ENTER" (que é 
+composto por dois caracteres ASC): 
+
+<table>
+  <tbody>
+  <tr>
+    <td bgcolor="#ffffaa"><pre>  char caracter, residuo;
+  scanf("%c", &amp;caracter);
+  scanf("%c", &amp;residuo);  // usado para capturar o resíduo do &lt;ENTER&gt;
+</pre></td></tr></tbody></table>
+
+<hr>
+
+Arquivos .c sem função <i>main</i> sempre apresentam dois "erros" 
+na compilação (usando-se Dev-C++): 
+
+
+<table>
+  <tbody>
+  <tr>
+    <td bgcolor="#ffffaa"><pre>  [Linker error] undefined reference to `WinMain@16' 
+  ld returned 1 exit status </pre></td></tr></tbody></table>Estes erros são 
+normais e significam que o arquivo não possui a função <i>main</i>. Não 
+significam um erro no código. O que fazer: compilar o .c que possui função main 
+(que possua um <i>include</i> do arquvio .c que você está desenvolvendo), ou criar uma 
+função main no arquivo que você está tentando compilar (note que alguns programas que faremos em C não devem possuir um <i>main</i>, quando só houver os dois erros de 
+compilação citados acima, isso significa que "não há erros de compilação" além 
+dos "esperados". Então você estará apto para fazer um programa .c com a função <i>main</i> que irá testar esse programa.
+
+<hr>
+<b>Problemas no Dev-C++:</b> se nenhum programa estiver compilando no Dev-C++ (incluindo os do site da disciplina), vá para o menu Tools, na opção Libraries e remova a linha com o caminho (<i>path</i>) das bibliotecas.
+<hr>
+
+<b>Testando seus programas:</b> ao executar um programa dentro do Dev-C++ é possível que o programa execute tão rápido que você não consiga visualizar o que foi impresso na tela. Para conseguir visualizar essas informações você pode inserir o comando <i>system("pause")</i> antes do <i>return 0;</i> como no exemplo a seguir:
+<table border=0><tr><td bgcolor="#ffffaa">
+
+<pre>
+#include &lt;stdio.h&gt;
+
+int main(){
+    printf("Ola Mundo!\n");
+    system("pause");
+}
+</pre>
+</td>
+</tr></table>
+Observação: não submeta EPs com o comando system("pause"). Este comando deve ser usado apenas em seus testes.
+<br>
+<br>
+<b>Para testar programas que possuem entradas e para se armazenar as saídas</b> abra um prompt do MSDOS (ou console do Linux) e vá ao diretório onde estão todos os arquivos desse programa (incluindo o .exe e o arquivo de entrada), por exemplo "C:\EP1". Lá digite "nomeDoPrograma.exe < entrada1.txt" para testar o programa usando a entrada presente no arquivo entrada1.txt. para salvar a saída num arquivo saida.txt use o seguinte comando: "nomeDoPrograma.exe < entrada1.txt > saida.txt". Se estiver utilizando um computador na EACH (onde você não tenha acesso ao prompt, edite o seguinte arquivo.bat para que ele execute o teste desejado: <a href='teste.bat'>teste.bat</a>.
+
+
+<HR>
+</BODY></HTML>

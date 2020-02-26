@@ -1,0 +1,151 @@
+<html>
+  <head>
+    <title>EP1 - ACH2023 - 1&ordm; Semestre de 2012</title>
+  </head>
+  <body>
+
+  <h2>Exerc&iacute;cio Pr&aacute;tico 1 - <font color="#CC0000#">data máxima de entrega: 12/05/11 até as 23:00h</font></h2>
+  
+<h3>Estrutura Hash utilizando listas ligadas para evitar/resolver colisões</h3>
+Conforme foi visto em ACH2002, estruturas hashs são úteis por permitir consultas com O(1) operações no caso médio. Há diferentes maneiras de se tratar ou evitar colisões. Neste EP vocês utilizarão listas ligadas ordenadas.
+<br>
+Neste EP cada aluno deverá implementar funções para o gerenciamento de um tipo específico de estrutura hash: uma estrutura hash na qual o usuário determinará o tamanho da tabela hash que, por sua vez, será um arranjo de ponteiros para listas ligadas ordenadas que guardarão os elementos que serão manipulados no sistema. Estas listas ligadas não possuirão nó cabeça, não serão circulares e não farão uso de nós sentinelas.
+<br>
+O usuário solicitará a inclusão, exclusão ou busca de chaves numéricas inteiras. Diferentemente de um hash tradicional, além de guardarmos as chaves inseridas pelo usuário também guardaremos a quantidade de vezes que está chave foi inserida.
+<br>
+Este EP tratará duas estruturas de dados: o <b>Registro</b> e o <b>HASH</b> propriamente dito. O Registro será a estrutura de dados para guardar cada chave inserida pelo usuário (no campo chave), a quantidade de vezes que a chave foi inserida (campo contador) e um ponteiro para o próximo registro da lista, caso haja (campo prox). Assim, o registro servirá também como unidade básica da lista ligada.
+<br>
+A estrutura <b>HASH</b> possui três campos: o tamanhoDaTabela que indica qual o tamanho do arranjo de ponteiros para registro que será alocado para a Tabela Hash (este tamanho será passado como parâmetro na inicialização de uma tabela hash); o campo quantidadeTotalDeRegistros indica quantos registros a estrutura hash está usando (número total de registros nas listas ligadas apontadas pelos ponteiros da Tabela Hash); por fim, o campo TabelaHash é um ponteiro para um arranjo de ponteiros de registros (este arranjo, que é a tabela hash propriamente dita, contém os ponteiros para as listas ligadas).
+<pre>
+typedef int TCHAVE;
+
+typedef struct aux {
+  TCHAVE chave;
+  int contador;
+  struct aux* prox;
+} Registro, * Pont;
+
+typedef struct {
+  Pont* TabelaHash;
+  int tamanhoDaTabela;
+  int quantidadeTotalDeRegistros;
+} HASH;
+
+</pre>
+
+
+A figura abaixo apresenta uma representação gráfica das estruturas que serão utilizadas e um exemplo de uma tabela hash com tamanho 5 e 4 registros cadastrados. Neste exemplo a chave 10 foi inserida três vezes, a 20 uma vez e assim por diante.
+
+<center><img src="ep1.png" border="0"></center>
+
+
+<h3>Exerc&iacute;cio Pr&aacute;tico 1</h3>
+Para este exerc&iacute;cio são fornecidos quatro arquivos:
+<br><b>hash_ep1.h</b>: contendo as estrutura de dados que ser&atilde; utilizadas para o gerenciamento dos hashs do EP1, bem como o cabeçalho de algumas funções.
+
+<br><b>hash_ep1.c</b>: arquivo contendo a implementa&ccedil;&atilde;o das funções do EP1.
+
+<br><b>testa_ep1.c</b>: arquivo principal (a partir do qual ser&aacute; gerado o programa execut&aacute;vel) que utiliza as funções implementadas em hash_ep1.c para gerenciamento da estrutura hash.
+
+<br><b>util_ep1.c</b>: arquivo auxiliar contendo duas funções para que sejam feitas a alocação e liberação de memória. <font color="#FF0000"> Neste EP vocês <b>não</b> deverão usar as funções <b>free</b> e <b>malloc</b> mas sim as funções deste arquivo: <b>meuFree</b> e <b>meuMalloc</b>.</font> O uso destas funções é necessário para a verificação da corretude dos EPs durante a correção dos mesmos.
+<br><br>
+<b>Não inclua bibliotecas</b> adicionais ao sistema e só use comandos da linguagem C "pura", não utilize nada de C++. Os arquivos serão compilados pelo compilador gcc com o parâmetro -ansi: <i>gcc -ansi testa_ep1.c</i>.
+<br>A função hash a ser utilizada já está implementada dentro do arquivo hash_ep1.c e chama-se <b>funcaoHash</b>.
+
+
+<br><br>Al&eacute;m desses arquivos ser&atilde;o fornecidos arquivos de entrada e de sa&iacute;da para que os alunos possam testar suas implementa&ccedil;&otilde;es.
+
+
+<h3>Entrega do trabalho</h3>
+Cada aluno dever&aacute; entregar sua implementa&ccedil;&atilde;o do arquivo <b>hash_ep1.c</b> (apenas este arquivo). Este arquivo deve ser compactado em um arquivo <font color="#FF0000"><b>NUM_USP.zip (ou .rar)</b></font> (onde NUM_USP é o número USP do aluno que está submetendo o EP) e ser submetido via COL até as 23:00h do dia 12/05/2012 (com uma hora de tolerância).
+
+<h3>Arquivos</h3>
+<table border=1><tr>
+<td><a href="hash_ep1.c">hash_ep1.c</a> <a href="hash_ep1.c.htm">[html]</a></td><td></td><td><a href="entrada1.txt">entrada1.txt</a></td><td><a href="saida1.txt">saida1.txt</a></td></tr><tr>
+
+<td><a href="hash_ep1.h">hash_ep1.h</a> <a href="hash_ep1.h.htm">[html]</a></td><td></td><td><a href="entrada2.txt">entrada2.txt</a></td><td><a href="saida2.txt">saida2.txt</a></td></tr><tr>
+
+<td><a href="testa_ep1.c">testa_ep1.c</a> <a href="testa_ep1.c.htm">[html]</a></td><td></td><td><a href="entrada3.txt">entrada3.txt</a></td><td><a href="saida3.txt">saida3.txt</a></td></tr><tr>
+
+<td><a href="util_ep1.c">util_ep1.c</a> <a href="util_ep1.c.htm">[html]</a></td><td></td><td><a href="entrada4.txt">entrada4.txt</a></td><td><a href="saida4.txt">saida4.txt</a></td></tr><tr>
+
+<td> &nbsp; </a></td><td></td><td><a href="entrada5.txt">entrada5.txt</a></td><td><a href="saida5.txt">saida5.txt</a></td></tr><tr>
+
+</table>
+
+<br>Os arquivos disponibilizados possuem um menu interativo com o qual o usuário (ou arquivo de entrada) indica quais operações devem ser feitas sobre a lista. <b>Juntamente com os arquivos há uma descrição detalhada de como cada estrutura funciona, bem como o que cada função deverá fazer.</b> As saídas do seu programa devem ser <b>idênticas</b> as saídas dos exemplos, não imprima coisas adicionais na tela (você pode fazer isso durante seus testes, mas deverá remover esses prints adicionais antes de submeter o EP).
+
+<h4>Exemplo de entrada e saída</h4>
+<table colspan=3 border=1><tr>
+<td>
+<center><b>Exemplo de Entrada</b></center>
+<pre>
+l
+0 3
+i 4
+i 3
+i 1
+i 5
+i 3
+i 3
+b 3
+e 3
+b 3
+i 20
+l
+d
+l
+q
+</pre>
+</td><td>
+<center><b>Exemplo de Saída</b></center>
+<pre>
+Tabela hash de tamanho 0, com 0 registros alocados e 0 chaves
+Tabela hash inicializada. Seu arranjo possui tamanho 3.
+Elemento 4 inserido corretamente.
+Elemento 3 inserido corretamente.
+Elemento 1 inserido corretamente.
+Elemento 5 inserido corretamente.
+Elemento 3 inserido corretamente.
+Elemento 3 inserido corretamente.
+Ha 3 ocorrencia(s) da chave 3.
+Chave 3 excluida corretamente.
+Ha 2 ocorrencia(s) da chave 3.
+Elemento 20 inserido corretamente.
+Tabela hash de tamanho 3, com 5 registros alocados e 6 chaves
+Hash zerado. Numero de registros apagados: 5.
+Tabela hash de tamanho 0, com 0 registros alocados e 0 chaves
+
+</pre>
+
+</td>
+<td>
+<center><b>Menu Interativo</b></center>
+<pre>
+Comandos validos: 
+   i &lt;chave1&gt;: inserir elemento com chave=chave1
+   e &lt;chave1&gt;: excluir elemento com chave=chave1
+   0 &lt;tam1&gt;inicializa um hash cuja tabela terah tamanho=tam1
+   d : destruir/liberar memoria do hash
+   l : exibir log de utilizacao do hash
+   h : exibir esta mensagem de ajuda
+   b &lt;chave1&gt;exibir a quantidade de ocorrencis da chave chave1
+   q : sair
+
+
+</pre>
+</td>
+
+</tr></table>
+
+
+<br><b>O "programa" hash_ep1.c n&atilde;o gera arquivo execut&aacute;vel pois n&atilde;o cont&eacute;m fun&ccedil;&atilde;o <i>main</i>.</b> Ao compilar o testa_ep1.c o arquivo testa_ep1.exe (ou equivalente) ser&aacute; criado. Para testar esse programa, abra um prompt do MSDOS ou um console do Linux e v&aacute; ao diret&oacute;rio onde est&atilde;o todos os arquivos desse programa (incluindo os .txt), por exemplo "C:\EP1". L&aacute; digite "testa_ep1.exe &lt; entrada1.txt" para testar o programa usando a entrada presente no arquivo 1.
+Comparare sua saída com a dada no arquivo saida1.txt. Fa&ccedil;a o mesmo teste com o arquivo entrada2.txt. A seguir está o link de um arquivo .bat que executa esse teste no Windows (copie e execute este arquivo para o diretório onde o arquivo testa_ep1.exe foi gerado): <a href="testar.bat">[testar.bat]</a></b> . Edite este arquivo para fazer outros testes.
+<br>Os exemplos de teste não testam exaustivamente toda a implementação, desta forma, fica a cargo do aluno testar cuidadosamente seu código antes de entregá-lo. Para este EP é necessário tomar muito cuidado com todos os ponteiros, pois alguns não são muito usados, mas serão verificados na correção. Outros testes que não estão sendo feitos automaticamente (mas que serão verificados na correção) são: <b>se as listas ligadas estão ordenadas (de acordo com o valor das chaves)</b>, se seguem as definições (sem nó cabeça e não circulares), e se a memória foi alocada e desalocada corretamente.
+
+<h3>Observação:</h3>
+Se, durante a compilação, vocês receberem mensagens de erro do tipo: constante true já estava definida ou tipo bool já estava definido, então vocês poderão modificar o arquivo testa_ep1.h e remover essas definições dele. Caso contrário, não modifiquem este arquivo. De qualquer forma, este arquivo não será submetido e os testes serão executados apenas sobre o arquivo testa_ep1.c.
+
+
+  </body>
+</html>

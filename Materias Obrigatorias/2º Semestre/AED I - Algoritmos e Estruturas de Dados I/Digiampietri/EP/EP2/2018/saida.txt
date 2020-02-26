@@ -1,0 +1,327 @@
+################# INSERINDO #######################
+Log lista [elementos: 0]
+  #TIPO: 0 -> 
+  #TIPO: 1 -> 
+  #TIPO: 2 -> 
+  #TIPO: 3 -> 
+  #TIPO: 4 -> 
+  #TIPO: 5 -> 
+  #TIPO: 6 -> 
+  #TIPO: 7 -> 
+  #TIPO: 8 -> 
+  #TIPO: 9 -> 
+
+Insercao retornou true (1)
+Log lista [elementos: 1]
+  #TIPO: 0 -> 
+  #TIPO: 1 ->  [2;22;23;$506]
+  #TIPO: 2 -> 
+  #TIPO: 3 -> 
+  #TIPO: 4 -> 
+  #TIPO: 5 -> 
+  #TIPO: 6 -> 
+  #TIPO: 7 -> 
+  #TIPO: 8 -> 
+  #TIPO: 9 -> 
+
+Insercao retornou true (2)
+Log lista [elementos: 2]
+  #TIPO: 0 -> 
+  #TIPO: 1 ->  [2;22;23;$506]
+  #TIPO: 2 -> 
+  #TIPO: 3 -> 
+  #TIPO: 4 ->  [4;4;4;$16]
+  #TIPO: 5 -> 
+  #TIPO: 6 -> 
+  #TIPO: 7 -> 
+  #TIPO: 8 -> 
+  #TIPO: 9 -> 
+
+Insercao retornou true (3)
+Log lista [elementos: 3]
+  #TIPO: 0 -> 
+  #TIPO: 1 ->  [6;8;9;$72] [2;22;23;$506]
+  #TIPO: 2 -> 
+  #TIPO: 3 -> 
+  #TIPO: 4 ->  [4;4;4;$16]
+  #TIPO: 5 -> 
+  #TIPO: 6 -> 
+  #TIPO: 7 -> 
+  #TIPO: 8 -> 
+  #TIPO: 9 -> 
+
+Insercao retornou true (4)
+Log lista [elementos: 4]
+  #TIPO: 0 -> 
+  #TIPO: 1 ->  [6;8;9;$72] [3;22;23;$506] [2;22;23;$506]
+  #TIPO: 2 -> 
+  #TIPO: 3 -> 
+  #TIPO: 4 ->  [4;4;4;$16]
+  #TIPO: 5 -> 
+  #TIPO: 6 -> 
+  #TIPO: 7 -> 
+  #TIPO: 8 -> 
+  #TIPO: 9 -> 
+
+Insercao retornou false (5)
+Log lista [elementos: 4]
+  #TIPO: 0 -> 
+  #TIPO: 1 ->  [6;8;9;$72] [3;22;23;$506] [2;22;23;$506]
+  #TIPO: 2 -> 
+  #TIPO: 3 -> 
+  #TIPO: 4 ->  [4;4;4;$16]
+  #TIPO: 5 -> 
+  #TIPO: 6 -> 
+  #TIPO: 7 -> 
+  #TIPO: 8 -> 
+  #TIPO: 9 -> 
+
+Insercao retornou false (6)
+Log lista [elementos: 4]
+  #TIPO: 0 -> 
+  #TIPO: 1 ->  [6;8;9;$72] [3;22;23;$506] [2;22;23;$506]
+  #TIPO: 2 -> 
+  #TIPO: 3 -> 
+  #TIPO: 4 ->  [4;4;4;$16]
+  #TIPO: 5 -> 
+  #TIPO: 6 -> 
+  #TIPO: 7 -> 
+  #TIPO: 8 -> 
+  #TIPO: 9 -> 
+
+Insercao retornou false (7)
+Log lista [elementos: 4]
+  #TIPO: 0 -> 
+  #TIPO: 1 ->  [6;8;9;$72] [3;22;23;$506] [2;22;23;$506]
+  #TIPO: 2 -> 
+  #TIPO: 3 -> 
+  #TIPO: 4 ->  [4;4;4;$16]
+  #TIPO: 5 -> 
+  #TIPO: 6 -> 
+  #TIPO: 7 -> 
+  #TIPO: 8 -> 
+  #TIPO: 9 -> 
+
+Insercao retornou false (8)
+Log lista [elementos: 4]
+  #TIPO: 0 -> 
+  #TIPO: 1 ->  [6;8;9;$72] [3;22;23;$506] [2;22;23;$506]
+  #TIPO: 2 -> 
+  #TIPO: 3 -> 
+  #TIPO: 4 ->  [4;4;4;$16]
+  #TIPO: 5 -> 
+  #TIPO: 6 -> 
+  #TIPO: 7 -> 
+  #TIPO: 8 -> 
+  #TIPO: 9 -> 
+
+Insercao retornou false (9)
+Log lista [elementos: 4]
+  #TIPO: 0 -> 
+  #TIPO: 1 ->  [6;8;9;$72] [3;22;23;$506] [2;22;23;$506]
+  #TIPO: 2 -> 
+  #TIPO: 3 -> 
+  #TIPO: 4 ->  [4;4;4;$16]
+  #TIPO: 5 -> 
+  #TIPO: 6 -> 
+  #TIPO: 7 -> 
+  #TIPO: 8 -> 
+  #TIPO: 9 -> 
+
+################# REMOVENDO #######################
+Remocao retornou true (1)
+Log lista [elementos: 4]
+  #TIPO: 0 -> 
+  #TIPO: 1 ->  [6;8;9;$72] [3;22;23;$506] [2;22;23;$506]
+  #TIPO: 2 -> 
+  #TIPO: 3 -> 
+  #TIPO: 4 ->  [4;3;4;$12]
+  #TIPO: 5 -> 
+  #TIPO: 6 -> 
+  #TIPO: 7 -> 
+  #TIPO: 8 -> 
+  #TIPO: 9 -> 
+
+Remocao retornou true (2)
+Log lista [elementos: 4]
+  #TIPO: 0 -> 
+  #TIPO: 1 ->  [6;8;9;$72] [2;21;23;$483] [3;22;23;$506]
+  #TIPO: 2 -> 
+  #TIPO: 3 -> 
+  #TIPO: 4 ->  [4;3;4;$12]
+  #TIPO: 5 -> 
+  #TIPO: 6 -> 
+  #TIPO: 7 -> 
+  #TIPO: 8 -> 
+  #TIPO: 9 -> 
+
+Remocao retornou true (3)
+Log lista [elementos: 3]
+  #TIPO: 0 -> 
+  #TIPO: 1 ->  [6;8;9;$72] [2;21;23;$483]
+  #TIPO: 2 -> 
+  #TIPO: 3 -> 
+  #TIPO: 4 ->  [4;3;4;$12]
+  #TIPO: 5 -> 
+  #TIPO: 6 -> 
+  #TIPO: 7 -> 
+  #TIPO: 8 -> 
+  #TIPO: 9 -> 
+
+Remocao retornou false (4)
+Log lista [elementos: 3]
+  #TIPO: 0 -> 
+  #TIPO: 1 ->  [6;8;9;$72] [2;21;23;$483]
+  #TIPO: 2 -> 
+  #TIPO: 3 -> 
+  #TIPO: 4 ->  [4;3;4;$12]
+  #TIPO: 5 -> 
+  #TIPO: 6 -> 
+  #TIPO: 7 -> 
+  #TIPO: 8 -> 
+  #TIPO: 9 -> 
+
+Remocao retornou false (5)
+Log lista [elementos: 3]
+  #TIPO: 0 -> 
+  #TIPO: 1 ->  [6;8;9;$72] [2;21;23;$483]
+  #TIPO: 2 -> 
+  #TIPO: 3 -> 
+  #TIPO: 4 ->  [4;3;4;$12]
+  #TIPO: 5 -> 
+  #TIPO: 6 -> 
+  #TIPO: 7 -> 
+  #TIPO: 8 -> 
+  #TIPO: 9 -> 
+
+Remocao retornou false (6)
+Log lista [elementos: 3]
+  #TIPO: 0 -> 
+  #TIPO: 1 ->  [6;8;9;$72] [2;21;23;$483]
+  #TIPO: 2 -> 
+  #TIPO: 3 -> 
+  #TIPO: 4 ->  [4;3;4;$12]
+  #TIPO: 5 -> 
+  #TIPO: 6 -> 
+  #TIPO: 7 -> 
+  #TIPO: 8 -> 
+  #TIPO: 9 -> 
+
+################# ATUALIZANDO VALOR #######
+Atualizacao retornou true (1)
+Log lista [elementos: 3]
+  #TIPO: 0 -> 
+  #TIPO: 1 ->  [6;8;1;$8] [2;21;23;$483]
+  #TIPO: 2 -> 
+  #TIPO: 3 -> 
+  #TIPO: 4 ->  [4;3;4;$12]
+  #TIPO: 5 -> 
+  #TIPO: 6 -> 
+  #TIPO: 7 -> 
+  #TIPO: 8 -> 
+  #TIPO: 9 -> 
+
+Atualizacao retornou true (2)
+Log lista [elementos: 3]
+  #TIPO: 0 -> 
+  #TIPO: 1 ->  [2;21;23;$483] [6;8;600;$4800]
+  #TIPO: 2 -> 
+  #TIPO: 3 -> 
+  #TIPO: 4 ->  [4;3;4;$12]
+  #TIPO: 5 -> 
+  #TIPO: 6 -> 
+  #TIPO: 7 -> 
+  #TIPO: 8 -> 
+  #TIPO: 9 -> 
+
+Atualizacao retornou true (3)
+Log lista [elementos: 3]
+  #TIPO: 0 -> 
+  #TIPO: 1 ->  [6;8;20;$160] [2;21;23;$483]
+  #TIPO: 2 -> 
+  #TIPO: 3 -> 
+  #TIPO: 4 ->  [4;3;4;$12]
+  #TIPO: 5 -> 
+  #TIPO: 6 -> 
+  #TIPO: 7 -> 
+  #TIPO: 8 -> 
+  #TIPO: 9 -> 
+
+Atualizacao retornou false (4)
+Log lista [elementos: 3]
+  #TIPO: 0 -> 
+  #TIPO: 1 ->  [6;8;20;$160] [2;21;23;$483]
+  #TIPO: 2 -> 
+  #TIPO: 3 -> 
+  #TIPO: 4 ->  [4;3;4;$12]
+  #TIPO: 5 -> 
+  #TIPO: 6 -> 
+  #TIPO: 7 -> 
+  #TIPO: 8 -> 
+  #TIPO: 9 -> 
+
+Atualizacao retornou false (5)
+Log lista [elementos: 3]
+  #TIPO: 0 -> 
+  #TIPO: 1 ->  [6;8;20;$160] [2;21;23;$483]
+  #TIPO: 2 -> 
+  #TIPO: 3 -> 
+  #TIPO: 4 ->  [4;3;4;$12]
+  #TIPO: 5 -> 
+  #TIPO: 6 -> 
+  #TIPO: 7 -> 
+  #TIPO: 8 -> 
+  #TIPO: 9 -> 
+
+Atualizacao retornou false (6)
+Log lista [elementos: 3]
+  #TIPO: 0 -> 
+  #TIPO: 1 ->  [6;8;20;$160] [2;21;23;$483]
+  #TIPO: 2 -> 
+  #TIPO: 3 -> 
+  #TIPO: 4 ->  [4;3;4;$12]
+  #TIPO: 5 -> 
+  #TIPO: 6 -> 
+  #TIPO: 7 -> 
+  #TIPO: 8 -> 
+  #TIPO: 9 -> 
+
+Atualizacao retornou true (7)
+Log lista [elementos: 3]
+  #TIPO: 0 -> 
+  #TIPO: 1 ->  [6;8;3;$24] [2;21;23;$483]
+  #TIPO: 2 -> 
+  #TIPO: 3 -> 
+  #TIPO: 4 ->  [4;3;4;$12]
+  #TIPO: 5 -> 
+  #TIPO: 6 -> 
+  #TIPO: 7 -> 
+  #TIPO: 8 -> 
+  #TIPO: 9 -> 
+
+Atualizacao retornou true (8)
+Log lista [elementos: 3]
+  #TIPO: 0 -> 
+  #TIPO: 1 ->  [6;8;3;$24] [2;21;23;$483]
+  #TIPO: 2 -> 
+  #TIPO: 3 -> 
+  #TIPO: 4 ->  [4;3;200;$600]
+  #TIPO: 5 -> 
+  #TIPO: 6 -> 
+  #TIPO: 7 -> 
+  #TIPO: 8 -> 
+  #TIPO: 9 -> 
+
+Atualizacao retornou true (9)
+Log lista [elementos: 3]
+  #TIPO: 0 -> 
+  #TIPO: 1 ->  [6;8;3;$24] [2;21;20;$420]
+  #TIPO: 2 -> 
+  #TIPO: 3 -> 
+  #TIPO: 4 ->  [4;3;200;$600]
+  #TIPO: 5 -> 
+  #TIPO: 6 -> 
+  #TIPO: 7 -> 
+  #TIPO: 8 -> 
+  #TIPO: 9 -> 
+

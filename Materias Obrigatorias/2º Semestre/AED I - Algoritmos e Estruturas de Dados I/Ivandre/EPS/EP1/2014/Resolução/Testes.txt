@@ -1,0 +1,343 @@
+----- >>> Testes para o EP <<< -----
+-PDF
+-P1 > P2
+-P2 > P1
+-P1 e P2 null
+-P2 e P1 null
+-P1 null e P2 null
+-Imprimir
+
+**PDF
+
+    //p1={1,1,2,3,4,4}
+    NO* no = (NO*) malloc(sizeof(NO));
+    no->chave = 1;
+    NO* no1 = (NO*) malloc(sizeof(NO));
+    no1->chave = 1;
+    no->prox = no1;
+    NO* no2 = (NO*) malloc(sizeof(NO));
+    no2->chave = 2;
+    no1->prox = no2;
+    NO* no3 = (NO*) malloc(sizeof(NO));
+    no3->chave = 3;
+    no2->prox = no3;
+    NO* no4 = (NO*) malloc(sizeof(NO));
+    no4->chave = 4;
+    no3->prox = no4;
+    NO* no5 = (NO*) malloc(sizeof(NO));
+    no5->chave = 4;
+    no4->prox = no5;
+    no5->prox = NULL;
+    
+    LISTA* lista = (LISTA*) malloc(sizeof(LISTA));
+    lista->inicio = no;
+    
+    //p2={1,2,2,3,5,5}
+    NO* nu = (NO*) malloc(sizeof(NO));
+    nu->chave = 1;
+    NO* nu1 = (NO*) malloc(sizeof(NO));
+    nu1->chave = 2;
+    nu->prox = nu1;
+    NO* nu2 = (NO*) malloc(sizeof(NO));
+    nu2->chave = 2;
+    nu1->prox = nu2;
+    NO* nu3 = (NO*) malloc(sizeof(NO));
+    nu3->chave = 3;
+    nu2->prox = nu3;
+    NO* nu4 = (NO*) malloc(sizeof(NO));
+    nu4->chave = 5;
+    nu3->prox = nu4;
+    NO* nu5 = (NO*) malloc(sizeof(NO));
+    nu5->chave = 5;
+    nu4->prox = nu5;
+    nu5->prox = NULL;
+    
+    LISTA* listo = (LISTA*) malloc(sizeof(LISTA));
+    listo->inicio = nu;
+     
+    NO* p1 = lista->inicio;
+    NO* p2 = listo->inicio;
+-----------------------------------------------------------------------
+
+**P1 > P2
+
+    //p1={1,1,2,3,4,4}
+    NO* no = (NO*) malloc(sizeof(NO));
+    no->chave = 1;
+    NO* no1 = (NO*) malloc(sizeof(NO));
+    no1->chave = 1;
+    no->prox = no1;
+    NO* no2 = (NO*) malloc(sizeof(NO));
+    no2->chave = 2;
+    no1->prox = no2;
+    NO* no3 = (NO*) malloc(sizeof(NO));
+    no3->chave = 3;
+    no2->prox = no3;
+    NO* no4 = (NO*) malloc(sizeof(NO));
+    no4->chave = 4;
+    no3->prox = no4;
+    NO* no5 = (NO*) malloc(sizeof(NO));
+    no5->chave = 4;
+    no4->prox = no5;
+    no5->prox = NULL;
+    
+    LISTA* lista = (LISTA*) malloc(sizeof(LISTA));
+    lista->inicio = no;
+
+    //p2={1,2,2,5}
+    NO* nu = (NO*) malloc(sizeof(NO));
+    nu->chave = 1;
+    NO* nu1 = (NO*) malloc(sizeof(NO));
+    nu1->chave = 2;
+    nu->prox = nu1;
+    NO* nu2 = (NO*) malloc(sizeof(NO));
+    nu2->chave = 2;
+    nu1->prox = nu2;
+    NO* nu5 = (NO*) malloc(sizeof(NO));
+    nu5->chave = 5;
+    nu2->prox = nu5;
+    nu5->prox = NULL;
+    
+    LISTA* listo = (LISTA*) malloc(sizeof(LISTA));
+    listo->inicio = nu;
+     
+    NO* p1 = lista->inicio;
+    NO* p2 = listo->inicio;
+---------------------------------------------------------------------
+
+**P2 > P1
+
+
+    //p1={1,1,2,4}
+    NO* no = (NO*) malloc(sizeof(NO));
+    no->chave = 1;
+    NO* no1 = (NO*) malloc(sizeof(NO));
+    no1->chave = 1;
+    no->prox = no1;
+    NO* no2 = (NO*) malloc(sizeof(NO));
+    no2->chave = 2;
+    no1->prox = no2;
+    NO* no5 = (NO*) malloc(sizeof(NO));
+    no5->chave = 4;
+    no2->prox = no5;
+    no5->prox = NULL;
+    
+    LISTA* lista = (LISTA*) malloc(sizeof(LISTA));
+    lista->inicio = no;
+    
+    //p2={1,2,2,3,5,5}
+    NO* nu = (NO*) malloc(sizeof(NO));
+    nu->chave = 1;
+    NO* nu1 = (NO*) malloc(sizeof(NO));
+    nu1->chave = 2;
+    nu->prox = nu1;
+    NO* nu2 = (NO*) malloc(sizeof(NO));
+    nu2->chave = 2;
+    nu1->prox = nu2;
+    NO* nu3 = (NO*) malloc(sizeof(NO));
+    nu3->chave = 3;
+    nu2->prox = nu3;
+    NO* nu4 = (NO*) malloc(sizeof(NO));
+    nu4->chave = 5;
+    nu3->prox = nu4;
+    NO* nu5 = (NO*) malloc(sizeof(NO));
+    nu5->chave = 5;
+    nu4->prox = nu5;
+    nu5->prox = NULL;
+    
+    LISTA* listo = (LISTA*) malloc(sizeof(LISTA));
+    listo->inicio = nu;
+     
+    NO* p1 = lista->inicio;
+    NO* p2 = listo->inicio;
+-----------------------------------------------------------------
+
+**P1 e P2 null
+
+    //p1={1,1,2,3,4,4}
+    NO* no = (NO*) malloc(sizeof(NO));
+    no->chave = 1;
+    NO* no1 = (NO*) malloc(sizeof(NO));
+    no1->chave = 1;
+    no->prox = no1;
+    NO* no2 = (NO*) malloc(sizeof(NO));
+    no2->chave = 2;
+    no1->prox = no2;
+    NO* no3 = (NO*) malloc(sizeof(NO));
+    no3->chave = 3;
+    no2->prox = no3;
+    NO* no4 = (NO*) malloc(sizeof(NO));
+    no4->chave = 4;
+    no3->prox = no4;
+    NO* no5 = (NO*) malloc(sizeof(NO));
+    no5->chave = 4;
+    no4->prox = no5;
+    no5->prox = NULL;
+    
+    LISTA* lista = (LISTA*) malloc(sizeof(LISTA));
+    lista->inicio = no;
+
+    LISTA* listo = (LISTA*) malloc(sizeof(LISTA));
+    listo->inicio = NULL;
+     
+    NO* p1 = lista->inicio;
+    NO* p2 = listo->inicio;
+---------------------------------------------------------------------
+
+**P2 E P1 null
+
+    LISTA* lista = (LISTA*) malloc(sizeof(LISTA));
+    lista->inicio = NULL;
+    
+    //p2={1,2,2,3,5,5}
+    NO* nu = (NO*) malloc(sizeof(NO));
+    nu->chave = 1;
+    NO* nu1 = (NO*) malloc(sizeof(NO));
+    nu1->chave = 2;
+    nu->prox = nu1;
+    NO* nu2 = (NO*) malloc(sizeof(NO));
+    nu2->chave = 2;
+    nu1->prox = nu2;
+    NO* nu3 = (NO*) malloc(sizeof(NO));
+    nu3->chave = 3;
+    nu2->prox = nu3;
+    NO* nu4 = (NO*) malloc(sizeof(NO));
+    nu4->chave = 5;
+    nu3->prox = nu4;
+    NO* nu5 = (NO*) malloc(sizeof(NO));
+    nu5->chave = 5;
+    nu4->prox = nu5;
+    nu5->prox = NULL;
+    
+    LISTA* listo = (LISTA*) malloc(sizeof(LISTA));
+    listo->inicio = nu;
+     
+    NO* p1 = lista->inicio;
+    NO* p2 = listo->inicio;
+-----------------------------------------------------------------------
+
+**P1 null e P2 null
+
+    LISTA* lista = (LISTA*) malloc(sizeof(LISTA));
+    lista->inicio = NULL;
+
+    LISTA* listo = (LISTA*) malloc(sizeof(LISTA));
+    listo->inicio = NULL;
+     
+    NO* p1 = lista->inicio;
+    NO* p2 = listo->inicio;
+-----------------------------------------------------------------------
+
+HARD
+
+//p1={0,1,2,3,4,5,6,7}
+    NO* no = (NO*) malloc(sizeof(NO));
+    no->chave = 0;
+    NO* no1 = (NO*) malloc(sizeof(NO));
+    no1->chave = 1;
+    NO* no2 = (NO*) malloc(sizeof(NO));
+    no2->chave = 2;
+    NO* no3 = (NO*) malloc(sizeof(NO));
+    no3->chave = 3;
+    NO* no4 = (NO*) malloc(sizeof(NO));
+    no4->chave = 4;
+    NO* no5 = (NO*) malloc(sizeof(NO));
+    no5->chave = 5;
+    NO* no6 = (NO*) malloc(sizeof(NO));
+    no6->chave = 6;
+    NO* no7 = (NO*) malloc(sizeof(NO));
+    no7->chave = 7;
+        
+    no->prox = no1;
+    no1->prox = no2;
+    no2->prox = no3;
+    no3->prox = no4;
+    no4->prox = no5;
+    no5->prox = no6;
+    no6->prox = no7;
+    no7->prox = NULL;
+
+    LISTA* lista = (LISTA*) malloc(sizeof(LISTA));
+    lista->inicio = no;
+
+    //p2={1,1,2,5,5,5,5,5,5,6,7}
+    NO* nu = (NO*) malloc(sizeof(NO));
+    nu->chave = 1;
+    NO* nu1 = (NO*) malloc(sizeof(NO));
+    nu1->chave = 1;
+    NO* nu2 = (NO*) malloc(sizeof(NO));
+    nu2->chave = 2;
+    NO* nu3 = (NO*) malloc(sizeof(NO));
+    nu3->chave = 5;
+    NO* nu4 = (NO*) malloc(sizeof(NO));
+    nu4->chave = 5;
+    NO* nu5 = (NO*) malloc(sizeof(NO));
+    nu5->chave = 5;
+    NO* nu6 = (NO*) malloc(sizeof(NO));
+    nu6->chave = 5;
+    NO* nu7 = (NO*) malloc(sizeof(NO));
+    nu7->chave = 5;
+    NO* nu8 = (NO*) malloc(sizeof(NO));
+    nu8->chave = 5;
+    NO* nu9 = (NO*) malloc(sizeof(NO));
+    nu9->chave = 5;
+    NO* nu10 = (NO*) malloc(sizeof(NO));
+    nu10->chave = 7;
+    NO* nu11 = (NO*) malloc(sizeof(NO));
+    nu11->chave = 9;
+    
+    nu->prox = nu1;
+    nu1->prox = nu2;
+    nu2->prox = nu3;
+    nu3->prox = nu4;
+    nu4->prox = nu5;
+    nu5->prox = nu6;
+    nu6->prox = nu7;
+    nu7->prox = nu8;
+    nu8->prox = nu9;
+    nu9->prox = nu10;
+    nu10->prox = nu11;
+	nu11->prox = NULL;
+
+    LISTA* listo = (LISTA*) malloc(sizeof(LISTA));
+    listo->inicio = nu;
+    
+    NO* p1 = lista->inicio;
+    NO* p2 = listo->inicio;
+---------------------------------------------------------------------
+
+**Imprimir
+
+    /*METODO*/
+
+    printf("Teste com operação 1: Uniao \n");
+    NO* listaR1 = resp.inicio;
+    while (listaR1) {
+          printf("%d   ", listaR1->chave);
+          listaR1 = listaR1->prox;
+    }
+    printf("\n");
+    
+    /*METODO*/ 
+    
+    printf("Teste com operação 2: Intersecçao \n");
+    NO* listaR2 = resps.inicio;
+    while (listaR2) {
+          printf("%d   ", listaR2->chave);
+          listaR2 = listaR2->prox;
+    }
+    printf("\n");
+    
+    printf("Lista 1 (P1) \n");
+    while (p1) {
+          printf("%d   ", p1->chave);
+          p1 = p1->prox;
+    }
+    printf("\n");
+    
+    printf("Lista 2 (P2) \n");
+    while (p2) {
+          printf("%d   ", p2->chave);
+          p2 = p2->prox;
+    }
+    printf("\n");

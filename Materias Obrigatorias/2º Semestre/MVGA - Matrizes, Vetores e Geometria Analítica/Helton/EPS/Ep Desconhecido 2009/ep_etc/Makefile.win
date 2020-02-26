@@ -1,0 +1,36 @@
+# Project: mvga
+# Makefile created by Dev-C++ 4.9.9.2
+
+CPP  = g++.exe
+CC   = gcc.exe
+WINDRES = windres.exe
+RES  = 
+OBJ  = VisOf/TrackBall.o VisOf/scrInteractor.o main[vf].o $(RES)
+LINKOBJ  = VisOf/TrackBall.o VisOf/scrInteractor.o main[vf].o $(RES)
+LIBS =  -L"D:/testing/Dev-CppPortable/App/devcpp/lib" -L"D:/testing/mvga/opengl" -lglut32 -lglu32 -lopengl32 opengl/libglut.a opengl/libglut32.a  
+INCS =  -I"D:/testing/Dev-CppPortable/App/devcpp/include"  -I"D:/testing/mvga/of"  -I"D:/testing/mvga/VisOf" 
+CXXINCS =  -I"D:/testing/Dev-CppPortable/App/devcpp/lib/gcc/mingw32/3.4.2/include"  -I"D:/testing/Dev-CppPortable/App/devcpp/include/c++/3.4.2/backward"  -I"D:/testing/Dev-CppPortable/App/devcpp/include/c++/3.4.2/mingw32"  -I"D:/testing/Dev-CppPortable/App/devcpp/include/c++/3.4.2"  -I"D:/testing/Dev-CppPortable/App/devcpp/include"  -I"D:/testing/mvga/of"  -I"D:/testing/mvga/VisOf"  -I"D:/testing/mvga/VisOf/iterFunc"  -I"D:/testing/mvga/VisOf/Utils"  -I"D:/testing/mvga/opengl"  -I"D:/testing/mvga/of"  -I"D:/testing/mvga/VisOf" 
+BIN  = mvga.exe
+CXXFLAGS = $(CXXINCS)  
+CFLAGS = $(INCS)  
+RM = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before mvga.exe all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o "mvga.exe" $(LIBS)
+
+VisOf/TrackBall.o: VisOf/TrackBall.cpp
+	$(CPP) -c VisOf/TrackBall.cpp -o VisOf/TrackBall.o $(CXXFLAGS)
+
+VisOf/scrInteractor.o: VisOf/scrInteractor.cpp
+	$(CPP) -c VisOf/scrInteractor.cpp -o VisOf/scrInteractor.o $(CXXFLAGS)
+
+main[vf].o: main[vf].cpp
+	$(CPP) -c main[vf].cpp -o main[vf].o $(CXXFLAGS)

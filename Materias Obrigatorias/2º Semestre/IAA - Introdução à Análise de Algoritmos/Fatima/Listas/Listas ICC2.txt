@@ -1,0 +1,432 @@
+LISTA 1
+1 - É um método que tem o mesmo nome da classe e instancia os atributos da classe. Durante a criação de um objeto (comando "new") o compilador java identifica qual o construtor adequado de acordo com a sua assinatura. Pode-se pensar em uma classe carro, que com o construtor padrão inicializa o atributo portas com 2, mas pode haver um outro construtor que passe como parâmetro o número de portas.
+
+2 - 
+class Produto
+{
+	double _preco;
+	int _codigo;
+	private double _margem;
+	static int _contador;
+	
+	Produto (double preco, int cod, double margem)
+	{
+		_preco = preco;
+		_codigo = cod;
+		_margem = margem;
+		_contador++;
+	}
+
+	void imprimeDados()
+	{
+		System.out.println("Preço = " + _preco);
+		System.out.println("Código = " + _codigo);
+	}
+}
+
+3-
+class Produto
+{
+	final int _dataCriacao;
+	double _preco;
+	int _codigo;
+	private double _margem;
+	static int _contador;
+	
+	Produto (double preco, int cod, double margem, int data)
+	{
+		_preco = preco;
+		_codigo = cod;
+		_margem = margem;
+		_contador++;
+		_dataCriacao = data;
+	}
+
+	void imprimeDados()
+	{
+		System.out.println("Preço = " + _preco);
+		System.out.println("Código = " + _codigo);
+	}
+
+	static void imprimeDataCriacao()
+	{
+		if (_dataCriacao != 0)
+			System.out.println(_dataCriacao);
+	}
+}
+• Crie um atributo para guardar a data de criação da classe (1 inteiro – vai guardar dia e mês, no formato
+ddmm). Este atributo nunca poderá ser alterado, isto é, será constante.
+• Crie um método que imprima este
+
+4 - 
+class MediaAlunoDisciplina{
+	private int numeroDoAluno;
+	private String nomeDaDisciplina;
+	private double pesoDeTrabalhos;
+	private double pesoDeProvas;
+	private double mediaDeTrabalhos;
+	private double mediaDeProvas;
+	private double mediaPonderada;
+
+	MediaAlunoDisciplina(int numeroDoAluno, String nomeDaDisciplina){
+		this.numeroDoAluno = numeroDoAluno;
+		this.nomeDaDisciplina = nomeDaDisciplina;
+	}
+
+	double getMediaPonderada(){
+		return mediaPonderada;
+	}
+
+	boolean setPesoDeProvas(int peso){
+		if (peso < 0 || peso > 10) return false;
+		pesoDeProvas = peso;
+		pesoDeTrabalhos = 10 - peso;
+		return (true);
+	}
+
+	//calcula a média do aluno, multiplicando as medidas de trabalhos e provas pelos seus respectivos pesos 
+	//e altera o atributo que armazena a média ponderada. Este atributo nunca poderá ser maior que 10
+	public void calculaMediaPonderada(){
+		mediaPonderada = (mediaDeTrabalhos*pesoDeTrabalhos)+(mediaDeProvas*pesoDeProvas);
+	}
+	
+	//imprime todos os atributos
+	public void imprimeDados(){
+		System.out.println(numeroDoAluno);
+		System.out.println(nomeDaDisciplina);
+	}
+}
+
+5-
+class Substancia
+{
+	private String _nome;
+	private int _tipo; // 1=simples 2=nobre
+	private double _preco;
+	private static int _quantidade;
+	private final double _cotacao;
+
+	Substancia(){
+		_quantidade++;
+	}
+
+	public void defineNome(String pnome) { nome = pnome; }
+	public String obtemNome () { return nome; }
+
+	public void defineTipo(char ptipo) { tipo = ptipo; }
+	public int obtemTipo () { return tipo; }
+
+	public void definePreco(int ppreco) { preco = ppreco; }
+	public double obtemPreco () { return preco; }
+
+	public void imprime(){
+		System.out.println(_nome);
+		System.out.println(_tipo);
+		System.out.println(_preco);
+		System.out.println(_quantidade);
+		System.out.println(_cotacao);
+	}
+}
+
+class Remedio
+{
+	private String _nome;
+	private double _precoFinal;
+	
+
+	public void defineNome(String pnome) { nome = pnome; }
+	public String obtemNome () { return nome; }
+	
+	public void adicionarSubstancia(Substancia s)
+	{
+		_precoFinal += (s.obtemCotacao()*s.obtemTipo()*obtemPreco());
+	}
+
+	public void printPreco()
+	{
+		System.out.println(“Preço de uma unidade do remédio" + _nome + "=" + _precoFinal);
+	}
+
+	public void teste()
+	{
+		Substancia alcool = new Substancia();
+		Substancia potacio= new Substancia();
+		alcool.defineNome(alcool); etc...
+		potacio.defineQuantidade(3); etc...
+		Remedio veneno = new Remedio();
+		veneno.defineNome("Veneno de Rato");
+		veneno.adicionarSubstancia(alcool);
+		veneno.adicionarSubstancia(potacio);
+		veneno.printPreco();		
+	}
+}
+
+---------------------------------------------------------------------------------------------------------------------------
+LISTA 2
+
+1-
+SerVivo: nasce(), reproduz(), morre(); 
+Animal: come(), respira(), dorme(); numeroDeMembros;
+Vegetal: fotossintese(), respira(); boolean Folhas();
+Monera:
+Protista:
+Fungo: int veneno();
+
+2-
+Representam um descrição dos métodos disponíveis e das respectivas assinaturas. Conhecendo apenas a interface de um dado objeto podemos utilizá-lo sem precisar conhecer sua implementação (ou seja, a escondendo), o que denota a característica de OO chamada encapsulamento. São úteis quando desejamos esconder detalhes de implementação e também na fase de especificação de um sistema. Além disso, a interface provê acesso às classes sem a necessidade de instanciá-las.
+
+3-
+public interface SalarioFuncionário
+{
+	void defineNome(String nome);
+	void valorHoraBase (double hora);
+	double calculaHE (int quantidade);
+	double calculaSalarioFinal();
+}
+
+4-
+
+class FuncionárioComum implements SalarioFuncionário
+{
+	double _valorHoraBase;
+	int _quantidadeHE;
+	String nome;
+	String _cargo;
+	int _dataAdmissao;
+	
+	FuncionárioComum(double valorHora){
+		if (valorHora > 200) System.out.println("Erro.");
+		else _valorHoraBase = valorHora;
+	}
+
+	double calculaHE (int quantidade){
+		if (quantidade+_quantidadeHE > 40){
+			System.out.println("Erro");
+			return _quantidadeHE;
+		}
+		return _valorHoraBase*quantidade;
+	}
+
+	void defineNome(String nome){ _nome = nome;}
+	void valorHoraBase (double hora){ _valorHoraBase = hora;}
+	void defineCargo(String cargo){ _cargo = cargo;}
+	void defineDataAdmissao(int data){ _dataAdmissao = data;}
+
+	double calculaSalarioFinal(){
+		return _valorHoraBase*200;
+	}
+}
+class Gerente implements SalarioFuncionário
+{
+	double _valorHoraBase;
+	String _nome;
+
+	Gerente(){
+		_valorHoraBase = valorHora;
+	}
+
+	void defineNome(String nome){ _nome = nome;}
+	void valorHoraBase (double hora){ _valorHoraBase = hora;}
+
+	double calculaHE (int quantidade){
+		return _valorHoraBase*0,2*quantidade;
+	}
+
+	double calculaSalarioFinal(){
+		return (_valorHoraBase*180)+2000;
+	}
+}
+
+5- xx
+
+6-
+class Besta{
+	FuncionárioComum[] fila;
+	Besta(){
+		fila = new FuncionárioComum[10];
+	}
+
+	void ordena(Comparador c){
+		//página 111 do livro.
+	}
+
+	void imprimir()
+	{
+		for (int i = 1; i < 10; i++){
+			System.out.println(
+		}
+	}
+}
+
+interface Comparador()
+{
+	int compara(Funcionario f, Funcionario g);
+}
+
+class comparaHora implements Comparador(){
+	int compara(Funcionario f1, Funcionario f2){
+		if (f1._valorHoraBase > f2._valorHoraBase) return 1;
+		if (f1._valorHoraBase == f2._valorHoraBase) return 0;
+		return -1;
+	}
+}
+
+class comparaNome implements Comparador(){
+	int compara(Funcionario f1, Funcionario f2){
+		return f1._nome.compareTo(f2._nome);
+	}
+}
+
+class comparaData implements Comparador(){
+	int compara(Funcionario f1, Funcionario f2){
+		if (f1._dataAdmissao > f2._dataAdmissao) return 1;
+		if (f1._dataAdmissao == f2._dataAdmissao) return 0;
+		return -1;
+	}
+}
+
+7-
+
+• Um método para ordenar um vetor de Livros. Este método deve utilizar obrigatoriamente objetos das
+classes criadas no item anterior, com conceito de interface, para ordenar o vetor de acordo com o atributo
+solicitado (título ou ano);
+• complete o método main da classe Biblioteca nos locais indicados para imprimir as listagens solicitadas.
+
+class Livro
+{
+	private String titulo;
+	private int ano;
+	private int tipo; // valor de 1 a 20 que classifica a categoria de cada livro
+
+	void setTitulo (String t) {titulo= t;}
+	void setAno (int a) {ano = a;}
+	void setTipo (int ti) {tipo = ti;}
+	String getTitulo () {return titulo;}
+	int getAno () { return ano;}
+	int getTipo () { return tipo;}
+}
+
+interface ComparadorDeLivro
+{
+	int livroMenor(Livro livro1, Livro livro2);
+	// retorna: 1 se atributo específico de livro1 é maior que livro2
+	// -1 se atributo específico de livro1 é menor que livro2
+	// 0 se atributo específico de livro1 é igual a livro2
+}
+
+class comparaTitulo implements ComparadorDeLivro
+{
+	int livroMenor(Livro livro1, Livro livro2){
+		return livro1.getTitulo().compareTo(livro2.getTitulo();
+	}
+}
+
+class comparaAno implements ComparadorDeLivro
+{
+	...sempre a mesma coisa....
+}
+
+class Biblioteca
+{
+	// método para criar vetor de Livros
+	// aqui vai o código para criar o vetor de Livros (você não precisa completar)
+	// método imprime
+	// aqui vai o código para imprimir o vetor de Livros (você não precisa completar)
+	// método para ordenar o vetor
+	... aqui vai código para ordenar o vetor (você deve apresentá-lo completo-)
+	// método principal
+	public static void main (String [] args)
+	{
+		Biblioteca bibl= new Biblioteca();
+		System.out.println("Livros desordenados");
+		bibl.imprime();
+		System.out.println("Livros em ordem de título")
+		(você deve completar aqui)
+		System.out.println("Livros em ordem de ano")
+		(você deve completar aqui)
+	}
+}
+
+---------------------------------------------------------------------------------------------------------------------------
+LISTA 3
+2- Herança consiste em reutilizar código prévio, com extensões e modificações, acrescentando funcionalidades adicionais. Herança reaproveita classes anteriores, interface define acesso e assinaturas dos métodos.
+
+3- Pedir para a professora resolver.
+4- Pedir para a professora resolver.
+
+5- 
+class Produto{
+	private int _codigo;
+	private String _nome;
+	private double _preco;
+
+	Produto(int codigo, String nome, double preco){
+		_codigo = codigo;
+		_nome = nome;
+		_preco = preco;
+	}
+
+	void imprimirDados(){
+		System.out....
+	}
+}
+
+class ProdutoPerecivel extends Produto{
+	int _dataVal;
+	String _fornecedor;
+	ProdutoPerecivel(int codigo, String nome, double preco, int dataVal, String fornecedor){
+		super(codigo, nome, preco);
+		_dataVal = dataVal;
+		_fornecedor = fornecedor;
+	}
+
+	void imprimirDados(){
+		super.imprimirDados();
+		System.out....
+	}
+}
+6-
+class Aluno{
+	private int _numeroUSP;
+	private String _nomeAluno;
+	private String _nomeCurso;
+
+	Aluno(int numeroUSP, String nomeAluno, String nomeCurso){
+		_numeroUSP = numeroUSP;
+		_nomeAluno = nomeAluno;
+		_nomeCurso = nomeCurso;
+	}
+}
+
+class AlunoBolsista extends Aluno
+{
+	private double _valorBolsa;
+	private String _orientador;
+	private String _orgaoFinanciadorBolsa;
+	private String _nomeProjeto;
+
+	AlunoBolsista(int numeroUSP, String nomeAluno, String nomeCurso, double valorBolsa, String orientador, String orgaoFinanciadorBolsa, String nomeProjeto){
+		super(int numeroUSP, String nomeAluno, String nomeCurso);
+		_valorBolsa = valorBolsa;
+		_orientador = orientador;
+		_orgaoFinanciadorBolsa = orgaoFinanciadorBolsa;
+		_nomeProjeto = nomeProjeto;
+	}
+}
+
+class AlunoEstagiario extends Aluno{
+	private String _nomeDaEmpresa;
+	private double _valorDaBolsa;
+	private int _dataInicio;
+	private int _dataFim;
+
+	AlunoEstagiario(int numeroUSP, String nomeAluno, String nomeCurso, String nomeDaEmpresa, double valorDaBolsa, int dataInicio, int dataFim ){
+	_nomeDaEmpresa = nomeDaEmpresa;
+	_valorDaBolsa = valorDaBolsa;
+	_dataInicio = dataInicio;
+	_dataFim = dataFim;
+	}
+
+	getters and setter()
+	imprimir()
+}

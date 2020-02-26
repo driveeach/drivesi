@@ -1,0 +1,15 @@
+Tabela hash de tamanho 0, com 0 registros alocados e 0 chaves
+Tabela hash inicializada. Seu arranjo possui tamanho 3.
+Elemento 4 inserido corretamente.
+Elemento 3 inserido corretamente.
+Elemento 1 inserido corretamente.
+Elemento 5 inserido corretamente.
+Elemento 3 inserido corretamente.
+Elemento 3 inserido corretamente.
+Ha 3 ocorrencia(s) da chave 3.
+Chave 3 excluida corretamente.
+Ha 2 ocorrencia(s) da chave 3.
+Elemento 20 inserido corretamente.
+Tabela hash de tamanho 3, com 5 registros alocados e 6 chaves
+Hash zerado. Numero de registros apagados: 5.
+Tabela hash de tamanho 0, com 0 registros alocados e 0 chaves

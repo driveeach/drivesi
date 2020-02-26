@@ -1,0 +1,9 @@
+i 1 a
+i 2 ab
+i 1 d
+i 3 cde
+i 2 cd
+i 2 de
+p
+l
+q

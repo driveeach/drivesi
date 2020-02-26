@@ -1,0 +1,13 @@
+Palavra inserida com sucesso.
+Palavra inserida com sucesso.
+Palavra inserida com sucesso.
+Palavra inserida com sucesso.
+Palavra inserida com sucesso.
+Palavra inserida com sucesso.
+a
+ab
+cd
+cde
+d
+de
+Numero de palavras na arvore: 6, numero de nos: 7, letras da maior palavra: 3

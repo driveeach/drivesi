@@ -1,0 +1,33 @@
+# Project: epMatrizesEsparsas
+# Makefile created by Dev-C++ 4.9.9.2
+
+CPP  = g++.exe
+CC   = gcc.exe
+WINDRES = windres.exe
+RES  = 
+OBJ  = main.o trabalho.o $(RES)
+LINKOBJ  = main.o trabalho.o $(RES)
+LIBS =  -L"F:/app/Dev-Cpp/lib"  
+INCS =  -I"F:/app/Dev-Cpp/include" 
+CXXINCS =  -I"F:/app/Dev-Cpp/lib/gcc/mingw32/3.4.2/include"  -I"F:/app/Dev-Cpp/include/c++/3.4.2/backward"  -I"F:/app/Dev-Cpp/include/c++/3.4.2/mingw32"  -I"F:/app/Dev-Cpp/include/c++/3.4.2"  -I"F:/app/Dev-Cpp/include" 
+BIN  = epMatrizesEsparsas.exe
+CXXFLAGS = $(CXXINCS)  
+CFLAGS = $(INCS)  
+RM = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before epMatrizesEsparsas.exe all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o "epMatrizesEsparsas.exe" $(LIBS)
+
+main.o: main.cpp
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+
+trabalho.o: trabalho.cpp
+	$(CPP) -c trabalho.cpp -o trabalho.o $(CXXFLAGS)

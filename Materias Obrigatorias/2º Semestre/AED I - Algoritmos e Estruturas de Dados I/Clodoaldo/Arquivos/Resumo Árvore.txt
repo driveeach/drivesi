@@ -1,0 +1,75 @@
+* profundidade == nível
+* altura = maior caminho entre o nó e a folha
+* altura máxima de uma AB com n nós = n-1
+* altura máxima de uma AB com n nós = log (n) na base 2
+
+AB (ÁRVORE BINÁRIA) {
+	Árvore Estritamente Binária (ou Árvore Própria) {
+		- tem nós com 0 ou 2 filhos
+	}
+
+	ABC (Árvore Binária Completa) {
+		- se a profundidade é (d), então cada nó folha está no nível (d) ou no nível (d-1)
+		- o nível (d-1) está totalmente preenchido
+		- os nós folhas do nível (d) estão mais a esquerda possível
+		- para um vetor, se um nó está na posição i: 
+			> filho da esquerda = 2i+1 
+			> filho da direita = 2i+2
+		- Alocação Estática: 
+			> Vantagem: espaço só para armazenar o conteúdo, ligações implícitas
+			> Desvantagem: espaços vagos se a árvore não é completa por níveis, ou se sofrer eliminação
+	}
+
+	ABCC (Árvore Binária Completa Cheia) {
+		- é uma árvore estritamente binária
+		- todos os nós folhas estão no mesmo nível
+		- total de nós = [2^(profundidade+1)]-1
+		- nós no nível d = 2^d
+	}
+
+	ABB (Árvore Binária Balanceada) {
+		- para cada nó, as ALTURAS de suas duas sub-árvores diferem de, no máximo, 1
+	}
+	ABPB (Árvore Binária Perfeitamente Balanceada) {
+		- para cada nó, o NÚMERO DE NÓS de suas sub-árvores esquerda e direita difere em, no máximo, 1;
+	}
+
+	Percurso {
+		Pré-ordem {
+			raiz -> esquerda -> direita
+		}
+		Em-ordem {
+			esquerda -> raiz -> direita
+		}
+		Pós-ordem {	
+			esquerda -> direita -> raiz
+		}
+	}
+
+	HEAP {
+		- árvore binária
+		- ordem 
+			> chave(nó) <= chave (pai(nó)) - heap máximo
+			> chave(nó) >= chave (pai(nó)) - heap mínimo
+		- completude: é completa
+		- Encontrar:
+			> filho esquerda: 2*i + 1
+			> filho direita: 2*i + 2
+			> pai: (i-1)/2
+		- como o heap é uma árvore completa não tem "buracos" no vetor
+	}
+
+	ABB (Árvore Binária de Busca) {
+		- Nós esquerdos menores que a raiz
+		- Nós direitos maiores que a raiz
+		- Percurso em-ordem mostra os valores em ordem crescente
+		- Operações de inserção e remoção não garantem o balanceamento
+	}
+
+	AVL {
+		- ABB no qual a diferença entre as alturas das duas subárvores não diferem em mais de 1
+		- Fator de balanceamento: altura da sub-árvore esquerda menos a altura da sub-árvore direita
+		- Fator de balanceamento em AVL é -1, 0 ou 1
+		- Operações de inserção e remoção garantem o balanceamento
+	}
+}

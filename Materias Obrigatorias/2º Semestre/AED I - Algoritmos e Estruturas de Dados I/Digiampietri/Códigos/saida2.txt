@@ -1,0 +1,35 @@
+Comandos validos: 
+   i <chave1>: inserir elemento com chave=chave1
+   e <chave1>: excluir elemento com chave=chave1
+   p : imprimir lista
+   d : destruir (zerar) lista
+   l : exibir log de utilizacao da lista
+   h : exibir esta mensagem de ajuda
+   b <chave1>: exibir posicao do elemento com chave=chave1
+   0 : exibir a chave e o endereco do primeiro elemento
+   u : exibir a chave e o endereco do ultimo elemento
+Lista: " "
+Numero de elementos na lista: 0.
+Tamanho da lista (em bytes): 4.
+Elemento 9 inserido corretamente.
+Elemento 3 inserido corretamente.
+Elemento 4 inserido corretamente.
+Elemento 1 inserido corretamente.
+Elemento 5 inserido corretamente.
+Lista: " 1 3 4 5 9 "
+Numero de elementos na lista: 5.
+Tamanho da lista (em bytes): 44.
+Primeiro elemento 1 encontrado no endereco 4016376.
+Ultimo elemento 9 encontrado no endereco 4008928.
+Nao foi possivel encontrar elemento 2.
+Elemento 3 encontrado no endereco 4008960.
+Elemento 9 encontrado no endereco 4008928.
+Elemento 3 excluido corretamente.
+Nao foi possivel encontrar elemento 3.
+Elemento 9 encontrado no endereco 4008928.
+Lista: " 1 4 5 9 "
+Numero de elementos na lista: 4.
+Tamanho da lista (em bytes): 36.
+Lista zerada.
+Numero de elementos na lista: 0.
+Tamanho da lista (em bytes): 4.

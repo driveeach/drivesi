@@ -1,0 +1,161 @@
+<html>
+  <head>
+    <title>EP2 - ACH2023 - 1&ordm; Semestre de 2012</title>
+  </head>
+  <body>
+
+  <h2>Exerc&iacute;cio Pr&aacute;tico 1 - <font color="#CC0000#">data máxima de entrega: 16/06/11 até as 23:00h</font></h2>
+  
+<h3>Árvores de Letras</h3>
+
+Árvores são estruturas de dados extremamente úteis para organizar e recuperar informações. Árvores com diferentes características são usadas para resolver diversos problemas. Por exemplo, há árvores balanceadas (o que limita o tamanho da árvore deixando suas buscas mais eficientes), árvores onde cada nó tem um número pequeno de filhos (árvores binárias e ternárias, por exemplo) e árvores onde cada nó pode ter muitos filhos. Em sistemas para o gerenciamento de bancos de dados é comum usar árvores B* onde cada nó pode ter até 100.000 filhos.
+<br>
+Neste EP, cada aluno deve implementar uma árvore que serve para armazenar palavras e cada nó corresponde a uma letra. As palavras devem ser armazenadas ordenadas de maneira crescente. Por mais que no EP as palavras estarão limitadas a usar as 26 letras minúsculas do alfabeto, a implementação de vocês será de árvores enárias (o que permitiria a cada nó ter, virtualmente, uma quantidade qualquer de filhos).
+<br>
+Nesta árvore o usuário solicitará apenas a inclusão e a busca de palavras na árvore, então não será necessário se preocupar com exclusões. Além disso, haverá uma função para averiguar a quantidade de nós da árvore e para imprimir em ordem alfabética todas as palavras da árvore.
+<br>
+A Figura 1 apresenta a visão lógica de uma árvore onde foram inseridas as palavras bola, bota, da e dado (sublinhadas estão as letras [ou nós] que indicam que uma palavra acaba naquela letra).
+<br>
+Independente da ordem que estas palavras foram inseridas, eles devem estar ordenadas (de maneira alfabética) dentro da árvore, conforme mostra a figura.
+
+<center><img src="logica.png" border="1">
+<br><font size=-1><b>Figura 1 - Representação Lógica dos dados</b></font>
+</center>
+<br>
+
+Há três maneiras principais de se implementar árvores onde cada nó pode ter vários filhos:
+<br>
+(i) Colocando em cada nó um arranjo de filhos (criado estatica ou dinamicamente). Esta abordagem é válida quando o número de filhos não varia muito de um nó para outro, mas tipicamente representa o desperdício de grande quantidade de memória;
+(ii) Utilizando uma lista ligada de filhos para cada nó. Esta abordagem costuma ter a implementação complexa pois exige que se utilize duas estruturas diferentes: os nós da árvore e os elementos da lista ligada.
+(iii) A terceira abordagem usa uma lista ligada de filhos de maneira implícia (utilizando apenas uma estrutura de dados e não duas) e por isto <b>será utilizada neste EP</b>. Nesta abordagem cada nó tem dois ponteiros: um para seu <i>filho menor</i> (com a letra de menor valor entre seus filhos) e um ponteiro para seu <i>"irmão"</i> (que será o nó filho do pai do nó atual, porém com uma letra maior do que a do nó atual. se considerarmos a ordem alfabética de cada letra como sendo a idade do nó (o nó "a" seria o mais novo e o "z" o mais velho) então cada nó aponta para seu filho mais novo e para seu irmão imediatamente mais velho. A seguir serão apresentadas as estruturas a serem utilizadas e a Figura 2 contém a descrição gráfica da representação física da árvore que será implementada neste EP. As listas de irmãos serão listas ligadas simples, sem nó cabeça, e ordenadas (ordem alfabética). Neste EP não serão usados nós cabeças ou sentinelas.
+
+<br>
+
+Este EP tratará três estruturas de dados: a <b>palavra</b>, o <b>No</b> e a <b>ArvoreL</b> propriamente dita. A palavra é uma estrutura temporária utilizada apenas como parâmetro de algumas funções (esta estrutura não aparecerá dentro da árvore). Neste EP uma palavra nada mais é do que um campo numérico contendo o número de letras da palavra e o ponteiro para um arranjo de chars que contém as letras da palavra. O No será a estrutura básica da árvore. Cada nó guardará o valor da letra que ele corresponde (no campo letra), bem como uma indicação se alguma palavra acaba naquele nó (campo fimDePalavra). Além disso, cada nó possuirá dois ponteiros: um para seu filho "mais novo" (campo filho) e outro para seu irmao "imediatamente mais velho" (campo prox).
+<br>
+A estrutura <b>ArvoreT</b> possui três campos: o <i>numeroDePalavras</i> que contem o número total de palavras inseridas na árvore; o campo <i>tamMaiorPalavra</i> que indica o número de letras da maior palavra; e, por fim, o campo <i>raiz</i> que é um ponteiro para o primeiro nó da árvore (menor primeira letra entre todas as palavras inseridas).
+<pre>
+typedef struct {
+  char* letras;
+  int numLetras;
+} palavra;
+
+typedef struct NoAux {
+  char letra;
+  bool fimDePalavra;
+  struct NoAux* prox;
+  struct NoAux* filho;
+} No, * PontNo;
+
+typedef struct {
+  int numeroDePalavras;
+  int tamMaiorPalavra;
+  PontNo raiz;
+} ArvoreL, * PontArvore;
+
+</pre>
+
+
+A figura abaixo apresenta uma representação gráfica das estruturas que serão utilizadas e um exemplo de uma árvore na qual foram inseridas as palavras bola, bota, da e dado.
+<br>
+<center><img src="arvore.png" border="1">
+<br><font size=-1><b>Figura 2 - Representação Física dos dados</b></font>
+</center><br><br>
+
+
+<h3>Exerc&iacute;cio Pr&aacute;tico 1</h3>
+Para este exerc&iacute;cio são fornecidos três arquivos:
+<br><b>arvoreLetras.h</b>: contendo as estrutura de dados que ser&atilde; utilizadas para o gerenciamento das árvores do EP2, bem como o cabeçalho de algumas funções.
+
+<br><b>arvoreLetras.c</b>: arquivo contendo a implementa&ccedil;&atilde;o das funções do EP2 (arquivo que vocês irão completar e submeter).
+
+<br><b>usaArvore.c</b>: arquivo principal (a partir do qual ser&aacute; gerado o programa execut&aacute;vel) que utiliza as funções implementadas em arvoreLetras.c para gerenciamento da árvore de letras.
+<br><br>
+<b>Não inclua bibliotecas</b> adicionais ao sistema e só use comandos da linguagem C "pura", não utilize nada de C++. Os arquivos serão compilados pelo compilador gcc com o parâmetro -ansi: <i>gcc -ansi usaArvore.c</i>.
+
+<br><br>Al&eacute;m desses arquivos ser&atilde;o fornecidos arquivos de entrada e de sa&iacute;da para que os alunos possam testar suas implementa&ccedil;&otilde;es.
+
+
+<h3>Entrega do trabalho</h3>
+Cada aluno dever&aacute; entregar sua implementa&ccedil;&atilde;o do arquivo <b>arvoreLetras.c</b> (apenas este arquivo). Este arquivo deve ser compactado em um arquivo <font color="#FF0000"><b>NUM_USP.zip (ou .rar)</b></font> (onde NUM_USP é o número USP do aluno que está submetendo o EP) e ser submetido via COL até as 23:00h do dia 16/06/2012 (com uma hora de tolerância).
+
+<h3>Arquivos</h3>
+<table border=1><tr>
+<td><a href="arvoreLetras.c">arvoreLetras.c</a> <a href="arvoreLetras.c.htm">[html]</a></td><td></td><td><a href="entrada1.txt">entrada1.txt</a></td><td><a href="saida1.txt">saida1.txt</a></td></tr><tr>
+
+<td><a href="arvoreLetras.h">arvoreLetras.h</a> <a href="arvoreLetras.h.htm">[html]</a></td><td></td><td><a href="entrada2.txt">entrada2.txt</a></td><td><a href="saida2.txt">saida2.txt</a></td></tr><tr>
+
+<td><a href="usaArvore.c">usaArvore.c</a> <a href="usaArvore.c.htm">[html]</a></td><td></td><td><a href="entrada3.txt">entrada3.txt</a></td><td><a href="saida3.txt">saida3.txt</a></td></tr><tr>
+
+</table>
+
+<br>Os arquivos disponibilizados possuem um menu interativo com o qual o usuário (ou arquivo de entrada) indica quais operações devem ser feitas sobre a lista. <b>Juntamente com os arquivos há uma descrição detalhada de como cada estrutura funciona, bem como o que cada função deverá fazer.</b> As saídas do seu programa devem ser <b>idênticas</b> as saídas dos exemplos, não imprima coisas adicionais na tela (você pode fazer isso durante seus testes, mas deverá remover esses prints adicionais antes de submeter o EP).
+
+<h4>Exemplo de entrada e saída</h4>
+<table colspan=3 border=1><tr>
+<td>
+<center><b>Exemplo de Entrada</b></center>
+<pre>
+l
+i 1 a
+i 2 ab
+i 1 d
+i 3 cde
+i 2 cd
+i 2 de
+p
+l
+q
+
+
+
+</pre>
+</td><td>
+<center><b>Exemplo de Saída</b></center>
+<pre>Palavra inserida com sucesso.
+Palavra inserida com sucesso.
+Palavra inserida com sucesso.
+Palavra inserida com sucesso.
+Palavra inserida com sucesso.
+Palavra inserida com sucesso.
+a
+ab
+cd
+cde
+d
+de
+Numero de palavras na arvore: 6, numero de nos: 7, letras da maior palavra: 3
+</pre>
+
+</td>
+<td>
+<center><b>Menu Interativo</b></center>
+<pre>
+Comandos validos: 
+  i &lt;num letras&gt; &lt;palavra&gt; : inserir elemento na arvore, dados: numero de letras e palavra
+  b &lt;num letras&gt; &lt;palavra&gt; : buscar a palavra definida pelo usuario
+  p : imprimir todas as palavras em ordem
+  l : exibir log de utilizacao da arvore
+  h : exibir esta mensagem de ajuda
+  q : sair do programa
+
+
+
+
+
+</pre>
+</td>
+
+</tr></table>
+
+
+<br><b>O "programa" arvoreLetras.c n&atilde;o gera arquivo execut&aacute;vel pois n&atilde;o cont&eacute;m fun&ccedil;&atilde;o <i>main</i>.</b> Ao compilar o usaArvore.c o arquivo usaArvore.exe (ou equivalente) ser&aacute; criado. Para testar esse programa, abra um prompt do MSDOS ou um console do Linux e v&aacute; ao diret&oacute;rio onde est&atilde;o todos os arquivos desse programa (incluindo os .txt), por exemplo "C:\EP1". L&aacute; digite "usaArvore.exe &lt; entrada1.txt" para testar o programa usando a entrada presente no arquivo 1.
+Comparare sua saída com a dada no arquivo saida1.txt. Fa&ccedil;a o mesmo teste com o arquivo entrada2.txt. A seguir está o link de um arquivo .bat que executa esse teste no Windows (copie e execute este arquivo para o diretório onde o arquivo usaArvore.exe foi gerado): <a href="testar.bat">[testar.bat]</a></b> . Edite este arquivo para fazer outros testes.
+<br>Os exemplos de teste não testam exaustivamente toda a implementação, desta forma, fica a cargo do aluno testar cuidadosamente seu código antes de entregá-lo. Para este EP é necessário tomar muito cuidado com todos os ponteiros, pois alguns não são muito usados, mas serão verificados na correção. Outros testes que não estão sendo feitos automaticamente (mas que serão verificados na correção) são: <b>se as listas ligadas (dos nós irmãos) estão ordenadas (de acordo com o valor das letras)</b>, e se seguem as definições (sem nó cabeça e não circulares).
+
+<h3>Observação:</h3>
+Se, durante a compilação, vocês receberem mensagens de erro do tipo: constante <i>true</i> já estava definida ou tipo <i>bool</i> já estava definido, então vocês poderão modificar o arquivo usaArvore.h e remover essas definições dele. Caso contrário, não modifiquem este arquivo. De qualquer forma, este arquivo não será submetido e os testes serão executados apenas sobre o arquivo usaArvore.c.
+
+
+  </body>
+</html>

@@ -1,0 +1,18 @@
+i 1 a
+i 2 ab
+i 1 d
+i 3 cde
+i 2 cd
+i 2 de
+p
+i 2 de
+i 1 a
+p
+b 2 de
+b 1 a
+i 10 algoritmos
+b 10 algoritmos
+b 10 estruturas
+p
+l
+q

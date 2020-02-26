@@ -1,0 +1,3 @@
+Palavra inserida com sucesso.
+a
+Numero de palavras na arvore: 1, numero de nos: 1, letras da maior palavra: 1

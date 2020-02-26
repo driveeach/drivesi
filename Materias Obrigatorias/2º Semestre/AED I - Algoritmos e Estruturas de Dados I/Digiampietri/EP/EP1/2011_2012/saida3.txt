@@ -1,0 +1,16 @@
+Tabela hash de tamanho 0, com 0 registros alocados e 0 chaves
+Tabela hash inicializada. Seu arranjo possui tamanho 3.
+Elemento 1 inserido corretamente.
+Tabela hash de tamanho 3, com 1 registros alocados e 1 chaves
+Chave 1 excluida corretamente.
+Tabela hash de tamanho 3, com 0 registros alocados e 0 chaves
+Nao foi possivel encontrar a chave 1.
+Elemento 1 inserido corretamente.
+Elemento 2 inserido corretamente.
+Elemento 3 inserido corretamente.
+Chave 1 excluida corretamente.
+Ha 1 ocorrencia(s) da chave 2.
+Chave 3 excluida corretamente.
+Ha 1 ocorrencia(s) da chave 2.
+Elemento 3 inserido corretamente.
+Ha 1 ocorrencia(s) da chave 3.

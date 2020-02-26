@@ -1,0 +1,13 @@
+Tabela hash de tamanho 0, com 0 registros alocados e 0 chaves
+Tabela hash inicializada. Seu arranjo possui tamanho 2.
+Elemento 3 inserido corretamente.
+Tabela hash de tamanho 2, com 1 registros alocados e 1 chaves
+Nao foi possivel encontrar a chave 1.
+Nao foi possivel encontrar a chave 2.
+Elemento 2 inserido corretamente.
+Ha 1 ocorrencia(s) da chave 2.
+Tabela hash de tamanho 2, com 2 registros alocados e 2 chaves
+Elemento 3 inserido corretamente.
+Elemento 1 inserido corretamente.
+Ha 1 ocorrencia(s) da chave 1.
+Tabela hash de tamanho 2, com 3 registros alocados e 4 chaves

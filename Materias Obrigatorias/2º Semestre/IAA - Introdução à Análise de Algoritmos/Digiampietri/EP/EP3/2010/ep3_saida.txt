@@ -1,0 +1,17 @@
+Testando Criterio de Selecao: 'Menor Peso'
+Peso maximo:	9.0
+Peso usado:	7.0
+Valor carregado:	9.0
+Numero de objetos:	4
+
+Testando Criterio de Selecao: 'Maior Valor'
+Peso maximo:	9.0
+Peso usado:	9.0
+Valor carregado:	11.0
+Numero de objetos:	2
+
+Testando Criterio de Selecao: 'Maior Valor Dividido pelo Peso'
+Peso maximo:	9.0
+Peso usado:	9.0
+Valor carregado:	16.0
+Numero de objetos:	3

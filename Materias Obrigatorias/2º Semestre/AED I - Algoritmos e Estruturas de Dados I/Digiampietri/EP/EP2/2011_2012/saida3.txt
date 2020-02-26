@@ -1,0 +1,33 @@
+Palavra inserida com sucesso.
+Palavra inserida com sucesso.
+Palavra inserida com sucesso.
+Palavra inserida com sucesso.
+Palavra inserida com sucesso.
+Palavra inserida com sucesso.
+a
+ab
+cd
+cde
+d
+de
+Nao foi possivel inserir a palavra: de
+Nao foi possivel inserir a palavra: a
+a
+ab
+cd
+cde
+d
+de
+Palavra encontrada: de
+Palavra encontrada: a
+Palavra inserida com sucesso.
+Palavra encontrada: algoritmos
+Palavra nao encontrada: estruturas
+a
+ab
+algoritmos
+cd
+cde
+d
+de
+Numero de palavras na arvore: 7, numero de nos: 16, letras da maior palavra: 10

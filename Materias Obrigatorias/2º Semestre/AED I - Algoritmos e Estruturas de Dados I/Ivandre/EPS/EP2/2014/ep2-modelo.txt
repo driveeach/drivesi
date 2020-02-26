@@ -1,0 +1,75 @@
+//--------------------------------------------------------------
+// NOMES: escreva o nome dos integrantes aqui
+//--------------------------------------------------------------
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <conio.h>
+#include <malloc.h>
+#include <string.h>
+#include <ctype.h>
+
+
+
+// ######### ESCREVA O NROUSP DO PRIMEIRO INTEGRANTE AQUI
+char* nroUSP1() {
+    return("0000000");
+}
+
+
+
+// ######### ESCREVA O NROUSP DO SEGUNDO INTEGRANTE AQUI (OU DEIXE COM ZERO)
+char* nroUSP2() {
+    return("0000000");
+}
+
+
+
+// no da arvore
+typedef struct estr {
+        int chave;
+        struct estr *esq;
+	struct estr *dir;
+} NO;
+
+void excluirNivel(NO **raiz, int n);
+
+
+
+
+
+
+//------------------------------------------
+// O EP consiste em implementar esta funcao
+//------------------------------------------
+void excluirNivel(NO **raiz, int n) {
+
+	NO* p = *raiz; 	// use p para percorrer a estrutura
+			// sem modificar a raiz indevidamente
+
+	// seu codigo AQUI
+
+}
+
+
+
+
+
+
+//---------------------------------------------------------
+// use main() para fazer chamadas de teste ao seu programa
+//---------------------------------------------------------
+int main() {
+
+	NO* arv = null;
+
+	
+
+	// serao realizadas chamadas como esta:
+	// int n = 7;
+	// excluirNivel(&arv, n);
+
+
+}
+
+// por favor nao inclua nenhum código abaixo da função main()
