@@ -1,0 +1,19 @@
+@namespace("dsid.assignment.avro")
+protocol FooProtocol {
+
+  record Author {
+    long id;
+    string name;
+    string surname;
+  }
+
+  record Foo {
+    long id;
+    string title;
+    array<string> body;
+    array<Author> authors;
+  }
+
+  Foo foo(Foo foo);
+
+}

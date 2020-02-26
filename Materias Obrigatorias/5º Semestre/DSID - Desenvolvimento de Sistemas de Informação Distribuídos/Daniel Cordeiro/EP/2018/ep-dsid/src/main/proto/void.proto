@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "dsid.assignment.proto";
+option java_outer_classname = "VoidProto";
+
+package proto;
+
+service VoidMessageService {
+    rpc SendVoid(Empty) returns (Empty) {}
+}
+
+//Protobuf requires a type for message sending. This is the closest we can get to a Void type.
+message Empty {
+
+}

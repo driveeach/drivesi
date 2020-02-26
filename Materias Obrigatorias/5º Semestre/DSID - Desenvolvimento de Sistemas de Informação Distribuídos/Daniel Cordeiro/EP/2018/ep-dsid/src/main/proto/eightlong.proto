@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "dsid.assignment.proto";
+option java_outer_classname = "EightLongProto";
+
+import "singlelong.proto";
+
+package proto;
+
+
+service EightLongMessageService {
+    rpc SendLong(EightLong) returns (SingleLong) {}
+}
+
+
+message EightLong {
+    int64 firstLong = 1;
+    int64 secondLong = 2;
+    int64 thirdLong = 3;
+    int64 fourthLong = 4;
+    int64 fifthLong = 5;
+    int64 sixthLong = 6;
+    int64 seventhLong = 7;
+    int64 eighthLong= 8;
+}

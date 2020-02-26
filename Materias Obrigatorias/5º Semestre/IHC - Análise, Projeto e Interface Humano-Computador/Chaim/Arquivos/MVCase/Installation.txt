@@ -1,0 +1,8 @@
+MVCASE requires JRE 5.0 to run.
+To install, unzip files on some folder, and run 
+mvcase.bat (windows users).
+The mvcase.bat file refers to the java.exe program, 
+which must be referenced by your PATH environment 
+variable. If you do not want to change your PATH 
+variable, change mvcase.bat to point directly to 
+java.exe from your JRE 5.0.

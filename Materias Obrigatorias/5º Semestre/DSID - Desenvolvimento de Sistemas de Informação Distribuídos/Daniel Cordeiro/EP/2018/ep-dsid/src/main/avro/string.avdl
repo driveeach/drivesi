@@ -1,0 +1,6 @@
+@namespace("dsid.assignment.avro")
+protocol StringProtocol {
+
+  string stringmessage(string value);
+
+}

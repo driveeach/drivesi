@@ -1,0 +1,1 @@
+double entropia = -1*(positivos/total)*(Math.log(positivos/total)/Math.log(2))-(negativos/total)*(Math.log(negativos/total)/Math.log(2));

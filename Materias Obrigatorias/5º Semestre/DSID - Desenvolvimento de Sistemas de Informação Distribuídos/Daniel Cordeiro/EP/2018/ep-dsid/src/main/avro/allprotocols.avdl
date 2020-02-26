@@ -1,0 +1,8 @@
+@namespace("dsid.assignment.avro")
+protocol AllProtocols {
+  import idl "eightlong.avdl";
+  import idl "foo.avdl";
+  import idl "singlelong.avdl";
+  import idl "string.avdl";
+  import idl "void.avdl";
+}

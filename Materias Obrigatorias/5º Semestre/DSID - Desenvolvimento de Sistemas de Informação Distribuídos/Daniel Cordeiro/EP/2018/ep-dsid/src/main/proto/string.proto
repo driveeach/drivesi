@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "dsid.assignment.proto";
+option java_outer_classname = "StringProto";
+
+package proto;
+
+
+service StringMessageService {
+    rpc SendString(StringMessage) returns (StringMessage) {}
+}
+
+
+message StringMessage {
+    string value = 1;
+}

@@ -1,0 +1,6 @@
+@namespace("dsid.assignment.avro")
+protocol EightLongProtocol {
+
+  long eightLong(long first, long second, long third, long fourth, long fifth, long sixth, long seventh, long eighth);
+
+}

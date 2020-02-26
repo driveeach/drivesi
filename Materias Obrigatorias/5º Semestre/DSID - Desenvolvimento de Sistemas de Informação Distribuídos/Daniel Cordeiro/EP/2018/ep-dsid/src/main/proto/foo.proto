@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "dsid.assignment.proto";
+option java_outer_classname = "FooProto";
+
+package proto;
+
+service FooMessageService {
+    rpc SendFoo(Foo) returns (Foo) {}
+}
+
+message Foo {
+    int64 id = 1;
+    string title = 2;
+    repeated string body = 3;
+    repeated Author authors = 4;
+}
+
+message Author {
+    int64 id = 1;
+    string name = 2;
+    string surname = 3;
+
+}

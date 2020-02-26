@@ -1,0 +1,30 @@
+1-) a-) Fazer a FPT de 6 bits, os nós eram: 1, 7, 18, 23, 36 e 55 (se não me engano).
+
+b-) Buscar a chave 39 usando a tabela criada
+
+
+2-)   A) ((Não lembro exatamente a questão))
+
+B) Mostrar um exemplo mostrando porque o Lamport não define uma relação causal 
+
+ C) Explicar como, usando o Lamport, fazer a exclusão mútua
+
+3-) Verdadeiro ou Falso, explicando a razão:
+
+Dois eventos podem ter timestamps iguais
+
+Dois eventos podem ter timestamps vetoriais iguais
+
+Ordenação causal implica ordenação total
+
+4 - Sobre consistência 
+
+A) O que é consistência sequencial
+
+B) O que é consistência causal
+
+C) Exemplos com consistência causal e não sequencial
+
+
+5-) Opinião sobre o curso (si próprio, professor, o que pode melhorar, etc.)
+

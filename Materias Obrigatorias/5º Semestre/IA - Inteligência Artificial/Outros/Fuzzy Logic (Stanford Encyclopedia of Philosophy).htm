@@ -1,0 +1,1116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+<title>Fuzzy Logic (Stanford Encyclopedia of Philosophy)</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="robots" content="noarchive, noodp" />
+<meta name="DC.title" content="Fuzzy Logic" />
+<meta name="DC.creator" content="Hajek, Petr" />
+<meta name="DCTERMS.modified" content="2010-08-04" />
+<meta name="citation_authors" content="Hajek, Petr" />
+<link rel="alternate" type="application/rss+xml" title="Stanford Encyclopedia of Philosophy" href="http://plato.stanford.edu/rss/sep.xml" />
+<link rel="stylesheet" type="text/css" media="screen" href="../../css/sepentry.css" />
+<link rel="stylesheet" type="text/css" media="print, handheld" href="../../css/sepprint.css" />
+
+</head>
+
+<body>
+
+<div id="pagetopleft" onclick="location.href='../../'">&nbsp;</div>
+
+<div id="navmenu">
+  <div class="menuheading"><a href="../../search/searcher.py" class="menulink">Search the SEP</a></div>
+<form method="get" action="../../search/searcher.py">
+    <div style="padding: 0px 0px 2px 5px"><input size="18" name="query" style="width: 140px; background-color: #eeeeee; color: #444444" /></div>
+    <div class="menuitem">&bull; <a href="../../search/searcher.py" class="menulink">Advanced Search</a></div>
+    <div class="menuitem">&bull; <a href="../../tools/" class="menulink">Tools</a> &bull; <a href="http://plato.stanford.edu/rss/sep.xml" class="menulink" target="other">RSS Feed</a></div>
+</form>
+
+<hr />
+
+<div class="menuheading"><a href="../../contents.html" class="menulink">Table of Contents</a></div>
+
+<div class="menuitem">&bull; <a href="../../new.html" class="menulink">What's New</a></div>
+
+<div class="menuitem">&bull; <a href="../../archives/" class="menulink">Archives</a></div>
+
+<div class="menuitem">&bull; <a href="../../projected-contents.html" class="menulink">Projected Contents</a></div>
+
+<hr />
+
+<div class="menuheading"><a href="../../info.html" class="menulink">Editorial Information</a></div>
+
+<div class="menuitem">&bull; <a href="../../about.html" class="menulink">About the SEP</a></div>
+
+<div class="menuitem">&bull; <a href="../../board.html" class="menulink">Editorial Board</a></div>
+
+<div class="menuitem">&bull; <a href="../../cite.html" class="menulink">How to Cite the SEP</a></div>
+
+<div class="menuitem">&bull; <a href="../../special-characters.html" class="menulink">Special Characters</a></div>
+
+<hr />
+
+<div class="menuheading"><a href="../../support/" class="menulink">Support the SEP</a></div>
+
+<div class="menuitem">&bull; <a href="../../support/friends.html" class="menulink">PDFs for SEP Friends</a></div>
+
+<div class="menuitem">&bull; <a href="../../support/donate.html" class="menulink">Make a Donation</a></div>
+
+<div class="menuitem">&bull; <a href="../../support/sepia.html" class="menulink">SEPIA for Libraries</a></div>
+
+<hr />
+
+<div class="menuheading"><a href="m&#97;ilto:webmaster&#37;40plato&#37;2estanford&#37;2eedu" class="menulink">Contact the SEP</a></div>
+
+<hr />
+
+<div class="copyright">
+<a href="http://plato.stanford.edu/"><img src="../../symbols/sepman.png" height="50" align="left" alt="SEP logo" border="0" /></a>
+<a href="../../info.html#c">&copy;</a>
+<a href="http://mally.stanford.edu/" target="other">Metaphysics Research Lab</a>,
+<a href="http://www-csli.stanford.edu/" target="other">CSLI</a>,
+<a href="http://www.stanford.edu/" target="other">Stanford University</a>
+</div>
+
+
+</div><!-- end #navmenu -->
+
+<div id="pagetopright">
+  <a href="../../" class="menulink"><img src="../../symbols/septop.jpg" alt="Stanford Encyclopedia of Philosophy" /></a>
+</div>
+
+
+
+<div id="content"> 
+
+<!--FUNDING MESSAGE-->
+<div id="message">
+  <a href="../../fundraising/" class="banner">
+  Open access to the SEP is made possible by a world-wide funding initiative.<br />
+  Please Read How You Can Help Keep the Encyclopedia Free</a>
+</div>
+
+<!--FUNDING MESSAGE-->
+
+<!--ACADEMIC LINKS-->
+<div id="linklist">
+<a href="http://plato.stanford.edu/cgi-bin/encyclopedia/archinfo.cgi?entry=logic-fuzzy" target="other">Author &amp; Citation Info</a> | 
+<a href="https://leibniz.stanford.edu/friends/preview/logic-fuzzy/" target="other">Friends PDF Preview</a> |
+<a href="https://inpho.cogs.indiana.edu/entity?sep=logic-fuzzy&amp;redirect=True" target="other">InPho Search</a> |
+<a href="http://philpapers.org/sep/logic-fuzzy/" target="other">PhilPapers Bibliography</a> 
+</div>
+<!--ACADEMIC LINKS-->
+
+<div id="aueditable"><!--DO NOT MODIFY THIS LINE AND ABOVE-->
+
+<h1>Fuzzy Logic</h1><div id="pubinfo"><em>First published Tue Sep 3, 2002; substantive revision Wed Aug 4, 2010</em></div>
+
+<p>
+
+The term &ldquo;fuzzy logic&rdquo; emerged in the development of the
+theory of fuzzy sets by Lotfi Zadeh (1965).  A fuzzy subset <em>A</em>
+of a (crisp) set <em>X</em> is characterized by assigning to each
+element <em>x</em> of <em>X</em> the <em>degree of membership</em>
+of <em>x</em> in <em>A</em> (e.g., <em>X</em> is a group of
+people, <em>A</em> the fuzzy set of
+<em>old</em> people in <em>X</em>). Now if <em>X</em> is a set of
+propositions then its elements may be assigned their <em>degree of
+truth</em>, which may be &ldquo;absolutely true,&rdquo; &ldquo;absolutely
+false&rdquo; or some <em>intermediate</em> truth degree: a proposition
+may be more true than another proposition.  This is obvious in the
+case of vague (imprecise) propositions like &ldquo;this person is
+old&rdquo; (beautiful, rich, etc.). In the analogy to various
+definitions of operations on fuzzy sets (intersection, union,
+complement, &hellip;) one may ask how propositions can be combined by
+<em>connectives</em> (conjunction, disjunction, negation, &hellip;) and
+if the truth degree of a composed proposition is determined by the
+truth degrees of its components, i.e. if the connectives have their
+corresponding <em>truth functions</em> (like truth tables of classical
+logic). Saying &ldquo;yes&rdquo; (which is the mainstream of fuzzy
+logic) one accepts the truth-functional approach; this makes fuzzy
+logic to something distinctly <em>different from probability
+theory</em> since the latter is not truth-functional (the probability
+of conjunction of two propositions is <em>not determined</em> by the
+probabilities of those propositions).</p>
+
+<p>
+ Two main directions in fuzzy logic have to be distinguished (cf.
+Zadeh 1994).
+<em>Fuzzy logic in the broad sense</em> (older, better known, heavily
+applied but not asking deep logical questions) serves mainly as
+apparatus for fuzzy control, analysis of vagueness in natural language
+and several other application domains. It is one of the techniques
+of <em>soft-computing</em>, i.e.  computational methods tolerant to
+suboptimality and impreciseness (vagueness) and giving quick, simple
+and <em>sufficiently good</em> solutions. The monographs Novak 1989,
+Zimmermann 1991, Klir-Yuan 1996, Nguyen 1999 can serve as recommended
+sources of information.</p>
+
+<p>
+ <em>Fuzzy logic in the narrow sense</em> is symbolic logic with a
+comparative notion of truth developed fully in the spirit of classical
+logic (syntax, semantics, axiomatization, truth-preserving deduction,
+completeness, etc.; both propositional and predicate logic). It is a
+branch of <em>many-valued logic</em> based on the paradigm
+of <em>inference under vagueness</em>. This fuzzy logic is a
+relatively young discipline, both serving as a foundation for the
+fuzzy logic in a broad sense and of independent logical interest,
+since it turns out that strictly logical investigation of this kind of
+logical calculi can go rather far. A basic monograph is Hajek 1998,
+further recommended monographs are Turunen 1999, Novak <em>et
+al</em>. 2000; also recent monographs dealing with many-valued logic
+(not specifically oriented to fuzziness), namely Gottwald 2001,
+Cignoli <em>et al</em>. 2000a; are highly relevant.</p>
+
+<p>
+ The interested reader will find below some more information on fuzzy
+connectives and a survey of a logical system called basic fuzzy
+(propositional and predicate) logic together with three stronger
+systems &mdash; &#321;ukasiewicz, G&ouml;del and product logic; a
+short discussion on paradoxes and fuzzy logic; some comments on other
+formal systems of fuzzy logic, complexity and, finally, a few remarks
+on fuzzy computing and bibliography.</p>
+
+<ul>
+<li><a href="#1">1. Fuzzy connectives</a></li>
+
+<li><a href="#2">2. Basic fuzzy propositional logic</a></li>
+
+<li><a href="#3">3. Basic fuzzy predicate logic</a></li>
+
+<li><a href="#4">4. &#321;ukasiewicz, G&ouml;del and product logic</a></li>
+
+<li><a href="#5">5. Fuzzy logic, paradoxes and probability</a></li>
+
+<li><a href="#6">6. Other systems of fuzzy logic</a></li>
+
+<li><a href="#7">7. On fuzzy computing</a></li>
+
+<li><a href="#8">8. Complexity</a></li>
+
+<li><a href="#9">9. Glossary</a></li>
+
+<li><a href="#Bib">Bibliography</a></li>
+
+<li><a href="#Oth">Other Internet Resources</a></li>
+
+<li><a href="#Rel">Related Entries</a></li>
+</ul>
+
+<hr />
+
+<h2><a name="1">1. Fuzzy connectives</a></h2>
+
+<p>
+ The <em>standard set of truth degrees</em> is the real interval [0,1]
+with its natural ordering &le; (1 standing for absolute truth, 0 for
+absolute falsity); but one can work with different domains, finite or
+infinite, linearly or partially ordered. Truth functions of
+connectives have to
+<em>behave classically on the extremal values</em> 0,1.</p>
+
+<p>
+ It is broadly accepted that <em>t-norms</em> (triangular norms) are
+possible truth functions of <em>conjunction.</em> (A binary operation
+* on the interval [0,1] is a <em>t</em>-norm if it is commutative,
+associative, non-decreasing and 1 is its unit element. Minimum
+(min(<em>x,y</em>) is the most popular <em>t</em>-norm.  See the
+Glossary at the end.)  Dually, <em>t-conorms</em> serve as truth
+functions of <em>disjunction.</em> See Klement <em>et al</em>. 2000
+for an extensive theory of <em>t</em>-norms. The truth function
+of <em>negation</em> has to be non-increasing (and assign 0 to 1 and
+vice versa); the function 1 &minus; <em>x</em> (&#321;ukasiewicz
+negation) is the best known candidate.</p>
+
+<p>
+ <em>Implication</em> is sometimes disregarded but is of fundamental
+importance for fuzzy logic in the narrow sense. A straightforward but
+logically less interesting possibility is to define implication from
+conjunction and negation (or disjunction and negation) using the
+corresponding tautology of classical logic; such implications are
+called <em>S-implications.</em> More useful and interesting are
+<em>R-implications:</em> an <em>R</em>-implication is defined as a
+residuum of a <em>t</em>-norm; denoting the <em>t</em>-norm * and the
+residuum &rarr; we have <em>x</em>&nbsp;&rarr;&nbsp;<em>y</em> =
+max{<em>z</em>| <em>x</em>*<em>z</em> &le; <em>y</em>}.  This is
+well-defined only if the <em>t</em>-norm is left-continuous.</p>
+
+<h2><a name="2">2. Basic fuzzy propositional logic</a></h2>
+
+<p>
+ Basic fuzzy propositional logic is the logic of
+ <a href="#8">continuous</a>
+<em>t</em>-norms (developed in Hajek 1998).  Formulas are built from
+propositional variables using connectives &amp; (conjunction), &rarr;
+(implication) and truth constant 0 (denoting falsity). Negation &not;
+&phi; is defined as &phi; &rarr; 0.  Given a
+continuous <em>t</em>-norm * (and hence its residuum &rarr;) each
+evaluation <em>e</em> of propositional variables by truth degrees for
+[0,1] extends uniquely to the evaluation
+<em>e</em><sub>*</sub>(&phi;) of each formula &phi; using * and &rarr;
+as truth functions of &amp; and &rarr;.</p>
+
+<p>A formula &phi; is a <em>t</em>-<em>tautology</em> or <em>standard
+BL-tautology</em> if <em>e</em><sub>*</sub>(&phi;) = 1 for each
+evaluation <em>e</em> and each continuous <em>t</em>-norm *.  The
+following <em>t</em>-tautologies are taken as <em>axioms of the
+logic</em> BL:</p>
+
+<blockquote>
+<table>
+<tr>
+<td valign="top">(A1)</td>
+<td valign="top">(&phi; &rarr; &psi;) 
+ &rarr;  ((&psi; &rarr; &chi;)
+ &rarr;  (&phi; &rarr; &chi;))</td>
+</tr>
+
+<tr>
+<td valign="top">(A2)</td>
+<td valign="top">(&phi; &amp; &psi;) &rarr; &phi;
+</td>
+</tr>
+
+<tr>
+<td valign="top">(A3)</td>
+<td valign="top">(&phi; &amp; &psi;)
+  &rarr;   (&psi; &amp; &phi;)
+</td>
+</tr>
+
+<tr>
+<td valign="top">(A4)</td>
+<td valign="top">(&phi; &amp; (&phi; &rarr; &psi;))
+  &rarr; (&psi; &amp; (&psi; &rarr; &phi;))
+</td>
+</tr>
+
+<tr>
+<td valign="top">(A5a)</td>
+<td valign="top">(&phi; &rarr; (&psi; &rarr; &chi;))
+  &rarr; ((&phi; &amp; &psi;) &rarr; &chi;)
+</td>
+</tr>
+
+<tr>
+<td valign="top">(A5b)</td>
+<td valign="top">((&phi; &amp; &psi;) &rarr; &chi;)
+  &rarr; (&phi; &rarr; (&psi; &rarr; &chi;))
+</td>
+</tr>
+
+<tr>
+<td valign="top">(A6)</td>
+<td valign="top">((&phi; &rarr; &psi;)
+  &rarr; &chi;)   &rarr;
+  (((&psi; &rarr; &phi;) &rarr; &chi;) &rarr; &chi;)
+</td>
+</tr>
+
+<tr>
+<td valign="top">(A7)</td>
+<td valign="top">
+  0 &rarr; &phi;
+</td>
+</tr>
+  
+</table>
+</blockquote>
+
+<p>
+ <em>Modus ponens</em> is the only deduction rule; this gives the
+usual notion of proof and provability of the logic BL.
+The <em>standard completeness theorem</em> (Cignoli <em>et
+al</em>. 2000b) says that a formula &phi; is a <em>t</em>-tautology
+iff it is provable in BL.</p>
+
+<p>
+There is a more general semantics of BL, based on algebras called
+<em>BL-algebras</em>; each
+BL-algebra can serve as the algebra of truth functions of BL. The
+<em> general completeness theorem</em> says that a formula
+&phi; is provable in BL iff it is a general BL-tautology, i.e., a
+tautology for each (linearly ordered) BL-algebra
+<strong>L</strong>.</p>
+
+<h2><a name="3">3. Basic fuzzy predicate logic</a></h2>
+
+<p>
+ Basic fuzzy predicate logic has the same formulas as classical
+predicate logic (they are built from predicates of arbitrary arity
+using object variables, connectives &amp;, &rarr;, truth constant 0
+and quantifiers &forall;, &exist;.  A <em>standard interpretation</em>
+is given by a non-empty domain <em>M</em> and for each <em>n</em>-ary
+predicate <em>P</em> by a <em>n</em>-ary fuzzy relation on <em>M</em>,
+i.e., a mapping assigning to each <em>n</em>-tuple of elements of
+<em>M</em> a truth value from [0,1] &mdash; the degree in which the
+<em>n</em>-tuple satisfies the atomic formula
+<em>P</em>(<em>x</em><sub>1</sub>,&hellip;,<em>x</em><sub><em>n</em></sub>).
+Given a continuous <em>t</em>-norm, this defines uniquely (in Tarski
+style) the truth degree ||&phi;|| of each closed formula &phi; given
+by the interpretation <strong>M</strong> and <em>t</em>-norm *.  (The
+degree of an universally quantified formula &forall;<em>x</em>&phi; is
+defined as the
+ <a href="#8">infimum</a>
+of truth degrees of instances of &phi;; similarly
+&exist;<em>x</em>&phi; and
+ <a href="#8">supremum</a>.
+See the Glossary at the end of this entry.)</p>
+
+<p>
+ This generalizes in an appropriate manner to a so called <em>safe
+interpretation</em> over any linearly ordered BL-algebra and
+definition of the truth value ||&phi;||
+<sub><strong>M,L</strong></sub> given by the
+<strong>L</strong>-interpretation <strong>M</strong>. A formula is a
+<em>general</em> BL-<em>tautology</em> in the predicate logic
+BL&forall; if its truth value is 1 in each safe interpretation.</p>
+
+<p>
+ The following BL-tautologies are taken as axioms of BL&forall;: (a)
+axioms of the propositional logic BL, and</p>
+
+<blockquote>
+<table>
+<tr>
+<td valign="top">(&forall;1)</td>
+<td>&forall;<em>x</em>&phi;(<em>x</em>)
+  &rarr;
+ &phi;(<em>y</em>)</td>
+</tr>
+
+<tr>
+<td valign="top">(&exist;1)</td>
+<td valign="top">&phi;(<em>y</em>)
+  &rarr;
+  &exist;<em>x</em>&phi;(<em>x</em>)
+</td>
+</tr>
+
+<tr>
+<td valign="top">(&forall;2)</td>
+<td valign="top">&forall;<em>x</em>(&chi;&rarr;&psi;)
+  &rarr; (&chi; &rarr; &forall;<em>x</em>&psi;)
+</td>
+</tr>
+
+<tr>
+<td valign="top">(&exist;2)</td>
+<td valign="top">&forall;<em>x</em>(&phi; &rarr; &chi;)
+  &rarr;  (&exist;<em>x</em>&phi; &rarr;  &chi;)
+</td>
+</tr>
+
+<tr>
+<td valign="top">(&forall;3)</td>
+<td valign="top">&forall;<em>x</em>(&phi;
+ &or; &chi;)
+ &rarr;
+ (&forall;<em>x</em>&phi; 
+ &or; &chi;)
+</td>
+</tr>
+</table>
+
+<p>
+
+(where <em>y</em> is substitutable for <em>x</em> into
+&phi; and <em>x</em> is not free in &chi;).</p>
+ </blockquote>
+
+<p>
+ Deduction rules are modus ponens and generalization as in
+classical logic.</p>
+
+<p>
+ The <em>general completeness theorem</em> says that a formula is
+provable in the fuzzy predicate logic BL&forall; iff it is a general
+BL-tautology (of predicate logic). This generalizes in a natural way
+to provability in a theory over BL&forall; and truth in all models of
+the theory.  But note
+that <em>standard</em> BL-tautologies, i.e., formulas true in all
+standard interpretations w.r.t. all continuous <em>t</em>-norms are
+not recursively axiomatizable (see Montagna 2001 for the
+final result).</p>
+
+<p>From recent important and general papers we recommend Cintula &amp;
+Hajek 2010a, Esteva <em>et al</em>. 2009,
+Metcalfe <em>et al</em>. 2008 and Montagna 2005.</p>
+
+<h2><a name="4">4. &#321;ukasiewicz, G&ouml;del and product logic</a></h2>
+
+<p>
+
+The following table presents three most important continuous
+<em>t</em>-norms, their residua and the corresponding negation:</p>
+
+<p>
+ <img src="ttab.gif" alt="ttab" />
+</p>
+
+<p>
+ They define three corresponding notions of tautology (being true in
+each evaluation with respect to the <em>t</em>-norm &mdash; standard
+&#321;-tautologies, G-tautologies and &Pi;-tautologies.)  On the level
+of propositional logic they are completely axiomatized as follows:</p>
+
+<blockquote>
+<table>
+<tr>
+<td valign="top">&#321;</td>
+<td valign="top">&mdash;</td>
+<td>BL plus the axiom 
+ &not;&not;&phi; &rarr; &phi;
+ of double negation,</td>
+</tr>
+
+<tr>
+<td valign="top">G</td>
+<td valign="top">&mdash;</td>
+<td>BL plus the axiom 
+ &phi;  &rarr; (&phi; &amp; &phi;)
+ of idempotence of conjunction,</td>
+</tr>
+
+<tr>
+<td valign="top">&Pi;</td>
+<td valign="top">&mdash;</td>
+<td>BL plus the axiom 
+ &not;&not;&phi;  &rarr;  ((&phi;&rarr;  (&phi; &amp; &psi;))
+ &rarr;  (&psi; &amp; &not;&not;&psi;)).</td>
+</tr>
+</table>
+</blockquote>
+
+<p>
+ This is <em>standard completeness</em>; we have also <em> general
+completeness</em> with respect to BL-algebras satisfying the
+corresponding additional conditions (making the additional axioms
+true): they are called MV-algebras (for &#321;), G-algebras (for G)
+and product algebras (for &Pi;) The corresponding predicate logics
+&#321;&forall;, G&forall;, &Pi;&forall; are extensions of the basic
+predicate fuzzy logic BL&forall; by the just formulated axioms
+characterizing &#321;, G, &Pi;.</p>
+
+<p>
+ Analogously to BL&forall; we have the <em>general completeness</em>
+heorem for predicate logics: provability = general validity; for
+G&forall; we have also <em>standard completeness</em>, but neither
+standard L&forall;-tautologies nor standard &Pi;&forall;-tautologies
+are recursively axiomatizable.</p>
+
+<p>Among important recent papers, we should mention Cintula &amp;
+Hajek 2009.</p>
+
+<h2><a name="5">5. Fuzzy logic, paradoxes and probability</a></h2>
+
+<p>
+ In classical logic, the liar paradox (sentence asserting its own
+falsity) relies on the fact that no formula can be equivalent to its
+own negation.  In &#321;ukasiewicz logic this is not the case: if
+&phi; has the value 0.5 then its negation &not;&phi; has the same
+value and is equivalent to &phi;.  But one may ask if one can add to
+(classical) arithmetic a fuzzy truth predicate <em>Tr</em> satisfying,
+for formulas of this extended language, the <em>disquotation
+schema</em></p>
+
+<blockquote>
+ &phi;  &equiv;  <em>Tr</em>(<strong>&phi;</strong>),  
+(where <strong>&phi;</strong> denotes the G&ouml;del number of
+ &phi;)
+</blockquote>
+
+<p>
+ The answer is &ldquo;yes and no&rdquo;: you get a theory which is
+consistent but has no model expanding the standard natural
+numbers. This is discussed in Hajek <em>et al</em>. 2000; see also
+Grim <em>et al</em>. 1992.</p>
+
+<p>
+ The <a href="../sorites-paradox/"><em>Sorites paradox</em></a> is
+related to notions like small, many etc.; considering them to be crisp
+(two-valued) leads to unnatural consequences. We shall sketch a
+treatment of the notion &ldquo;small number&rdquo; in fuzzy
+logic. (See Goguen 1968&ndash;69 for a &ldquo;classic&rdquo;
+analysis.)  Without going into detail, imagine a theory inside fuzzy
+predicate calculus (BL&forall; or other) containing crisp arithmetic
+of natural numbers (as above) and an additional
+predicate <em>Small</em> with the axioms saying that 0 is small
+(<em>Small</em>(0)), that <em>Small</em> respects &le;, i.e.,</p>
+
+<blockquote>
+ &forall;<em>x</em>,<em>y</em> (<em>x</em>&le;<em>y</em> &rarr;
+(<em>Small</em>(<em>y</em>) &rarr; <em>Small</em>(<em>x</em>))),
+ </blockquote>
+
+<p>
+ and that for all <em>x</em>, the implication
+<em>Small</em>(<em>x</em>)&rarr;<em>Small</em>(<em>x</em>+1)
+is <em>almost true</em>; finally that there is a non small number,
+&exist;<em>x</em>&not;<em>Small</em>(<em>x</em>).  The
+&ldquo;induction&rdquo; condition can be expressed in various ways,
+e.g.,</p>
+
+<blockquote>
+ &forall;<em>x</em> <em>At</em>(<em>Small</em>(<em>x</em>)
+ &rarr; <em>Small</em>(<em>x</em>+1))
+</blockquote>
+
+<p>
+ where <em>At</em> is an unary connective &ldquo;almost true&rdquo;.
+Its truth function has to satisfy some natural conditions, in
+particular <em>u&rarr;At(u)</em>.  You can have <em>At</em> definable,
+introducing a new propositional constant <em>r</em> that should be
+interpreted by a truth value near to 1 and defining <em>At</em>&phi;
+to be <em>r</em>&rarr;&phi;, thus the above formula becomes</p>
+
+<blockquote>
+ &forall;<em>x</em>(<em>r</em>
+ &rarr; (<em>Small</em>(<em>x</em>)
+ &rarr; <em>Small</em>(<em>x</em>+1))), or equivalently <br />
+ &forall;<em>x</em>((<em>Small</em>(<em>x</em>)
+ &amp; <em>r</em>)
+ &rarr; <em>Small</em>(<em>x</em>+1)).
+</blockquote>
+
+<p>
+ You see that the theory admits many interpretations (and hence is
+consistent). All interpretations satisfy in some sense the following:
+the truth degree of <em>Small</em>(<em>x</em>+1) is only slightly less
+than (or equal to) the truth degree of
+<em>Small</em>(<em>x</em>). Thus the paradox can be handled in the
+frame of fuzzy logic in an axiomatic way, not enforcing any unique
+semantics. The semantics need not be numerical and the truth values
+need not be linearly ordered (there are BL algebras whose order is not
+linear).</p>
+
+<p>For the liar paradox and fuzzy logic
+see Hajek <em>et al</em>. 2000 and for Sorites
+paradox and fuzzy logic see Hajek &amp; Novak 2003.</p>
+
+<p>
+ Several other notions can be handled similarly; for example the fuzzy
+notion <em>probably</em> can be axiomatized as a <em>fuzzy
+modality</em>. Having a probability on Boolean formulas, define for
+each such formula &phi; a new formula P&phi;, read &ldquo;probably
+&phi;&rdquo;, and define the truth value of P&phi; to be the
+probability of &phi;.  One gets a reasonably elegant bridge between
+fuzziness and probability, with a simple axiom system over
+&#321;ukasiewicz logic. See Hajek 1998.</p>
+
+<h2><a name="6">6. Other systems of fuzzy logic</a></h2>
+
+<p>
+ We mention a few: </p>
+
+<ul>
+
+<li><p><em>Pavelka's logic</em>. (&#321;ukasiewicz with rational truth
+constants; see Pavelka 1979, Novak <em>et al</em>. 2000;
+V. Novak systematically develops this logic as a logic with evaluated
+syntax (working with pairs (<em>formula, truth value</em>)), fuzzy
+theories (sets of evaluated formulas) and fuzzy modus ponens
+[<em>from</em> (&phi;,<em>u</em>), (&phi;&rarr;&psi;,<em>v</em>)
+derive (&psi;,<em>u</em>*<em>v</em>) where * is &#321;ukasiewicz
+<em>t</em>-norm].  This has excellent properties thanks to the fact
+that &#321;ukasiewicz t-norm is the only continuous t-norm whose
+residuum is continuous. Expansions of other logics with truth
+constants were studied in Esteva <em>et al</em>. 2009 and Savicky <em>et al</em>. 2006.</p></li>
+
+<li><p><em>Expansions of basic logic BL by aditional
+connectives</em>. These include logics with an additional involutive
+negation (Esteva <em>et al</em>. 2000), and logics putting
+&#321;ukasiewicz and product logic together (Esteva &amp; Godo 1999,
+Cintula 2001, Cintula 2003, Horcik &amp; Citula 2004).</p></li>
+
+<li><p>The <em>monoidal t-norm based logic</em> MTL. Introduced in Esteva
+&amp; Godo 2001 as well as its predicate variant MTL&forall;.  This is
+a generalization of the logic BL &mdash; a logic of left continuous
+t-norms. It has stronger variants IMTL and &Pi;MTL generalizing the
+&#321;ukasiewicz and product logic. These logics are (strongly)
+complete with respect to corresponding algebras. For results on
+standard completeness of these logics, see Jenei &amp; Montagna 2002
+and (for &Pi;MTL) Horcik 2005.</p></li>
+
+<li><p><em>Fuzzy logics with non-commutative conjunction</em>.
+(&phi;&amp;&psi; not necessarily equivalent to &psi;&amp;&phi;). For
+details see di Nola <em>et al</em>. 2002, Hajek 2003, and for standard
+completeness, Jenei &amp; Montagna 2003.</p></li>
+
+<li><p><em>Fuzzy logic and vagueness</em>. Is fuzzy logic a logic of
+vague notions? This is discussed; there are two monographs on
+vagueness written by philosophers, Shapiro 2006 and Smith 2008.  They
+also discuss the relation of vagueness to truth degrees
+(fuzziness). Shapiro is rather negative but Smith is open and
+positive. Let's mention two papers: Ferm&uuml;ller 2003 and Hajek
+2009a.</p></li>
+
+<li><p><em>Axiomatic fuzzy set theory</em>. Let us mention two important
+approaches: first, an axiomatic theory (over a fuzzy predicate logic)
+which should be analogous to the classical Zermelo-Fraenkel set
+theory. This is well possible - see Hajek &amp; Hanikova 2003.
+Another very interesting approach is to have a theory (over
+&#321;ukasiewicz predicate logic) which would have full comprehension
+&mdash; each formula determines a set of all elements satisfing the
+formula. Over classical logic this is contradictory (Russel's
+paradox), but over &#321;ukasiewicz it is consistent
+(Cantor-&#321;ukasiewicz set theory), as was proved by White 1979. It
+is very interesting to investigate what can one prove on natural
+numbers in this set theory, see e.g. Hajek 2005b and
+Yatabe 2005, 2007, 2009.</p></li>
+
+</ul>
+
+<p>
+ To close this section let us mention a very general treatment of
+fuzzy logics in the frame of the so-called weakly implicative logics
+presented in Cintula 2006. </p>
+
+<h2><a name="7">7. On fuzzy computing</a></h2>
+
+<p>
+ We briefly comment on so-called fuzzy IF-THEN rules as an example of
+fuzzy logic in a broad sense. They may be understood as partial
+imprecise knowledge on some crisp function and have (in the simplest
+case) the form IF <em>x</em> is <em>A</em><sub><em>i</em></sub> THEN
+<em>y</em> is <em>B<sub>i</sub></em>.  They should
+<strong>not</strong> be immediately understood as implications; think
+of a <em>table</em> relating values of a (dependent) variable
+<em>y</em> to values of an (independent variable) <em>x</em>:</p>
+
+<blockquote>
+<table width="150" cellspacing="0" border="1">
+<tr>
+<td align="center"><em>x</em></td>
+<td align="center"><em>A</em><sub>1</sub></td>
+<td align="center">&hellip;</td>
+<td align="center"><em>A</em><sub><em>n</em></sub></td>
+</tr>
+
+<tr>
+<td align="center"><em>y</em></td>
+<td align="center"><em>B</em><sub>1</sub></td>
+<td align="center">&hellip;</td>
+<td align="center"><em>B</em><sub><em>n</em></sub></td>
+</tr>
+</table>
+</blockquote>
+
+<p>
+ <em>A</em><sub><em>i</em></sub>, <em>B</em><sub><em>i</em></sub> may
+be crisp (concrete numbers) or fuzzy (small, medium, &hellip;) It may be
+understood in two, in general non-equivalent ways:</p>
+
+<p> (1) as a listing 
+of <em>n</em> possibilities, called Mamdani's formula:</p>
+
+<blockquote>
+<table>
+<tr>
+<td valign="middle"><em>MAMD</em>(<em>x</em>,<em>y</em>)</td>
+<td valign="middle">&equiv;</td>
+<td align="center">
+  <span class="index"><em>n</em></span><br />
+  <font size="+3">&or;</font><br />
+  <span class="index"><em>i</em>=1</span>
+</td>
+<td valign="middle">(<em>A</em><sub><em>i</em></sub>(<em>x</em>) &amp;
+  <em>B</em><sub><em>i</em></sub>(<em>y</em>)).</td>
+</tr>
+</table>
+</blockquote>
+
+<p>
+ (where <em>x</em> is <em>A</em><sub>1</sub> and <em>y</em> is
+<em>B</em><sub>1</sub> <em>or</em> <em>x</em> is
+<em>A</em><sub>2</sub> and <em>y</em> is <em>B</em><sub>2</sub> or
+&hellip;). </p>
+
+<p>(2) as a conjunction of implications:</p>
+
+<blockquote>
+<table>
+<tr>
+<td valign="middle"><em>RULES</em>(<em>x</em>,<em>y</em>)</td>
+<td valign="middle">&equiv;</td>
+<td align="center">
+   <span class="index"><em>n</em></span><br />
+   <font size="+3">&and;</font><br />
+   <span class="index"><em>i</em>=1</span>
+</td>
+<td valign="middle">(<em>A</em><sub><em>i</em></sub>(<em>x</em>)
+ &rarr;
+  <em>B</em><sub><em>i</em></sub>(<em>y</em>)).</td>
+</tr>
+</table>
+</blockquote>
+
+<p>
+
+(if <em>x</em> is <em>A</em><sub>1</sub> then <em>y</em> is
+<em>B</em><sub>1</sub> <em>and</em> &hellip;).</p>
+
+<p>
+ Both <em>MAMD</em> and <em>RULES</em> define a binary fuzzy relation
+(given the interpretation of <em>A</em><sub><em>i</em></sub>s,
+<em>B</em><sub><em>i</em></sub>s and truth functions of
+connectives).  Now given a <em>fuzzy input</em>
+<em>A</em><sup>*</sup>(<em>x</em>) one can consider the image
+<em>B</em><sup>*</sup> of <em>A</em><sup>*</sup>(<em>x</em>) under
+this relation, i.e.,</p>
+
+<blockquote>
+ <em>B</em><sup>*</sup>(<em>y</em>) &equiv;
+&exist;<em>x</em>(<em>A</em>(<em>x</em>) &amp;
+<em>R</em>(<em>x</em>,<em>y</em>)),
+ </blockquote>
+
+<p>
+ where <em>R</em>(<em>x</em>,<em>y</em>) is
+<em>MAMD</em>(<em>x</em>,<em>y</em>) (most frequent case) or
+<em>RULES</em>(<em>x</em>,<em>y</em>). Thus one gets an operator
+assigning to each fuzzy input set <em>A</em><sup>*</sup> a
+corresponding fuzzy output <em>B</em><sup>*</sup>.  Usually this is
+combined with some <em>fuzzifications</em> converting a crisp input
+<em>x</em><sub>0</sub> to some fuzzy
+<em>A</em><sup>*</sup>(<em>x</em>) (saying something as &ldquo;<em>x</em> is
+similar to <em>x</em><sub>0</sub>&rdquo;) and a <em>defuzzification</em>
+converting the fuzzy image <em>B</em><sup>*</sup> to a crisp output
+<em>y</em><sub>0</sub>.  Thus one gets a crisp function; its relation
+to the set of rules may be analyzed. For detailed information on fuzzy
+control see Driankov <em>et al</em>. 1993.  (But be sure <em>not</em>
+to call minimum &ldquo;Mamdani implication&rdquo; &mdash; minimum is
+not an implication at all! For logical analysis, see e.g., Hajek
+2000.)</p>
+
+<h2><a name="8">8. Complexity</a></h2>
+
+<p>
+ For propositional logics it is always a natural question whether a
+logic is decidable, i.e., whether its set of tautologies is recursive,
+and if it is, whether it is in co-NP (its complement being
+non-neterministically computable in polynomial time). Similarly for
+the set of satisfiable formulas and NP. (Also sets of positive
+tautologies, i.e. formulas having a positive value in each evaluation
+and positively satisfiable formulas are discussed.)  It has been shown
+that for our logics tautologies are co-NP-complete (of maximal
+complexity in co-NP) and satisfiable formulas are NP-complete. See
+Baaz <em>et al</em>. 2002 and Hanikova 2002 for final results. </p>
+
+<p>
+ The corresponding predicate logics are undecidable (as is the
+classical predicate logic) but of various degree of undecidability in
+the sense of so-called arithmetical hierarchy of
+&Sigma;<sub><em>n</em></sub>-sets and
+&Pi;<sub><em>n</em></sub>-sets. For the reader knowing this hierarchy
+we mention that for example the set of standard predicate tautologies
+of G&ouml;del logic is &Sigma;<sub>1</sub>-complete, for
+&#321;ukasiewicz it is &Pi;<sub>2</sub>-complete and for product logic
+it is non-arithmetical (outside the arithmetical hierarchy).  Not
+surprisingly, the set of general predicate tautologies of each of
+these logics is &Sigma;<sub>1</sub>-complete (due to completeness
+theorem). Much more is known; see Hajek 2005 for a survey of known
+results. Most difficult results on non-arithmeticity were obtained by
+Montagna 2001 and Montagna 2005.</p>
+
+<p>For a recent and important contribution, see Montagna &amp; Noguera
+2010.</p>
+
+<h2><a name="9">9. Glossary</a></h2>
+
+<p>
+To help the reader not familiar with the basic notions of higher
+mathematics, we describe two notions used:</p>
+
+<p>
+<em>Continuous t-norm</em>. A <em>t</em>-norm is a particular operation
+<em>x</em>*<em>y</em> with arguments and values in the real unit
+interval [0,1]. Such an operation is <em>continuous,</em> intuitively
+speaking, if small changes of the arguments lead only to small changes
+of the result of the operation. Precisely, for each &epsilon; &gt; 0
+there is a &delta; &gt; 0 such that wherever |<em>x</em><sub>1</sub>
+&minus; <em>x</em><sub>2</sub>| &lt; &delta; and
+|<em>y</em><sub>1</sub> &minus; <em>y</em><sub>2</sub>| &lt; &delta;
+then |(<em>x</em><sub>1</sub>*<em>y</em><sub>1</sub>) &minus;
+(<em>x</em><sub>2</sub>*<em>y</em><sub>2</sub>)| &lt; &epsilon;.</p>
+
+<p>
+ <em>Infimum and supremum</em> of a subset of the real unit interval
+[0,1]. Let <em>A</em> be a set of truth values, hence a subset of
+[0,1]. A truth value <em>x</em> is a <em>lower bound</em> of
+<em>A</em> if <em>x</em> &le; <em>y</em> for each element <em>y</em>
+of <em>A</em>; it is the <em>infimum</em> of <em>A</em> if it is the
+largest lower bound (notation: <em>x</em> = inf(<em>A</em>)).
+Clearly, if <em>A</em> has a least element then this element is its
+infimum; but if <em>A</em> has no least element then its infimum is
+not its element. For example if <em>A</em> is the set of all positive
+truth values (<em>x</em> &gt; 0) then inf(<em>A</em>)=0. Dually,
+<em>x</em> is an <em>upper bound</em> of <em>A</em> if <em>x</em> &ge;
+<em>y</em> for all <em>y</em> in <em>A</em>; the <em>supremum</em> of
+<em>A</em> is its least upper bound.</p>
+
+<h2><a name="Bib">Bibliography</a></h2>
+
+<ul class="hanging">
+
+<li>Baaz, M., Hajek, P., Montagna, F., and Veith, H. (2002),
+&ldquo;Complexity of t-tautologies&rdquo;, <em>Annals of Pure and
+Applied Logic</em>, 113: 3&ndash;11.  </li>
+
+<li>Cignoli, R., D'Ottaviano, I., and Mundici,
+D. (2000a), <em>Algebraic foundations of many-valued reasoning</em>,
+Dordrecht: Kluwer.  </li>
+
+<li>Cignoli, R., Esteva, F., Godo, L., and Torrens, A. (2000b),
+&ldquo;Basic logic is the logic of continuous t-norms and their
+residua&rdquo;, <em>Soft Computing</em>, 4: 106&ndash;112.  </li>
+
+<li>Cintula, P. (2001), &ldquo;The L&Pi; and L&Pi;1/2 propositional
+and predicate logics&rdquo;,
+<em>Fuzzy Sets and Systems</em>, 124 (3):  21&ndash;34.  </li>
+
+<li>Cintula, P. (2003), &ldquo;Advances in L&Pi; and L&Pi;1/2
+logics&rdquo;, <em>Arch. Math. Logic</em>, 42: 449&ndash;468.  </li>
+
+<li>Cintula P., (2006), &ldquo;Weakly implicative logics I &mdash;
+basic properties&rdquo;, <em>Arch. Math. Logic</em>, 45(6):
+673&ndash;704.</li>
+
+<li>Cintula P., and Hajek, P. (2009), &ldquo;Complexity issues in
+axiomatic extensions of &#321;ukasiewicz
+logic&rdquo;, <em>J. Log. Comput.</em>, 12: 245&ndash;260.</li>
+
+<li>Cintula P., and Hajek, P. (2010), &ldquo;On theories and models in
+fuzzy predicate logics&rdquo;, <em>Journal of Symbolic Logic</em>,
+71(3): 863&ndash;880.</li>
+
+<li>Cintula P., and Hajek, P. (2010a), &ldquo;Triangular norm based
+predicate fuzzy logics&rdquo;, <em>Fuzzy sets and systems</em>, 161:
+311&ndash;346.</li>
+
+<li>di Nola, A., Georgescu, G., and Iorgulescu, A. (2002),
+&ldquo;Pseudo-BL algebras I, II&rdquo;, <em>J. Multiple-valued
+Logic</em>, 8: 671&ndash;750. </li>
+
+<li>Driankov, D., Hellendorf, H., and Reinfrank, M.  (1993), <em>An
+introduction to fuzzy control</em>, Berlin: Springer-Verlag.  </li>
+
+<li>Esteva, F., and Godo, L. (1999), &ldquo;Putting together
+&#321;ukasiewicz and product logic&rdquo;, <em>Mathware and Soft
+Computing</em>, 6: 219&ndash;234.  </li>
+
+<li>Esteva, F., and Godo, L. (2001), &ldquo;Monoidal t-norm based
+logic&rdquo;, <em>Fuzzy Sets and Systems</em>, 124:
+271&ndash;288.  </li>
+
+<li>Esteva, F., Godo, L., Hajek, P., and Navara, M. (2000),
+&ldquo;Residuated fuzzy logics with an involutive negation&rdquo;,
+<em>Archive for Math. Log.</em>, 39: 103&ndash;124.  </li>
+
+<li>Esteva, F., Godo, L., and Noguera, C. (2006), &ldquo;On rational
+weak nilpotent minimum logics&rdquo;, <em>J. Multiple-valued Logic and
+Soft Computing</em>, 12(1): 9&ndash;32. </li>
+
+<li>Esteva F., Godo L., and Noguera C. (2009), &ldquo;First-order
+t-norm based fuzzy logics with truth-constants: Distinguished
+semantics and completeness properties&rdquo;, <em>Annals of Pure and
+Applied Logic</em>, 161(2): 185&ndash;202. </li>
+
+<li>Ferm&uuml;ller C. G. (2003), &ldquo;Theories of vagueness versus
+fuzzy logic: can logicians learn from philosophers?&rdquo;, <em>Neural
+Network World</em>, 13: 455&ndash;465. </li>
+
+<li>Goguen, J. A. (1968&ndash;69), &ldquo;The logic of inexact
+concepts&rdquo;, <em>Synthese</em>, 19: 325&ndash;373. </li>
+
+<li>Gottwald, S. (2001), <em>A treatise on many-valued logic</em>,
+Baldock: Research Studies Press. </li>
+
+<li>Gottwald, S., and Hajek, P. (2005), &ldquo;Triangular norm-based
+mathematical fuzzy logics&rdquo;, in Klement and Mesiar (eds.),
+<em>Logical, Algebraic, Analytic and Probabilistic Aspects of
+Triangular Norms</em>, Amsterdam: Elsevier, pp. 275&ndash;300 </li>
+
+<li>Grim, P., Mar, G., and St. Denis, P. (1992),
+<em>The philosophical computer</em>, Cambridge, MA: MIT Press.  </li>
+
+<li>Hajek, P. (1998), <em>Metamathematics of fuzzy logic</em>,
+Dordrecht: Kluwer.  </li>
+
+<li>Hajek, P. (2000), &ldquo;Fuzzy predicate calculus and fuzzy
+rules&rdquo;, in Da Ruan and Kerre (eds.), <em>Fuzzy IF-THEN rules in
+computational intelligence</em>, Dordrecht: Kluwer,
+pp. 27&ndash;36.  </li>
+
+<li>Hajek, P. (2003), &ldquo;Observations on non-commutative fuzzy
+logic&rdquo;, <em>Soft Computing</em> 8: 28-43. </li>
+
+<li>Hajek, P. (2005), &ldquo;Arithmetical complexity of fuzzy logic
+&mdash; a survey&rdquo;, <em>Soft Computing</em> 9:
+935&ndash;941.</li>
+
+<li>Hajek P. (2005b), On arithmetic in Cantor-Lukasiewicz fuzzy set
+theory. <em>Archive for Mathematical Logic</em>, 44 (6):
+763&ndash;782.</li>
+
+<li>Hajek P. (2009a), &ldquo;On vagueness, truth values and fuzzy
+logics&rdquo;, <em>Studia Logica</em>, 91 (3): 367&ndash;382.</li>
+
+<li>Hajek P., and Novak V. (2003), &ldquo;The sorites paradox and
+fuzzy logic&rdquo;, <em>International Journal of General Systems</em>,
+32: 373&ndash;383.</li>
+
+<li>Hajek, P., Paris, J., and Shepherdson, J. (2000), &ldquo;The liar
+paradox and fuzzy logic&rdquo;, <em>Journal of Symbolic Logic</em>,
+65: 339&ndash;346.  </li>
+
+<li>Hajek P., and Hanikova Z. (2003), &ldquo;A development of set
+theory in fuzzy logic&rdquo;, in Melvin Chris Fitting and Ewa Orlowska
+(eds.), <em>Beyond Two: Theory and Applications of Multiple-Valued
+Logic</em> (Studies in Fuzziness and Soft Computing: Volume 114),
+Heidelberg: Physica-Verlag, pages 273&ndash;285.</li>
+
+<li>Hanikova, Z. (2002), &ldquo;A note on the complexity of
+propositional logics of individual t-algebras&rdquo;, <em>Neural
+Network World</em>, 21: 453&ndash;460. </li>
+
+<li>Horcik, R. (2005), &ldquo;Standard completeness of
+&Pi;MTL&rdquo;, <em>Arch. Math. Logic</em>, 44: 413&ndash;424. </li>
+
+<li>Horcik, R., and Citula, P. (2004), &ldquo;Product &#321;ukasiewicz
+logic&rdquo;, <em>Arch. Math. Logic</em>, 43: 447&ndash;503.</li>
+
+<li>Jenei, S., and Montagna, F. (2002), &ldquo;A proof of standard
+completeness for Esteva and Godo's logic MTL&rdquo;, <em>Studia
+Logica</em>, 70: 183&ndash;192.  </li>
+
+<li>Jenei, S. and Montagna, F. (2003), &ldquo;A proof of standard
+completeness for non-commutative monoidal t-norm
+logic&rdquo;, <em>Neural Network world</em>, 13: 481&ndash;489.  </li>
+
+<li>Klement, E.P., Mesiar, R., and Pap, E. (2000),
+<em>Triangular norms</em>, Dordrecht: Kluwer.  </li>
+
+<li>Klir, G.J., and Yuan, B., (1996), (eds.),
+<em>Fuzzy sets, fuzzy logic and fuzzy system: Selected papers by Lotfi
+A. Zadeh</em>, Singapore: World Scientific.  </li>
+
+<li>Metcalfe G., Olivetti N., and Gabbay D.M. (2008),
+<em>Proof Theory for Fuzzy Logics</em> (Applied Logic Series:  Volume 36),
+Berlin: Springer. </li>
+
+<li>Montagna, F. (2001), &ldquo;Three complexity problems in
+quantified fuzzy logic&rdquo;, <em>Studia Logica</em>, 68:
+143&ndash;152.  </li>
+
+<li>Montagna, F. (2005), &ldquo;On the predicate logics of continuous
+t-norm BL-algebras&rdquo;, <em>Arch. Math. Logic</em>, 44:
+97&ndash;114. </li>
+
+<li>Montagna, F., and Noguera C. (2010), &ldquo;Arithmetical
+complexity of first-order predicate fuzzy logics over distinguished
+semantics&rdquo;,
+<em>Journal of Logic and Computation</em>, 20: 399&ndash;424. </li>
+
+<li>Nguyen, H.T., and Walker, E. (1999),
+<em>First course in fuzzy logic</em>, Boca Raton: Chapman &amp;
+Hall/CRC Press, second edition. </li>
+
+<li>Novak, V. (1989), <em>Fuzzy sets and their applications</em>,
+Bristol: Adam Hilger.</li>
+
+<li>Novak, V., Perfilieva, I., and Mockor, J. (2000), <em>Mathematical
+principles of fuzzy logic</em>, Dordrecht: Kluwer.  </li>
+
+<li>Pavelka, J., (1979), &ldquo;On fuzzy logic I, II,
+III&rdquo;, <em>Zeitschrift fur Math. Logik und Grundlagen der
+Math</em>, 25: 45&ndash;52, 119&ndash;134, 447&ndash;464.  </li>
+
+<li>Turunen, E. (1999), <em>Mathematics behind fuzzy logic</em>
+(Advances in Soft Computing), Heidelberg: Physica Verlag.</li>
+
+<li>Savicky, P., Cignoli R., Esteva F., and Godo L. (2006), &ldquo;On
+product logic with truth constants&rdquo;,
+<em>Journal of Logic and Computation</em>, 16(2): 205&ndash;225.  </li>
+
+<li>Shapiro, S. (2006), <em>Vagueness in Context</em>, Oxford: Oxford
+University Press. </li>
+
+<li>Smith, N.J.J. (2008), <em>Vagueness and truth degrees</em> Oxford:
+Oxford University Press.</li>
+
+<li>White, R.B. (1979), &ldquo;The consistency of the axiom of
+comprehension in the infinite-valued predicate logic of
+&#321;ukasiewicz&rdquo;, <em>Journal of Philosophical Logic</em>, 8:
+509&ndash;534. </li>
+
+<li>Yatabe, S. (2005), &ldquo;Note on Hajek, Paris and Shepherdson's
+theorem&rdquo;, <em>Logic Journal of the Interest Group of Pure and
+Applied Logic</em>, 13: 261&ndash;266.</li>
+
+<li>Yatabe, S. (2007), &ldquo;Distinguishing non-standard natural
+numbers in a set theory within &#321;ukasiewicz
+logic&rdquo;, <em>Archive for Mathematical Logic</em>, 46:
+281&ndash;287.</li>
+
+<li>Yatabe, S. (2009), &ldquo;Comprehension contradicts to the
+induction within &#321;ukasiewicz predicate logic&rdquo;, <em>Archive
+for Mathematical Logic</em>, 48: 265&ndash;269.</li>
+
+<li>Zadeh, L. (1965), &ldquo;Fuzzy sets&rdquo;,
+<em>Information and Control</em>, 8: 338&ndash;353.  </li>
+
+<li>Zadeh, L. (1994), &ldquo;Preface&rdquo;, in R. J. Marks II
+(ed.), <em>Fuzzy logic technology and applications</em>, IEEE
+Publications.  </li>
+
+<li>Zimmermann, H.-J. (1991), <em>Fuzzy set theory and its
+applications</em>, Dordrecht: Kluwer, second edition.  </li>
+
+</ul>
+
+<h2><a name="Oth">Other Internet Resources</a></h2>
+
+<ul>
+
+<li><a href="http://www.abo.fi/~rfuller/fuzs.html" target="other">Fuzzy Sets and Systems</a>, maintained by 
+ <a href="http://www.abo.fi/~rfuller/robert.html" target="other">Robert Full&eacute;r</a>
+ (Operations Research, E&ouml;tv&ouml;s Lor&aacute;nd
+University)</li>
+
+<li><a href="http://www.austinlinks.com/Fuzzy/" target="other">The Fuzzy Logic Archives</a></li>
+
+<li><a href="http://www-2.cs.cmu.edu/Groups/AI/html/faqs/ai/fuzzy/part1/faq.html" target="other">Fuzzy Logic Frequently Asked Questions</a> (Carnegie Mellon/AI)</li>
+
+</ul>
+
+<h2><a name="Rel">Related Entries</a></h2>
+
+<p>
+
+ <a href="../logic-classical/">logic: classical</a> |
+ <a href="../logic-manyvalued/">logic: many-valued</a> |
+ <a href="../sorites-paradox/">Sorites paradox</a>
+
+</p>
+
+<h3>Acknowledgments</h3>
+
+ <p>
+
+Support of the grant No. A1030004/00 of the Grant Agency of the
+Academy of Sciences of the Czech Republic is acknowledged. Thanks are
+due to David Coufal for his help in converting this entry into html.</p>
+
+</div><!-- #aueditable --><!--DO NOT MODIFY THIS LINE AND BELOW-->
+
+<div id="foot">
+<span style="font-size: 11pt;"> <a href="../../info.html#c">Copyright &copy; 2010</a> by
+</span>
+<br />
+<a href="http://www.cs.cas.cz/hajek/" target="other">Petr Hajek</a>
+&lt;<a href="m&#97;ilto:hajek&#37;40cs&#37;2ecas&#37;2ecz"><em>hajek<abbr title=" at ">&#64;</abbr>cs<abbr title=" dot ">&#46;</abbr>cas<abbr title=" dot ">&#46;</abbr>cz</em></a>&gt;
+</div><!-- end #foot -->
+</div><!-- end #content -->
+</body>
+</html>

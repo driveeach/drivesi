@@ -1,0 +1,6 @@
+@namespace("dsid.assignment.proto")
+protocol VoidProtocol {
+
+  void voidmessage();
+
+}

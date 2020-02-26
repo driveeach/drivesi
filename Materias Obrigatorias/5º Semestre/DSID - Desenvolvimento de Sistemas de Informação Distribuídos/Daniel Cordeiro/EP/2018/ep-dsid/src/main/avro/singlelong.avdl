@@ -1,0 +1,6 @@
+@namespace("dsid.assignment.avro")
+protocol SingleLongProtocol {
+
+  long singleLong(long l);
+
+}
