@@ -1,0 +1,70 @@
+CAPÍTULO 4
+Características {
+	* Localização
+	* Capacidade
+	* Unidade de transferência
+	* Método de Acesso
+	* Desempenho
+	* Características físicas
+	* Tipo físico
+	* Organização
+}
+
+Localização {
+	* memória interna se refere a memória principal, diretamente acessada pela CPU
+	* CPU necessita da própria memória local, na forma de registradores
+	* memória externa (memória secundária) é utilizada por todos os dispositivos usados para armazenar dados e que acessam a CPU por módulos de E/S
+}
+
+Capacidade {
+	* memória interna -> bytes ou words 
+	* tamanhos usuais de palavras -> 8, 16, 32 bits
+	* memória externa -> só bytes
+}
+
+Unidade de transferência {
+	* interna -> número de linhas de dados que entram e saem do módulo de memória. É determinada pela largura do barramento de dados
+	* externa -> um bloque que é maior que uma palavra
+	* unidade endereçável -> o menor local de memória que pode ser endereçado
+}
+
+Métodos de Acesso {
+	* Sequencial -> começa do início e lê os dados sequencialmente. Ex: fita cassete
+	* Direto -> blocos individuais tem endereços únicos e o acesso é feito por salto e por procura sequencial. Ex: disco
+	* Aleatório -> endereços individuais identificam locais exatos e o tempo de acesso não depende do local. Ex: RAM
+	* Associativo -> os dados são localizados por comparação aos dados já armazenados. Ex: cache
+}
+
+Desempenho {
+	* Tempo de acesso {
+		- memória de acesso aleatório: tempo que demora para executar uma operação de leitura ou escrita
+		- outras memórias:  tempo que demora o mecanismo de leitura-escrita para posicionar-se na localização desejada
+	}
+	* Tempo de ciclo de memória = acesso + recuperar (para próximo acesso)
+	* Taxa de Transferência {
+		- memórias aleatória = 1/Tempo de Ciclo
+		- outras memórias:  TN = TA + N/R
+		- TN: tempo médio de leitura ou escrita de N bits
+		  TA: tempo médio de acesso
+		  N: número de bits
+		  R: taxa de transferência, em bits por segundo
+	}
+}
+
+Tipos de memória física {
+	* Semicondutora - RAM
+	* Magnética - disco e fita
+	* ótica - cd e dvd
+	* Outros - magneto-optica
+}
+
+Lista de Hierarquia {
+	* Registradores
+	* L1 Cache
+	* L2 Cache
+	* Memória principal
+	* Cache de disco
+	* Disco
+	* Óptico
+	* Fita
+}

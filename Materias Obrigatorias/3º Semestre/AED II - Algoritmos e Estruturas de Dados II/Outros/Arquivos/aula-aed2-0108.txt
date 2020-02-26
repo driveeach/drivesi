@@ -1,0 +1,57 @@
+Circuito Euleriano
+	- seja um grafo G;
+	- circuito euleriano é um circuito que contém cada vértice e aresta de G;
+		- ou seja, é uma sequencia de vértices e arestas adjacentes que começa e termina no mesmo vértice de G
+			- deve passar ao menos uma vez por cada vértice e exatamente UMA vez por cada aresta de G
+			- TEM QUE SER CONEXO, NÃO PODE SER NULO
+			
+	- Teorema: Se um grafo possui um circuito Euleriano, então cada vértice do grafo tem grau PAR.
+	- Contrapositivo do Teorema: se o grafo possui um vértice com grau ÍMPAR, ele não possui um circuito Euleriano.
+	
+	- Teorema: se cada vértice de um grafo não vazio tem d(v) par e o grafo é conexo, então o grafo tem um circuito euleriano.
+	
+	- Trajeto Euleriano: caminho de v -> w onde se começa em v e termina em w, realizando um circuito euleriano. (logo, os vértices não precisam ter,
+	necessariamente, d(v) par)
+	
+Circuito Hamiltoniano
+	- dado um grafo G, o circuito hamiltoniano inclui cada vértice de G, tal forma que cada vértice aparece apenas uma vez (exceto o começo = final)
+	- veja que NÃO É NECESSÁRIO PASSAR POR TODAS AS ARESTAS (logo, não precisa ser um circuito euleriano)
+	- difícil mostrar que um grafo TEM um circuito Hamiltoniano, mas é possível dizer quando NÃO TEM
+		- Caso as condições abaixo não apareçam, o grafo não possui, com certeza, um circuito hamiltoniano:
+			- deve ter um subgrafo H, com os mesmos vértices de G
+			- H deve ter TODOS os vértices com d(v) = 2
+			- H deve ter o mesmo número de vértices e arestas
+			- H deve ser conexo
+		
+	
+Isomorfismo de Grafos
+	- Grafos onde as funções aresta-vértice são as mesmas (as ligações entre os vértices se dão pelas mesmas arestas)
+	- necessário mapeamento de vértices e arestas para confirmar o isomorfismo
+		- função aresta-vértice de G e G' deve ser bijetora (possuir apenas um elemento no contradomínio, e todos os elementos do domínio possuem representação)
+		- as relações de vizinhança devem ser preservadas (os vértices adjacentes à uma aresta em G devem ser os mesmos em G')
+		
+		-ex: a e² de G liga v² a v³; logo, se e² de G' ligar v² e v³ em G', as relações foram preservadas
+			G			G'
+		e1 = v1 - v3		e'1 = v'1 - v'5
+		e2 = v3 - v4		e'2 = v'1 - v'5
+		e3 = v3 - v4		e'3 = v'1 - v'2
+		e4 = v4 - v1		e'4 = v'2 - v'3
+		e5 = v1 - v5		e'5 = v'3 - v'4
+		e6 = v5 - v2		e'6 = v'4 - v'2
+		e7 = v2 - v1		e'7 = v'2 - v'5
+		
+		v1 = v'2
+		v2 = v'3
+		v3 = v'1
+		v4 = v'5
+		v5 = v'4
+
+		e1 = e'3
+		e2 = e'1
+		e3 = e'2
+		e4 = e'7
+		e5 = e'6
+		e6 = e'5
+		e7 = e'4
+		
+		logo, G e G' são isomorfos.

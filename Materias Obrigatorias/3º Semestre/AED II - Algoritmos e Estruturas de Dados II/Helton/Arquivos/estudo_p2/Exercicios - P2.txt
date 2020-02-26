@@ -1,0 +1,5 @@
+1 - Diferença entre hashing linear e hashing dinâmico
+2 - Cálculo de tempo de caso merge-sort
+3 - Argumentar sobre eficiência de árvores B
+4 - Explicar com suas palavras remoção em árvore B
+5 - Push e Pop na remoção de ponteiros de lista generalizada

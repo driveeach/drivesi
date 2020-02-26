@@ -1,0 +1,503 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include<iostream>
+#include <ctime>
+#include <math.h>
+#define randomize() (srand((unsigned)time(NULL)))
+#define random(x) (rand() % x)
+#define MAXpr 10111 
+#define MAXpo 16384
+
+typedef struct Reg{  
+int chave;
+int colisoes;
+}Table;
+Table TablePR[MAXpr];
+Table TablePO[MAXpo];
+
+double frac(double numero)
+{
+long double parte_fracionaria; 
+double parte_inteira;
+parte_fracionaria = modf(numero,&parte_inteira);
+return parte_fracionaria;
+    }
+
+int hPrimo(int chave){//funcao hash para uma tabela de tamanho primo 
+return (chave%MAXpr); 
+} 
+            
+int hPotencia(int chave){//funcao hash para uma tabela de tamanho potencia de dois 
+return (chave%MAXpo);           
+}
+
+int rhLinearPr(int chave){ 
+return((chave+1)%MAXpr);
+}
+
+int rhLinearPo(int chave){
+return((chave+1)%MAXpo);
+}
+
+double h2Pr(double chave)
+{
+
+    return floor((MAXpr-1)*frac(0.6180339887*chave));
+     }
+                   
+int rhDuploPr(int i, int chave){
+    int k = (int)h2Pr(chave);               
+return ((i+k)%MAXpr);                        
+}
+
+double h2Po(double chave)
+{
+
+    return floor((MAXpo-1)*frac(0.6180339887*chave));
+     }
+
+int rhDuploPo(int i, int chave){
+    int k = (int)h2Po(chave);               
+return ((i+k)%MAXpo);                        
+}
+                        
+int primo(int i, int chave){
+ return (i+(1+hPrimo(chave)))%MAXpr;
+}
+ 
+int potencia(int i, int chave){
+ return (i+(1+hPotencia(chave)))%MAXpo;
+}
+                           
+void atualizaTabPr(){
+for(int i=0; i<MAXpr; i++)
+{                         
+TablePR[i].chave = -1;
+TablePR[i].colisoes = 0;
+}
+}  
+
+void atualizaTabPo(){
+for(int i=0; i<MAXpo; i++)
+{                         
+TablePO[i].chave = -1;
+TablePO[i].colisoes = 0;
+}
+}  
+                  
+void espalhaTabPr1()//insere na tabela utilizando rhLinear com tablesize primo
+{
+atualizaTabPr();
+for(int i=0; i <= ((0.8)*MAXpr); i++){
+int ch = random(100000);//recebe um numero aleatorio que vai ser inserido
+int key = hPrimo(ch);
+while((TablePR[key].chave != -1) && (TablePR[key].chave != ch))
+{                 
+ TablePR[key].colisoes++; 
+ key = rhLinearPr(key);
+                         }
+                         if(TablePR[key].chave == ch) ;
+                         else 
+                         {
+                              TablePR[key].chave = ch;
+                                
+                              }
+}
+}
+
+void espalhaTabPr2()//insere na tabela utilizando rhDuplo com tablesize primo
+{
+atualizaTabPr();
+for(int i=0; i <= ((0.8)*MAXpr); i++){
+int ch = random(100000);//recebe um numero aleatorio que vai ser inserido
+int key = hPrimo(ch);
+while(TablePR[key].chave != -1 && TablePR[key].chave != ch)
+{
+
+ int i = key;
+ TablePR[key].colisoes++; 
+ key = rhDuploPr(i, ch);
+                         }
+                         if(TablePR[key].chave == ch);
+                         else 
+                         {
+                            TablePR[key].chave = ch;  
+                              }
+}
+}
+
+void espalhaTabPr3()//insere na tabela utilizando rhLinear com tablesize primo
+{
+atualizaTabPr();
+for(int i=0; i <= ((0.8)*MAXpr); i++){
+int cont=0;
+
+int ch = random(100000);//recebe um numero aleatorio que vai ser inserido
+int key = hPrimo(ch);
+while((TablePR[key].chave != -1) && (TablePR[key].chave != ch) && (cont<10000))
+{            
+ TablePR[key].colisoes++; 
+ int i = key;
+ cont++;
+ key = primo(key, ch);
+                         }
+                         if(TablePR[key].chave == ch); 
+                         else 
+                         {
+                              TablePR[key].chave = ch;
+                                
+                              }
+}
+}
+
+
+void espalhaTabPo1()//insere na tabela utilizando rhLinear com tablesize potencia
+{
+atualizaTabPo();
+for(int i=0; i <= ((0.8)*MAXpo); i++){
+int ch = random(100000);//recebe um numero aleatorio que vai ser inserido
+int key = hPotencia(ch);
+while((TablePO[key].chave != -1) && (TablePO[key].chave != ch))
+{                 
+ TablePO[key].colisoes++; 
+ key = rhLinearPo(key);
+                         }
+                         if(TablePO[key].chave == ch) ;
+                         else 
+                         {
+                              TablePO[key].chave = ch;
+                                
+                              }
+}
+}
+
+void espalhaTabPo2()//insere na tabela utilizando rhDuplo com tablesize potencia
+{
+atualizaTabPo();
+for(int i=0; i <= ((0.8)*MAXpr); i++){
+int ch = random(100000);//recebe um numero aleatorio que vai ser inserido
+int key = hPotencia(ch);
+while(TablePO[key].chave != -1 && TablePO[key].chave != ch)
+{
+
+ int i = key;
+ TablePO[key].colisoes++; 
+ key = rhDuploPo(i, ch);
+                         }
+                         if(TablePO[key].chave == ch);
+                         else 
+                         {
+                            TablePO[key].chave = ch;  
+                              }
+}
+}
+
+void espalhaTabPo3()//insere na tabela utilizando rhLinear com tablesize potencia
+{
+atualizaTabPo();
+for(int i=0; i <= ((0.8)*MAXpo); i++){
+int cont=0;
+
+int ch = random(100000);//recebe um numero aleatorio que vai ser inserido
+int key = hPotencia(ch);
+while((TablePO[key].chave != -1) && (TablePO[key].chave != ch) && (cont<10000))
+{            
+ TablePO[key].colisoes++; 
+ int i = key;
+ cont++;
+ key = potencia(key, ch);
+                         }
+                         if(TablePO[key].chave == ch); 
+                         else 
+                         {
+                              TablePO[key].chave = ch;
+                                
+                              }
+}
+}
+
+
+ 
+ void posicoesNaoOcupadasPr()//Calcula porcentagem de posicoes da tabela q nao estao ocupada
+ {
+     int cont1=0;//hlinear Primo
+     int cont2=0;//hduplo Primo
+     int cont3=0;//h Primo
+     espalhaTabPr1();
+     int i=0;
+      while(i<MAXpr)
+     {
+           if(TablePR[i].chave == -1) cont1++;  
+           i++;
+     }
+     espalhaTabPr2();
+     for(int i = 0;i<MAXpr;i++)
+     {
+           if(TablePR[i].chave == -1) cont2++;  
+             }
+     espalhaTabPr3();
+     for(int i = 0;i<MAXpr;i++)
+     {
+           if(TablePR[i].chave == -1) cont3++;  
+             }
+     cont1 = (cont1*100)/MAXpr;
+     cont2 = (cont2*100)/MAXpr;
+     cont3 = (cont3*100)/MAXpr;
+     printf("Utilizando RehashLinear porcentagem nao ocupada com Tablesize Primo = %d Porcento\n", cont1);
+     printf("Utilizando RehashDuplo porcentagem nao ocupada com Tablesize Primo = %d Porcento\n", cont2);
+     printf("Utilizando RehashZ porcentagem nao ocupada com Tablesize Primo = %d Porcento\n", cont3);
+          }
+    
+ void posicoesNaoOcupadasPot()//Calcula porcentagem de posicoes da tabela q n?o est? ocupada
+  {
+     int cont1=0;
+     int cont2=0;
+     int cont3=0;
+     espalhaTabPo1();
+     for(int i = 0;i<MAXpo;i++)
+     {
+        if(TablePO[i].chave == -1)  cont1++;  
+             }
+     espalhaTabPo2();
+     for(int i = 0;i<MAXpo;i++)
+     {
+           if(TablePO[i].chave == -1) cont2++;  
+             }
+      espalhaTabPo3();
+     for(int i = 0;i<MAXpo;i++)
+     {
+           if(TablePO[i].chave == -1) cont3++;  
+             }
+     cont1 = (cont1*100)/MAXpo;
+     cont2 = (cont2*100)/MAXpo;
+     cont3 = (cont3*100)/MAXpo;
+     printf("Utilizando RehashLinear porcentagem nao ocupada com Tablesize Pot = %d Porcento\n", cont1);
+     printf("Utilizando RehashDuplo porcentagem nao ocupada com Tablesize Pot = %d Porcento \n", cont2);
+     printf("Utilizando RehashZ porcentagem nao ocupada com Tablesize Pot = %d Porcento\n", cont3);
+         }
+     
+ void posicoesHouveColisaoPr()//Calcula porecentagem de posicoes da tabela q houveram colisoes
+ {
+     int cont1;
+     int cont2;
+     int cont3;
+     espalhaTabPr1();
+     for(int i = 0;i<MAXpr;i++)
+     {
+           if(TablePR[i].colisoes > 0) cont1++;  
+             }
+     espalhaTabPr2();
+     for(int i = 0;i<MAXpr;i++)
+     {
+           if(TablePR[i].colisoes > 0) cont2++;  
+             }
+     espalhaTabPr3();
+     for(int i = 0;i<MAXpr;i++)
+     {
+          if(TablePR[i].colisoes > 0) cont3++;  
+             }
+     cont1 = ((cont1*100)/MAXpr);
+     cont2 = ((cont2*100)/MAXpr);
+     cont3 = ((cont3*100)/MAXpr);
+     printf("Utilizando RehashLinear porcentagem que houve colisao com Tablesize Primo = %d porcento \n", cont1);
+     printf("Utilizando RehashDuplo porcentagem que houve colisao com Tablesize Primo = %d porcento \n", cont2);
+     printf("Utilizando RehashZ porcentagem que houve colisao com Tablesize Primo = %d porcento \n", cont3);
+           }
+     
+     
+  void posicoesHouveColisaoPot()//Calcula porecentagem de posicoes da tabela q houveram colis?es
+ {
+     int cont1;
+     int cont2;
+     int cont3;
+     espalhaTabPo1();
+     for(int i = 0;i<MAXpo;i++)
+     {
+           if(TablePO[i].colisoes > 0) cont1++;  
+             }
+     espalhaTabPo2();
+     for(int i = 0;i<MAXpo;i++)
+     {
+           if(TablePO[i].colisoes > 0) cont2++;  
+             }
+     espalhaTabPo3();
+     for(int i = 0;i<MAXpo;i++)
+     {
+          if(TablePO[i].colisoes > 0) cont3++;  
+             }
+     cont1 = (cont1*100)/MAXpo;
+     cont2 = (cont2*100)/MAXpo;
+     cont3 = (cont3*100)/MAXpo;
+     printf("Utilizando RehashLinear porcentagem que houve colisao com Tablesize Pot = %d porcento \n", cont1);
+     printf("Utilizando RehashDuplo porcentagem que houve colisao com Tablesize Pot = %d porcento \n", cont2);
+     printf("Utilizando RehashZ porcentagem que houve colisao com Tablesize Pot = %d porcento \n", cont3);
+           }
+     
+ void numChavesHouveColisaoPr()//Numero max de chaves q colidiram em uma unica posicao
+ {
+      int max1=0;
+      espalhaTabPr1();
+      for(int i = 0;i<MAXpr;i++)
+     {
+              
+             if(TablePR[i].colisoes > max1)
+             {
+             max1 = TablePR[i].colisoes;
+             }
+     }    
+          
+     espalhaTabPr2();
+     int max2=0;      
+     for(int i = 0;i<MAXpr;i++)
+     {
+             
+             if(TablePR[i].colisoes > max2)
+             {
+             max2 = TablePR[i].colisoes;
+             
+             }
+     }  
+              
+    espalhaTabPr3();
+    
+     int max3=0;      
+     for(int i = 0;i<MAXpr;i++)
+     {
+             
+             if(TablePR[i].colisoes > max3)
+             {
+             max3 = TablePR[i].colisoes;
+             
+             }
+     }            
+     printf("Utilizando RehashLinear Numero max de chave que colidiu em uma unica posicao com Tablesize Primo = %d \n", max1);
+     printf("Utilizando RehashDuplo Numero max de chave que colidiu em uma unica posicao com Tablesize Primo = %d \n", max2);
+     printf("Utilizando RehashZ Numero max de chave que colidiu em uma unica posicao com Tablesize Primo = %d \n", max3);
+          }
+     
+ void numChavesHouveColisaoPot()//Numero max de chaves q colidiram em uma unica posi??o
+ {
+      int max1;
+      int max2;
+      int max3;
+      espalhaTabPo1();
+     for(int i = 0;i<MAXpo;i++)
+     {
+             if(TablePO[i].colisoes > max1)
+             {
+             max1 = TablePO[i].colisoes;
+             }
+     }           
+     espalhaTabPo2();
+     for(int i = 0;i<MAXpo;i++)
+     {
+             if(TablePO[i].colisoes > max2)
+             {
+             max2 = TablePO[i].colisoes;
+             }
+     }           
+     espalhaTabPo3();
+     for(int i = 0;i<MAXpo;i++)
+     {
+             if(TablePO[i].colisoes > max3)
+             {
+             max3 = TablePO[i].colisoes;
+             }
+     }           
+     printf("Utilizando RehashLinear Numero max de chave que colidiu em uma unica posicao com Tablesize Pot = %d \n", max1);
+     printf("Utilizando RehashDuplo Numero max de chave que colidiu em uma unica posicao com Tablesize Pot = %d \n", max2);
+     printf("Utilizando RehashZ Numero max de chave que colidiu em uma unica posicao com Tablesize Pot = %d \n", max3);
+          }
+ void mediaColisaoAntesInsercaoPr()//Numero medio de colisoes q ocorreram antes da insercao de uma chave
+ {
+      int qde1=0;
+      int cont1=0;
+      int qde2=0;
+      int cont2=0;
+      int qde3=0;
+      int cont3=0;
+      espalhaTabPr1();
+     for(int i = 0;i<MAXpr;i++)
+     {
+     qde1 = qde1+(TablePR[i].colisoes);
+     if(TablePR[i].chave!= -1) cont1++;              
+    }           
+     espalhaTabPr2();
+     for(int i = 0;i<MAXpr;i++)
+     {
+     qde2 = qde2+(TablePR[i].colisoes);
+     if(TablePR[i].chave!= -1) cont2++;              
+     }           
+     espalhaTabPr3();
+     for(int i = 0;i<MAXpr;i++)
+     {
+     qde3 = qde3+(TablePR[i].colisoes);
+     if(TablePR[i].chave!= -1) cont3++;              
+     }
+     int media1=(qde1/cont1);
+     int media2=(qde2/cont2);
+     int media3 =(qde3/cont3);          
+     printf("Utilizando RehashLinear Media de colisoes que ocorreram antes da insercao com Tablesize Primo = %d \n", media1);
+     printf("Utilizando RehashDuplo Media de colisoes que ocorreram antes da insercao com Tablesize Primo = %d \n", media2);
+     printf("Utilizando RehashZ Media de colisoes que ocorreram antes da insercao com Tablesize Primo = %d \n", media3);
+          }
+     
+ void mediaColisaoAntesInsercaoPot()//Numero medio de colisoes q ocorreram antes da insercao de uma chave
+ {
+      int qde1=0;
+      int cont1=0;
+      int qde2=0;
+      int cont2=0;
+      int qde3=0;
+      int cont3=0;
+      espalhaTabPo1();
+     for(int i = 0;i<MAXpo;i++)
+     {
+     qde1 = qde1+(TablePO[i].colisoes);
+     if(TablePO[i].chave!= -1) cont1++;              
+    }           
+     espalhaTabPo2();
+     for(int i = 0;i<MAXpo;i++)
+     {
+     qde2 = qde2+(TablePO[i].colisoes);
+     if(TablePO[i].chave!= -1) cont2++;              
+     }           
+     espalhaTabPo3();
+     for(int i = 0;i<MAXpo;i++)
+     {
+     qde3 = qde3+(TablePO[i].colisoes);
+     if(TablePO[i].chave!= -1) cont3++;              
+     }
+     int media1=(qde1/cont1);
+     int media2=(qde2/cont2);
+     int media3 =(qde3/cont3);          
+     printf("Utilizando RehashLinear Media de colisoes que ocorreram antes da insercao com Tablesize Potencia = %d \n", media1);
+     printf("Utilizando RehashDuplo Media de colisoes que ocorreram antes da insercao com Tablesize Potencia = %d \n", media2);
+     printf("Utilizando RehashZ Media de colisoes que ocorreram antes da insercao com Tablesize Potencia = %d \n", media3);
+          }
+ 
+
+
+ int main()
+ {
+     
+    //posicoesNaoOcupadasPr();
+     
+    //posicoesNaoOcupadasPot();
+          
+    posicoesHouveColisaoPr();
+     
+    posicoesHouveColisaoPot();
+     
+    numChavesHouveColisaoPr();
+     
+     numChavesHouveColisaoPot();
+     
+     mediaColisaoAntesInsercaoPr();
+     
+     mediaColisaoAntesInsercaoPot();
+  	
+  	getchar();
+      }
+        
+

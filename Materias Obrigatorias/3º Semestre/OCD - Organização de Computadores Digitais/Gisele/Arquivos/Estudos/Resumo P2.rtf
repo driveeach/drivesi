@@ -1,0 +1,303 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1046{\fonttbl{\f0\fnil\fcharset0 Calibri;}}
+{\colortbl ;\red255\green0\blue0;}
+{\*\generator Riched20 6.2.9200}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\qc\cf1\b\f0\fs22\lang22 CAP\'cdTULO 9\cf0\b0\par
+
+\pard\sa200\sl276\slmult1\b ELEMENTOS DE INSTRU\'c7\'d5ES DE M\'c1QUINAS\par
+\b0\i Elementos de instru\'e7\'f5es:\i0\par
+- \ul C\'f3digo de Opera\'e7\'e3o (OPCODE):\ulnone  especifica a opera\'e7\'e3o a ser efetuada, atrav\'e9s de um c\'f3digo bin\'e1rio\par
+- \ul Refer\'eancia a Operando Fonte: \ulnone uma opera\'e7\'e3o pode envolver um ou mais operandos fontes, que s\'e3o os dados de entrada (inputs) da opera\'e7\'e3o*\par
+- \ul Refer\'eancia a Operando de Destino: \ulnone uma opera\'e7\'e3o pode produzir um resultado*\par
+- \ul Endere\'e7o da pr\'f3xima instru\'e7\'e3o: \ulnone indica onde a CPU deve buscar a pr\'f3xima instru\'e7\'e3o. Pode estar localizada na mem\'f3ria principal ou na secund\'e1ria (disco).\par
+*Podem estar localizados na mem\'f3ria principal ou virtual, registrador da CPU, dispositivo de E/S\par
+\par
+\i Representa\'e7\'e3o de Instru\'e7\'f5es:\par
+\i0 - \ul Mnem\'f4nicos:\ulnone\tab\par
+\tab - ADD: Adi\'e7\'e3o\par
+\tab - SUB: Subtra\'e7\'e3o\par
+\tab - MPY: Multiplica\'e7\'e3o\par
+\tab - DIV: Divis\'e3o\par
+\tab - LOAD: Carregar dados da mem\'f3ria\par
+\tab - STOR: Armazenas dados na mem\'f3ria\par
+\par
+\i Tipos de Instru\'e7\'f5es de m\'e1quina:\par
+\i0 - \ul Processamento de dados: \ulnone instru\'e7\'f5es l\'f3gicas e aritm\'e9ticas\par
+- \ul Armazenamento de dados:\ulnone  instru\'e7\'f5es de mem\'f3ria\par
+- \ul Movimenta\'e7\'e3o de dados:\ulnone  instru\'e7\'f5es de e/s\par
+- \ul Controle:\ulnone  instru\'e7\'f5es de teste e desvio\par
+* \i Opera\'e7\'f5es aritm\'e9ticas\i0  tem a capacidade de processamento de dados num\'e9ricos. \i Instru\'e7\'f5es l\'f3gicas \i0 (booleanas) operam sobre bits de uma palavra, ou seja, processa qualquer outro tipo de dado. Essas opera\'e7\'f5es s\'e3o executadas em dados armazenados em registradores, para isso s\'e3o necess\'e1rias \i instru\'e7\'f5es de mem\'f3ria \i0 para mover os dados entre a mem\'f3ria e os registradores. Para passar dados para a mem\'f3ria s\'e3o necess\'e1rias as \i intru\'e7\'f5es de E/S\i0 . As \i instru\'e7\'f5es de teste\i0  s\'e3o usadas para testar o valor de uma palavra de dados. Dependendo do resultado desse teste, s\'e3o utilizadas as \i instru\'e7\'f5es de desvio\i0  para desviar a execu\'e7\'e3o do programa a uma nova instru\'e7\'e3o.\par
+\par
+\i N\'famero de Endere\'e7os:\i0\par
+- Idealmente o n\'famero de endere\'e7os que uma instru\'e7\'e3o possui seriam 4: 2 para operandos, uma para o resultado e outra para o endere\'e7o da pr\'f3xima instru\'e7\'e3o\par
+- \ul Poucos endere\'e7os\ulnone  por instru\'e7\'e3o requerem menor complexidade da CPU e tem instru\'e7\'f5es menores. Por outro lado, resulta em maior tempo de execu\'e7\'e3o e em programas mais complexos\par
+\i Projeto do Conjunto de Instru\'e7\'f5es\par
+\i0 - Quest\'f5es relativas ao projeto de conjunto de instru\'e7\'f5es\par
+\tab - \ul Repert\'f3rio de opera\'e7\'f5es\ulnone : quantas e quais s\'e3o as opera\'e7\'f5es que devem ser fornecidas e qu\'e3o complexas elas devem ser\par
+\tab - \ul Tipos de dados:\ulnone  quais tipos de dados as opera\'e7\'f5es s\'e3o efetuadas\par
+\tab - \ul Formatos de instru\'e7\'e3o:\ulnone  qual o tamanho das instru\'e7\'f5es, n\'famero de endere\'e7os por instru\'e7\'e3o, tamanho dos campos...\par
+\tab - \ul Registradores:\ulnone  qual o n\'famero de registradores da CPU que podem ser utilizados pelas instru\'e7\'f5es e qual o prop\'f3sito de cada um\par
+\tab - \ul Endere\'e7amento:\ulnone  qual a forma que o endere\'e7o de um operando pode ser especificado\par
+\par
+\i Tipos de Operandos:\par
+\i0 - Endere\'e7os\par
+- N\'fameros: inteiro, ponto flutuante, decimal\par
+- Caracteres\par
+- Dados L\'f3gicos\par
+\par
+\i Tipos de Opera\'e7\'f5es\par
+\i0 - \ul Opera\'e7\'f5es de transfer\'eancia de dados:\ulnone  \par
+\tab - Deve especificar o endere\'e7o dos operandos fonte e de destino, o comprimento de dados a transferir, o modo de endere\'e7amento de cada operando\par
+\tab - S\'e3o o tipo mais simples de opera\'e7\'e3o, em termos de a\'e7\'e3o tomada pela CPU. \par
+\tab - Se os dois operandos s\'e3o registradores, a CPU transfere dados entre registradores, \'e9 uma opera\'e7\'e3o interna da CPU.\par
+\tab - Se um ou ambos os operandos est\'e3o na mem\'f3ria deve realizar algumas ou todas as seguintes a\'e7\'f5es: calcular endere\'e7o de mem\'f3ria (com base no mode de endere\'e7amento especificado), se o endere\'e7o for da mem\'f3ria virtual, traduzir para um endere\'e7o de mem\'f3ria real, determinar se o item est\'e1 na mem\'f3ria cache, se n\'e3o estiver, emitir um comando para o m\'f3dulo de mem\'f3ria.\par
+- \ul Opera\'e7\'f5es aritm\'e9ticas:\ulnone  \par
+\tab - A maioria das m\'e1quinas fornece opera\'e7\'f5es aritm\'e9ticas b\'e1sicas para soma, subtra\'e7\'e3o, multiplica\'e7\'e3o e divis\'e3o.\par
+\tab - A execu\'e7\'e3o de uma instru\'e7\'e3o aritm\'e9tica pode envolver transfer\'eancia de dados, para fornecer os valores dos operando como entrada para a ULA e para armazenar na mem\'f3ria o valor obtido como sa\'edda da ULA.\par
+- \ul Opera\'e7\'f5es l\'f3gicas:\ulnone  \par
+\tab - Variedade de opera\'e7\'f5es para manipular bits de uma palavra ou de uma unidade endere\'e7\'e1vel, e s\'e3o baseadas em opera\'e7\'f5es booleanas: NOT, AND, OR, XOR, EQUAL\par
+- \ul Opera\'e7\'f5es de convers\'e3o:\ulnone  \par
+\tab - S\'e3o aquelas que mudam ou operam sobre o formato de dador. Ex: convers\'e3o de n\'famero decimal para bin\'e1rio\par
+- \ul Opera\'e7\'f5es de E/S:\ulnone  \par
+\tab - Existe uma variedade de abordagens: E/S programada, E/S mapeada na mem\'f3ria, DMA e uso de processadores de E/S\par
+- \ul Opera\'e7\'f5es de controle de sistema:\ulnone\par
+\tab - S\'e3o executadas apenas quando o processador est\'e1 no estado privilegiado ou est\'e1 executando um programa carregado em \'e1rea especial da mem\'f3ria, que \'e9 privilegiada.\par
+\tab - Geralmente s\'e3o reservadas para uso do sistema operacional\par
+- \ul Opera\'e7\'f5es de transfer\'eancia de controle:\par
+\ulnone\tab - Quando altera a sequ\'eancia de execu\'e7\'e3o de instru\'e7\'f5es, a CPU atualiza o contador de programa com o endere\'e7o de alguma outra instru\'e7\'e3o armazenada na mem\'f3ria.\par
+\tab - Essas opera\'e7\'f5es s\'e3o requeridas pelas raz\'f5es: poder executar um conjunto de instru\'e7\'f5es mais de uma vez; tomada de decis\'f5es, executar uma sequ\'eancia de opera\'e7\'f5es dada determinada condi\'e7\'e3o; dividir o programa em partes.\par
+\tab - \ul Opera\'e7\'f5es de desvio:\ulnone  tem como um de seus operandos o endere\'e7o da pr\'f3xima instru\'e7\'e3o. Pode ser um desvio condicional. \par
+\tab - \ul Opera\'e7\'f5es de salto:\ulnone  incluem um endere\'e7o de desvio impl\'edcito. Indica que a execu\'e7\'e3o de uma instru\'e7\'e3o da sequ\'eancia de instru\'e7\'f5es deve ser omitida.\par
+\tab - \ul Opera\'e7\'f5es de chamada de procedimento:\ulnone  \'e9 um subprograma autocontido, que \'e9 incorporado em um programa maior. Ele pode ser chamado ou invocado em qualquer ponto do programa. Uma chamada a um procedimento instrui o processador a executar todo o procedimento e depois retornar ao ponto em que ocorreu a chamada. Envolve duas instru\'e7\'f5es b\'e1sicas: uma instru\'e7\'e3o de chamada, que desvia a execu\'e7\'e3o da instru\'e7\'e3o corrente para o in\'edcio do procedimento, e uma instru\'e7\'e3o de retorno, que provoca o retorno da execu\'e7\'e3o do procedimento para o endere\'e7o em que ocorreu a chamada. Ambas s\'e3o formas de instru\'e7\'f5es de desvio\par
+\par
+\par
+
+\pard\sa200\sl276\slmult1\qc\cf1\b CAP\'cdTULO 10\par
+
+\pard\sa200\sl276\slmult1\cf0\b0 - \ul Modo de Endere\'e7amento:\ulnone  quase todos os computadores possuem mais de um modo de endere\'e7amento. A quest\'e3o \'e9 como a unidade de controle escolher\'e1 o modo a ser usado em uma instru\'e7\'e3o. Pode ser decidido por aproxima\'e7\'e3o atrav\'e9s do OPCODE ou ent\'e3o um ou mais bits podem ser usados no formato de instru\'e7\'f5es.\par
+- \ul T\'e9cnicas de Endere\'e7amento:\par
+\ulnone\tab * A: conte\'fado do campo de endere\'e7o da instru\'e7\'e3o\par
+\tab * EA: endere\'e7o real (efetivo) da posi\'e7\'e3o que cont\'e9m o operando\par
+\tab * X: conte\'fado da posi\'e7\'e3o de endere\'e7o x\par
+\tab - \ul Imediato:\par
+\ulnone\tab\tab - Operando = campo de endere\'e7o\par
+\tab\tab - Ex: ADD 5 (5 \'e9 o operando)\ul\par
+\ulnone\tab\tab - \'c9 a forma mais simples de endere\'e7amento e pode ser utilizado para definir e utilizar constantes e inicializar vari\'e1veis. R\'e1pido.\par
+\tab\tab - Vantagem: n\'e3o necessita de qualquer acesso \'e0 mem\'f3ria para obter o operando, economizando assim um ciclo de acesso \'e0 mem\'f3ria\par
+\tab\tab - Desvantagem: o tamanho do operando fica limitado ao tamanho do campo de endere\'e7o, o qual na maioria das vezes \'e9 menor que o tamanho de uma palavra\par
+\tab - \ul Direto:\ulnone  \par
+\tab\tab - O campo de endere\'e7amento cont\'e9m o endere\'e7o efetivo do operando EA = A\par
+\tab\tab - T\'e9cnica muito utilizada nas primeiras gera\'e7\'f5es de computadores\par
+\tab\tab - Ex: ADD A (A est\'e1 na mem\'f3ria). Adiciona o conte\'fado da c\'e9lula A ao acumulador. Procura no endere\'e7o de mem\'f3ria A pelo operando.\par
+\tab\tab - Vantagem: implica apenas um acesso \'e0 mem\'f3ria\par
+\tab\tab - Desvantagem: limita o espa\'e7o do endere\'e7amento\par
+\tab - \ul Indireto:\ulnone  \par
+\tab\tab - Procura solucionar o problema do endere\'e7amento direto, colocando no campo de endere\'e7o da instru\'e7\'e3o uma refer\'eancia a mem\'f3ria que cont\'e9m o endere\'e7o completo da opera\'e7\'e3o. Ex: EA = (A)\par
+\tab\tab - Vantagem: para um campo da palavra n est\'e1 dispon\'edvel um espa\'e7o de endere\'e7amento 2^n\par
+\tab\tab -Desvantagem: s\'e3o necess\'e1rio dois acessos para buscar o operando\par
+\tab - \ul Registrador:\ulnone  \par
+\tab\tab -  Semelhante ao endera\'e7amento direto, s\'f3 que ao inv\'e9s de o campo referenciar uma posi\'e7\'e3o na mem\'f3ria, referencia um registrador.\par
+\tab\tab - Vatagem: apenas um pequeno campo de endere\'e7o \'e9 necess\'e1rio e n\'e3o \'e9 preciso refer\'eancias \'e0 mem\'f3ria. Execu\'e7\'e3o muito r\'e1pida\par
+\tab\tab - Desvantagem: n\'famero limitado de registradores\par
+\tab - \ul Indireto por Registrador:\ulnone  \par
+\tab\tab - Semelhante ao endere\'e7amento indireto, s\'f3 que ao inv\'e9s da refer\'eancia do campo de mem\'f3ria ser de uma posi\'e7\'e3o na mem\'f3ria \'e9 um registrador. Ex: EA = R\par
+\tab\tab - Vantagens e desvantagens s\'e3o as mesmas do endere\'e7amento indireto\par
+\tab\tab - Vantagem: usa uma refer\'eancia \'e0 mem\'f3ria a menos que o endere\'e7amento indireto\par
+\tab - \ul Deslocamento (Indexado):\ulnone  \par
+\tab\tab - Combina as t\'e9cnicas de endere\'e7amento direto e endere\'e7amento indireto por registrador. Ex: EA = A+(R)\par
+\tab\tab - Obriga que a instru\'e7\'e3o tenha dois campos de endere\'e7o. Pelo menos um deve ser expl\'edcito (valor A usado diretamente). O outro campo referencia implicitamente um registrador cujo conte\'fado \'e9 adicionado a A.\par
+\tab\tab - 1) Endere\'e7amento Relativo: utiliza o Program Counter. O campo de endere\'e7o da instru\'e7\'e3o atual \'e9 um deslocamento em rela\'e7\'e3o ao PC. Explora o princ\'edpio da localidade permitindo poupar bits de endere\'e7o na instru\'e7\'e3o\par
+\tab\tab - 2) Endere\'e7amento via Registrador Base: o registrador de refer\'eancia cont\'e9m a posi\'e7\'e3o da mem\'f3ria e o endere\'e7o da instru\'e7\'e3o cont\'e9m o deslocamento a partir de uma posi\'e7\'e3o de mem\'f3ria.\par
+\tab\tab - 3) Endere\'e7amento Indexado: o campo de endere\'e7o referencia uma mem\'f3ria principal e o registrador de refer\'eancia cont\'e9m um deslocamento positivo a partir dessa posi\'e7\'e3o de mem\'f3ria. \'c9 contr\'e1ria ao endere\'e7amento baseado em registrador e tem utilidade na execu\'e7\'e3o de instru\'e7\'f5es iterativas atrav\'e9s de altera\'e7\'f5es sucessivas do registrador de refer\'eancia. Ex: EA = A+(R) -> R=R+1.\par
+\tab - \ul Pilha:\ulnone  \par
+\tab\tab - A pilha \'e9 LIFO e existe um apontador associado Pa pilha que tem o endere\'e7o do topo da pilha. O operando est\'e1 (implicitamente) no topo da pilha.\par
+\tab\tab - Ex: ADD - remove dois elementos da pilha, adiciona-os e coloca o resultado na pilha.\par
+- \ul Formato das Instru\'e7\'f5es:\ulnone  define a forma como os campos s\'e3o distribu\'eddos. Cada instru\'e7\'e3o deve ter um c\'f3digo de opera\'e7\'e3o (opcode), e um ou mais operandos. Cada operando explic\'edto tem de ser referenciado utilizando um dos m\'e9todos de endere\'e7amento.\par
+- \ul Tamanho das Instru\'e7\'f5es:\ulnone  \'e9 o fator mais b\'e1sico do desenho do conjunto de instru\'e7\'f5es e \'e9 afetada por: tamanho da mem\'f3ria, organiza\'e7\'e3o da mem\'f3ria, estrutura do bus, velocidade da CPU. O compromisso mais \'f3bvio \'e9 entre ter um repert\'f3rio de instru\'e7\'f5es mais poderoso e a necessidade de poupar espa\'e7o. Al\'e9m disso, existem outras considera\'e7\'f5es, como: o tamanho da instru\'e7\'e3o deve ser igual ou m\'faltiplo do bus do sistema, sen\'e3o as instru\'e7\'f5es n\'e3o ficariam completas; o tamanho da instru\'e7\'e3o deve ser m\'faltiplo do tamanho de caracteres e dos n\'fameros da v\'edrgula fixa para n\'e3o ter desperd\'edcio de bits nos c\'e1lculos a efetuar. \par
+- \ul Aloca\'e7\'e3o de Bits:\ulnone  Fatores que determinam a utiliza\'e7\'e3o dos bits de endere\'e7amento:\par
+\tab - n\'ba de modos de endere\'e7amento: os modos de endere\'e7amento indicados explicitamento ocupam mais bits que os indicados implicitamente\par
+\tab - n\'ba de operandos:  menos endere\'e7os tornam os programas mais longos e complexos.\par
+\tab - registrador vs mem\'f3ria: quanto mais registradores puderem ser utilizados para referenciar operandos, menos bits ser\'e3o necess\'e1rios\par
+\tab - n\'ba de conjuntos de registradores: para um n\'famero fixo de conjuntos de registradores, um menor n\'famero de bits ser\'e1 utilizado\par
+\tab - alcance do endere\'e7amento: est\'e1 relacionado ao n\'famero de bits para endere\'e7amento na instru\'e7\'e3o\par
+\par
+\par
+
+\pard\sa200\sl276\slmult1\qc\cf1\b CAP\'cdTULO 11\par
+
+\pard\sa200\sl276\slmult1\cf0\b0 - \ul Arquitetura de Microprocessadores:\ulnone  A CPU \'e9 quem vai exercer o controle entre os registradores da mem\'f3ria e calcular as opera\'e7\'f5es tendo em conta v\'e1rios sinais de controle. Os computadores contempor\'e2neos s\'e3o baseados em 3 conceitos:\par
+\tab - Os dados e as instru\'e7\'f5es s\'e3o armazenados em uma mem\'f3ria de leitura/escrita\par
+\tab - O conte\'fado dessa mem\'f3ria \'e9 endere\'e7ado por localiza\'e7\'e3o, sem preocupa\'e7\'e3o com o tipo de dados\par
+\tab - A execu\'e7\'e3o ocorre de uma forma sequencial (a n\'e3o ser que explicitamente modificada) de uma instru\'e7\'e3o para outra\par
+- \ul Organiza\'e7\'e3o Interna da CPU:\ulnone  \par
+\tab - Fun\'e7\'f5es b\'e1sicas:\par
+\tab\tab - Buscar instru\'e7\'f5es: a CPU tem de ler as instru\'e7\'f5es da mem\'f3ria\par
+\tab\tab - Interpretar instru\'e7\'f5es: as instru\'e7\'f5es tem de ser decodificadas para determinar a a\'e7\'e3o a executar\par
+\tab\tab - Buscar dados: a execu\'e7\'e3o de uma instru\'e7\'e3o pode precisar da leitura de dados da mem\'f3ria ou do m\'f3dulo de E/S\par
+\tab\tab - Processar dados: a execu\'e7\'e3o de uma instru\'e7\'e3o pode precisar de opera\'e7\'f5es l\'f3gicas ou aritm\'e9ticas nos dados\par
+\tab\tab - Escrever dados: o resultado de uma instru\'e7\'e3o pode precisar escrever dados na mem\'f3ria ou em um m\'f3dulo de E/S\par
+\tab - O computador precisar ter um lugar onde guardar os dados\par
+\tab - Precisa saber qual o endere\'e7o fixo da \'faltima instru\'e7\'e3o para que ele saiba qual a pr\'f3xima a executar\par
+\tab - Precisa guardar temporariamente os dados durante a execu\'e7\'e3o de uma instru\'e7\'e3o. Por isso a CPU precisa ter uma pequena mem\'f3ria interna\par
+\tab - A CPU \'e9 constitu\'edda por uma Unidade L\'f3gica Aritm\'e9tica (ULA) e uma Unidade de Controle, al\'e9m dos registradores internos no processador (instru\'e7\'f5es e dados s\'e3o alocados temporariamente)\par
+\tab - A ULA processa e calcula dados\par
+\tab - A Unidade de Controle controla o fluxo de dados e as instru\'e7\'f5es enviadas e recebidas da CPU, al\'e9m de controlar as opera\'e7\'f5es da ULA\par
+\tab - A ULA e todos os registradores da CPU est\'e3o interligados por um bus interno\par
+- \ul Estrutura e Fun\'e7\'f5es da CPU:\ulnone  a espa\'e7o que a CPU tem para trabalhar \'e9 constitu\'eddo por registradores, que constituem o topo da hierarquia da mem\'f3ria. O n\'famero e fun\'e7\'f5es dele varia de processador para processador.\par
+- \ul Organiza\'e7\'e3o dos Registradores:\ulnone  \par
+\tab - Organizam-se em dois grupos: registradores vis\'edveis ao usu\'e1rio e registradores de controle de estado\par
+\tab - \ul Registradores Vis\'edveis ao Usu\'e1rio:\ulnone  permitem ao programador minimizar as refer\'eancias \'e0 mem\'f3ria principal, e possuem as seguintes categorias:\par
+\tab\tab - Registradores de Uso Geral: podem ser atribu\'eddos a uma variedade de fun\'e7\'f5es pelo programador, normalmente podem conter operandos para qualquer c\'f3digo de opera\'e7\'e3o\par
+\tab\tab - Registradores de Dados: s\'f3 podem ser utilizados para guardar dados e n\'e3o podem ser utilizados em opera\'e7\'f5es de c\'e1lculo de endere\'e7os\par
+\tab\tab - Registradores de Endere\'e7o: podem ser de uso geral ou estar direcionado para um modo de endere\'e7amento particular (Ex: Stack pointer)\par
+\tab\tab - C\'f3digos de Condi\'e7\'e3o: tamb\'e9m conhecidos como flags, geralmente agrupados em um ou mais registradores que s\'f3 s\'e3o alterados pela CPU, dependendo da \'faltima opera\'e7\'e3o l\'f3gica ou aritm\'e9tica. Ex: Conjunto de bits individuais (resultado da \'faltima opera\'e7\'e3o foi zero), podem ser lidos implicitamente por programas (salta se zero), n\'e3o pode ser estabelecido por programas\par
+\tab - \ul Registradores de Controle de Estado:\ulnone  s\'e3o utilizados pela unidade de controle para controlar a opera\'e7\'e3o da CPU e por programas privialegiados (SO) para controlar a execu\'e7\'e3o de outros programas. Exemplos: \par
+\tab\tab - Program Counter(PC): cont\'e9m o endere\'e7o da instru\'e7\'e3o a ser buscada\par
+\tab\tab - Instrution Register (IR): cont\'e9m a \'faltima instru\'e7\'e3o buscada\par
+\tab\tab - Memory Access Register (MAR): cont\'e9m o endere\'e7o de uma posi\'e7\'e3o de mem\'f3ria\par
+\tab\tab - Memory Buffer Register (MBR): cont\'e9m uma palavra de dados a ser escrita na mem\'f3ria ou a palavra lida mais recentemente\par
+\tab - Fazem parte dos registradores internos da CPU: MAR e MBR. \par
+\tab - Os registradores I/O AR e o I/O BR especificam o m\'f3dulo de E/S usado para a troca de dados entre m\'f3dulos de E/S\par
+\tab - Todas as CPUs possuem um registrador ou um conjunto deles normalmente chamado de Program Status Word (PSW) que cont\'e9m informa\'e7\'f5es de estado:\par
+\tab\tab - sign: cont\'e9m o sinal da \'faltima opera\'e7\'e3o aritm\'e9tica\par
+\tab\tab - zero: ativo quando o resultado \'e9 zero\par
+\tab\tab - carry: ativo se uma compara\'e7\'e3o l\'f3gica for verdadeira\par
+\tab\tab - overflow: indica overflow aritm\'e9tico\par
+\tab\tab - interrupt enable/disable: liga e desliga interrup\'e7\'f5es\par
+\tab\tab - supervisor: indica se a CPU est\'e1 executando em modo privilegiados\par
+- \ul Ciclo de Instru\'e7\'e3o:\ulnone  inclui os seguintes subciclos:\par
+\tab - Busca: l\'ea a pr\'f3xima instru\'e7\'e3o da mem\'f3ria para a CPU\par
+\tab - Execu\'e7\'e3o: interpreta o opcode e executa a respectiva opera\'e7\'e3o\par
+\tab - Interrup\'e7\'e3o: no caso de haver uma interrup\'e7\'e3o, a informa\'e7\'e3o \'e9 salva no estado em que se encontra\par
+- \ul Fluxo de Dados/Ciclo de Busca:\ulnone  no ciclo de busca, uma instru\'e7\'e3o \'e9 lida da mem\'f3ria. O PC tem o endere\'e7o da pr\'f3xima instru\'e7\'e3o a ser buscada, esse endere\'e7o \'e9 movido para o MAR e colocado no barramento (bus) de endere\'e7o. A Unidade de Controle requisita uma leitura \'e0 mem\'f3ria e o resultado \'e9 colocado no barramento de dados e copiado no MBR, e depois movido para o IR. O PC \'e9 incrementado em 1. Quando o ciclo de busca termina, a Unidade de Controle verifica se a instru\'e7\'e3o que est\'e1 no IR cont\'e9m operandos que possuem endere\'e7amento indireto. Se tiver, um ciclo indireto \'e9 executado.\par
+- \ul Ciclo Indireto:\ulnone  a busca de um endere\'e7o indireto come\'e7a um novo subciclo de instru\'e7\'e3o. A principal linha de atividade nessa situa\'e7\'e3o \'e9 a altern\'e2ncia entre atividades de busca de instru\'e7\'f5es e execu\'e7\'e3o. Quando a Unidade de Controle examina o conte\'fado do IR, se for um operando com endere\'e7amento indireto, inicia-se o ciclo indireto. Os n bits mais significativos do MBR que cont\'e9m o endere\'e7o de refer\'eancia, s\'e3o transferidos par o MAR. Dessa forma a Unidade de Controle faz uma leitura \'e0 mem\'f3ria para obter o endere\'e7o desejado do operando para o MBR.\par
+- \ul Ciclo de Interrup\'e7\'e3o:\ulnone  o valor do PC \'e9 transferido para o MBR e escrito na mem\'f3ria. O local reservado em mem\'f3ria para este feito \'e9 carregado no MAR a partir da Unidade de Controle. O PC \'e9 carregado com o endere\'e7o da rotina de interrup\'e7\'e3o.\par
+\par
+\par
+
+\pard\sa200\sl276\slmult1\qc\cf1\b CAP\'cdTULO 14\cf0\b0\par
+
+\pard\sa200\sl276\slmult1 - Para especificar as fun\'e7\'f5es do sistema, temos que levar em conta: opera\'e7\'f5es (opcodes), modos de endere\'e7amento, registradores, interfaces de E/S, interfaces e estrutura de processamento de interrup\'e7\'f5es. Esses termos determinam o que a CPU faz.\par
+- \ul Micro Opera\'e7\'f5es:\ulnone  cada ciclo envolve um conjunto de v\'e1rios passos, cada um envolvendo registradores da CPU. Cada um desses passos s\'e3o micro-opera\'e7\'f5es.\par
+- \ul Ciclo de Busca:\ulnone  4 registradores est\'e3o envolvidos:\par
+\tab - MAR (Memory Address Register): conectado \'e0s linhas de endere\'e7o do bus do sistema. Especifica endere\'e7amento na mem\'f3ria para opera\'e7\'e3o de leitura ou escrita\par
+\tab - MBR (Memory Buffer Register): conectado \'e0s linhas de dados do bus. Cont\'e9m dados para escrita na mem\'f3ria ou os \'faltimos dados lidos\par
+\tab - PC (Program Counter): cont\'e9m o endere\'e7o da pr\'f3xima instru\'e7\'e3o a ser buscada\par
+\tab - IR (Instruction Register): cont\'e9m a \'faltima instru\'e7\'e3o buscada\par
+- \ul Sequ\'eancia do Ciclo de Busca:\ulnone  \par
+\tab - O endere\'e7o da pr\'f3xima instru\'e7\'e3o a ser executada \'e9 colocado no PC\par
+\tab - Mover esse endere\'e7o para o MAR\par
+\tab - O endere\'e7o \'e9 colocado no bus de endere\'e7os\par
+\tab - A Unidade de Controle envia um comando READ para o controlador do bus e o resultado aparece no bus de dados\par
+\tab - Copia o dado para o MBR\par
+\tab - Incrementa o PC em uma unidade para obter a pr\'f3xima instru\'e7\'e3o\par
+\tab - Mover o conte\'fado do MBR para o IR\par
+\tab - Um ciclo de busca tem 3 passos e 4 micro-opera\'e7\'f5es (\b\i cada micro-opera\'e7\'e3o envolve o movimento de dados de ou para um registrador\b0\i0 )\par
+\tab - Simbolicamente:\par
+\tab\tab * A1: MAR <- PC (mover os dados do PC para o MAR)\par
+\tab\tab * A2: MBR <- MEM\'d3RIA, PC <- PC + 1 (mover o conte\'fado da mem\'f3ria especificada do MAR para o MBR e incrementar o PC)\par
+\tab\tab * A3: IR <- MBR (mover o conte\'fado do MBR para o IR)\par
+- \ul Ciclo Indireto:\ulnone  \par
+\tab - O campo endere\'e7o de uma instru\'e7\'e3o \'e9 transferido para o MAR. \'c9 ent\'e3o usado para adquirir o endere\'e7o do operando e passado para o MBR. Finalmente, o campo endere\'e7o do IR \'e9 atualizado para o contido no MBR.\par
+\tab - Micro-opera\'e7\'f5es:\par
+\tab\tab * T1: MAR <- (IR(ENDERE\'c7O))\par
+\tab\tab * T2: MBR <- MEM\'d3RIA\par
+\tab\tab * T3: IR(ENDERE\'c7O) <- MBR (ENDERE\'c7O)\par
+- \ul Ciclo de Interrup\'e7\'e3o:\ulnone  \par
+\tab - Depois de completado o ciclo de execu\'e7\'e3o \'e9 feito um teste para saber se houve alguma interrup\'e7\'e3o. Em caso afirmativo \'e9 dado in\'edcio ao ciclo de interrup\'e7\'e3o:\par
+\tab\tab * T1: MBR <- (PC)\par
+\tab\tab * T2: MAR <- Endere\'e7o de Salvamento\par
+\tab\tab            PC <- Endere\'e7o de Rotina\par
+\tab\tab * T3: MEM\'d3RIA <- MBR\par
+\tab - O conte\'fado do PC \'e9 transferido para o MBR, para que possa ser salvo para o retorno da interrup\'e7\'e3o\par
+\tab - O MAR \'e9 carregado com o endere\'e7o onde o conte\'fado do PC deve ser salvo e o PC \'e9 atualizado com o endere\'e7o da rotina de tratamento de interrup\'e7\'e3o\par
+\tab - Guardar o MBR que cont\'e9m o velho valor do PC na mem\'f3ria\par
+\tab - A CPU est\'e1 pronta para come\'e7ar o pr\'f3ximo ciclo de instru\'e7\'e3o\par
+- \ul Ciclo de Execu\'e7\'e3o: \ulnone\par
+\b ADD\par
+\tab\b0 - ADD R1, X - adiciona o conte\'fado da posi\'e7\'e3o X ao registrador 1, resultado coloca em R1\par
+\tab * T1: MAR <- (IR ADDRESS)\par
+\tab * T2: MBR <- (MEM\'d3RIA)\par
+\tab * T3: R1 <- (R1) + (MBR)\par
+\b ISZ\par
+\b0\tab - ISZ X - incrementa 1 e salta se for zero\par
+\tab * T1: MAR <- (IR ADDRESS)\par
+\tab * T2: MBR <- (MEM\'d3RIA)\par
+\tab * T3: MBR <- (MBR) + 1\par
+\tab * T4: MEM\'d3RIA <- (MBR)\par
+\tab            IF (MBR) == 0 THEN PC <- (PC) + 1\par
+\b BSA (BRANCH AND SAVE ADDRESS)\par
+\b0\tab - BSA X - endere\'e7o de instru\'e7\'e3o seguinte a BSA \'e9 salvo em X e a execu\'e7\'e3o do programa reinicia a partir da instru\'e7\'e3o X+1\par
+\tab * T1: MAR <- (IR ADDRESS)\par
+\tab            MBR <- (PC)\par
+\tab * T2: PC <- (IR ADDRESS)\par
+\tab            MEM\'d3RIA <- (MBR)\par
+\tab * T3: PC <- PC + 1\par
+- \ul Requisitos Funcionais:\ulnone  s\'e3o as fun\'e7\'f5es que a unidade de controle tem que executar.\par
+\tab - A Unidade de Controle \'e9 caracterizada por: \par
+\tab\tab - Definir os elementos b\'e1sicos da CPU\par
+\tab\tab - Descrever as micro-opera\'e7\'f5es \'e0s opera\'e7\'f5es que a CPU pode executar\par
+\tab\tab - Determinar a fun\'e7\'f5es que a unidade de controle tem de executar para que as micro-opera\'e7\'f5es sejam executadas\par
+- \ul Elementos B\'e1sicos do Processador: \ulnone\par
+\tab - ULA - componente funcional de um computador\par
+\tab - Registradores - guardar dados internos na CPU\par
+\tab - Path de dados internos - mover dados entre registradores e a ULA e entre registradores\par
+\tab - Path de dados externos - ligam registradores \'e0 mem\'f3ria e a m\'f3dulos de E/S\par
+\tab - Unidade de Controle - controla as opera\'e7\'f5es da CPU\par
+- \ul Tipos de Micro Opera\'e7\'f5es:\ulnone\par
+\tab - transfer\'eancia de dados de um registrador para outro\par
+\tab - transfer\'eancia de dados de um registrador para uma interface externa\par
+\tab - tranfer\'eancia de dados de uma interface externa para um registrador\par
+\tab - execu\'e7\'e3o de uma opera\'e7\'e3o l\'f3gica ou aritm\'e9tica, utilizando registradores de E/S\par
+- \ul Fun\'e7\'f5es da Unidade de Controle:\ulnone\par
+\tab - Sequenciamento: \'e9 quem controla a sequ\'eancia certa das micro-instru\'e7\'f5es a serem executadas\par
+\tab - Execu\'e7\'e3o: origina micro-instru\'e7\'f5es para serem executadas\par
+- \ul Sinais de Controle:\ulnone  s\'e3o a chave de como funciona a Unidade de Controle. Para que a UC possa executar suas fun\'e7\'f5es \'e9 necess\'e1rio ter \i inputs \i0 (avaliar o estado do sistema)\i  \i0 e \i outputs \i0 (controlar o comportamento do sistema).\par
+\tab - \b Input\b0  \par
+\tab\tab - Rel\'f3gio - a UC executa uma micro-opera\'e7\'e3o em cada pulso de rel\'f3gio\par
+\tab\tab - Instruction Register - o OPCODE da instru\'e7\'e3o atual \'e9 usado para determinar a micro-opera\'e7\'e3o que ser\'e1 realizada durante o ciclo de execu\'e7\'e3o\par
+\tab\tab - Flags - determinar o estado atual da CPU e das opera\'e7\'f5es da ULA\par
+\tab\tab - Sinais de Controle de Bus de Controle - envia sinais para a UC, sinais de interrup\'e7\'e3o e de reconhecimento\par
+\tab - \b Output\par
+\tab\tab\b0 - Sinais de Controle com a CPU - esses sinais s\'e3o de dois tipos: os que causam a movimenta\'e7\'e3o de dados de um registrador para outro e os que ativam fun\'e7\'f5es espec\'edficas da ULA\par
+\tab\tab - Sinais de Controle para o Bus de Controle - existem dois tipos: sinais de controle para a mem\'f3ria e para os m\'f3dulos de E/S\par
+- \ul Organiza\'e7\'e3o Interna:\ulnone\par
+\tab - Ula e os registradores da CPU est\'e3o ligados a um simples bus interno\par
+\tab - Portas e sinais de controle proporcionam o movimento de dados para e do bus para cada um dos registradores\par
+- \ul Formas de Implementa\'e7\'e3o:\ulnone  UC tem duas categorias de implementa\'e7\'e3o:\par
+\tab - Implementa\'e7\'f5es por Hardware\par
+\tab\tab - a UC \'e9 um circuito em que seus sinais l\'f3gicos s\'e3o transformados no conjunto de sinais l\'f3gicos na sa\'edda, que s\'e3o os sinais de controle\par
+\tab\tab - a l\'f3gica da UC dever\'e1 ter uma \'fanica entrada l\'f3gica para cada opcode. Pode ser executada por um decodificadore que recebe um input codificado e produz um simples output\par
+\tab\tab - Problemas:\par
+\tab\tab\tab * L\'f3gica complexa de sequenciamento e micro-opera\'e7\'e3o\par
+\tab\tab\tab * Dif\'edcil de projetar e testar\par
+\tab\tab\tab * Inflex\'edvel\par
+\tab\tab\tab * Dif\'edcil de adicionar novas instru\'e7\'f5es\par
+\tab\tab\tab * Solu\'e7\'e3o: utilizar a microprograma\'e7\'e3o para a implementa\'e7\'e3o da UC\par
+\tab - Implementa\'e7\'f5es Microprogramadas\par
+\par
+\par
+
+\pard\sa200\sl276\slmult1\qc\cf1\b CAP\'cdTULO 15 - IMPLEMENTA\'c7\'c3O MICROPROGRAMADA\par
+
+\pard\sa200\sl276\slmult1\cf0\b0 - Na utiliza\'e7\'e3o de sinais de controle, cada micro-opera\'e7\'e3o \'e9 descrita em uma anota\'e7\'e3o simb\'f3lica, que se assemelha a uma linguagem de programa\'e7\'e3o\par
+- Sequ\'eancia de microinstru\'e7\'f5es \'e9 conhecida como microprograma ou firmware\par
+- O conjunto de microinstru\'e7\'f5es \'e9 denominado \i microinstru\'e7\'f5es horizontais\i0\par
+- Cada microinstru\'e7\'e3o \'e9 constitu\'edda por um bit, por cada linha interna de controle da CPU e por um outro bit por cada linha de controle do bus do sistema. Existe ainda um campo de condi\'e7\'e3o, indicando a condi\'e7\'e3o a qual dever\'e1 ocorrer um salto, e um campo com o endere\'e7o da microinstru\'e7\'e3o a ser executada quando esse salto ocorrer\par
+Execu\'e7\'e3o de uma instru\'e7\'e3o:\par
+1. Para executar uma instru\'e7\'e3o, a unidade l\'f3gica de sequenciamento envia um comando de leitura (READ) para a mem\'f3ria de controle\par
+2. A palavra na qual o endere\'e7o \'e9 especificado no registrador de controle de endere\'e7o \'e9 lida para o registrador de controle do buffer\par
+3. O conte\'fado do registrador de controle do buffer gera um sinal de controle e a informa\'e7\'e3o em rela\'e7\'e3o ao endere\'e7o para a unidade l\'f3gica de sequenciamento\par
+4. A unidade l\'f3gica de sequenciamento carrega o novo endere\'e7o no registrador de controle de endere\'e7o, baseado na informa\'e7\'e3o do pr\'f3xio endere\'e7o do registrador de controle do buffer e das flags da ULA\par
+- No final de cada microinstru\'e7\'e3o, a unidade l\'f3gica de sequenciamento carrega o novo endere\'e7o para o registrador de controle de endere\'e7o.\par
+- Dependendo do valor das flags da ULA e do registrador de controle do buffer, umas das tr\'eas decis\'f5es \'e9 tomada: \par
+\tab - Adquirir a pr\'f3xima instru\'e7\'e3o\par
+\tab - Saltar para uma nova rotina baseada numa microinstru\'e7\'e3o de salto\par
+\tab - Saltar para a pr\'f3xima instru\'e7\'e3o de m\'e1quina\par
+- \ul Vantagens:\par
+\ulnone\tab - Simplifica\'e7\'e3o do projeto, mais barato e menos sujeito a erros\par
+\tab - A implementa\'e7\'e3o em hardware tem de incluir l\'f3gica complexa e um elevado n\'famero de micro-opera\'e7\'f5es do ciclo de instru\'e7\'e3o\par
+-\ul Desvantagens:\par
+\ulnone\tab - Decodificadores e unidades l\'f3gicas de sequenciamento baseiam-se em l\'f3gicas muito simplificadas\par
+\tab - S\'e3o mais lentar que as UC baseadas em hardware\par
+}
+ 

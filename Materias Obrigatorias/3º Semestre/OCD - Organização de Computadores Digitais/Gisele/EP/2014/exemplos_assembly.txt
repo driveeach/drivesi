@@ -1,0 +1,122 @@
+########## HELLO WORLD
+.text
+.globl main
+main:
+        la $a0,$texto                # imprime texto "Hello World"
+        li $v0,4
+        syscall
+        li $v0,10                        # termina
+        syscall
+.data
+$texto:
+        .asciiz "Hello World"
+
+########## INTEGER
+.text
+.globl main
+main:
+        ld $a0,$valor                # obtem o valor da memoria
+        addi $a0,$a0,20                # soma com um valor imediato
+        li $v0,1                        # imprime o inteiro $a0
+        syscall
+        li $v0,10                        # exit
+        syscall
+.data
+$valor: .word 45
+
+########## FLOAT
+.text
+.globl main
+main:
+        l.s $f12,$valor                        # carrega o float 45.1 no f12
+        l.s $f13,$outro                        # carrega o float 12.4 no f13
+        add.s $f12,$f12,$f13        # soma $f12 = $f12 + $f13
+        li $v0,2                                # imprime o float $f12
+        syscall
+        li $v0,10                                # termina
+        syscall
+.data
+$valor: .float 45.1
+$outro: .float 12.4
+
+########## IF
+.text
+.globl main
+main:
+        ld $a1,$idade                # carrega a idade da memoria
+        blt $a1,18,menor        # verifica se a idade eh menor que 18
+        la $a0,$texto1                # idade maior
+        j fim                                # idade menor
+menor:
+        la $a0,$texto2
+fim:
+        li $a0,4                        # imprime o texto
+        syscall                                # termina
+        li $v0,10
+        syscall
+.data
+$idade: .word 20
+$texto1: .asciiz "Sim"
+$texto2: .asciiz "Nao"
+
+########## LOOP
+.text
+.globl main
+main:
+        li $a0,0                        # inicia o total
+        li $a1,1                        # inicia o contador
+loop:
+        add $a0,$a0,$a1                # adiciona o contador no total
+        addi $a1,$a1,1                # incrementa o contador
+        ble $a1,10,loop                #verifica se terminou e faz o loop
+        li $v0,1                        # imprime o resultado
+        syscall
+        li $v0,10                        # termina
+        syscall
+
+########## VECTOR
+.text
+.globl main
+main:
+        li $a0,0                        # inicia o total
+        la $a1,$vetor                # aponta para o vetor
+        la $a2,0                        # inicia o contador
+loop:
+        ld $a3,($a1)                # carrega o valor apontado pelo a1 para dentro do $a3
+        add $a0,$a0,$a3                # adiciona o $a3 no total $a0
+        addi $a1,$a1,4                # incrementa o apontador
+        addi $a2,$a2,1                # incrementa o contador
+        blt $a2,5,loop                # verifica se terminou e faz o loop
+        li $v0,1                        # imprime o resultado
+        syscall
+        li $v0,10                        # termina
+        syscall
+.data
+$vetor: .word 20, 21, 22, 23, 24
+
+########## SUBROUTINE
+.text
+.globl main
+main:
+        li $a0,4                        # inicia o total
+        jal fatorial                # chama o fatorial
+        li $v0,1                        # imprime o resultado
+        syscall
+        li $v0,10                        # termina
+        syscall        
+fatorial:
+        bgt $a0,1,fat_exec        # verifica se chegou no final
+        li $a0,1                        # coloca 1 no $a0
+        j fat_fim                        # vai para o final
+fat_exec:
+        subu $sp,$sp,8                # Abre um espaco na pilha
+        sw $a0,4($sp)                # Salva o $a0
+        sw $ra,0($sp)                # Salva o endereco de retorno
+        subu $a0,$a0,1                # subtrai 1 do fatorial
+        jal fatorial                # chama o fatorial
+        lw $ra,0($sp)                # recupera o valor original do $a0 em $a1
+        lw $a1,4($sp)                # recupera o valor original do $a0 em $a1
+        addu $sp,$sp,8                # retira o espaco ocupado na pilha
+        mul $a0,$a0,$a1                # multiplica
+fat_fim:
+        jr $ra                                # retorna

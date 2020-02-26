@@ -1,0 +1,3 @@
+class MyParentException extends Exception{
+	
+}

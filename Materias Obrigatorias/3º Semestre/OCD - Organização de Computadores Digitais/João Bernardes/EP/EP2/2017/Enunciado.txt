@@ -1,0 +1,42 @@
+EP2 de OCD (Grupos de 2 ou 3 alunos)
+
+Criar um programa em Java que simule os sinais de controle enviados pela UC (com um microprogama com palavras horizontais) para executar instru��es em assembly (como se estivessem armazenadas na mem�ria principal). O microprograma deve ser lido e executado durante cada passo dessa simula��o e deve enviar os sinais de controle adequados para outros elementos do sistema simulado que s� ent�o, ao receber esses sinais, devem responder da forma correta.
+
+Podem assumir que o c�digo sempre ser� executado com a primeira instru��o come�ando em zero.
+
+O processador simulado deve contar com 4 registradores de uso geral (AX, BX, CX e DX), al�m dos outros necess�rios para o funcionamento do sistema (IR, PC, MAR, MBR, Flags). N�o haver� intera��o com dispositivos de IO no EP, portanto n�o � necess�rio acrescentar os registradores IOAR e IOBR.
+
+Seu programa deve ser capaz de simular a execu��o das seguintes instru��es (sem uso de labels - endere�os ser�o usados diretamente - e com funcionamento similar ao do assembly do 8086):
+
+MOV - de registrador para registrador
+    - de registrador para mem�ria (com endere�o fixo ou em registrador)
+    - de mem�ria para registrador (com endere�o fixo ou em registrador)
+(N�o h� necessidade de ciclo de indire��o)
+
+ADD, SUB, MUL, DIV
+INC, DEC
+CMP
+(Todas essas opera��es com registradores e constantes mas n�o com endere�os de mem�ria e n�o � preciso utilizar as opera��es feitas no EP1, podem simplesmente utilizar os operadores aritm�ticos e l�gicos de Java.)
+
+JMP, JE, JNE, JG, JL, JGE, JLE
+&, |
+
+Todas as instru��es seguir�o o seguinte formato: comando com uma ou duas letras em mai�sculas, seguido por um espa�o, seguido pelos par�metros separados por uma v�rgula (sem espa�o), seguido por um enter (line break e carriage return).
+
+O programa deve permitir que o usu�rio execute cada micro-opera��o de cada vez. A cada um desses passos, deve mostrar o estado atual de todos os registradores (de uso geral e do sistema, inclusive as flags zero, sinal e overflow - n�o � necess�rio simular as outras flags), qual micro-opera��o est� sendo executada, quais sinais de controle s�o enviados e a linha do microprograma que corresponde �quela micro-opera��o.
+
+O EP deve come�ar pela especifica��o (apresentada no relat�rio), pelo grupo, de diversos elementos, como:
+- A organiza��o do hardware (mostrar um diagrama similar ao apresentado em aula)
+- Os opcodes para cada instru��o
+- C�digos (ou endere�os) dos registradores gerais
+- Tamanho da palavra e de cada instru��o (usar instru��es e tamanho fixo, escolher um tamanho de palavra que comporte a maior instru��o e lembrar e incrementar o PC com o n�mero de bytes correto, assumindo que a mem�ria principal permite o endere�amento de cada byte)
+- C�digos das opera��es da ULA
+- Condi��es de pulo do firmware
+
+Al�m dessas especifica��es, o relat�rio deve conter as seguintes informa��es:
+- Como ler o c�digo
+- Como usar o programa
+- Que testes foram feitos (todas as instru��es devem ser testadas, n�o � preciso se preocupar com entradas ilegais) e quais os resultados
+- Problemas encontrados
+- "Refer�ncias" consultadas
+ 

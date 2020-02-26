@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1286842313 source:c:\documentos\codeblocks\revisaoaed2\main.cpp
+	<iostream>
+	"revisao.h"
+
+1286835785 c:\documentos\codeblocks\revisaoaed2\revisao.h
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<malloc.h>
+	<string.h>
+

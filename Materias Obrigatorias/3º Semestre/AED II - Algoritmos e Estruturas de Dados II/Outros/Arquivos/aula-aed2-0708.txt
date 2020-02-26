@@ -1,0 +1,55 @@
+Algorítmos de Percorrimento de Grafos
+	- Matriz de Adjacências
+		- O número de vértices representa o tamanho da matriz (um grafo de 6 vértices gera uma matriz de 6x6 (0..5)) (necessárias n² posições)
+		- onde há aresta, há 1 na matriz. Se não há aresta, 0;
+		- há uma linha inteira para cada vértice;
+		
+	- Lista de Incidências
+		- para cada vértice, há uma lista com APENAS os elementos ligados à ele;
+		- n listas, onde n é o número de vértices
+			- os elementos da lista são os vértices que se ligam com aquele vértice em específico;
+				(ou seja, se o vértice 1 se liga à 4 e 5, o vértice 1 terá uma lista com os elementos 4 e 5 dentro dela)
+			
+	- Arestas com peso
+		- cada aresta possui um peso associado a ela
+		
+		Matriz de Adjacências com Pesos
+			- para cada par, se há uma ligação entre os vértices, o peso da aresta é associado ao par, caso contrário, infinito.
+			
+		Lista de Incidências com pesos
+			- para cada vértice, há uma lista com os elementos ligados a ele e o custo da aresta entre os vértices
+			- n listas, onde n é o número de vértices
+			
+	- Busca em Grafos
+		- escolhendo um vértice inicial, é possivel visitar os vértices seguindo uma determinada ordem
+		- a cada iteração, escolhemos uma aresta que parte de um vértice JÁ VISITADO
+			- usa-se uma flag para indicar se o vértice foi indicado
+			
+			-a cada passo, divide-se os vértices em 3 grupos:
+				- VISITADOS
+				- CANDIDATOS (adjacentes aos visitados)
+				- NÃO VISITADOS (não possuem ligação direta com os já visitados)
+			-a cada iteração, os vértices vão mudando de grupo, de acordo com as arestas escolhidas e os vértices visitados
+			
+			- buscas comuns
+				- busca em profundidade (escolhe arestas que partem do vértice mais recente)
+				- busca em largura (escolhe arestas que partem do vértice mais antigo)
+				- busca gulosa (escolhe o menro caminho, através de algum critério)
+				
+		- Busca em profundidade
+			- escolhe-se um nó raix
+				- percorre cada caminho de forma a ir o mais longe possível do nó raiz
+					- vai empilhando os elementos encontrados no caminho
+					- quando voltar, vai visitando os elementos empilhados
+						- se houver adjacentes não visitados, empilha os mesmos antes de desempilhar
+						- para quando acabar os elementos da pilha
+						
+		- Busca em largura
+			- escolhe-se um nó raiz
+				- visita-se primeiro TODOS os nós próximos da raiz e insere-os numa fila
+				
+		- Busca Gulosa
+			- Algoritmo de Dijkstra
+				- percorre os vértices através do peso das arestas, traçando um caminho menos custoso
+					- problema: não lida com pesos negativos das arestas
+			

@@ -1,0 +1,113 @@
+AED II
+
+- foco em acesso à memória secundária
+- minimizar quantidade de acessos ao disco para obter o que procura;
+- Grafos, algoritmos para classificação externa em disco e fita; Arquivos, consultas, organizações, sequências, técnicas de indexação, árvores B, hashing;
+Organização de arquivos, estruturas de dados clássicas;
+
+Data Structures Using C - Tenembaum.
+Data Structure and Algorithms - Hopcroft
+Grafos e algoritmos Computacionais - Szwarcfiter
+
+Grafos
+[http://pt.wikipedia.org/wiki/Teoria_dos_grafos - consultar p/ futuras referências]
+
+[http://pt.wikipedia.org/wiki/Algoritmo_de_Dijkstra] -> percorrer o caminho mais curto entre v e w
+
+- Visualmente = conjunto de pontos e um conjunto de linhas/setas que ligam esses pontos
+- Modelo matemático que representa relacionamentos entre objetos
+
+- Um grafo G = (V,E) consiste em um conjunto de vértices V, ligados por um conjunto de arestas E.
+
+Grafo não direcionado/não orientado G = (V,E) -> conjunto NÃO-VAZIO V e um conjunto E de arestas (a ordem dos vértices não altera a relação)
+	- Para grafos direcionados, o mesmo não é válido
+	
+	- Ordem de um grafo: cardinalidade do conjunto de vértices => V= (v1, v2, v3,...) |V| = n
+	- Número de Arestas: cardinalidade do conjunto de arestas;
+	
+	Definição formal ex (slide 15): G = ((v1,v2,v3,v4,v5,v6,v7,v8,v9),((v1,v2),(v1,v3),(v2,v3),(v3,v4),(v4,v5),(v4,v6),(v5,v6),...))
+	Ordem: 9
+	Número de Arestas: 12
+	
+	Aresta = Laço quando u = v (vértice inicial = final)
+	2 ou mais arestas = paralelas quando possuirem os mesmos vértices como extremidades
+	
+	Grafo simples = sem laços e sem paralelas;
+	Multigrafo = sem laços, mas pode ter paralelas
+	Pseudografo = pode ter laços e paralelas
+	2 vértices ligados por uma aresta = vértices adjacentes
+	2 arestas com um vértice em comum = arestas adjacentes
+	Arestas são incidentes a cada uma de suas extremidades (vértices)
+	Grafo nulo = sem arestas. (se não tem vértices, não é grafo) Nn = grafo nulo de n vértices
+	Grafo completo = grafo simples, onde existe exatamente uma aresta entre cada par de vértices distintos (todos ligados à todos) Kn = grafo completo de n vértices
+	
+	Número de arestas em um grafo completo = (n² - n)/2 onde n = número de vértices
+	Grafo valorado = arestas com pesos(valores) associados
+		- Nesse caso, o conjunto de arestas será (v, w, valor) onde v e w são vértices adjacentes
+	
+	
+	
+Grafo direcionado
+
+	- (vi, vj) != (vj, vi)
+	- arestas direcionadas;
+	- para cada grafo direcionado, existe um simples que é obtido ao se remover a direção das arestas
+	- uma aresta (v,w) é divergente de v, e convergente a w -> (3,5) é divergente de 3 e convergente a 5
+	- grau d(v) -> número de arestas incidentes a v (ou número de vértices adjacentes à v) (laços contam como 2)
+		- somatória do grau de seus vértices (ou 2|E|, onde |E| = número de arestas) -> sempre será par
+	- grau 0 = vértice isolado; grau 1 = vértice pendente; grau ímpar = vértice impar; grau par = vértice par;
+	- grafo regular = todos os vértices com o mesmo grau
+	
+	- grau de saída = d+(v) = número de arestas DIVERGENTES
+	- grau de entrada = d-(v) = número de arestas CONVERGENTES
+	- grau(v) = d+ + d-
+	
+	d(v) = d-(v) + d+(v)
+	
+	- vértice com grau de saída = 0 chama-se SUMIDOURO
+	- vértice com grau de entrada = 0 chama-se FONTE
+	
+Grafo bipartido
+
+	- o conjunto de vértices V pode ser particionado em 2 subconjuntos V1 e V2, onde qualquer aresta do grafo possui um vértice em V1 e outro em V2.
+	- O GRAFO PODE SER REMONTADO À VONTADE (os vértices podem ser rearranjados para formar quaisquer subconjuntos, porém as ligações entre eles (arestas) não
+	podem ser desmontadas)
+	
+	- bipartido completo se todos os vértices de V1 estão ligados à todos de V2
+	
+Subgrafo
+	- G' = (V', E') é subgrafo de G = (V,E) se:
+		- cada vértice de G' é um vértice de G
+		- cada aresta de G' é uma aresta de G
+	- G' é complemento de G se:
+		- V' = V
+		- dois vértices são adjacentes em G', e se, somente se, a adjacência não existe em G
+		
+
+[http://pt.wikipedia.org/wiki/Sete_pontes_de_K%C3%B6nigsberg]
+
+Caminho
+	- dados os vértices v,w, um caminho é uma sequencia de vértices e arestas alternados entre v e w.
+		- cada aresta no caminho é incidente ao nó anterior e ao posterior
+	- forma: (v=)v0e1v1e2v2..vn-1envn(=w)
+	- v e w são as EXTREMIDADES do caminho
+	- não é necessário o MENOR caminho (a menos que especificado).
+	- se existe um caminho c de v -> w, w é alcançado por v
+	- Caminho fechado se v = w
+	- Caminho trivial de v -> v consiste apenas do vértice v (sem arestas)
+		- Um caminho fechado com arestas = ciclo
+	- Caminho sem cíclos = acíclico;
+	- Comprimento do caminho = número de arestas percorridas no caminho;
+	- Caminho simples = não possui vértices repetidos;
+		- consequentemente, não possui arestas repetidas;
+	- Circuito = caminho fechado sem arestas repetidas
+		- pode possuir vértices repetidos;
+
+Grafo conexo
+	- possível caminhar de v para w por meio de um conjunto de arestas adjacentes (caminho)
+	- ou seja, se quaisquer 2 vértices do grafo possuem um caminho entre eles, o grafo é conexo.
+	- um grafo não conexo pode ser subdividido em subgrafos conexos
+		- um subgrafo H é componente conexo se:
+			H é um subgrafo de G;
+			H é conexo;
+			Nenhum subrafo conexo de G tem H como um subgrafo (ou seja, se H for o maior subgrafo possível) (ou seja 2, um outro subgrafo de G não pode ter H como subgrafo de si mesmo)

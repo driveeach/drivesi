@@ -1,0 +1,21 @@
+o imprime vc chama pra cada requisição de rotz
+
+rota*
+
+entao pra cada imprime vc chama dois dijkstra um pra um vertice da aresta de origem e o outro pra outro vertice da aresta
+
+ai tipo pra cada dijkstra vai voltar um vetor de custos
+
+ai tipo em cada vetor vc vai ter q ver a distancia ate os vertices da aresta de destino
+
+ai vc compara a distancias totais(distancia do vetor do dijkstra + a distancia do nro ate um vertice da aresta de origem +a distancia do nro ate um vertice da aresta de destino)
+
+ai vc faz isso pras 4 situações
+
+tem isso no pdf
+
+ai tipo vc tem q verificar antes de tudo isso se a origem e o destino sao a mesma rua, se for pode pular a prte do dijikstra
+
+ai tipo depois tem q imprimir o caminho no arquivo de saida
+
+o formato direitinho ta em cima do imprime no proprio codigo

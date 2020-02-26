@@ -1,0 +1,10 @@
+IVANDRE
+7
+LUCAS
+3
+MURILO
+8
+THAIS
+10
+mumux
+32

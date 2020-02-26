@@ -1,0 +1,42 @@
+CAPÍTULO 4 - MEMÓRIA CACHE
+* memória pequena e rápida colocada entre o processador e a memória principal.
+* pode estar na CPU ou em um módulo
+
+Operações da Cache {
+	CPU pede dados à memória principal -> procura esses dados na cache -> estão na cache, dados obtidos rapidamente -> não estão na cache, bloco de dados é lido da memória principal para a cache -> dados entregues da cache para a CPU
+}
+
+Mapeamento direto {
+	* cada bloco da memória principal é mapeado em uma única linha da cache
+	* simples
+	* barato
+	* um endereço da memória principal pode ser visto como três campos: os primeiros bits identificam um bloco de memória, depois identificam em que slot um endereço é mapeado, os últimos bits identificam uma palavra em uma linha da cache
+	* Problema: se um programa faz repetidas referências a palavra de dois blocos distintos, mapeados em uma mesma linha, esses blocos serão trocados continuamente na memória cache e a taxa de acertos à memória será baixa.
+}
+
+Mapeamento associativo {
+	* cada bloco da memória principal é mapeado em qualquer linha de memória cache
+	* um endereço de memória é composto por um rótulo (bloco da memória principal) e um campo de palavra. 
+}
+
+Mapeamento associativo por conjuntos {
+	* divide a cache em v conjuntos de k linhas
+	* um bloco pode ser mapeado em qualquer linha de um conjunto
+}
+
+Algoritmos de substituição {
+	* LRU - least recently used
+	* FIFO - first in first out
+	* LFU - least frequently used
+	* Random
+}
+
+Políticas de escrita {
+	* Write-throught - operações são executadas em simultâneo na cache e na memória
+	* write-back - operações são executas na cache e atualizando a memória principal apenas quando o bloco é substituído
+}
+
+Caches unificadas versus separadas {
+	* unificadas - maior taxa de acerto
+	* separadas - elimina disputa pela cache entre a unidade de busca/decodificação de instrução e a unidade de execução
+}

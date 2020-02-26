@@ -1,0 +1,4 @@
+key into outof
+key - dist até os vertices
+into - devolve o índice do heap
+out of - devolve o índice do key

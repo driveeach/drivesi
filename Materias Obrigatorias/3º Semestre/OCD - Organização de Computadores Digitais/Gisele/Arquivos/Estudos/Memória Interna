@@ -1,0 +1,33 @@
+RAM {
+	* Leitura / Escrita
+	* volátil
+	* Armazenamento de dados temoprário
+	Estática {
+		* os bits são guardados em configurações lógicas do tipo flip-flop
+		* não precisam de refrescamento
+		* mais complexa, mais cara e rápida
+		* Utilização: cache
+		* NVRAM {
+			- RAM não volátil
+			- tem uma bateria de lítio incorporada
+			- mantem a informação mesmo com ausencia de alimentação
+		}
+	}
+	Dinâmica {
+		* as células guardam os dados em capacitores, a presença ou ausência de carga nele, indica o nível lógico (0 ou 1)
+		* necessita ser refrescada periodicamente, uma vez que os capacitores perdem a sua carga
+		* construção simples, mais baratas e lentas
+		* Utilização: memória principal
+	}
+}
+
+ROM {
+	* Read Only Memory
+	* Conteúdo já vem programado de fábrica
+	* Conteúdo pode ser programado pelo usuário: PROM (Programmable ROM) ou EPROM (erasable ROM), respectivamento, os dispositivos que podem ser programados apenas uma vez, ou várias vezes
+	* Aplicações {
+		- microprogramação
+		- programas de sistema (bios)
+		- tabelas de funções
+	}
+}

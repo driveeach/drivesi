@@ -1,0 +1,66 @@
+1
+Even Flow
+Pearl Jam
+c:\music\even_flow.mp3
+1.5
+1
+Everlong
+Foo Fighters
+f.mp3
+1.99
+1
+My Name Is Jonas
+Weezer
+c:\music\myname.mp3
+1.99
+1
+Hey Ya!
+Outkast
+c:\music\hey_ya.mp3
+1.25
+1
+Tonight, Tonight
+Smashing Pumpkins
+c:\music\tonight_tonight.mp3
+1.99
+1
+Today
+Smashing Pumpkins
+c:\music\today.mp3
+1.99
+1
+1979
+Smashing Pumpkins
+c:\music\1979.mp3
+1.99
+3
+5
+Smashing Pumpkins
+7
+Smashing Pumpkins
+7
+Smashing Pumpkins
+6
+9
+arquivo.dat
+8
+arquivo.dat
+9
+arquivo.dat
+10
+12
+5
+Relative Ways
+... And You Will Know Us by the Trail of Dead
+c:\music\tags.mp3
+2.36
+11
+4
+5
+Foo Fighters
+13
+Everlong
+Foo Fighters
+f.mp3
+1.99
+1

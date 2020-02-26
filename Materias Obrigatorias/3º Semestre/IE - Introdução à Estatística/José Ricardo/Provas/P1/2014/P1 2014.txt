@@ -1,0 +1,38 @@
+PROVA P1 de 2014 - 
+
+[Estatística] P1 manhã 2014
+Lista 1
+
+III
+5)Considere a malha de interruptores da figura 1. Cada interruptor pode falhar com pro-
+babilidade p igualmente e independentemente. Encontre a probabilidade de que haja um
+caminho fechado entre os terminais a e b dessa malha.
+
+III
+6) Considere o experimento aleatório de lancar uma moeda honesta repetidamente e contar o
+o numero de lancamentos efetuados até se obter uma cara. 
+(a) encontre a probabilidade de que a primeira cara apareca no k-
+esimo lancamento e 
+(b) encontre a probabilidade de que a primeira cara apareca em um lancamento de número impar.
+
+V
+2) 
+Uma empresa produz componentes elétricos (por exemplo, lâmpadas) em 3 fábricas dis-
+tintas, F1 , F2 e F3 , responsáveis, respectivamente, por 50%, 30% e 20% de sua producao
+total. Suponha que as probabilidades de se manufaturar um componente defeituoso em
+cada uma dessas fábricas são, respectivamente, de 2%, 5% e 1%. 
+
+(a) Se um componente fabricado por essa empresa for escolhido ao acaso, qual e a probabilidade de que ele
+seja defeituoso? 
+(b) Se um componente escolhido ao acaso for defeituoso, qual e a
+probabilidade de que ele tenha sido manufaturado na fábrica F3 ?
+
+
+lista 2
+
+III
+3) 
+Uma moeda honesta e lancada 10 vezes. Encontre a probabilidade de se obter 3,4 ou 6
+caras nesses lancamentos.
+
+

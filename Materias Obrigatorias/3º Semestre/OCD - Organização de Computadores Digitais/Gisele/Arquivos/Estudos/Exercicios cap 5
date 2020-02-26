@@ -1,0 +1,37 @@
+EXERCÍCIOS CAPÍTULO 5
+
+Perguntas de Revisão
+
+5.1. Quais as principais propriedades da memória semicondutora?
+	Elas apresentam dois estados estáveis (ou semiestáveis), que podem ser usados para representar o binário 0 e 1, são capazes de ser escritas para definir o estado e são capazes de ser lidas, para verificar o estado.
+
+5.2. Quais são os dois sentidos em que o termo memória de acesso aleatório é usado?
+	Primeiro, a memória em que é possível ler dados da memória e escrever novos dados de modo fácil e rápido. O segundo sentido é a memória em que as palavras individuais são acessadas diretamente.
+
+5.3. Qual a diferença entre DRAM e SRAM em termos de aplicação?
+	A DRAM é usada para a memória principal e a SRAM para a memória cache
+
+5.4. Qual a diferença entre DRAM e SRAM em termos de velocidade, tamanho e custo?
+	A DRAM é mais lenta, mais barata e menos volumosa que a SRAM.
+
+5.5. Explique porque um tipo de RAM é considerado como analógico e outro digital.
+	A SRAM pode ser considerada um dispositivo digital, já que seus bits são guardados em configurações lógicas do tipo flip-flop. Já a DRAM pode ser considerada um dispositivo analógico, pois suas células guardam os dados em capacitores, onde a presença ou ausência de carga indica o nível lógico (0 ou 1).
+
+5.6. Quais são as aplicações para a ROM?
+	Microprogramação, programa de sistemas (BIOS), tabelas de funções e bibliotecas de subrotinas para funções muito acessadas.
+
+5.7. Quais são as diferenças entre EPROM, EEPROM, e memória flash?
+	EPROM é a memória somente de leitura programável e apagável, ela é lida e escrita eletricamente, assim como a PROM. Porém, antes da escrita, todas as células de armazenamento precisam ser apagadas para retornar ao estado inicial, pela exposição do chip empacotado à radiação ultravioleta (UV). Para quantidades comparáveis de armazenamento, a EPROM é mais cara que a PROM, mas tem a vantagem da capacidade de múltiplas atualizações.
+	EEPROM é a memória somente de leitura programável e apagável eletricamente, ela é uma memória principalmente de leitura que pode ser escrita a qualquer momento sem apagar o conteúdo anterior. A operação de escrita leva muito mais tempo do que a operação de leitura. Ela combina a vantagem da não volatilidade e flexibilidade de ser atualizável. A EEPROM é mais cara que a EPROM e também menos densa, admitindo menos bits por chip.
+	A memória flash (que tem esse nome devido à velocidade com que pode ser reprogramada) é intermediária entre a EPROM e a EEPROM tanto no custo quanto na funcionalidade. Assim como a EEPROM, ela usa uma tecnologia elétrica de apagamento. Uma memória flash inteira pode ser apagada em um ou alguns segundos, muito mais rápido que a EPROM. Além disso, é possível apagar apenas blocos ao invés de um chip inteiro.
+
+
+
+
+
+
+
+
+
+
+

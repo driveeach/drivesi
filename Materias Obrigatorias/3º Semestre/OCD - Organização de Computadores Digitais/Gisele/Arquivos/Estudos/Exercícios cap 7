@@ -1,0 +1,26 @@
+EXERCÍCIOS CAPÍTULO 7
+
+Perguntas de Revisão
+7.1. Liste três classificações gerais de dispositivos externos ou periféricos.
+	Legíveis ao ser humano, adequados para comunicação com usuários de computador. Legíveis a máquina, adequados para comunicação com equipamentos. Comunicação, adequados para comunicação com dispositivos remotos.
+
+7.2. O que é o International Reference Alphabet?
+	É um sistema de correspondência entre caracteres e a manifestação deles no computador. Quando você digita o trandutor do módulo de I/O do teclado traduz o caracter em um binário para jogar no barramento de dados.
+
+7.3. Quais são as principais funções de um módulo de E/S?
+	Controle e temporização, comunicação com o processador, comunicação com o dispositivo, armazenamento temporário de dados, detecção de erro
+
+7.4. Liste e defina resumidamente três técnicas para realizar E/S
+	E/S Programada: os dados são trocados entre o processador e o módulo de E/S. O processador executa um programa que lhe oferece controle direto da operação de E/S. Quando o processador emite um comando ao módulo de E/S, ele precisa esperar até que a operação de E/S termine. Se o processador for mais rápido que o módulo de E/S, isso desperdiça o tempo do processador.
+	E/S Controlada por Interrupção: O processador emite um comando de E/S, continua a executar outras instruções e é interrompido pelo módulo de E/S quando o último tiver completado seu trabalho.
+	Acesso Direto a Memória (DMA): Nesse modo, o módulo de E/S e a memória principal trocam dados diretamente, sem envolvimento do processador.
+
+7.5. Qual é a diferença entre E/S mapeada na memória e E/S independente?
+	E/S Mapeada na Memória: com a E/S mapeada na memória, existe um único espaço de endereço para locais de memória e dispositivos de E/S. O processador trata os registradores de estado e dados dos módulos de E/S como locais de memória, e usa as mesmas instruções de máquina para acessar a memória e os dispositivos de E/S. Assim, por exemplo, com 10 linhas de endereço, um total combinado de 210 = 1024 locais de memória e endereços de E/S podem ser aceitos, em qualquer combinação. Uma única linha de leitura e uma única linha de escrita são necessárias no barramento. 
+	E/S Independente: como alternativa, o barramento pode ter linhas de leitura e escrita de memória além das linhas de comando de entrada e saída. Agora, a linha de comando especifica se o endereço se refere a um local de memória ou a um dispositivo de E/S. A faixa completa de endereços pode estar disponível para ambos. Novamente, com 10 linhas de endereço, ele agora pode aceitar 1024 locais e 1024 endereços de E/S. Como o espaço de endereço para E/S é independente do espaço da memória, isso é chamado de E/S independente.
+
+7.6. Quando ocorre uma interrupção de dispositivo, como o processador determina qual dispositivo emitiu a interrupção?
+	Múltiplas linhas de interrupção, verificação por software (polling), Daisy (verificação por hardware, vetorado), arbitração de barramento(vetorado)
+
+7.7. Quando um módulo de DMA toma o controle de um barramento, e enquanto ele retem o controle do barramento, o que o processador faz?	
+	O processador para cada ciclo do barramento roubado pelo módulo de DMA.

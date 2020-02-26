@@ -1,0 +1,100 @@
+Registro inserido
+Registro inserido
+Registro inserido
+Registro inserido
+Registro inserido
+Registro inserido
+Registro inserido
+1979
+Smashing Pumpkins
+c:\music\1979.mp3
+1.99
+Even Flow
+Pearl Jam
+c:\music\even_flow.mp3
+1.5
+Everlong
+Foo Fighters
+f.mp3
+1.99
+Hey Ya!
+Outkast
+c:\music\hey_ya.mp3
+1.25
+My Name Is Jonas
+Weezer
+c:\music\myname.mp3
+1.99
+Today
+Smashing Pumpkins
+c:\music\today.mp3
+1.99
+Tonight, Tonight
+Smashing Pumpkins
+c:\music\tonight_tonight.mp3
+1.99
+1979
+Smashing Pumpkins
+c:\music\1979.mp3
+1.99
+Today
+Smashing Pumpkins
+c:\music\today.mp3
+1.99
+Tonight, Tonight
+Smashing Pumpkins
+c:\music\tonight_tonight.mp3
+1.99
+Today
+Smashing Pumpkins
+c:\music\today.mp3
+1.99
+Tonight, Tonight
+Smashing Pumpkins
+c:\music\tonight_tonight.mp3
+1.99
+Even Flow
+Pearl Jam
+c:\music\even_flow.mp3
+1.5
+Arquivo carregado
+Arquivo salvo
+Arquivo carregado
+Arquivo salvo
+Arquivo alterado
+Arquivo carregado
+Relative Ways
+... And You Will Know Us by the Tra
+c:\music\tags.mp3
+2.36
+Everlong
+Foo Fighters
+f.mp3
+1.99
+Hey Ya!
+Outkast
+c:\music\hey_ya.mp3
+1.25
+Even Flow
+Pearl Jam
+c:\music\even_flow.mp3
+1.5
+Tonight, Tonight
+Smashing Pumpkins
+c:\music\tonight_tonight.mp3
+1.99
+1979
+Smashing Pumpkins
+c:\music\1979.mp3
+1.99
+Today
+Smashing Pumpkins
+c:\music\today.mp3
+1.99
+Everlong
+Foo Fighters
+f.mp3
+1.99
+Tocando a musica Everlong.
+Tecle 1 para encerrar a execucao e voltar para o menu.
+Everlong tocou ate o final.

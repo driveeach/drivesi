@@ -1,0 +1,11 @@
+ADD ax,10
+ADD ax,1
+ADD bx,10
+SUB bx,11
+SUB cx,9
+SUB ax,12
+DEC dx
+MUL ax
+INC bx
+CMP ax,ax
+JLE 0

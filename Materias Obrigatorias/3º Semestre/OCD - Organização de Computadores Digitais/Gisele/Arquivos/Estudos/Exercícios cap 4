@@ -1,0 +1,25 @@
+EXERCÍCIOS CAPÍTULO 4
+
+Perguntas de Revisão:
+4.1. Quais são as diferenças entre acesso sequencial, acesso direto e acesso aleatório?
+	Acesso sequencial: os dados são organizados na memória em unidades chamadas registros. O acesso é feito segundo uma sequência linear específica.
+	Acesso direto: cada bloco individual ou registro possui um endereço único, baseado em sua localização física. O acesso é feito por meio de um acesso direto a uma vizinhança genérica do registro e em seguida por uma pesquisa sequencial.
+	Acesso aleatório: cada posição de memória endereçável possui um mecanismo de enderaçamento único e fisicamente conectado a ela. O tempo de acesso é constante e independente da sequência de acessos anteriores.
+
+4.2. Qual é o relacionamento geral entre tempo de acesso, custo de memória e capacidade?
+	Tempo de acesso mais rápido, custo por bit maior; capacidade maior, custo por bit menor; capacidade maior, tempo de acesso menor.
+
+4.3. Como o princípio de localidade se relaciona com o uso de múltiplos níveis de memória?
+	É possível organizar os dados através de uma hierarquia de memória de tal modo que a porcentagem de acessos para cada nível mais baixo é menor do que a de níveis acima. Como as referências de memória tendem a se agrupar, os dados da memória superior não precisa mudar muitas vezes para atender a pedidos de acesso a memória.
+
+4.4. Quais as diferenças entre mapeamento direto, mapeamento associativo e mapeamento associativo em conjunto?
+	No mapeamento direto cada bloco da memória principal é mapeado em uma única linha da cache. No mapeamento associativo permite que cada bloco da memória possa ser mapeado em qualquer linha da cache. No mapeamento associativo em conjunto a cache é dividida em conjuntos de linhas eum bloco pode ser mapeado em qualquer linha de um conjunto.
+
+4.5. Para uma cache mapeada diretamente, um endereço de memória principal é visto como consistindo em três campos. Liste e defina os três campos.
+	Um campo identifica uma única palavra ou byte dentro de um bloco de memória principal. O segundo campo identifica em que slot um endereço é mapeado. O última campo identifica uma palavra em uma linha da cache
+
+4.6. Para uma cache associativa, um endereço de memória principal é visto como consistindo em dois campos. Liste e defina os dois campos.
+	Um campo é a tag, que identifica um bloco da memória principal. O outro campo é um campo de palavra que identifica uma única palavra ou byte dentro de um bloco da memória principal.
+
+4.7. Para uma cache associativa em conjunto, um endereço da memória principal é visto como consistindo em três campos. Liste e defina os três campos. 
+	O campo palavra identifica uma única palavra ou byte dentro de um bloco da memória principal. Os dois restantes especificam um dos blocos da memória principal. Um campo conjunto, que identifica um dos conjuntos da cache e outro campo tag, que identifica um dos blocos que podem caber em um conjunto

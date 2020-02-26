@@ -1,0 +1,393 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <malloc.h>
+#include<iostream>
+#define min 256
+#define ordem 512
+
+typedef int TipoChave;
+typedef struct
+{
+  TipoChave Chave;
+} Registro;
+
+typedef struct no_arvoreB *arvoreB;
+typedef struct no_arvoreB
+{
+  int num_chaves;
+  Registro chave[ordem-1];
+  arvoreB filhos[ordem];
+} No;
+
+typedef arvoreB Raiz_arvoreB;
+void inicializaArvore(Raiz_arvoreB *ArvoreB)
+{
+  *ArvoreB = NULL;
+} 
+
+int quant=0;
+
+void busca(Registro *x, arvoreB Ap)
+{
+  int i;
+  if (Ap == NULL)return ;
+  quant++;
+  i = 1;
+  while (i < Ap->num_chaves && x->Chave > Ap->chave[i - 1].Chave) i++;
+  if (x->Chave == Ap->chave[i - 1].Chave)
+  {
+    *x = Ap->chave[i - 1];
+     return ;
+  }
+  if (x->Chave < Ap->chave[i - 1].Chave) busca(x, Ap->filhos[i - 1]);
+  else busca(x, Ap->filhos[i]);
+} 
+
+void insereNoNo(arvoreB Ap, Registro Reg, arvoreB ApDir)
+{
+  int k;
+  int ok;
+
+  k = Ap->num_chaves;
+  ok = k > 0;
+  while (ok)
+  {
+    if (Reg.Chave >= Ap->chave[k - 1].Chave)
+    {
+      ok = 0;
+      break;
+    }
+    Ap->chave[k] = Ap->chave[k - 1];
+    Ap->filhos[k + 1] = Ap->filhos[k];
+    k--;
+    if (k < 1)
+      ok = 0;
+  }
+  Ap->chave[k] = Reg;
+  Ap->filhos[k + 1] = ApDir;
+  Ap->num_chaves++;
+} 
+
+
+void insere(Registro Reg, arvoreB Ap, int *Cresceu, Registro *RegRetorno, arvoreB *ApRetorno)
+{
+  arvoreB ApTemp;
+  int i, j;
+
+  if (Ap == NULL)
+  {
+    *Cresceu = 1;
+    *RegRetorno = Reg;
+    
+    *ApRetorno = NULL;
+    return;
+  }
+  i = 1;
+  while (i < Ap->num_chaves && Reg.Chave > Ap->chave[i - 1].Chave)
+    i++;
+  if (Reg.Chave == Ap->chave[i - 1].Chave)
+  {
+    *Cresceu = 0;
+    return;
+  }
+  if (Reg.Chave < Ap->chave[i - 1].Chave)
+    insere(Reg, Ap->filhos[i - 1], Cresceu, RegRetorno, ApRetorno);
+  else
+    insere(Reg, Ap->filhos[i], Cresceu, RegRetorno, ApRetorno);
+  if (!*Cresceu)
+    return;
+  if (Ap->num_chaves < (ordem-1))
+  { 
+    insereNoNo(Ap, *RegRetorno, *ApRetorno);
+    *Cresceu = 0;
+    return;
+  }
+ 
+  ApTemp = (arvoreB) malloc(sizeof(No));
+  ApTemp->num_chaves = 0;
+  ApTemp->filhos[0] = NULL;
+  if (i <= min + 1)
+  {
+    insereNoNo(ApTemp, Ap->chave[(ordem-1) - 1], Ap->filhos[(ordem-1)]);
+    Ap->num_chaves--;
+    insereNoNo(Ap, *RegRetorno, *ApRetorno);
+  }
+  else
+    insereNoNo(ApTemp, *RegRetorno, *ApRetorno);
+  for (j = min + 2; j <= (ordem-1); j++)
+    insereNoNo(ApTemp, Ap->chave[j - 1], Ap->filhos[j]);
+  Ap->num_chaves = min;
+  ApTemp->filhos[0] = Ap->filhos[min + 1];
+  *RegRetorno = Ap->chave[min];
+  *ApRetorno = ApTemp;
+} 
+
+
+void insereArvore(Registro Reg, arvoreB *Ap)
+{
+  int Cresceu;
+  Registro RegRetorno;
+  arvoreB ApRetorno;
+  arvoreB ApTemp;
+
+  insere(Reg, *Ap, &Cresceu, &RegRetorno, &ApRetorno);
+  if (Cresceu) { 
+    ApTemp = (arvoreB) malloc(sizeof(No));
+    ApTemp->num_chaves = 1;
+    ApTemp->chave[0] = RegRetorno;
+    ApTemp->filhos[1] = ApRetorno;
+    ApTemp->filhos[0] = *Ap;
+    *Ap = ApTemp;
+    }
+  } 
+
+void balanceada(arvoreB ApPag, arvoreB ApPai, int PosPai, int *Diminuiu)
+{
+  arvoreB Aux;
+  int DispAux, j;
+
+  if (PosPai < ApPai->num_chaves) {  
+    Aux = ApPai->filhos[PosPai + 1];
+    DispAux = (Aux->num_chaves - min + 1) / 2;
+    ApPag->chave[ApPag->num_chaves] = ApPai->chave[PosPai];
+    ApPag->filhos[ApPag->num_chaves + 1] = Aux->filhos[0];
+    ApPag->num_chaves++;
+    if (DispAux > 0) { 
+      for (j = 1; j < DispAux; j++)
+        insereNoNo(ApPag, Aux->chave[j - 1], Aux->filhos[j]);
+      ApPai->chave[PosPai] = Aux->chave[DispAux - 1];
+      Aux->num_chaves -= DispAux;
+      for (j = 0; j < Aux->num_chaves; j++)
+        Aux->chave[j] = Aux->chave[j + DispAux];
+      for (j = 0; j <= Aux->num_chaves; j++)
+        Aux->filhos[j] = Aux->filhos[j + DispAux];
+      *Diminuiu = 0;
+    }
+    else
+    { 
+      for (j = 1; j <= min; j++)
+        insereNoNo(ApPag, Aux->chave[j - 1], Aux->filhos[j]);
+      free(Aux);
+      for (j = PosPai + 1; j < ApPai->num_chaves; j++)
+      {   
+        ApPai->chave[j - 1] = ApPai->chave[j];
+        ApPai->filhos[j] = ApPai->filhos[j + 1];
+      }
+      ApPai->num_chaves--;
+      if (ApPai->num_chaves >= min)
+        *Diminuiu = 0;
+    }
+  }
+  else
+  { 
+    Aux = ApPai->filhos[PosPai - 1];
+    DispAux = (Aux->num_chaves - min + 1) / 2;
+    for (j = ApPag->num_chaves; j >= 1; j--)
+      ApPag->chave[j] = ApPag->chave[j - 1];
+    ApPag->chave[0] = ApPai->chave[PosPai - 1];
+    for (j = ApPag->num_chaves; j >= 0; j--)
+      ApPag->filhos[j + 1] = ApPag->filhos[j];
+    ApPag->num_chaves++;
+    if (DispAux > 0) { 
+      for (j = 1; j < DispAux; j++)
+        insereNoNo(ApPag, Aux->chave[Aux->num_chaves - j], Aux->filhos[Aux->num_chaves - j + 1]);
+      ApPag->filhos[0] = Aux->filhos[Aux->num_chaves - DispAux + 1];
+      ApPai->chave[PosPai - 1] = Aux->chave[Aux->num_chaves - DispAux];
+      Aux->num_chaves -= DispAux;
+      *Diminuiu = 0;
+    }
+    else
+    {  
+      for (j = 1; j <= min; j++)
+        insereNoNo(Aux, ApPag->chave[j - 1], ApPag->filhos[j]);
+      free(ApPag);
+      ApPai->num_chaves--;
+      if (ApPai->num_chaves >= min)
+        *Diminuiu = 0;
+    }
+  }
+}  
+
+void irmaos(arvoreB Ap, int Ind, arvoreB ApPai, int *Diminuiu)
+{
+  if (ApPai->filhos[ApPai->num_chaves] != NULL)
+  {
+    irmaos(Ap, Ind, ApPai->filhos[ApPai->num_chaves], Diminuiu);
+    if (*Diminuiu)
+      balanceada(ApPai->filhos[ApPai->num_chaves], ApPai, ApPai->num_chaves, Diminuiu);
+    return;
+  }
+  Ap->chave[Ind - 1] = ApPai->chave[ApPai->num_chaves - 1];
+  ApPai->num_chaves--;
+  *Diminuiu = ApPai->num_chaves < min;
+} 
+
+void remove(TipoChave Ch, arvoreB *Ap, int *Diminuiu)
+{
+  int Ind, j;
+  arvoreB WITH;
+
+  if (*Ap == NULL)
+  {
+    printf("Erro: registro nao esta na arvore\n");
+    getchar();
+    getchar();
+    *Diminuiu = 0;
+    return;
+  }
+  WITH = *Ap;
+  Ind = 1;
+  while (Ind < WITH->num_chaves && Ch > WITH->chave[Ind - 1].Chave)
+    Ind++;
+  if (Ch == WITH->chave[Ind - 1].Chave)
+  {
+    if (WITH->filhos[Ind - 1] == NULL) {  /* Pagina folha */
+      WITH->num_chaves--;
+      *Diminuiu = WITH->num_chaves < min;
+      for (j = Ind; j <= WITH->num_chaves; j++)
+      {
+        WITH->chave[j - 1] = WITH->chave[j];
+        WITH->filhos[j] = WITH->filhos[j + 1];
+      }
+      return;
+    }
+    irmaos(*Ap, Ind, WITH->filhos[Ind - 1], Diminuiu);
+    if (*Diminuiu)
+      balanceada(WITH->filhos[Ind - 1], *Ap, Ind - 1, Diminuiu);
+    return;
+  }
+  if (Ch > WITH->chave[Ind - 1].Chave)
+    Ind++;
+  remove(Ch, &WITH->filhos[Ind - 1], Diminuiu);
+  if (*Diminuiu)
+    balanceada(WITH->filhos[Ind - 1], *Ap, Ind - 1, Diminuiu);
+}  /* Ret */
+
+
+void removeDaArvore(TipoChave Ch, arvoreB *Ap)
+{
+  int Diminuiu;
+  arvoreB Aux;
+  remove(Ch, Ap, &Diminuiu);
+  if (Diminuiu && (*Ap)->num_chaves == 0) { /* Arvore diminui na altura */
+    Aux = *Ap;
+    *Ap = Aux->filhos[0];
+    free(Aux);
+  }
+}  /* Retira */
+
+
+void Imprime(arvoreB raiz)
+{
+  int i; 
+  if (raiz != NULL)
+   {
+     for (i = 0; i < raiz->num_chaves; i++)
+      {
+        Imprime(raiz->filhos[i]);
+        printf(", %d", raiz->chave[i].Chave);
+      }
+     Imprime(raiz->filhos[i]);
+      }
+}
+
+int gerarNumeros(const int i, const int j)
+{
+    return i + ( ((rand() << 15) | rand()) % (j - i + 1) );
+}
+
+int calculaMedia(arvoreB *raiz, Registro reg)
+{
+
+    int ch;
+    int soma=0;
+    for(int i=0; i<10000; i++)
+    {
+        ch = gerarNumeros(0, 1200000);
+        reg.Chave=ch;
+        busca(&reg, *raiz);
+       }
+    int media = (quant/10000);
+    return media;
+}
+
+void geraChaves(arvoreB *raiz)
+{
+Registro reg;
+
+int ch;
+for (int i =0;i <1200000; i++)
+{
+ch = gerarNumeros(0, 1200000);//recebe um numero aleatorio que vai ser inserido
+reg.Chave=ch;
+insereArvore(reg, raiz);
+}
+printf("Chaves inseridas!");
+getchar();
+getchar();
+}
+
+int main()
+{
+  arvoreB *arv;
+  Registro reg;
+  char tecla;
+  system("cls");
+  arv=(arvoreB*) malloc(sizeof(arvoreB));
+  inicializaArvore(arv);
+  system("cls");
+  printf("MENU\n");
+  printf("_______________\n");
+  while(1)
+  {
+    system("cls");
+    printf("ESCOLHA AS OPCOES\n");
+    printf("______________\n");
+    printf("1. Gerar/Inserir chaves\n");
+    printf("2. Remover Chaves\n");
+    printf("3. Buscar chaves e calcular Media\n");
+    printf("4. Visualizar chaves\n");
+    printf("5. Sair\n");
+    printf("--> ");
+    scanf("%c", &tecla);
+    if (tecla=='5')
+      break;
+    switch(tecla)
+    {
+      case '1':
+       
+           system("cls");
+           printf("EXECUTANDO...\n");
+           printf("______________\n");
+           geraChaves(arv);
+           break;
+      case '2':
+        while(1)
+        {
+           system("cls");
+           printf("REMOCAO\n");
+           printf("___________\n");
+           printf("Digite o valor da chave a ser removida: (989898 para finalizar)\n--> ");
+           scanf("%d", &reg.Chave);
+           if (reg.Chave==989898)
+             break;
+           removeDaArvore(reg.Chave, arv);
+         }
+      break;
+      case '3':
+          calculaMedia(arv, reg); 
+          printf("\n\nMedia de Busca e : %d", calculaMedia(arv, reg));
+          quant=0;
+          getchar();
+          getchar();
+         
+      break;
+      case '4':
+          Imprime(*arv); 
+          getchar();
+          getchar();
+        break;
+    }
+  }
+  getchar();
+}

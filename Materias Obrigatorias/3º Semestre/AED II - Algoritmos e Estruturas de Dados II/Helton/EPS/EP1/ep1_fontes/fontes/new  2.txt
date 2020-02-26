@@ -1,0 +1,39 @@
+Tipo. Pra esse metodo, existem cinco possibilidades
+
+Pensando q i seja o inicio e f seja o fim
+
+i esta numa aresta q vai de a ate b
+
+f esta numa aresta q vai de c ate d
+
+os caminhos possiveis sao
+
+1. i->a a->c c->f
+
+2. i->a a->d d->f
+
+3. i->b b->c c->f
+
+4. i->b b->d d->f
+
+5. se i e f estiverem na mesma aresta, i->f
+
+daí pra calcular o caminho minimo de a ate c e de a ate d vc vai usar o dijkstra com origem em a
+
+da mesma forma, pra calcular o caminho minimo de b ate c e de b ate d, vc vai usar o dijkstra com origem em b
+
+dps, com os metodos dijkstra vc tem os custos intermediarios mas não do caminho todo
+
+pra vc fazer o custo de (por exemplo) i->a vc pode usar uma regra de tres simples
+
+tipo
+
+se de a ate b tem peso x
+
+quanto sera o peso de i ate a
+
+vc pode criar um metodo q calcula isso
+
+agora como vc vai fazer isso, depende de vc
+
+pq senão a logica vai ficar igual...

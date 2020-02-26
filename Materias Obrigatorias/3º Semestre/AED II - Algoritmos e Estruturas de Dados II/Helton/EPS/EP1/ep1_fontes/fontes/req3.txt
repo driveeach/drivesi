@@ -1,0 +1,11 @@
+10			
+Nelson	41	Barao_Do_Bananal	15
+Othon_Carvalhais_Siqueira	6	Barao_Do_Bananal	6
+Nelson	52	Sao_Miguel	30
+Barao_Do_Bananal	1	Sao_Miguel	27
+Nelson	7	Aristeu_Dias_Leme	152
+Portugal	33	Taylor	18
+Afranio_Peixoto	30	Portugal	47
+Aristeu_Dias_Leme	158	Das_Cerejeiras	12
+Albino_Bairao	93	Euclides_Miragaia	21
+Cardoso_De_Almeida	196	Barao_Do_Bananal	198
