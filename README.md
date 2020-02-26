@@ -16,4 +16,4 @@ Os estudos compartilhados do Ciclo Básico podem ser encontrados [aqui](https://
 ![](grade.jpg)
 
 ### Outros Drives
-Você pode encontrar uma coletânea com todos os Drives da EACH [aqui](https://gitlab.com/driveeach/)
+Você pode encontrar uma coletânea com todos os Drives da EACH [aqui](https://github.com/driveeach/driveeach)
