@@ -1,0 +1,17 @@
+1. 
+Calcule:
+a. integral(0)(1)d/dx (e^(atg*x))dx
+b. d/dx integral(0)(1)(e^(atg*x))dx
+c. d/dx integral(0)(x)(e^(atg*t))dt
+
+2. 
+Considere V o volume do sólido obtido pela rotação em torno do eixo y da região delimitada por y=raiz(x) e y=x^2. Encontre V pelo fatiamento e por cascas cilindricas. Em ambos os casos, desenhe um diagrama para explicar seu método
+
+3. 
+A velocidade média das moléculas em um gás ideal é
+vm=4/raiz(2) * (M/(2RT))^(3/2) * integral(0)(∞) v^3*e^((Mv^2)/(2RT))dv,
+onde M é o peso molecular do gás; R, a constante do gás; T, a temperatura do gás, e v, a velocidade molecular. Calcule vm
+
+4. 
+a. Encontre a função de comprimento do arco para a curva y=asenx+raiz(1-x^2) com ponto inicial (0,1)
+b. Calcule o centro de massa da região delimitada pelas curvas y=x^(1/2), y=0, x=4
