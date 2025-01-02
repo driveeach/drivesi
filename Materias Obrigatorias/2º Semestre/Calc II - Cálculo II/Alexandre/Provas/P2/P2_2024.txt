@@ -1,0 +1,24 @@
+1.
+a. Seja P um ponto fora da reta L que passa através dos pontos Q e R. Mostre que a distância d a partir do ponto P para a reta L é:
+d = |a X b|/|a|,
+onde a=vetor(QR) e b= vetor(QP)
+b. Use a formula da parte (a) para encontrar a distância o ponto P(1,1,1) à reta que passa por Q(0,6,8) e R(-1,4,7).
+
+2. 
+Suponha que em uma certa região do espaço o potencial eletrico V seja dado por V(x,y,z)= 5x^2-3xy+xyz
+a. Determine a taxa de variação do potencial em P(3,4,5) na direção do vetor v=i+j-k
+b. Em que direção V varia mais rapidamente em P?
+c. Qual a taxa minima de variação em P?
+
+3. 
+Considere a função f(x,y)=x^2+2xy+3y^2 definida na região triangulas com vertices em (-1,1), (2,1), (-1,-2).
+a. Esboce o domínio de f.
+b. Determine os valores extremos de f e utilize o teste da derivada segunda para classificar os extremos como maximo ou minimo local.
+c. Reescreva f e determine se o extremo é um maximo ou minimo global.
+
+4. 
+Utilize o metodo dos multiplicadores de Lagrange para classificar os valores extremos de f(x1, x2, ..., xn)=x1+x2+...+xn, sujeita à x1^2+x2^2+...+xn^2=1, como maximos ou minimos
+
+5. Seja w=w(x,y,z)= lnraiz(x^2+y^2+z^2)
+a. calcule o diferencial w
+b. tomando w0=w(1/raiz(3), 1/raiz(3), 1/raiz(3)) como referencia, aproxime w1=w(1/2, 1/2, 1/2) utilizando a formula para o diferencial calculada na letra (a)
