@@ -1,0 +1,206 @@
+/*
+
+EX1
+
+#include <stdio.h>
+#include <stdlib.h>
+
+
+void imprimeCarta (int v, int n) {
+  int valor=v;
+  int naipe=n;
+  if ((valor==1)||(valor>10)) {
+    switch (valor) {
+      case 1: printf ("As "); break;
+      case 11: printf ("Valete "); break;
+      case 12: printf ("Dama "); break;
+      case 13: printf ("Rei "); break;
+    }
+  } else {
+    printf ("%d ", valor);
+  }
+
+  switch (naipe) {
+    case 0: printf ("de paus"); break;
+    case 1: printf ("de copas"); break;
+    case 2: printf ("de ouros"); break;
+    case 3: printf ("de espadas");
+  }
+}
+
+int main () {
+//  int c=rand()%52;
+//  printf ("%d\n", c);
+  
+  imprimeCarta(12,3);
+  puts("");
+  imprimeCarta(1,0);
+  puts("");
+  imprimeCarta(7,2);
+  puts("");
+  imprimeCarta(11,1);
+  puts("");
+}
+
+
+EX2
+
+#include <stdio.h>
+#include <stdlib.h>
+
+
+void imprimeCarta (int v, int n) {
+  int valor=v;
+  int naipe=n;
+  if ((valor==1)||(valor>10)) {
+    switch (valor) {
+      case 1: printf ("As "); break;
+      case 11: printf ("Valete "); break;
+      case 12: printf ("Dama "); break;
+      case 13: printf ("Rei "); break;
+    }
+  } else {
+    printf ("%d ", valor);
+  }
+
+  switch (naipe) {
+    case 0: printf ("de paus"); break;
+    case 1: printf ("de copas"); break;
+    case 2: printf ("de ouros"); break;
+    case 3: printf ("de espadas");
+  }
+}
+
+int main () {
+  for (int i=0;i<4;i++) {
+    for (int j=1;j<14;j++) {
+      imprimeCarta(j,i);
+      puts("");
+    }
+  }
+
+}
+
+EX 3 e 4
+
+ * ela consiste em criar dois arrays que armazenam uma mão.
+ * o array v armazena os valores das cartas na mão,
+ * o array n armazena os naipes das cartas na mão.
+ * Uma carta é determinada pelo índice. Por exemplo, a
+ * carta de índice 2 é a terceira carta na mão, 
+ * tem valor v[2] e naipe n[2].
+ * Com as cartas codificadas desta forma, a solução da
+ * questão 4 consiste em verificar se há quatro valores
+ * iguais no array v[]. A função contaOcorrencias(v,m,o)
+ * percorre o array v, de comprimento m, 
+ * contando quantas vezes o valor
+ * o ocorre, retornando essa contagem. O loop que 
+ * contém o teste "if (c==4) {"
+ * testa todos os valores possíveis no baralho.
+ * Informação adicional:
+ * - Seria fácil ajustar o teste para testar somente 
+ *   os valores das cartas na mão;
+ * - Seria suficiente testar somente os valores de
+ *   duas cartas na mão, mesmo que sejam do mesmo
+ *   valor.
+ * - As constantes 4 e 13 deveriam ser substituídas
+ *   por macros, por exemplo, #define NNAIPES 4
+ *   #define MAXVALOR 13 por completude o valor
+ *   mínimo seria uma constante importante:
+ *   #define MINVALOR 1
+ *   falaremos disso em aula.
+ *
+
+
+#include <stdio.h>
+#include <stdlib.h>
+
+
+void imprimeCarta (int v, int n) {
+  int valor=v;
+  int naipe=n;
+  if ((valor==1)||(valor>10)) {
+    switch (valor) {
+      case 1: printf ("As "); break;
+      case 11: printf ("Valete "); break;
+      case 12: printf ("Dama "); break;
+      case 13: printf ("Rei "); break;
+    }
+  } else {
+    printf ("%d ", valor);
+  }
+
+  switch (naipe) {
+    case 0: printf ("de paus"); break;
+    case 1: printf ("de copas"); break;
+    case 2: printf ("de ouros"); break;
+    case 3: printf ("de espadas");
+  }
+}
+
+// Função que faz parte da solução para a questão 4
+
+int contaOcorrencias (int v[], int m, int o) {
+    int conta=0;
+    for (int i=0;i<m;i++) {
+        if (v[i]==o) conta++;
+    }
+    return conta;
+}
+// Fim da função que faz parte...
+
+int main () {
+// Começo da solução da questão 3 
+  int m=5; // comprimento dos arrays
+  int v[m];
+  int n[m];
+  for (int i=0;i<m;i++) {
+    v[i]=rand()%13+1;
+    n[i]=rand()%4;
+  }
+// Fim da solução da questão 3
+
+// Ajuste para testar um caso com quadra.
+  // cria uma quadra
+  v[0]=2;
+  v[3]=2;
+// Fim do ajuste
+// Imprime as cartas na mão
+  for (int i=0;i<m;i++) {
+    imprimeCarta(v[i],n[i]);
+    puts("");
+  }
+// Começo da solução da questão 4
+  for (int k=1;k<14;k++) {
+      int c=contaOcorrencias (v, m, k);
+      if (c==4) {
+          printf ("tem quadra de %d.\n", k);
+      } else {
+          printf ("Não tem quadra de %d.\n", k);
+      }
+  }
+// Fim da solução da questão 4
+}
+
+// Dump de tela para uma execução do teste
+2 de ouros
+Dama de espadas
+2 de espadas
+2 de paus
+2 de copas
+Não tem quadra de 1.
+tem quadra de 2.
+Não tem quadra de 3.
+Não tem quadra de 4.
+Não tem quadra de 5.
+Não tem quadra de 6.
+Não tem quadra de 7.
+Não tem quadra de 8.
+Não tem quadra de 9.
+Não tem quadra de 10.
+Não tem quadra de 11.
+Não tem quadra de 12.
+Não tem quadra de 13.
+
+
+*/
